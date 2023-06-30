@@ -2,8 +2,7 @@ import React from "react";
 
 export default function BrandIcon() {
   return (
-    <div className="">
-      <div className="flex justify-center items-center">
+      <div className="flex items-center">
         <div className="w-12 h-8 bg-blue-500 rounded-3xl flex justify-center items-center">
           <svg
             className="w-4 h-4 text-white fill-current"
@@ -14,6 +13,5 @@ export default function BrandIcon() {
         </div>
         <p className=" ml-3 font-semibold text-blue-500">LearnU</p>
       </div>
-    </div>
   );
 }
