@@ -5,6 +5,7 @@
 .btn{
     @apply font-bold py-1.5 rounded-xl border px-10;
 }
+
 .btn-primary {
     @apply bg-primary-blue text-white
     transition-all duration-300
