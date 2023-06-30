@@ -1,10 +1,11 @@
-import Image from 'next/image'
 import BrandIcon from './BrandIcon'
+import TitleAndParagraph from "./components/TitleAndParagraph";
 
 export default function Home() {
   return (
     <main>
-      <BrandIcon></BrandIcon>
+      <BrandIcon />
+      <TitleAndParagraph />
     </main>
-  )
+  );
 }
