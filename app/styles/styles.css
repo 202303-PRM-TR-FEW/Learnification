@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+}
+
+.sectionLink {
+  width: 30px;
+  height: 30px;
+  overflow: visible;
+  opacity: 1;
+  z-index: 1;
+  fill: rgb(177, 177, 177);
+}
+
+.sectionLink:hover,
+.sectionLink:focus {
+  fill: rgb(46, 141, 255);
+  cursor: pointer;
+}
+
+.sideBarContainer {
+  display: flex;
+  justify-content: center;
+}
+.sideBarContainer nav {
+  position: fixed;
+  bottom: 0;
+}
+.sideBarContainer ul {
+  display: flex;
+  justify-content: space-around;
+  width: 85vw;
+  list-style: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  padding: 1em;
+  border-radius: 40px;
+}
+
+.linkLabels {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .sideBarContainer {
+    flex-direction: column;
+  }
+  .sideBarContainer nav {
+    position: unset;
+  }
+
+  .sideBarContainer ul {
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+    width: 3em;
+    text-align: center;
+    background-color: unset;
+  }
+  .linkLabels {
+    display: block;
+  }
+  .sideBarContainer a {
+    text-decoration: none;
+    color: rgb(177, 177, 177);
+  }
+}
