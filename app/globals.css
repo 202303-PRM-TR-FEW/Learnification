@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn{
-    @apply font-bold py-1.5 rounded-xl border px-10;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 177, 177, 177;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
 }
-
+.btn{
+  @apply font-bold py-1.5 rounded-xl border px-10;
+}
 .btn-primary {
     @apply bg-primary-blue text-white
     transition-all duration-300

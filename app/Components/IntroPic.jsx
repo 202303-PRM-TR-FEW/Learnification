@@ -1,5 +1,4 @@
 import React from "react";
-import "./styles/styles.css";
 function IntroPic() {
   return (
     <div className="container">
@@ -8,6 +7,7 @@ function IntroPic() {
         className="introPic w-full bg-white h-[38rem] rounded-[50px]"
       />
     </div>
+
   );
 }
 

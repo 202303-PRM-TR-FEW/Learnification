@@ -10,6 +10,7 @@ module.exports = {
       backgroundColor: {
         'primary-blue': '#2e8dff',
         'primary-white': '#ffffff',
+        'primary-gray': '#f5f5f5',
       },
       textColor: {
         'primary-white': '#ffffff',
