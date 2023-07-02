@@ -1,3 +1,5 @@
+//SideBar component needs to be tailwinded out
+//Going to push the tailwinded version by tonight
 import React, { useState } from "react";
 import "./styles.css";
 function SideBar() {

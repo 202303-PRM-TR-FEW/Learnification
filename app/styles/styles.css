@@ -40,15 +40,6 @@ body {
   display: none;
 }
 @media screen and (min-width: 768px) {
-  .container {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-
-  .introPic {
-    margin-left: 0;
-  }
-
   .sideBarContainer {
     flex-direction: column;
   }
