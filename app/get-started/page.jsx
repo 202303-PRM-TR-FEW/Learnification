@@ -11,7 +11,7 @@ export default function Home() {
             lg:pb-[0rem] flex flex-col lg:flex-row-reverse lg:items-center"
             >
                 <IntroPic />
-                <div className="xl:pl-[12rem] lg:pl-[6rem] max-lg:mt-8 px-8 basis-full mx-auto">
+                <div className="xl:pl-[12rem] lg:pl-[6rem] max-lg:mt-8 px-8 pb-8 basis-full mx-auto">
                     <BrandIcon />
                     <TitleAndParagraph />
                     <Link href="/home">
