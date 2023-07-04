@@ -6,12 +6,12 @@ import '../globals.css'
 import Link from 'next/link'
 export default function Home() {
     return (
-        <main className="p-4 md:p-16 min-h-screen flex m-auto bg-[#f5f5f5]" >
+        <main className="p-4 lg:p-16 min-h-screen flex m-auto bg-[#f5f5f5]" >
             <div className="w-full shadow-light-gray rounded-[50px]
-            md:pb-[0rem] flex flex-col md:flex-row-reverse md:items-center"
+            lg:pb-[0rem] flex flex-col lg:flex-row-reverse lg:items-center"
             >
                 <IntroPic />
-                <div className="xl:pl-[12rem] lg:pl-[6rem] max-md:mt-8 px-8 basis-full mx-auto">
+                <div className="xl:pl-[12rem] lg:pl-[6rem] max-lg:mt-8 px-8 basis-full mx-auto">
                     <BrandIcon />
                     <TitleAndParagraph />
                     <Link href="/home">
