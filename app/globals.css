@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+:root {
+  --foreground-rgb: 245, 245, 245;
+  --background-start-rgb: 245, 245, 245;
+  --background-end-rgb: 245, 245, 245;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

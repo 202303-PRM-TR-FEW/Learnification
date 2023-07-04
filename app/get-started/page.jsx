@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import IntroPic from '../Components/IntroPic'
 import TitleAndParagraph from '../Components/TitleAndParagraph'
 import BrandIcon from '../Components/BrandIcon'
