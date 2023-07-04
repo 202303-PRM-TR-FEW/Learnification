@@ -21,7 +21,10 @@ module.exports = {
       },
       boxShadow: {
         "light-gray": "0px 0px 20px rgba(0, 0, 0, 0.1)",
-      }
+      },
+      borderColor: {
+        "primary-blue": "#2e8dff",
+      },
     },
   },
   plugins: [],

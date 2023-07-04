@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function LearnUButton({ text, paddingInline = 40, bgColor = "blue", borderRadius = 12 }) {
+export default function LearnUButton({ text, paddingInline = 40, bgColor = "blue", borderRadius = 12, width = "", className }) {
     return (
         <>
             <button
-                className={`btn ${bgColor === "blue" ? "btn-primary" : "btn-secondary"}`}
+                className={`${width === "full" ? "w-full" : ""} btn ${bgColor === "blue" ? "btn-primary" : "btn-secondary "} ${className}`}
                 style={{ paddingInline: paddingInline, borderRadius: borderRadius }}>
                 {text}
             </button >

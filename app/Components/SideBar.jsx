@@ -1,7 +1,8 @@
 //SideBar component needs to be tailwinded out
 //Going to push the tailwinded version by tonight
+"use client"
 import React, { useState } from "react";
-import "./styles.css";
+import "../styles/styles.css";
 function SideBar() {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => {
