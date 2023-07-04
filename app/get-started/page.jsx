@@ -3,15 +3,20 @@ import TitleAndParagraph from '../Components/TitleAndParagraph'
 import BrandIcon from '../Components/BrandIcon'
 import LearnUButton from '../Components/LearnUButton'
 import '../globals.css'
+import Link from 'next/link'
 export default function Home() {
     return (
-        <main className="p-8" >
-            <div className="pb-[10rem] shadow-xl rounded-[50px] shadow-gray-600 md:flex md:flex-row-reverse md:items-center md:pb-[0rem]" style={{ boxShadow: "0 0 5px 0" }}>
+        <main className="p-4 lg:p-16 min-h-screen flex m-auto bg-[#f5f5f5]" >
+            <div className="w-full shadow-light-gray rounded-[50px]
+            lg:pb-[0rem] flex flex-col lg:flex-row-reverse lg:items-center"
+            >
                 <IntroPic />
-                <div className="md:p-[8rem]">
+                <div className="xl:pl-[12rem] lg:pl-[6rem] max-lg:mt-8 px-8 pb-8 basis-full mx-auto">
                     <BrandIcon />
                     <TitleAndParagraph />
-                    <LearnUButton text="Get Started" />
+                    <Link href="/home">
+                        <LearnUButton text="Get Started" />
+                    </Link>
                 </div>
             </div>
         </main>

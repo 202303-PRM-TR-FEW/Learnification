@@ -17,8 +17,11 @@ module.exports = {
         "primary-blue": "#2e8dff",
       },
       borderColor: {
-        "primary-blue": "#2e8dff",
+        'primary-blue': '#2e8dff',
       },
+      boxShadow: {
+        "light-gray": "0px 0px 20px rgba(0, 0, 0, 0.1)",
+      }
     },
   },
   plugins: [],
