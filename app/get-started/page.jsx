@@ -7,7 +7,7 @@ import Link from 'next/link'
 export default function Home() {
     return (
         <main className="p-4 md:p-16 min-h-screen flex m-auto bg-[#f5f5f5]" >
-            <div className="w-full shadow-intro rounded-[50px]
+            <div className="w-full shadow-light-gray rounded-[50px]
             md:pb-[0rem] flex flex-col md:flex-row-reverse md:items-center"
             >
                 <IntroPic />
