@@ -1,6 +1,3 @@
-//SideBar component needs to be tailwinded out
-//Going to push the tailwinded version by tonight
-import "../styles/styles.css";
 import "../globals.css"
 
 function SideBar() {
