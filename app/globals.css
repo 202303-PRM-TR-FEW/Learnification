@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 245, 245, 245;
+  --background-start-rgb: 245, 245, 245;
+  --background-end-rgb: 245, 245, 245;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --foreground-rgb: 177, 177, 177;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 245, 245, 245;
+    --background-start-rgb: 245, 245, 245;
+    --background-end-rgb: 245, 245, 245;
   }
 }
 
@@ -24,4 +24,9 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.mainLinks:hover svg, .mainLinks:hover span {
+  fill: #2e8dff;
+  color:#2e8dff;
 }
