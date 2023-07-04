@@ -7,7 +7,7 @@ function IntroPic() {
         className="introPic w-full bg-white h-[38rem] rounded-[50px]"
       />
     </div>
-    
+
   );
 }
 
