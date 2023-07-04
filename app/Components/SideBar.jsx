@@ -3,7 +3,7 @@ import Link from 'next/link'
 function SideBar() {
   return (
     <>
-      <div className="fixed top-7 left-6 z-10">
+      <div className="fixed top-7 left-6 z-50">
         <Link href="/">
           <span>
             <svg className="w-[3em] h-[2em] px-[1em] py-[0.3em] md:w-[4em] md:h-[2m] md:px-[1em] md:py-[0.4em] bg-blue-500 rounded-[20px] overflow-visible z-[1] fill-white" viewBox="0 0 576 512">
@@ -14,7 +14,7 @@ function SideBar() {
       </div>
       <div className="flex justify-center md:flex-col md:mt-[4em]">
         <nav className="fixed bottom-2 md:static">
-          <ul className="flex justify-around md:justify-evenly w-[85vw] list-none md:bg-transparent bg-black/75 backdrop-blur-xl p-[1em] rounded-[40px] md:flex-col md:items-center md:h-[25em] md:w-[7em]">
+          <ul className="flex justify-around md:justify-evenly w-[85vw] list-none md:bg-transparent bg-black/75 backdrop-blur-xl p-[1em] rounded-[40px] md:flex-col md:items-center md:h-[25em] md:w-[7em] z-40">
             <li>
               <Link href="/home" className="mainLinks no-underline text-[#b1b1b1]">
                 <span>
