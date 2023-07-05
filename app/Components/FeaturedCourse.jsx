@@ -1,19 +1,33 @@
 import React from 'react'
 import Tutor from './Tutor'
 import LearnUButton from './LearnUButton'
-
+import SaveIcon from './SaveIcon'
+/**
+ * 
+ * @param {object} course course object
+ * @returns a featured course card
+ */
 export default function FeaturedCourse({ course }) {
     return (
         <>
-            <div className='bg-primary-white rounded-2xl  shadow-light-gray'>
+            <div className='bg-primary-white rounded-2xl shadow-light-gray'>
+                {/* CARD HEAD */}
                 <div className='p-2'>
                     <div className={`p-2 w-full min-h-[100px] bg-no-repeat bg-cover bg-center bg rounded-2xl relative`}
-                        style={{ backgroundImage: `url(${course.imageUrl})`, }}>
-                        <div className="max-w-max flex items-center bg-primary-white rounded-[50px] p-1 absolute shadow-light-gray -bottom-5 -z-0">
+                        style={{ backgroundImage: `url(${course.imageUrl})` }}>
+
+                        <div className="max-w-max flex items-center bg-primary-white rounded-[50px] p-1 pr-4 absolute shadow-light-gray -bottom-5 -z-0">
                             <Tutor tutor={course?.tutor} />
+                        </div>
+
+                        <div className='absolute right-4 p-3 bg-primary-saved rounded-xl'>
+                            <SaveIcon />
                         </div>
                     </div>
                 </div>
+                {/* CARD HEAD ENDS */}
+
+                {/* CARD BODY STARTS*/}
                 <div className="mt-8 pb-3 px-4">
                     <h3 className='mb-2'>
                         {course?.title}
@@ -48,6 +62,7 @@ export default function FeaturedCourse({ course }) {
                         </div>
                     </div>
                 </div>
+                {/* CARD BODY ENDS*/}
             </div>
         </>
     )

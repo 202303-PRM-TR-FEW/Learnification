@@ -1,6 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
-
+/**
+ * 
+ * @param {object} tutor tutor of the course
+ * @returns a tutor component with rounded image and name
+ */
 export default function Tutor({ tutor }) {
     return (
         <>

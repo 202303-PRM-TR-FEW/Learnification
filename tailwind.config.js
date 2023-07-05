@@ -10,7 +10,9 @@ module.exports = {
       backgroundColor: {
         "primary-blue": "#2e8dff",
         "primary-white": "#ffffff",
-        "primary-gray": "#f5f5f5",
+        "white-smoke": "#f5f5f5",
+        "primary-saved": "rgb(251,251,251,0.4)",
+        "secondary-saved": "rgb(251,251,251,0.3)"
       },
       textColor: {
         "primary-white": "#ffffff",
@@ -25,6 +27,9 @@ module.exports = {
       borderColor: {
         "primary-blue": "#2e8dff",
       },
+      fill: {
+        "white-smoke": "#f5f5f5",
+      }
     },
   },
   plugins: [],
