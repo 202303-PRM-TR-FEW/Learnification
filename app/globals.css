@@ -2,11 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
+:root {
+  --foreground-rgb: 245, 245, 245;
+  --background-start-rgb: 245, 245, 245;
+  --background-end-rgb: 245, 245, 245;
+}
+
+@media (prefers-color-scheme: light) {
   :root {
-    --foreground-rgb: 177, 177, 177;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 245, 245, 245;
+    --background-start-rgb: 245, 245, 245;
+    --background-end-rgb: 245, 245, 245;
   }
 }
 .btn {
@@ -18,4 +24,9 @@
 
 .btn-secondary {
   @apply transition-all duration-300 text-primary-blue bg-primary-white border-primary-blue hover:bg-primary-blue hover:text-primary-white hover:border-primary-blue active:scale-95 active:duration-150;
+}
+
+.mainLinks:hover svg, .mainLinks:hover span {
+  fill: #2e8dff;
+  color:#2e8dff;
 }
