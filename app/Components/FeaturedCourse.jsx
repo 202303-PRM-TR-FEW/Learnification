@@ -21,7 +21,7 @@ export default function FeaturedCourse({ course }) {
                         </div>
 
                         <div className='absolute right-4 p-3 bg-primary-saved rounded-xl'>
-                            <SaveIcon />
+                            <SaveIcon width={18} height={18} />
                         </div>
                     </div>
                 </div>
