@@ -11,25 +11,6 @@ const Categories = () => {
     { id: 5, name: "Marketing", icon: <Icons.MarketingIcon /> },
     { id: 6, name: "Astronomy", icon: <Icons.AstronomyIcon /> },
   ];
-
-  const [hoverStates, setHoverStates] = useState(categories.map(() => false));
-
-  const handleMouseEnter = (index) => {
-    setHoverStates((prevStates) => {
-      const newStates = [...prevStates];
-      newStates[index] = true;
-      return newStates;
-    });
-  };
-
-  const handleMouseLeave = (index) => {
-    setHoverStates((prevStates) => {
-      const newStates = [...prevStates];
-      newStates[index] = false;
-      return newStates;
-    });
-  };
-
   return (
     <div>
       <h1 className="p-2 font-bold">Categories</h1>
@@ -37,25 +18,13 @@ const Categories = () => {
         {categories.map((category, index) => (
           <div
             key={index}
-            className={`flex flex-col items-center px-1 py-2 m-4 rounded-lg shadow ${
-              hoverStates[index]
-                ? "bg-[#CBE1FA] border-blue-500 border"
-                : "bg-[#fbfbfb]"
-            }`}
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={() => handleMouseLeave(index)}
+            className={`flex flex-col items-center px-1 py-2 m-4 rounded-lg shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb]`}
           >
             <div>
-              {React.cloneElement(category.icon, {
-                fill: hoverStates[index]
-                  ? "rgb(46, 141, 255)"
-                  : "rgb(177, 177, 177)",
-              })}
+              {category.icon}
             </div>
             <p
-              className={`text-sm font-bold ${
-                hoverStates[index] ? "text-[#2E8DFF]" : "text-[#616161]"
-              }`}
+              className={`text-sm font-bold`}
             >
               {category.name}
             </p>
