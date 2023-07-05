@@ -6,7 +6,7 @@ import '../globals.css'
 import Link from 'next/link'
 export default function Home() {
     return (
-        <main className="p-4 lg:p-16 min-h-screen flex m-auto bg-[#f5f5f5]" >
+        <main className="p-4 lg:p-16 min-h-screen flex m-auto bg-white-smoke" >
             <div className="w-full shadow-light-gray rounded-[50px]
             lg:pb-[0rem] flex flex-col lg:flex-row-reverse lg:items-center"
             >
