@@ -33,7 +33,7 @@ const Categories = () => {
   return (
     <div>
       <h1 className="p-2 font-bold">Categories</h1>
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-7">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:grid-cols-7 cursor-pointer px-10">
         {categories.map((category, index) => (
           <div
             key={index}
@@ -53,7 +53,7 @@ const Categories = () => {
               })}
             </div>
             <p
-              className={`text-base font-bold ${
+              className={`text-sm font-bold ${
                 hoverStates[index] ? "text-[#2E8DFF]" : "text-[#616161]"
               }`}
             >
