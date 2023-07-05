@@ -1,11 +1,13 @@
-"use client"
+"use client";
 
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
+import Categories from "@/app/Components/Categories";
 
 export default function Home() {
-    return (
-        <div>
-            <h1>Home</h1>
-        </div>
-    )
+  return (
+    <div className="bg-neutral-100">
+      
+      <Categories />
+    </div>
+  );
 }
