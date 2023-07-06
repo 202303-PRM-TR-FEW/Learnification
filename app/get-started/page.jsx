@@ -4,7 +4,7 @@ import BrandIcon from '../Components/BrandIcon'
 import LearnUButton from '../Components/LearnUButton'
 import '../globals.css'
 import Link from 'next/link'
-export default function Home() {
+export default function GetStarted() {
     return (
         <main className="p-4 lg:p-16 min-h-screen flex m-auto bg-white-smoke" >
             <div className="w-full shadow-light-gray rounded-[50px]

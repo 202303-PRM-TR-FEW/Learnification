@@ -1,4 +1,4 @@
 import { redirect } from 'next/navigation'
-export default function GetStarted() {
+export default function Page() {
   redirect("/get-started")
 }
