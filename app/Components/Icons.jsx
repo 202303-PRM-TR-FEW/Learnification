@@ -1,10 +1,12 @@
 import React from "react";
 
-const SalesIcon = (props) => (
+// Category Icons Start
+
+const SalesIcon = ({ width = 28, height = 28, ...props }) => (
   <svg
     style={{
-      width: 28,
-      height: 28,
+      width: width,
+      height: height,
       overflow: "visible",
       opacity: 1,
       zIndex: 1,
@@ -17,16 +19,15 @@ const SalesIcon = (props) => (
   </svg>
 );
 
-const HRIcon = (props) => (
+const HRIcon = ({ width = 28, height = 28, ...props }) => (
   <svg
     style={{
-      width: 28,
-      height: 28,
+      width: width,
+      height: height,
       overflow: "visible",
       opacity: 1,
       zIndex: 1,
     }}
-
     viewBox="0 0 640 512"
     className="category-icon"
     {...props}
@@ -35,11 +36,11 @@ const HRIcon = (props) => (
   </svg>
 );
 
-const DrawingIcon = (props) => (
+const DrawingIcon = ({ width = 28, height = 28, ...props }) => (
   <svg
     style={{
-      width: 32,
-      height: 32,
+      width: width,
+      height: height,
       overflow: "visible",
       opacity: 1,
       zIndex: 1,
@@ -53,11 +54,11 @@ const DrawingIcon = (props) => (
   </svg>
 );
 
-const BigDataIcon = (props) => (
+const BigDataIcon = ({ width = 28, height = 28, ...props }) => (
   <svg
     style={{
-      width: 26,
-      height: 26,
+      width: width,
+      height: height,
       overflow: "visible",
       opacity: 1,
       zIndex: 1,
@@ -69,11 +70,11 @@ const BigDataIcon = (props) => (
     <path d="M448 32C483.3 32 512 60.65 512 96V416C512 451.3 483.3 480 448 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H448zM224 256V160H64V256H224zM64 320V416H224V320H64zM288 416H448V320H288V416zM448 256V160H288V256H448z" />
   </svg>
 );
-const DesignIcon = (props) => (
+const DesignIcon = ({ width = 28, height = 28, ...props }) => (
   <svg
     style={{
-      width: 28,
-      height: 28,
+      width: width,
+      height: height,
       overflow: "visible",
       opacity: 1,
       zIndex: 1,
@@ -86,11 +87,11 @@ const DesignIcon = (props) => (
     <path d="m16.24 11.51 1.57-1.57-3.75-3.75-1.57 1.57-4.14-4.13c-.78-.78-2.05-.78-2.83 0l-1.9 1.9c-.78.78-.78 2.05 0 2.83l4.13 4.13L3 17.25V21h3.75l4.76-4.76 4.13 4.13c.95.95 2.23.6 2.83 0l1.9-1.9c.78-.78.78-2.05 0-2.83l-4.13-4.13zm-7.06-.44L5.04 6.94l1.89-1.9L8.2 6.31 7.02 7.5l1.41 1.41 1.19-1.19 1.45 1.45-1.89 1.9zm7.88 7.89-4.13-4.13 1.9-1.9 1.45 1.45-1.19 1.19 1.41 1.41 1.19-1.19 1.27 1.27-1.9 1.9zm3.65-11.92a.996.996 0 0 0 0-1.41l-2.34-2.34c-.47-.47-1.12-.29-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
   </svg>
 );
-const MarketingIcon = (props) => (
+const MarketingIcon = ({ width = 28, height = 28, ...props }) => (
   <svg
     style={{
-      width: 28,
-      height: 28,
+      width: width,
+      height: height,
       overflow: "visible",
       opacity: 1,
       zIndex: 1,
@@ -103,11 +104,11 @@ const MarketingIcon = (props) => (
     <path d="M9 21c0 .5.4 1 1 1h4c.6 0 1-.5 1-1v-1H9v1zm3-19C8.1 2 5 5.1 5 9c0 2.4 1.2 4.5 3 5.7V17c0 .5.4 1 1 1h6c.6 0 1-.5 1-1v-2.3c1.8-1.3 3-3.4 3-5.7 0-3.9-3.1-7-7-7z" />
   </svg>
 );
-const AstronomyIcon = (props) => (
+const AstronomyIcon = ({ width = 28, height = 28, ...props }) => (
   <svg
     style={{
-      width: 28,
-      height: 28,
+      width: width,
+      height: height,
       overflow: "visible",
       opacity: 1,
       zIndex: 1,
@@ -120,6 +121,75 @@ const AstronomyIcon = (props) => (
     <path d="m19 9 1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z" />
   </svg>
 );
+// Category Icons End
+
+const StarIcon = ({ width = 24, height = 24, ...props }) => (
+  <svg
+    style={{
+      width: width,
+      height: height,
+      overflow: "visible",
+      opacity: 1,
+      zIndex: 1,
+      fill: "rgb(177, 177, 177)",
+    }}
+    viewBox="0 0 576 512"
+    {...props}
+  >
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+  </svg>
+);
+const SaveIcon = ({ width = 14, height = 14, ...props }) => (
+  <svg
+    style={{
+      width: width,
+      height: height,
+      overflow: "visible",
+      opacity: "unset",
+      zIndex: 1,
+      fill: "rgb(245, 245, 245)",
+      cursor: "pointer",
+    }}
+    viewBox="0 0 384 512"
+    {...props}
+  >
+    <path d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z" />
+  </svg>
+);
+const ClockIcon = ({ width = 16, height = 16, ...props }) => (
+  <svg
+    style={{
+      width: width,
+      height: height,
+      overflow: "visible",
+      opacity: 1,
+      zIndex: 1,
+      fill: "rgb(177, 177, 177)",
+    }}
+    viewBox="0 0 512 512"
+    {...props}
+  >
+    <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm57.1 350.1L224.9 294c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h48c6.6 0 12 5.4 12 12v137.7l63.5 46.2c5.4 3.9 6.5 11.4 2.6 16.8l-28.2 38.8c-3.9 5.3-11.4 6.5-16.8 2.6z" />
+  </svg>
+);
+
+const BrandIcon = ({ width = 28, height = 28, ...props }) => (
+  <svg
+    style={{
+      width: width,
+      height: height,
+      overflow: "visible",
+      opacity: "unset",
+      zIndex: 1,
+      fill: "rgb(251, 251, 251)",
+    }}
+    viewBox="0 0 576 512"
+    {...props}
+  >
+    <path d="M575.81 217.98C572.64 157.41 518.28 112 457.63 112h-9.37c-52.82 0-104.25-16.25-147.74-46.24-41.99-28.96-96.04-41.62-153.21-28.7C129.3 41.12-.08 78.24 0 224c.04 70.95 38.68 132.8 95.99 166.01V464c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16v-54.26c15.36 3.96 31.4 6.26 48 6.26 5.44 0 10.68-.73 16-1.18V464c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16v-59.43c14.24-5.06 27.88-11.39 40.34-19.51C342.07 355.25 393.86 336 448.46 336c25.48 0 16.01-.31 23.05-.78l74.41 136.44c2.86 5.23 8.3 8.34 14.05 8.34 1.31 0 2.64-.16 3.95-.5 7.09-1.8 12.05-8.19 12.05-15.5 0 0 .14-240.24-.16-246.02zM463.97 248c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm80 153.25l-39.86-73.08c15.12-5.83 28.73-14.6 39.86-25.98v99.06z" />
+  </svg>
+);
+
 const Icons = {
   SalesIcon,
   HRIcon,
@@ -128,6 +198,10 @@ const Icons = {
   DesignIcon,
   MarketingIcon,
   AstronomyIcon,
+  StarIcon,
+  SaveIcon,
+  ClockIcon,
+  BrandIcon,
 };
 
 export default Icons;
