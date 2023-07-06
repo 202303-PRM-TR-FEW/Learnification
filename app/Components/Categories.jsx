@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Icons from "./Icons";
 
 const Categories = () => {
@@ -20,14 +20,8 @@ const Categories = () => {
             key={index}
             className={`flex flex-col items-center px-1 py-2 m-4 rounded-lg shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb]`}
           >
-            <div>
-              {category.icon}
-            </div>
-            <p
-              className={`text-sm font-bold`}
-            >
-              {category.name}
-            </p>
+            <div>{category.icon}</div>
+            <p className={`text-sm font-bold`}>{category.name}</p>
           </div>
         ))}
       </div>
