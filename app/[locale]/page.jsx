@@ -1,10 +1,12 @@
-import IntroPic from '../Components/IntroPic'
-import TitleAndParagraph from '../Components/TitleAndParagraph'
-import BrandIcon from '../Components/BrandIcon'
-import LearnUButton from '../Components/LearnUButton'
+import IntroPic from './Components/IntroPic'
+import TitleAndParagraph from './Components/TitleAndParagraph'
+import BrandIcon from './Components/BrandIcon'
+import LearnUButton from './Components/LearnUButton'
 import '../globals.css'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 export default function Home() {
+    const t = useTranslations('GetStarted')
     return (
         <main className="p-4 lg:p-16 min-h-screen flex m-auto bg-white-smoke" >
             <div className="w-full shadow-light-gray rounded-[50px]
@@ -15,7 +17,7 @@ export default function Home() {
                     <BrandIcon />
                     <TitleAndParagraph />
                     <Link href="/home">
-                        <LearnUButton text="Get Started" />
+                        <LearnUButton text={t('button')} />
                     </Link>
                 </div>
             </div>
