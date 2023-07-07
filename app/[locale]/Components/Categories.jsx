@@ -1,5 +1,6 @@
 import React from "react";
 import Icons from "./Icons";
+import { useTranslations } from "next-intl";
 
 const Categories = () => {
   const categories = [
@@ -11,9 +12,12 @@ const Categories = () => {
     { id: 5, name: "Marketing", icon: <Icons.MarketingIcon /> },
     { id: 6, name: "Astronomy", icon: <Icons.AstronomyIcon /> },
   ];
+  const t = useTranslations('Home')
   return (
     <div>
-      <h1 className="p-2 font-bold">Categories</h1>
+      <h1 className="p-2 font-bold">
+        {t('Categories.title')}
+      </h1>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:grid-cols-7 cursor-pointer px-10">
         {categories.map((category, index) => (
           <div

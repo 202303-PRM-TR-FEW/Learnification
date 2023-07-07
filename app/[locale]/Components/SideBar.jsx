@@ -1,4 +1,4 @@
-import "../globals.css";
+import "../../globals.css";
 import Link from 'next/link';
 function SideBar() {
   return (
