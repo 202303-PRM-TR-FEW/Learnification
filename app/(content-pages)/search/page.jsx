@@ -1,7 +1,11 @@
-import React from 'react'
+
+import SearchFormPartTwo from "@/app/Components/SearchPage/SearchFormPartTwo";
+import React from "react";
 
 export default function Search() {
-    return (
-        <div>Search</div>
-    )
+  return (
+    <div>
+      <SearchFormPartTwo/>
+    </div>
+  );
 }
