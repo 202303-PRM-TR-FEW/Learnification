@@ -11,5 +11,12 @@
         "Categories": {
             "title":"Categories"
         }
+    },
+    "SideBar":{
+        "Home": "Home",
+        "Search": "Search",
+        "Courses": "Courses",
+        "Saved": "Saved",
+        "Profile": "Profile"
     }
 }

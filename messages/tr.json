@@ -11,5 +11,12 @@
         "Categories": {
             "title":"Kategoriler"
         }
+    },
+    "SideBar":{
+        "Home": "Ana Sayfa",
+        "Search": "Ara",
+        "Courses": "Kurslar",
+        "Saved": "Kaydedilenler",
+        "Profile": "Profil"
     }
 }
