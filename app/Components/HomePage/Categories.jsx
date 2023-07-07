@@ -1,5 +1,5 @@
 import React from "react";
-import Icons from "./Icons";
+import Icons from "../Icons";
 import { useTranslations } from "next-intl";
 
 const Categories = () => {
@@ -12,7 +12,7 @@ const Categories = () => {
     { id: 5, name: "Marketing", icon: <Icons.MarketingIcon /> },
     { id: 6, name: "Astronomy", icon: <Icons.AstronomyIcon /> },
   ];
-  const t = useTranslations('Home')
+  const t = useTranslations("Home")
   return (
     <div>
       <h1 className="p-2 font-bold">

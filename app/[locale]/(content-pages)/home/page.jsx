@@ -1,6 +1,6 @@
 import React from "react";
-import Categories from "../../Components/Categories";
-import FeaturedCourses from "../../Components/FeaturedCourses";
+import Categories from "../../../Components/HomePage/Categories";
+import FeaturedCourses from "../../../Components/HomePage/FeaturedCourses";
 
 export default function Home() {
   return (
