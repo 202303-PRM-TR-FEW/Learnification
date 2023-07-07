@@ -4,9 +4,15 @@ import BrandIcon from '../Components/BrandIcon'
 import LearnUButton from '../Components/LearnUButton'
 import '../globals.css'
 import Link from 'next/link'
+import Categories from '../Components/Categories'
+import CategoriesExpansion from '../Components/CategoriesExpansion'
 export default function Home() {
     return (
-        <main className="p-4 lg:p-16 min-h-screen flex m-auto bg-[#f5f5f5]" >
+        <Categories />
+    )
+}
+
+/*<main className="p-4 lg:p-16 min-h-screen flex m-auto bg-[#f5f5f5]" >
             <div className="w-full shadow-light-gray rounded-[50px]
             lg:pb-[0rem] flex flex-col lg:flex-row-reverse lg:items-center"
             >
@@ -19,6 +25,4 @@ export default function Home() {
                     </Link>
                 </div>
             </div>
-        </main>
-    )
-}
+        </main>*/
