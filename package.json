@@ -1,5 +1,5 @@
 {
-  "name": "capstone-template",
+  "name": "learnu-team-7",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,7 +15,8 @@
     "next": "13.4.7",
     "postcss": "8.4.24",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-router-dom": "^6.14.1"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.2"
