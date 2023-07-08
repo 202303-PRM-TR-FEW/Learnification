@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Search() {
   return (
-    <div>
+    <div className="basis-full mt-2 px-6 sm:px-12 bg-neutral-100">
       <SearchFormPartTwo/>
     </div>
   );
