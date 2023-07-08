@@ -1,18 +1,24 @@
 {
-    "GetStarted":{
+    "GetStarted": {
         "title": "Discover Passion",
         "description": "Find out what topics you find interesting, learn a new skill & connect with people that are passionate about similar topics.",
         "button": "Get Started"
     },
     "Home": {
-        "Featured Courses":{
-            "title":"Featured Courses"
+        "Featured Courses": {
+            "title": "Featured Courses"
         },
         "Categories": {
-            "title":"Categories"
+            "title": "Categories",
+            "Sales": "Sales",
+            "Marketing": "Marketing",
+            "HR": "HR",
+            "Design": "Design",
+            "Astronomy": "Astronomy",
+            "Big Data": "Big Data"
         }
     },
-    "SideBar":{
+    "SideBar": {
         "Home": "Home",
         "Search": "Search",
         "Courses": "Courses",
