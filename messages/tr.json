@@ -1,0 +1,28 @@
+{
+    "GetStarted": {
+        "title": "Tutkunu Keşfet",
+        "description": "İlgi duyduğun konuları keşfet, yeni beceriler geliştir ve benzer tutkulara sahip olan insanlarla bağlantı kur.",
+        "button": "BAŞLA"
+    },
+    "Home": {
+        "Featured Courses": {
+            "title": "Öne Çıkan Kurslar"
+        },
+        "Categories": {
+            "title": "Kategoriler",
+            "Sales": "Satışlar",
+            "Marketing": "Pazarlama",
+            "HR": "İK",
+            "Design": "Tasarım",
+            "Astronomy": "Astronomi",
+            "Big Data": "Büyük Veri"
+        }
+    },
+    "SideBar": {
+        "Home": "Ana Sayfa",
+        "Search": "Ara",
+        "Courses": "Kurslar",
+        "Saved": "Kaydedilenler",
+        "Profile": "Profil"
+    }
+}
