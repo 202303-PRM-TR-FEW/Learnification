@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import intro from "../../public/intro.png";
+import intro from "../../../public/intro.png";
 function IntroPic() {
   return (
     <div className="bg-primary-white max-w-full lg:h-full rounded-[50px] object-contain grid items-center justify-center basis-full">

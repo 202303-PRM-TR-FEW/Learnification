@@ -16,17 +16,25 @@
   }
 }
 .btn {
-  @apply font-bold py-1.5 rounded-xl border px-10;
+  @apply font-bold py-1.5 rounded-xl border-2 px-10;
 }
 .btn-primary {
-  @apply text-white transition-all duration-300 bg-primary-blue hover:bg-primary-white hover:text-primary-blue hover:border hover:border-primary-blue active:scale-95 active:duration-150;
+  @apply text-white transition-all border-primary-blue duration-300 bg-primary-blue hover:bg-primary-white hover:text-primary-blue hover:border-primary-blue active:scale-95 active:duration-150;
 }
 
 .btn-secondary {
-  @apply transition-all duration-300 text-primary-blue bg-primary-white border-primary-blue hover:bg-primary-blue hover:text-primary-white hover:border hover:border-primary-blue active:scale-95 active:duration-150;
+  @apply transition-all duration-300 text-primary-blue bg-primary-white border-primary-blue hover:bg-primary-blue hover:text-primary-white hover:border-primary-blue active:scale-95 active:duration-150;
 }
 
 .mainLinks:hover svg, .mainLinks:hover span {
   fill: #2e8dff;
   color:#2e8dff;
+}
+
+.category-icon{
+  fill:rgb(177, 177, 177);
+}
+
+.category-icon--container:hover .category-icon{
+  fill: #2e8dff;
 }

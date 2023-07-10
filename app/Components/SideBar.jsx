@@ -3,6 +3,7 @@ import Link from "next/link";
 import Icons from "./Icons";
 
 function SideBar() {
+  const t = useTranslations("SideBar")
   return (
     <>
       <div className="fixed top-7 left-6 z-50">
