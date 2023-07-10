@@ -45,8 +45,10 @@ const Categories = () => {
     { id: 6, name: "Astronomy", icon: <Icons.AstronomyIcon /> },
   ];
 
-  const phoneCategories = [...categories.slice(4), { id: 7, name: "More", icon: <Icons.AstronomyIcon /> }];
-  const tabletCategories = [...categories.slice(2), { id: 7, name: "More", icon: <Icons.AstronomyIcon /> }];
+  const phoneCategories = [...categories.slice(0, 3), { id: 7, name: "More", icon: <Icons.AstronomyIcon /> }];
+  const tabletCategories = [...categories.slice(0, 5), { id: 7, name: "More", icon: <Icons.AstronomyIcon /> }];
+  const extraPhoneCat = categories.slice(3);
+  const extraTabletCat = categories.slice(5);
 
   const handleCategoryClick = (categoryId) => {
     if (categoryId === 7) {
@@ -94,7 +96,8 @@ const Categories = () => {
               </div>
             ))}
       </div>
-      {selectedCategoryId === 7 && <CategoriesExpansion />}
+      {selectedCategoryId === 7 && (
+      <CategoriesExpansion categories={isPhoneVersion ? extraPhoneCat : extraTabletCat} /> )}
     </div>
   );
 };
