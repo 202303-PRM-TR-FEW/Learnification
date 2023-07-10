@@ -1,6 +1,5 @@
 import React from "react";
-import { useTranslations } from "next-intl";
-const t = useTranslations("SideBar")
+
 
 // Category Icons Start
 
@@ -135,7 +134,7 @@ const LogoIcon = () => (
   </span>
 );
 
-const HomeIcon = () => (
+const HomeIcon = ({t}) => (
   <>
     <span>
       <svg className="w-full h-6 lg:h-7 overflow-visible z-[1] fill-[#b1b1b1]" viewBox="0 0 576 512">
@@ -146,7 +145,7 @@ const HomeIcon = () => (
   </>
 );
 
-const SearchIcon = () => (
+const SearchIcon = ({t}) => (
   <>
     <span>
       <svg className="w-full  h-6 lg:h-7 overflow-visible z-[1] fill-[#b1b1b1]" viewBox="0 0 512 512">
@@ -157,7 +156,7 @@ const SearchIcon = () => (
   </>
 )
 
-const CoursesIcon = () => (
+const CoursesIcon = ({t}) => (
   <>
     <span>
       <svg className="w-full h-6 lg:h-7 overflow-visible z-[1] fill-[#b1b1b1]" viewBox="0 0 512 512">
@@ -167,7 +166,7 @@ const CoursesIcon = () => (
   <span className="hidden lg:block lg:text-sm">{t("Courses")}</span></>
 )
 
-const SavedIcon = () => (
+const SavedIcon = ({t}) => (
   <>
     <span>
       <svg className="w-full h-6 lg:h-7 overflow-visible z-[1] fill-[#b1b1b1]" viewBox="0 0 384 512">
@@ -178,7 +177,7 @@ const SavedIcon = () => (
   </>
 )
 
-const ProfileIcon = () => (
+const ProfileIcon = ({t}) => (
   <>
     <span>
       <svg className="w-full h-6 lg:h-7 overflow-visible z-[1] fill-[#b1b1b1]" viewBox="0 0 496 512">
