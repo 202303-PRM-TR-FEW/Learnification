@@ -1,6 +1,7 @@
 import "../globals.css";
 import Link from "next/link";
 import Icons from "./Icons";
+
 function SideBar() {
   return (
     <>
@@ -9,8 +10,8 @@ function SideBar() {
           <Icons.LogoIcon />
         </Link>
       </div>
-      <div className="flex justify-center md:flex-col md:mt-[4em]">
-        <nav className="fixed bottom-2 md:static z-40">
+      <div className="flex justify-center md:flex-col md:mt-[4em] md:w-20">
+        <nav className="fixed bottom-2 md:top-14 z-40">
           <ul className="flex justify-around md:justify-evenly w-[85vw] list-none md:bg-transparent bg-black/75 backdrop-blur-xl p-[1em] rounded-[40px] md:flex-col md:items-center md:h-[25em] md:w-[7em] z-40">
             <li>
               <Link href="/home" className="mainLinks no-underline text-[#b1b1b1]">
