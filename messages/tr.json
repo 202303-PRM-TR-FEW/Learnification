@@ -17,7 +17,16 @@
             "Astronomy": "Astronomi",
             "Big Data": "Büyük Veri",
             "More": "Daha Fazla Göster"
+        },
+        "MyLearning": {
+            "title": "Benim Öğrenmem",
+            "BecomingAPhotographer": "Bir Fotoğrafçı Olmak", 
+            "DesignThinking": "Tasarım Düşüncesi 2.0", 
+            "Complete": "Tamamlandı",
+            "Save": "Kaydet",
+            "SeeAll": "Hepsini Gör"
         }
+        
     },
     "SideBar": {
         "Home": "Ana Sayfa",

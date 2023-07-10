@@ -6,6 +6,12 @@ import { useTranslations } from "next-intl";
 function SideBar() {
   return (
     <>
+      <div className="absolute top-6 right-6 z-50">
+        <select>
+          <option value="EN">EN</option>
+          <option value="TR">TR</option>
+        </select>
+      </div>
       <div className="fixed top-7 left-6 z-50">
         <Link href="/">
           <Icons.LogoIcon />

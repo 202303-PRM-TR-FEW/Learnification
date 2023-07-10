@@ -60,16 +60,16 @@ const Categories = () => {
 
   return (
     <div>
-      <h1 className="p-2 font-bold">{t('Categories.title')}</h1>
+      <h1 className="pt-10 pb-5 text-2xl font-bold">{t('Categories.title')}</h1>
       <div
         ref={categoriesRef}
-        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 cursor-pointer px-10"
+        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 cursor-pointer"
       >
         {isPhoneVersion
           ? phoneCategories.map((category) => (
               <div
                 key={category.id}
-                className="flex flex-col items-center px-1 py-2 m-4 rounded-lg shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb]"
+                className="flex flex-col items-center px-1 py-2 rounded-xl shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb]"
                 onClick={() => handleCategoryClick(category.id)}
               >
                 <div>{category.icon}</div>
@@ -80,7 +80,7 @@ const Categories = () => {
           ? tabletCategories.map((category) => (
               <div
                 key={category.id}
-                className="flex flex-col items-center px-1 py-2 m-4 rounded-lg shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb]"
+                className="flex flex-col items-center px-1 py-2 rounded-xl shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb]"
                 onClick={() => handleCategoryClick(category.id)}
               >
                 <div>{category.icon}</div>
@@ -90,7 +90,7 @@ const Categories = () => {
           : categories.map((category) => (
               <div
                 key={category.id}
-                className="flex flex-col items-center px-1 py-2 m-4 rounded-lg shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb]"
+                className="flex flex-col items-center px-1 py-2 rounded-xl shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb] w-full"
                 onClick={() => handleCategoryClick(category.id)}
               >
                 <div>{category.icon}</div>
