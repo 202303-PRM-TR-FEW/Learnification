@@ -1,22 +1,26 @@
+"use client"
 import "../globals.css";
 import Link from "next-intl/link";
 import Icons from "./Icons";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
+import { usePathname } from "next-intl/client";
 
 function SideBar() {
   const locale = useLocale();
+  const path = usePathname();
+  if (path.includes("tr")) path.replace("/tr", "") // it will replace the /tr with empty string so that we can use it in the Link component
   return (
     <>
       <div className="absolute top-6 right-6 z-50">
         <ul className="">
           <div>
             {locale === "en" ? (
-              <Link href="/home" locale="tr">
+              <Link href={path} locale="tr">
                 <Image src="/turkey.png" width={40} height={40} sizes="100wh" alt="Turkey Flag" />
               </Link>
             ) : (
-              <Link href="/home" locale="en">
+              <Link href={path} locale="en">
                 <Image src="/united-states-of-america.png" width={40} height={40} sizes="100wh" alt="USA Flag" />
               </Link>
             )}
