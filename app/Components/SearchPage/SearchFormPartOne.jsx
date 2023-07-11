@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from "react";
+import LearnUButton from "../LearnUButton";
 
 export default function SearchFormPartOne() {
   const topSearches = [
@@ -26,19 +27,20 @@ export default function SearchFormPartOne() {
   return (
     <div>
       <div className="mt-5 mb-4 ml-3 mr-3 lg:mt-8">
-        <h1 className="font-bold mb-2 md:text-xl lg:text-3xl mb-12">Find Your Favorites</h1>
+        <h1 className="font-bold mb-2 md:text-xl lg:text-3xl mb-10">Find Your Favorites</h1>
         <div className="flex mt-2 lg:w-8/12">
           <input
             type="text"
-            placeholder="Search categories"
+            placeholder="Search Courses"
             className="px-4 py-2 border border-gray-300 rounded-xl focus:outline-none w-full"
           />
-          <button
-            type="button"
-            className="px-4 py-2 ml-2 bg-blue-400 text-white font-bold text-s rounded-xl hover:bg-blue-500 focus:outline-none"
-          >
-            SEARCH
-          </button>
+          <LearnUButton
+            text="SEARCH"
+            paddingInline={14}
+            bgColor="blue"
+            borderRadius={10}
+            className="ml-4"
+          />
         </div>
         <hr class="h-px mt-10 bg-gray-200 border-0" />
         <div className="mt-4">
