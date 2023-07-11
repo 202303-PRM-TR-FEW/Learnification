@@ -1,5 +1,6 @@
 import React from "react";
 import FeaturedCourse from "./FeaturedCourse";
+import { useTranslations } from "next-intl";
 export default function FeaturedCourses() {
   const mockCourses = [
     {
@@ -55,10 +56,11 @@ export default function FeaturedCourses() {
       },
     },
   ];
+  const t = useTranslations("Home")
   return (
     <>
       <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold mt-12 mb-4 2xl:mb-12 ">
-        Featured Courses
+        {t('Featured Courses.title')}
       </h2>
       <div className="grid sm:grid-cols-2 2xl:grid-cols-4 gap-2 sm:gap-4 2xl:gap-6">
         {mockCourses.map((course, index) => (

@@ -6,9 +6,10 @@ import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
 
 const SearchFormPartTwo = () => {
+  const categories = CategoriesArray();
   const CustomStarIcon = (props) => {
     const { value, ...other } = props;
-
+    
     return (
       <span {...other}>
         {Array.from(Array(value), (_, index) => (
@@ -23,7 +24,7 @@ const SearchFormPartTwo = () => {
       <section>
         <h3 className="uppercase font-bold mb-4">Categories</h3>
         <ul className="flex flex-wrap justify-start lg:justify-between gap-4">
-          {CategoriesArray.map((category) => (
+          {categories.map((category) => (
             <li key={category.id}>
               <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
                 <input type="checkbox" />
