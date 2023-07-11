@@ -18,6 +18,10 @@
             "Big Data": "Big Data"
         }
     },
+    "MyLearning":{
+        "title": "Öğrenmekte Olduklarım",
+        "statistics": "İstatistikler"
+    },
     "SideBar": {
         "Home": "Home",
         "Search": "Search",
