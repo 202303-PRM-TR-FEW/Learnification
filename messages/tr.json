@@ -18,6 +18,24 @@
             "Big Data": "Büyük Veri"
         }
     },
+    "Search":{
+        "Search Input": {
+            "title": "Favorilerini Bul",
+            "placeholder": "Kurs Ara",
+            "button": "Ara"
+        },
+        "Top Searches": {
+            "title": "Popüler Aramalar",
+            "Marketing Strategy": "Pazarlama Stratejisi",
+            "UX Design": "UX Tasarımı",
+            "Excel": "Excel",
+            "Adobe Photoshop": "Adobe Photoshop",
+            "CRM": "Müşteri İlişkileri Yönetimi",
+            "Photography": "Fotoğrafçılık",
+            "Content Making": "İçerik Üretimi"
+        }
+
+    },
     "SideBar": {
         "Home": "Ana Sayfa",
         "Search": "Ara",
