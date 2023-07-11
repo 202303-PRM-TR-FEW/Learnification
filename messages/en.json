@@ -18,6 +18,24 @@
             "Big Data": "Big Data"
         }
     },
+    "Search":{
+        "Search Input": {
+            "title": "Find Your Favorites",
+            "placeholder": "Search Courses",
+            "button": "Search"
+        },
+        "Top Searches": {
+            "title": "Top Searches",
+            "Marketing Strategy": "Marketing Strategy",
+            "UX Design": "UX Design",
+            "Excel": "Excel",
+            "Adobe Photoshop": "Adobe Photoshop",
+            "CRM": "CRM",
+            "Photography": "Photography",
+            "Content Making": "Content Making"
+        }
+
+    },
     "SideBar": {
         "Home": "Home",
         "Search": "Search",
