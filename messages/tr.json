@@ -4,7 +4,6 @@
     "description": "İlgi duyduğun konuları keşfet, yeni beceriler geliştir ve benzer tutkulara sahip olan insanlarla bağlantı kur.",
     "button": "BAŞLA"
   },
-
   "Home": {
     "Featured Courses": {
       "title": "Öne Çıkan Kurslar"
@@ -13,7 +12,20 @@
       "title": "Kategoriler"
     }
   },
-
+  "Search": {
+    "Categories": {
+      "title": "Kategoriler"
+    },
+    "Rating": {
+      "title": "Puan"
+    },
+    "Level": {
+      "title": "Seviye",
+      "Beginner": "Başlangıç",
+      "Intermediate": "Orta",
+      "Advanced": "İleri"
+    }
+  },
   "SideBar": {
     "Home": "Ana Sayfa",
     "Search": "Ara",

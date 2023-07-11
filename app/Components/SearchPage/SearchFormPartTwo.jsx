@@ -4,12 +4,14 @@ import Icons from "../Icons";
 import CategoriesArray from "../CategoriesArray";
 import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
+import { useTranslations } from "next-intl";
 
 const SearchFormPartTwo = () => {
   const categories = CategoriesArray();
+  const t = useTranslations("Search")
   const CustomStarIcon = (props) => {
     const { value, ...other } = props;
-    
+
     return (
       <span {...other}>
         {Array.from(Array(value), (_, index) => (
@@ -22,7 +24,9 @@ const SearchFormPartTwo = () => {
   return (
     <div className="flex flex-col justify-between gap-8 mt-4">
       <section>
-        <h3 className="uppercase font-bold mb-4">Categories</h3>
+        <h3 className="uppercase font-bold mb-4">
+          {t("Categories.title")}
+        </h3>
         <ul className="flex flex-wrap justify-start lg:justify-between gap-4">
           {categories.map((category) => (
             <li key={category.id}>
@@ -37,7 +41,9 @@ const SearchFormPartTwo = () => {
       <div className="grid grid-cols-1 gap-8 md:grid-flow-col md:justify-stretch lg:justify-start">
         {/* Rating Start */}
         <section>
-          <h3 className="uppercase font-bold mb-4">Rating</h3>
+          <h3 className="uppercase font-bold mb-4">
+            {t("Rating.title")}
+          </h3>
           <Stack spacing={1}>
             <Rating
               name="half-rating"
@@ -49,24 +55,26 @@ const SearchFormPartTwo = () => {
         </section>
 
         <section className="">
-          <h3 className="uppercase font-bold mb-4">Level</h3>
+          <h3 className="uppercase font-bold mb-4">
+            {t("Level.title")}
+          </h3>
           <ul className="flex justify-between flex-wrap gap-4">
             <li className="mr-4">
               <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
                 <input type="checkbox" />
-                Beginner
+                {t("Level.Beginner")}
               </label>
             </li>
             <li className="mr-4">
               <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
                 <input type="checkbox" />
-                Intermadiate
+                {t("Level.Intermediate")}
               </label>
             </li>
             <li>
               <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
                 <input type="checkbox" />
-                Professional
+                {t("Level.Advanced")}
               </label>
             </li>
           </ul>

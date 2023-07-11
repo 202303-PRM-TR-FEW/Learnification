@@ -12,6 +12,20 @@
       "title": "Categories"
     }
   },
+  "Search": {
+    "Categories": {
+      "title": "Categories"
+    },
+    "Rating": {
+      "title": "Rating"
+    },
+    "Level": {
+      "title": "Level",
+      "Beginner": "Beginner",
+      "Intermediate": "Intermediate",
+      "Advanced": "Advanced"
+    }
+  },
   "SideBar": {
     "Home": "Home",
     "Search": "Search",
