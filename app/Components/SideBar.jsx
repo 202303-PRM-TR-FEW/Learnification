@@ -1,16 +1,27 @@
 import "../globals.css";
-import Link from "next/link";
+import Link from "next-intl/link";
 import Icons from "./Icons";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import Image from "next/image";
 
 function SideBar() {
+  const locale = useLocale();
   return (
     <>
       <div className="absolute top-6 right-6 z-50">
-        <select>
-          <option value="EN">EN</option>
-          <option value="TR">TR</option>
-        </select>
+        <ul className="">
+          <div>
+            {locale === "en" ? (
+              <Link href="/home" locale="tr">
+                <Image src="/turkey.png" width={40} height={40} sizes="100wh" alt="Turkey Flag" />
+              </Link>
+            ) : (
+              <Link href="/home" locale="en">
+                <Image src="/united-states-of-america.png" width={40} height={40} sizes="100wh" alt="USA Flag" />
+              </Link>
+            )}
+          </div>
+        </ul>
       </div>
       <div className="fixed top-7 left-6 z-50">
         <Link href="/">
