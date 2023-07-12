@@ -1,9 +1,8 @@
-import { useLocale } from "next-intl"
+import { NextIntlClientProvider, useLocale } from "next-intl"
 import { notFound } from "next/navigation"
 import '../globals.css'
 import { Inter } from 'next/font/google'
 import {NextIntlClientProvider} from 'next-intl';
-
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -22,11 +21,10 @@ export default async function LocaleLayout({ children, params }) {
     } catch (error) {
       notFound();
     }
-
     return (
         <html lang="{locale}">
             <body className={inter.className}>
-                <NextIntlClientProvider locale={locale} messages={messages}>
+                <NextIntlClientProvider messages={messages} locale={locale}>
                     {children}
                 </NextIntlClientProvider>
             </body>
