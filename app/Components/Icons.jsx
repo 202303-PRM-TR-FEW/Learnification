@@ -1,5 +1,6 @@
 import React from "react";
 
+
 // Category Icons Start
 
 const SalesIcon = ({ width = 28, height = 28, ...props }) => (
@@ -70,6 +71,7 @@ const BigDataIcon = ({ width = 28, height = 28, ...props }) => (
     <path d="M448 32C483.3 32 512 60.65 512 96V416C512 451.3 483.3 480 448 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H448zM224 256V160H64V256H224zM64 320V416H224V320H64zM288 416H448V320H288V416zM448 256V160H288V256H448z" />
   </svg>
 );
+
 const DesignIcon = ({ width = 28, height = 28, ...props }) => (
   <svg
     style={{
@@ -87,6 +89,7 @@ const DesignIcon = ({ width = 28, height = 28, ...props }) => (
     <path d="m16.24 11.51 1.57-1.57-3.75-3.75-1.57 1.57-4.14-4.13c-.78-.78-2.05-.78-2.83 0l-1.9 1.9c-.78.78-.78 2.05 0 2.83l4.13 4.13L3 17.25V21h3.75l4.76-4.76 4.13 4.13c.95.95 2.23.6 2.83 0l1.9-1.9c.78-.78.78-2.05 0-2.83l-4.13-4.13zm-7.06-.44L5.04 6.94l1.89-1.9L8.2 6.31 7.02 7.5l1.41 1.41 1.19-1.19 1.45 1.45-1.89 1.9zm7.88 7.89-4.13-4.13 1.9-1.9 1.45 1.45-1.19 1.19 1.41 1.41 1.19-1.19 1.27 1.27-1.9 1.9zm3.65-11.92a.996.996 0 0 0 0-1.41l-2.34-2.34c-.47-.47-1.12-.29-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
   </svg>
 );
+
 const MarketingIcon = ({ width = 28, height = 28, ...props }) => (
   <svg
     style={{
@@ -104,6 +107,7 @@ const MarketingIcon = ({ width = 28, height = 28, ...props }) => (
     <path d="M9 21c0 .5.4 1 1 1h4c.6 0 1-.5 1-1v-1H9v1zm3-19C8.1 2 5 5.1 5 9c0 2.4 1.2 4.5 3 5.7V17c0 .5.4 1 1 1h6c.6 0 1-.5 1-1v-2.3c1.8-1.3 3-3.4 3-5.7 0-3.9-3.1-7-7-7z" />
   </svg>
 );
+
 const AstronomyIcon = ({ width = 28, height = 28, ...props }) => (
   <svg
     style={{
@@ -121,6 +125,69 @@ const AstronomyIcon = ({ width = 28, height = 28, ...props }) => (
     <path d="m19 9 1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z" />
   </svg>
 );
+
+const LogoIcon = () => (
+  <span>
+    <svg className="w-[3em] h-[2em] px-[1em] py-[0.3em] lg:w-[4em] lg:h-[2m] lg:px-[1em] lg:py-[0.4em] bg-blue-500 rounded-[20px] overflow-visible z-50 fill-white" viewBox="0 0 576 512">
+        <path d="M575.81 217.98C572.64 157.41 518.28 112 457.63 112h-9.37c-52.82 0-104.25-16.25-147.74-46.24-41.99-28.96-96.04-41.62-153.21-28.7C129.3 41.12-.08 78.24 0 224c.04 70.95 38.68 132.8 95.99 166.01V464c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16v-54.26c15.36 3.96 31.4 6.26 48 6.26 5.44 0 10.68-.73 16-1.18V464c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16v-59.43c14.24-5.06 27.88-11.39 40.34-19.51C342.07 355.25 393.86 336 448.46 336c25.48 0 16.01-.31 23.05-.78l74.41 136.44c2.86 5.23 8.3 8.34 14.05 8.34 1.31 0 2.64-.16 3.95-.5 7.09-1.8 12.05-8.19 12.05-15.5 0 0 .14-240.24-.16-246.02zM463.97 248c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm80 153.25l-39.86-73.08c15.12-5.83 28.73-14.6 39.86-25.98v99.06z"></path>
+    </svg>
+  </span>
+);
+
+const HomeIcon = ({t}) => (
+  <>
+    <span>
+      <svg className="w-full h-6 lg:h-7 overflow-visible z-[1] fill-[#b1b1b1]" viewBox="0 0 576 512">
+        <path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path>
+      </svg>
+    </span>
+    <span className="hidden lg:block lg:text-center lg:text-sm">{t("Home")}</span>
+  </>
+);
+
+const SearchIcon = ({t}) => (
+  <>
+    <span>
+      <svg className="w-full  h-6 lg:h-7 overflow-visible z-[1] fill-[#b1b1b1]" viewBox="0 0 512 512">
+        <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+      </svg>
+    </span>
+    <span className="hidden lg:block lg:text-center lg:text-sm">{t("Search")}</span>
+  </>
+)
+
+const CoursesIcon = ({t}) => (
+  <>
+    <span>
+      <svg className="w-full h-6 lg:h-7 overflow-visible z-[1] fill-[#b1b1b1]" viewBox="0 0 512 512">
+      <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path>
+    </svg>
+  </span>
+  <span className="hidden lg:block lg:text-sm">{t("Courses")}</span></>
+)
+
+const SavedIcon = ({t}) => (
+  <>
+    <span>
+      <svg className="w-full h-6 lg:h-7 overflow-visible z-[1] fill-[#b1b1b1]" viewBox="0 0 384 512">
+        <path d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path>
+      </svg>
+    </span>
+    <span className="hidden lg:block lg:text-center lg:text-sm">{t("Saved")}</span>
+  </>
+)
+
+const ProfileIcon = ({t}) => (
+  <>
+    <span>
+      <svg className="w-full h-6 lg:h-7 overflow-visible z-[1] fill-[#b1b1b1]" viewBox="0 0 496 512">
+          <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"></path>
+      </svg>
+    </span>
+    <span className="hidden lg:block lg:text-center lg:text-sm">{t("Profile")}</span>
+  </>
+)
+
 // Category Icons End
 
 const StarIcon = ({ width = 24, height = 24, ...props }) => (
@@ -198,6 +265,12 @@ const Icons = {
   DesignIcon,
   MarketingIcon,
   AstronomyIcon,
+  LogoIcon,
+  HomeIcon,
+  SearchIcon,
+  CoursesIcon,
+  SavedIcon,
+  ProfileIcon,
   StarIcon,
   SaveIcon,
   ClockIcon,

@@ -15,7 +15,16 @@
             "HR": "HR",
             "Design": "Design",
             "Astronomy": "Astronomy",
-            "Big Data": "Big Data"
+            "Big Data": "Big Data",
+            "More": "More"
+        },
+        "MyLearning": {
+            "title": "My Learning",
+            "BecomingAPhotographer": "Becoming A Photographer", 
+            "DesignThinking": "Design Thinking 2.0", 
+            "Complete": "Complete",
+            "Save": "Save",
+            "SeeAll": "See All"
         }
     },
     "Search":{
