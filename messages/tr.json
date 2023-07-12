@@ -1,0 +1,46 @@
+{
+    "GetStarted": {
+        "title": "Tutkunu Keşfet",
+        "description": "İlgi duyduğun konuları keşfet, yeni beceriler geliştir ve benzer tutkulara sahip olan insanlarla bağlantı kur.",
+        "button": "BAŞLA"
+    },
+    "Home": {
+        "Featured Courses": {
+            "title": "Öne Çıkan Kurslar"
+        },
+        "Categories": {
+            "title": "Kategoriler",
+            "Sales": "Satışlar",
+            "Marketing": "Pazarlama",
+            "HR": "İK",
+            "Design": "Tasarım",
+            "Astronomy": "Astronomi",
+            "Big Data": "Büyük Veri"
+        }
+    },
+    "Search":{
+        "Search Input": {
+            "title": "Favorilerini Bul",
+            "placeholder": "Kurs Ara",
+            "button": "Ara"
+        },
+        "Top Searches": {
+            "title": "Popüler Aramalar",
+            "Marketing Strategy": "Pazarlama Stratejisi",
+            "UX Design": "UX Tasarımı",
+            "Excel": "Excel",
+            "Adobe Photoshop": "Adobe Photoshop",
+            "CRM": "Müşteri İlişkileri Yönetimi",
+            "Photography": "Fotoğrafçılık",
+            "Content Making": "İçerik Üretimi"
+        }
+
+    },
+    "SideBar": {
+        "Home": "Ana Sayfa",
+        "Search": "Ara",
+        "Courses": "Kurslar",
+        "Saved": "Kaydedilenler",
+        "Profile": "Profil"
+    }
+}

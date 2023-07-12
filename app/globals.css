@@ -30,3 +30,11 @@
   fill: #2e8dff;
   color:#2e8dff;
 }
+
+.category-icon{
+  fill:rgb(177, 177, 177);
+}
+
+.category-icon--container:hover .category-icon{
+  fill: #2e8dff;
+}
