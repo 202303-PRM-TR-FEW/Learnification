@@ -1,47 +1,83 @@
+"use client";
 import React from "react";
 import Icons from "../Icons";
+import CategoriesArray from "../CategoriesArray";
+import Rating from "@mui/material/Rating";
+import Stack from "@mui/material/Stack";
+import { useTranslations } from "next-intl";
 
 const SearchFormPartTwo = () => {
-  const renderRating = (count) => {
-    const stars = [];
-    for (let i = 0; i < count; i++) {
-      stars.push(
-        <div className="inline-block">
-          <Icons.StarIcon key={i} />
-        </div>
-      );
-    }
-    return stars;
+  const categories = CategoriesArray();
+  const t = useTranslations("Search")
+  const CustomStarIcon = (props) => {
+    const { value, ...other } = props;
+
+    return (
+      <span {...other}>
+        {Array.from(Array(value), (_, index) => (
+          <Icons.StarIcon key={index} />
+        ))}
+      </span>
+    );
   };
+
   return (
-    <div className="grid grid-cols-1">
+    <div className="flex flex-col justify-between gap-8 mt-4">
       <section>
-        <h3 className="uppercase font-bold">Categories</h3>
-        <input type="checkbox" />
-        <label htmlFor="" className="pl-2">
-          Sales
-        </label>
+        <h3 className="uppercase font-bold mb-4">
+          {t("Categories.title")}
+        </h3>
+        <ul className="flex flex-wrap justify-start lg:justify-between gap-4">
+          {categories.map((category) => (
+            <li key={category.id}>
+              <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
+                <input type="checkbox" />
+                {category.name}
+              </label>
+            </li>
+          ))}
+        </ul>
       </section>
-      <br className="" />
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 gap-8 md:grid-flow-col md:justify-stretch lg:justify-start">
+        {/* Rating Start */}
         <section>
-          <h3 className="uppercase font-bold">Rating</h3>
-          {renderRating(5)}
+          <h3 className="uppercase font-bold mb-4">
+            {t("Rating.title")}
+          </h3>
+          <Stack spacing={1}>
+            <Rating
+              name="half-rating"
+              defaultValue={2.5}
+              icon={<CustomStarIcon style={{ marginRight: "5px" }} />}
+              emptyIcon={<Icons.StarIcon empty={true} />}
+            />
+          </Stack>
         </section>
-        <section>
-          <h3 className="uppercase font-bold">Level</h3>
-          <input type="checkbox" id="beginner" />
-          <label htmlFor="beginner" className="pl-2">
-            Beginner
-          </label>
-          <input type="checkbox" id="intermadiate" />
-          <label htmlFor="intermadiate" className="pl-2">
-            Intermadiate
-          </label>
-          <input type="checkbox" id="professional" />
-          <label htmlFor="professional" className="pl-2">
-            Professional
-          </label>
+
+        <section className="">
+          <h3 className="uppercase font-bold mb-4">
+            {t("Level.title")}
+          </h3>
+          <ul className="flex justify-between flex-wrap gap-4">
+            <li className="mr-4">
+              <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
+                <input type="checkbox" />
+                {t("Level.Beginner")}
+              </label>
+            </li>
+            <li className="mr-4">
+              <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
+                <input type="checkbox" />
+                {t("Level.Intermediate")}
+              </label>
+            </li>
+            <li>
+              <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
+                <input type="checkbox" />
+                {t("Level.Advanced")}
+              </label>
+            </li>
+          </ul>
         </section>
       </div>
     </div>
