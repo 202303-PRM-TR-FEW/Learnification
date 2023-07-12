@@ -1,55 +1,71 @@
 {
-    "GetStarted": {
-        "title": "Discover Passion",
-        "description": "Find out what topics you find interesting, learn a new skill & connect with people that are passionate about similar topics.",
-        "button": "Get Started"
+  "GetStarted": {
+    "title": "Discover Passion",
+    "description": "Find out what topics you find interesting, learn a new skill & connect with people that are passionate about similar topics.",
+    "button": "Get Started"
+  },
+  "Home": {
+    "Featured Courses": {
+      "title": "Featured Courses"
     },
-    "Home": {
-        "Featured Courses": {
-            "title": "Featured Courses"
-        },
-        "Categories": {
-            "title": "Categories",
-            "Sales": "Sales",
-            "Marketing": "Marketing",
-            "HR": "HR",
-            "Design": "Design",
-            "Astronomy": "Astronomy",
-            "Big Data": "Big Data",
-            "More": "More"
-        },
-        "MyLearning": {
-            "title": "My Learning",
-            "BecomingAPhotographer": "Becoming A Photographer", 
-            "DesignThinking": "Design Thinking 2.0", 
-            "Complete": "Complete",
-            "Save": "Save",
-            "SeeAll": "See All"
-        }
+    "Categories": {
+      "title": "Categories",
+      "More": "More"
     },
-    "Search":{
-        "Search Input": {
-            "title": "Find Your Favorites",
-            "placeholder": "Search Courses",
-            "button": "Search"
-        },
-        "Top Searches": {
-            "title": "Top Searches",
-            "Marketing Strategy": "Marketing Strategy",
-            "UX Design": "UX Design",
-            "Excel": "Excel",
-            "Adobe Photoshop": "Adobe Photoshop",
-            "CRM": "CRM",
-            "Photography": "Photography",
-            "Content Making": "Content Making"
-        }
-
-    },
-    "SideBar": {
-        "Home": "Home",
-        "Search": "Search",
-        "Courses": "Courses",
-        "Saved": "Saved",
-        "Profile": "Profile"
+    "MyLearning": {
+        "title": "My Learning",
+        "BecomingAPhotographer": "Becoming A Photographer", 
+        "DesignThinking": "Design Thinking 2.0", 
+        "Complete": "Complete",
+        "Save": "Save",
+        "SeeAll": "See All"
     }
+  },
+  "Search":{
+    "Search Input": {
+        "title": "Find Your Favorites",
+        "placeholder": "Search Courses",
+        "button": "Search"
+    },
+    "Top Searches": {
+        "title": "Top Searches",
+        "Marketing Strategy": "Marketing Strategy",
+        "UX Design": "UX Design",
+        "Excel": "Excel",
+        "Adobe Photoshop": "Adobe Photoshop",
+        "CRM": "CRM",
+        "Photography": "Photography",
+        "Content Making": "Content Making"
+    },
+    "Categories": {
+      "title": "Categories"
+    },
+    "Rating": {
+      "title": "Rating"
+    },
+    "Level": {
+      "title": "Level",
+      "Beginner": "Beginner",
+      "Intermediate": "Intermediate",
+      "Advanced": "Advanced"
+    }
+  },
+  "SideBar": {
+    "Home": "Home",
+    "Search": "Search",
+    "Courses": "Courses",
+    "Saved": "Saved",
+    "Profile": "Profile"
+  },
+  "CategoriesArray": {
+    "title": "Categories",
+    "Sales": "Sales",
+    "Marketing": "Marketing",
+    "HR": "HR",
+    "Drawing": "Drawing",
+    "Design": "Design",
+    "Astronomy": "Astronomy",
+    "Big Data": "Big Data"
+    
+  }
 }
