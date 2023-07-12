@@ -50,6 +50,10 @@
       "Advanced": "Advanced"
     }
   },
+  "MyLearning":{
+    "title": "My Learning",
+    "statistics": "Statistics"
+  },
   "SideBar": {
     "Home": "Home",
     "Search": "Search",
@@ -66,6 +70,5 @@
     "Design": "Design",
     "Astronomy": "Astronomy",
     "Big Data": "Big Data"
-    
   }
 }

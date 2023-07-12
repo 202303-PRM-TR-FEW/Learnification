@@ -14,7 +14,7 @@ export default function MyLearningCard({ key, course, courseName, teacherName, p
     return (
         <div key={key} className="shadow rounded-2xl lg:p-3 py-2 md:mr-2 h-auto relative flex flex-col">
             <div className="flex">
-                <div className="mr-5 h-auto w-1/2 md:w-1/4 lg:w-1/2">
+                <div className="mr-5 h-auto min-w-[100px] w-full md:w-[200px] lg:w-[400px]">
                     <img src={image}
                         alt='Course Main Image'
                         className="w-full h-32 ml-2 md:w-44 md:h-32 lg:w-44 lg:mt-1 lg:h-32 rounded-2xl"

@@ -2,6 +2,7 @@ import React from "react";
 import LearnUButton from "./LearnUButton"
 import { useTranslations } from "next-intl";
 import MyLearningCard from './MyLearningCard'
+import Link from "next/link";
 
 export default function MyLearning() {
   const t = useTranslations("Home")
@@ -21,7 +22,9 @@ export default function MyLearning() {
         })}
       </div>
       <div className="flex justify-center mt-5">
-        <LearnUButton text={t('MyLearning.SeeAll')} paddingInline={60} />
+        <Link href={"/my-learning"}>
+          <LearnUButton text={t('MyLearning.SeeAll')} paddingInline={60} />
+        </Link>
       </div>
     </div>
   );
