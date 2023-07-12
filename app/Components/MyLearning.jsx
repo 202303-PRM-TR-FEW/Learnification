@@ -16,7 +16,7 @@ export default function MyLearning() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {courses.map((course, index) => {
           return (
-            <MyLearningCard key={index} course={course} courseName={course.courseName} teacherName={course.teacherName} percentage={course.percentage} image={course.image} t={t} />
+            <MyLearningCard key={index} course={course} courseName={course.courseName} teacherName={course.teacherName} percentage={course.percentage} image={course.image} />
           )
         })}
       </div>

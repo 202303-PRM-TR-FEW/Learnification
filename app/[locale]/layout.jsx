@@ -2,7 +2,6 @@ import { NextIntlClientProvider, useLocale } from "next-intl"
 import { notFound } from "next/navigation"
 import '../globals.css'
 import { Inter } from 'next/font/google'
-import {NextIntlClientProvider} from 'next-intl';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -17,9 +16,9 @@ export default async function LocaleLayout({ children, params }) {
     }
     let messages;
     try {
-      messages = (await import(`../../messages/${locale}.json`)).default;
+        messages = (await import(`../../messages/${locale}.json`)).default;
     } catch (error) {
-      notFound();
+        notFound();
     }
     return (
         <html lang="{locale}">
