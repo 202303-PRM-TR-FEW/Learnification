@@ -9,7 +9,8 @@
       "title": "Featured Courses"
     },
     "Categories": {
-      "title": "Categories"
+      "title": "Categories",
+      "More": "More"
     },
     "MyLearning": {
         "title": "My Learning",
@@ -64,7 +65,7 @@
     "Drawing": "Drawing",
     "Design": "Design",
     "Astronomy": "Astronomy",
-    "Big Data": "Big Data",
-    "More": "More"
+    "Big Data": "Big Data"
+    
   }
 }

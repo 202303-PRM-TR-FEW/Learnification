@@ -9,7 +9,8 @@
       "title": "Öne Çıkan Kurslar"
     },
     "Categories": {
-      "title": "Kategoriler"
+      "title": "Kategoriler",
+      "More": "Daha Fazla Göster"
     },
     "MyLearning": {
         "title": "Benim Öğrenmem",
@@ -63,7 +64,6 @@
     "Drawing": "Çizim",
     "Design": "Tasarım",
     "Astronomy": "Astronomi",
-    "Big Data": "Büyük Veri",
-    "More": "Daha Fazla Göster"
+    "Big Data": "Büyük Veri"
   }
 }
