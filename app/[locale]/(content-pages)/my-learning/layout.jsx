@@ -12,32 +12,38 @@ export default function Layout({ children }) {
     ]
     const t = useTranslations('MyLearning')
     return (
-        <main className='w-full flex md:mx-12 md:my-4 bg-white-smoke'>
-            <div className='flex flex-col sm:w-1/2 '>
-                <header className='flex justify-between items-center my-2'>
-                    <h1 className='text-2xl'>
-                        {t('title')}
-                    </h1>
-                    <Link href='/statistics'>
-                        <p className='flex gap-2'>
-                            <span>
-                                <Icons.StatisticsIcon />
-                            </span>
-                            <span>
-                                {t('statistics')}
-                            </span>
-                        </p>
-                    </Link>
-                </header>
-                <div className='flex flex-col gap-4'>
-                    {courses.map((course, index) => (
-                        <Link key={index} href={`/my-learning/${index}`}>
-                            <MyLearningCard course={course} courseName={course.courseName} teacherName={course.teacherName} percentage={course.percentage} image={course.image} />
+        <main className='w-full min-h-screen flex md:mx-12 md:pt-12 bg-white-smoke'>
+            <div className='flex flex-col basis-full sm:w-1/2 '>
+                <div className='max-xl:min-h-screen'>
+                    <header className='flex justify-between items-center my-2'>
+                        <h1 className='text-2xl'>
+                            {t('title')}
+                        </h1>
+                        <Link href='/statistics'>
+                            <p className='flex gap-2'>
+                                <span>
+                                    <Icons.StatisticsIcon />
+                                </span>
+                                <span>
+                                    {t('statistics')}
+                                </span>
+                            </p>
                         </Link>
-                    ))}
+                    </header>
+                    <div className='flex flex-col gap-4'>
+                        {courses.map((course, index) => (
+                            <Link key={index} href={`/my-learning/${index}`}>
+                                <MyLearningCard course={course} courseName={course.courseName} teacherName={course.teacherName} percentage={course.percentage} image={course.image} />
+                            </Link>
+                        ))}
+
+                    </div>
+                </div>
+                <div className='bg-white rounded-t-2xl xl:hidden'>
+                    {children}
                 </div>
             </div>
-            <div className='basis-full bg-white hidden sm:block rounded-t-2xl'>
+            <div className='bg-white hidden xl:block rounded-t-2xl basis-full min-h-full'>
                 {children}
             </div>
         </main>

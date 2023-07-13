@@ -46,14 +46,14 @@ export default function MyLearningSide({ params }) {
     const course = courses[params.id]
     const t = useTranslations("MyLearning")
     return (
-        <>
+        <div className='flex flex-col h-full'>
             {course && (
                 <CourseView course={course} />
             )}
-            <div className='flex gap-2 px-8'>
+            <div className='flex gap-2 p-8 mt-auto'>
                 <LearnUButton text={t("Review Course")} bgColor={"white"} width={"full"} />
                 <LearnUButton text={t("Continue Learning")} width={"full"} />
             </div>
-        </>
+        </div>
     )
 }

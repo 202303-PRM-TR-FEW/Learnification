@@ -16,6 +16,9 @@
     --background-end-rgb: 245, 245, 245;
   }
 }
+html{
+  scroll-behavior: smooth !important;
+}
 .btn {
   @apply font-bold py-1.5 rounded-xl border-2 px-10;
 }

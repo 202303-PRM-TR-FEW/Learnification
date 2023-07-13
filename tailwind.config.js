@@ -17,6 +17,7 @@ module.exports = {
       textColor: {
         "primary-white": "#ffffff",
         "primary-blue": "#2e8dff",
+        "white-smoke": "#f5f5f5",
       },
       borderColor: {
         'primary-blue': '#2e8dff',
