@@ -12,7 +12,7 @@ export default function Layout({ children }) {
     ]
     const t = useTranslations('MyLearning')
     return (
-        <main className='w-full flex md:mx-12 md:my-4'>
+        <main className='w-full flex md:mx-12 md:my-4 bg-white-smoke'>
             <div className='flex flex-col sm:w-1/2 '>
                 <header className='flex justify-between items-center my-2'>
                     <h1 className='text-2xl'>
@@ -37,7 +37,7 @@ export default function Layout({ children }) {
                     ))}
                 </div>
             </div>
-            <div className='basis-full'>
+            <div className='basis-full bg-white hidden sm:block rounded-t-2xl'>
                 {children}
             </div>
         </main>

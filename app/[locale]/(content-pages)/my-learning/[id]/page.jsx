@@ -1,4 +1,6 @@
 import CourseView from '@/app/Components/CourseView'
+import LearnUButton from '@/app/Components/LearnUButton'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React from 'react'
 
@@ -42,11 +44,16 @@ export default function MyLearningSide({ params }) {
         }
     ]
     const course = courses[params.id]
+    const t = useTranslations("MyLearning")
     return (
         <>
             {course && (
                 <CourseView course={course} />
             )}
+            <div className='flex gap-2 px-8'>
+                <LearnUButton text={t("Review Course")} bgColor={"white"} width={"full"} />
+                <LearnUButton text={t("Continue Learning")} width={"full"} />
+            </div>
         </>
     )
 }

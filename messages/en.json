@@ -52,7 +52,10 @@
   },
   "MyLearning":{
     "title": "My Learning",
-    "statistics": "Statistics"
+    "statistics": "Statistics",
+    "Course Description": "Course Description",
+    "Review Course":"Review Course",
+    "Continue Learning":"Continue Learning"
   },
   "SideBar": {
     "Home": "Home",
