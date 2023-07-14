@@ -23,7 +23,7 @@ export default function CourseOverview() {
       {lessons.map((lesson) => (
         <li
           key={lesson.id}
-          className="flex flex-col shadow rounded-3xl p-2 my-3 mx-6 overflow-hidden"
+          className="flex flex-col shadow rounded-3xl p-2 my-3 mx-6 overflow-hidden cursor-pointer"
           onClick={() => handleLessonClick(lesson.id)}
         >
           <div className="flex justify-between py-3 px-6">
