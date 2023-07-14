@@ -1,6 +1,4 @@
-import mongoose from "mongoose";
 import User from "@/models/User";
-
 run()
 async function run(){
     const furkan = await User.create({
