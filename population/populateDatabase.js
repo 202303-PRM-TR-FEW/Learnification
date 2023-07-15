@@ -1,9 +1,11 @@
 import { User } from "@/models/User";
 import { Course } from "@/models/Course";
 import { connectToDb } from "@/utils/database";
+import mongoose, { Mongoose, Schema } from "mongoose";
 
 const users = [
   {
+    _id: new mongoose.Types.ObjectId(),
     username: "Furkan",
     email: "Furkan@gmail.com",
     password: "password123",
@@ -17,6 +19,7 @@ const users = [
     loginState: false,
   },
   {
+    _id: new mongoose.Types.ObjectId(),
     username: "Amdjed",
     email: "Amdjed@gmail.com",
     password: "password123",
@@ -30,6 +33,7 @@ const users = [
     loginState: false,
   },
   {
+    _id: new mongoose.Types.ObjectId(),
     username: "Tugba",
     email: "Tugba@gmail.com",
     password: "password123",
@@ -43,6 +47,7 @@ const users = [
     loginState: false,
   },
   {
+    _id: new mongoose.Types.ObjectId(),
     username: "Ebla",
     email: "Ebla@gmail.com",
     password: "password123",
@@ -56,6 +61,7 @@ const users = [
     loginState: false,
   },
   {
+    _id: new mongoose.Types.ObjectId(),
     username: "john",
     email: "john@example.com",
     password: "password1",
@@ -69,6 +75,7 @@ const users = [
     loginState: false,
   },
   {
+    _id: new mongoose.Types.ObjectId(),
     username: "emma",
     email: "emma@example.com",
     password: "password2",
@@ -82,6 +89,7 @@ const users = [
     loginState: false,
   },
   {
+    _id: new mongoose.Types.ObjectId(),
     username: "alex",
     email: "alex@example.com",
     password: "password3",
@@ -95,6 +103,7 @@ const users = [
     loginState: false,
   },
   {
+    _id: new mongoose.Types.ObjectId(),
     username: "lisa",
     email: "lisa@example.com",
     password: "password4",
@@ -112,6 +121,7 @@ const users = [
 
 const courses = [
   {
+    _id:new mongoose.Types.ObjectId(),
     name: "Introduction to Programming",
     teacherName: "Alex",
     duration: 10,
@@ -121,6 +131,7 @@ const courses = [
     recommendedCourses: [],
   },
   {
+    _id:new mongoose.Types.ObjectId(),
     name: "Web Development 101",
     teacherName: "Sophia",
     duration: 15,
@@ -130,6 +141,7 @@ const courses = [
     recommendedCourses: [],
   },
   {
+    _id:new mongoose.Types.ObjectId(),
     name: "Data Science Fundamentals",
     teacherName: "David",
     duration: 12,
@@ -139,6 +151,7 @@ const courses = [
     recommendedCourses: [],
   },
   {
+    _id:new mongoose.Types.ObjectId(),
     name: "Mobile App Development",
     teacherName: "Sarah",
     duration: 18,
@@ -155,12 +168,17 @@ const createSampleData = async () => {
     await connectToDb();
     await User.deleteMany({});
     await Course.deleteMany({});
-    const newUsers = await User.create(users);
-    const newCourses = await Course.create(courses);
-    await newUsers.save();
-    await newCourses.save();
+    for (const course of courses) {
+      const newCourse = new Course(course);
+      await newCourse.save();
+    }
+    for (const user of users) {
+      const newUser = new User(user);
+      newUser.finishedCourses.push(courses[0]._id);
+      newUser.courses.push(courses[0]._id);
+      await newUser.save();
+    }
     console.log("Data created successfully!");
-    return { users, courses }
   } catch (error) {
     console.error("Error creating data:", error);
   }

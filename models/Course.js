@@ -1,18 +1,18 @@
 import mongoose, { Schema, model, models } from "mongoose";
 const courseSchema = new mongoose.Schema({
-  id: {
-    type: Schema.Types.ObjectId,
-    required: true,
-    unique: true
-  },
-  lessonId: {
-    type: Schema.Types.ObjectId,
-    ref: 'Lesson'
-  },
-  categoryID: {
-    type: Schema.Types.ObjectId,
-    ref: 'Category'
-  },
+  _id: Schema.Types.ObjectId,
+  lessons: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Lesson'
+    }
+  ],
+  categories: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Category'
+    }
+  ],
   name: {
     type: String,
     required: true
@@ -37,10 +37,12 @@ const courseSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  recommendedCourses: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: 'Course'
-  }
+  recommendedCourses: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Course'
+    }
+  ]
 });
 
-export const Course = models.Course || model("Couse", courseSchema);
+export const Course = models.Course || model("Course", courseSchema);
