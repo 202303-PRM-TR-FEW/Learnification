@@ -1,38 +1,69 @@
 {
-    "GetStarted": {
-        "title": "Tutkunu Keşfet",
-        "description": "İlgi duyduğun konuları keşfet, yeni beceriler geliştir ve benzer tutkulara sahip olan insanlarla bağlantı kur.",
-        "button": "BAŞLA"
+  "GetStarted": {
+    "title": "Tutkunu Keşfet",
+    "description": "İlgi duyduğun konuları keşfet, yeni beceriler geliştir ve benzer tutkulara sahip olan insanlarla bağlantı kur.",
+    "button": "BAŞLA"
+  },
+  "Home": {
+    "Featured Courses": {
+      "title": "Öne Çıkan Kurslar"
     },
-    "Home": {
-        "Featured Courses": {
-            "title": "Öne Çıkan Kurslar"
-        },
-        "Categories": {
-            "title": "Kategoriler",
-            "Sales": "Satışlar",
-            "Marketing": "Pazarlama",
-            "HR": "İK",
-            "Design": "Tasarım",
-            "Astronomy": "Astronomi",
-            "Big Data": "Büyük Veri",
-            "More": "Daha Fazla Göster"
-        },
-        "MyLearning": {
-            "title": "Benim Öğrenmem",
-            "BecomingAPhotographer": "Bir Fotoğrafçı Olmak", 
-            "DesignThinking": "Tasarım Düşüncesi 2.0", 
-            "Complete": "Tamamlandı",
-            "Save": "Kaydet",
-            "SeeAll": "Hepsini Gör"
-        }
-        
+    "Categories": {
+      "title": "Kategoriler",
+      "More": "Daha Fazla Göster"
     },
-    "SideBar": {
-        "Home": "Ana Sayfa",
-        "Search": "Ara",
-        "Courses": "Kurslar",
-        "Saved": "Kaydedilenler",
-        "Profile": "Profil"
+    "MyLearning": {
+        "title": "Benim Öğrenmem",
+        "BecomingAPhotographer": "Bir Fotoğrafçı Olmak", 
+        "DesignThinking": "Tasarım Düşüncesi 2.0", 
+        "Complete": "Tamamlandı",
+        "Save": "Kaydet",
+        "SeeAll": "Hepsini Gör"
     }
+  },
+  "Search":{
+    "Search Input": {
+        "title": "Favorilerini Bul",
+        "placeholder": "Kurs Ara",
+        "button": "Ara"
+    },
+    "Top Searches": {
+        "title": "Popüler Aramalar",
+        "Marketing Strategy": "Pazarlama Stratejisi",
+        "UX Design": "UX Tasarımı",
+        "Excel": "Excel",
+        "Adobe Photoshop": "Adobe Photoshop",
+        "CRM": "Müşteri İlişkileri Yönetimi",
+        "Photography": "Fotoğrafçılık",
+        "Content Making": "İçerik Üretimi"
+    },
+    "Categories": {
+      "title": "Kategoriler"
+    },
+    "Rating": {
+      "title": "Puan"
+    },
+    "Level": {
+      "title": "Seviye",
+      "Beginner": "Başlangıç",
+      "Intermediate": "Orta",
+      "Advanced": "İleri"
+    }
+  },
+  "SideBar": {
+    "Home": "Ana Sayfa",
+    "Search": "Ara",
+    "Courses": "Kurslar",
+    "Saved": "Kaydedilenler",
+    "Profile": "Profil"
+  },
+  "CategoriesArray": {
+    "Sales": "Satışlar",
+    "Marketing": "Pazarlama",
+    "HR": "İK",
+    "Drawing": "Çizim",
+    "Design": "Tasarım",
+    "Astronomy": "Astronomi",
+    "Big Data": "Büyük Veri"
+  }
 }
