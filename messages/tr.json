@@ -65,5 +65,8 @@
     "Design": "Tasarım",
     "Astronomy": "Astronomi",
     "Big Data": "Büyük Veri"
+  },
+  "CourseOverview": {
+    "title": "Kurs İçeriği"
   }
 }
