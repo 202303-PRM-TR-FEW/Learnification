@@ -2,6 +2,9 @@ import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 import GitHubProvider from 'next-auth/providers/github'
 import Credentials from 'next-auth/providers/credentials'
+import { User } from '@/models/User'
+import mongoose from 'mongoose'
+import { connectToDb } from '@/utils/database'
 const handler = NextAuth({
     providers: [
         GoogleProvider({
@@ -29,10 +32,28 @@ const handler = NextAuth({
         })
     ],
     callbacks:{
-        signIn({ user, account, profile, email, credentials }){
+        async signIn({ user, account, profile, email, credentials }){
             // check if user is allowed to sign in and save their data to db
-            console.log(credentials);
-            return true
+            console.log(user);
+            try {
+                await connectToDb();
+                const existingUser = User.findOne({email: user.email})
+                if(existingUser) return true
+                const newUser = new User({
+                    _id: new mongoose.Types.ObjectId(),
+                    username: user.name,
+                    email: user.email,
+                    location: profile.locale,
+                    profilePicture: user.image
+                })
+                await newUser.save();
+                return true
+            } catch (error) {
+                console.log(error);
+                return null
+            } finally {
+                mongoose.disconnect()
+            }
         }
     },
 })
