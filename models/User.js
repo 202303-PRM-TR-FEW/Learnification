@@ -1,6 +1,6 @@
 import mongoose, { Schema, models, model } from "mongoose";
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
   id: {
     type: Schema.Types.ObjectId,
     required: true,
@@ -10,9 +10,10 @@ const userSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Course",
   },
-  AchievementsObtainedID: {
+  achievementID: {
     type: Schema.Types.ObjectId,
     ref: "Achievement",
+    required: true,
   },
   username: {
     type: String,
