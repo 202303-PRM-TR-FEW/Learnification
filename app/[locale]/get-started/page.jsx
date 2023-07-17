@@ -4,9 +4,8 @@ import BrandIcon from '../../Components/GetStarted/BrandIcon'
 import LearnUButton from '../../Components/LearnUButton'
 import '../../globals.css'
 import Link from 'next/link'
-import { useLocale, useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 export default function Home() {
-  const locale = useLocale()
   const t = useTranslations('GetStarted')
   return (
     <main className="p-4 lg:p-16 min-h-screen flex m-auto bg-white-smoke" >
