@@ -1,4 +1,5 @@
 import SearchFormPartTwo from "@/app/Components/SearchPage/SearchFormPartTwo";
+import SearchFormPartOne from "@/app/Components/SearchPage/SearchFormPartOne";
 import React from "react";
 import RecommendedForYou from "@/app/Components/SearchPage/RecommendedForYou";
 

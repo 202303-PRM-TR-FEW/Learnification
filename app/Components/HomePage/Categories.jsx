@@ -1,10 +1,13 @@
 "use client"
 import React, { useEffect, useState, useRef } from "react";
-import Icons from "../Icons";
 import CategoriesExpansion from "../CategoriesExpansion";
+import CategoriesArray from "../CategoriesArray";
+import Icons from "../Icons";
 import { useTranslations } from "next-intl";
 
 const Categories = () => {
+  const t = useTranslations("Home");
+  const categories = CategoriesArray();
   const [isPhoneVersion, setIsPhoneVersion] = useState(false);
   const [isTabletVersion, setIsTabletVersion] = useState(false);
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
@@ -36,16 +39,6 @@ const Categories = () => {
     };
   }, []);
 
-  const t = useTranslations("Home")
-  const categories = [
-    { id: 0, name: `${t('Categories.Sales')}`, icon: <Icons.SalesIcon /> },
-    { id: 1, name: `${t('Categories.HR')}`, icon: <Icons.HRIcon /> },
-    { id: 2, name: `${t('Categories.Design')}`, icon: <Icons.DrawingIcon /> },
-    { id: 3, name: `${t('Categories.Big Data')}`, icon: <Icons.BigDataIcon /> },
-    { id: 4, name: `${t('Categories.Design')}`, icon: <Icons.DesignIcon /> },
-    { id: 5, name: `${t('Categories.Marketing')}`, icon: <Icons.MarketingIcon /> },
-    { id: 6, name: `${t('Categories.Astronomy')}`, icon: <Icons.AstronomyIcon /> },
-  ];
 
   const phoneCategories = [...categories.slice(0, 3), { id: 7, name: `${t('Categories.More')}`, icon: <Icons.AstronomyIcon /> }];
   const tabletCategories = [...categories.slice(0, 5), { id: 7, name: `${t('Categories.More')}`, icon: <Icons.AstronomyIcon /> }];
@@ -57,6 +50,7 @@ const Categories = () => {
       setSelectedCategoryId(categoryId);
     }
   };
+  
 
   return (
     <div>
