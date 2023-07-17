@@ -6,6 +6,7 @@
   --foreground-rgb: 245, 245, 245;
   --background-start-rgb: 245, 245, 245;
   --background-end-rgb: 245, 245, 245;
+  --form-control-color: 177, 177, 177;
 }
 
 @media (prefers-color-scheme: light) {
@@ -26,15 +27,35 @@
   @apply transition-all duration-300 text-primary-blue bg-primary-white border-primary-blue hover:bg-primary-blue hover:text-primary-white hover:border-primary-blue active:scale-95 active:duration-150;
 }
 
-.mainLinks:hover svg, .mainLinks:hover span {
+.mainLinks:hover svg,
+.mainLinks:hover span {
   fill: #2e8dff;
-  color:#2e8dff;
+  color: #2e8dff;
 }
 
-.category-icon{
-  fill:rgb(177, 177, 177);
+.category-icon {
+  fill: rgb(177, 177, 177);
 }
 
-.category-icon--container:hover .category-icon{
+.category-icon--container:hover .category-icon {
   fill: #2e8dff;
+}
+
+input[type="checkbox"] {
+  @apply appearance-none bg-white text-current w-[1.15rem] h-[1.15rem] grid place-content-center rounded border-[0.15em]  border-[rgb(177,177,177)];
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+  background-color: CanvasText;
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
