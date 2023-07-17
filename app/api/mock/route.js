@@ -10,32 +10,32 @@ export async function GET() {
   await connectToDb();
 
   const users = await User.find({})
-    .populate("courseID")
-    .populate("achievementID")
+    .populate("courses")
+    .populate("achievements")
     .populate("followers")
     .populate("following")
     .populate("finishedCourses")
     .exec();
 
   const courses = await Course.find({})
-    .populate('lessonId')
-    .populate('categoryID')
+    .populate('lessons')
+    .populate('categories')
     .populate('recommendedCourses')
     .exec();
     
   const lesson = await Lesson.find({})
-    .populate('courseID')
-    .populate('sectionID')
+    .populate('courses')
+    .populate('sections')
     .exec();
   
   const category = await Category.find({})
-    .populate('courseID')
+    .populate('courses')
 
   const achievement = await Achievement.find({})
 
   const transaction = await Transaction.find({})
-    .populate('userID')
-    .populate('courseID')
+    .populate('users')
+    .populate('courses')
 
   
   console.log(`${users}\n${courses}\n${lesson}\n${category}\n${achievement}\n${transaction}`);

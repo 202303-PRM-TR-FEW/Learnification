@@ -5,11 +5,11 @@ const courseSchema = new Schema({
     required: true,
     unique: true
   },
-  lessonId: [{
+  lessons: [{
     type: Schema.Types.ObjectId,
     ref: 'Lesson'
   }],
-  categoryID: {
+  categories: {
     type: Schema.Types.ObjectId,
     ref: 'Category'
   },

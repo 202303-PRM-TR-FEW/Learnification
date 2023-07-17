@@ -1,7 +1,7 @@
 import { Schema, models, model } from "mongoose";
 
 const achievementSchema = new Schema({
-  id: {
+  _id: {
     type: Schema.Types.ObjectId,
     required: true,
     unique: true,

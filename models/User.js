@@ -1,16 +1,16 @@
 import { Schema, models, model } from "mongoose";
 
 const userSchema = new Schema({
-  id: {
+  _id: {
     type: Schema.Types.ObjectId,
     required: true,
     unique: true,
   },
-  courseID: [{
+  courses: [{
     type: Schema.Types.ObjectId,
     ref: "Course",
   }],
-  achievementID: [{
+  achievements: [{
     type: Schema.Types.ObjectId,
     ref: "Achievement",
     required: true,

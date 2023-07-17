@@ -1,12 +1,12 @@
 import { Schema, models, model } from "mongoose";
 
 const categorySchema = new Schema({
-  id: {
+  _id: {
     type: Schema.Types.ObjectId,
     required: true,
     unique: true,
   },
-  courseID: [{
+  courses: [{
     type: Schema.Types.ObjectId,
     ref: "Course",
     required: true,
