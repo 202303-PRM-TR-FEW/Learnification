@@ -1,16 +1,16 @@
-import mongoose, { Schema, model, models } from "mongoose";
-const courseSchema = new mongoose.Schema({
-  id: {
-    type: mongoose.Schema.Types.ObjectId,
+import { Schema, model, models } from "mongoose";
+const courseSchema = new Schema({
+  _id: {
+    type: Schema.Types.ObjectId,
     required: true,
     unique: true
   },
-  lessonId: {
-    type: mongoose.Schema.Types.ObjectId,
+  lessonId: [{
+    type: Schema.Types.ObjectId,
     ref: 'Lesson'
-  },
+  }],
   categoryID: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: 'Category'
   },
   title: {
@@ -47,10 +47,10 @@ const courseSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  recommendedCourses: {
-    type: [mongoose.Schema.Types.ObjectId],
+  recommendedCourses: [{
+    type: Schema.Types.ObjectId,
     ref: 'Course'
-  }
+  }]
 });
 
 export const Course = models.Course || model("Course", courseSchema);

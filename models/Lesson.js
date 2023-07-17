@@ -1,6 +1,6 @@
-import mongoose, { Schema, models, model } from "mongoose";
+import { Schema, models, model } from "mongoose";
 
-const lessonSchema = new mongoose.Schema({
+const lessonSchema = new Schema({
   id: {
     type: Schema.Types.ObjectId,
     required: true,
@@ -28,7 +28,7 @@ const lessonSchema = new mongoose.Schema({
     type: String,
   },
   completionState: {
-    type: [String],
+    type: Boolean,
     default: [],
   },
 });

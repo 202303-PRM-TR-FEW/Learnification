@@ -1,15 +1,10 @@
-import mongoose, { Schema, models, model } from "mongoose";
+import { Schema, models, model } from "mongoose";
 
-const achievementSchema = new mongoose.Schema({
+const achievementSchema = new Schema({
   id: {
     type: Schema.Types.ObjectId,
     required: true,
     unique: true,
-  },
-  userID: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-    required: true,
   },
   name: {
     type: String,

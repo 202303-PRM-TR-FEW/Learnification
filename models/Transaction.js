@@ -1,6 +1,6 @@
-import mongoose, { Schema, models, model } from "mongoose";
+import { Schema, models, model } from "mongoose";
 
-const transactionSchema = new mongoose.Schema({
+const transactionSchema = new Schema({
   id: {
     type: Schema.Types.ObjectId,
     required: true,
@@ -11,11 +11,11 @@ const transactionSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
-  courseID: {
+  courseID: [{
     type: Schema.Types.ObjectId,
     ref: "Course",
     required: true,
-  },
+  }],
   transactionAmount: {
     type: Number,
     required: true,

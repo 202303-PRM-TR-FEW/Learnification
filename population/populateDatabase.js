@@ -2,7 +2,7 @@ import { User } from "@/models/User";
 import { Course } from "@/models/Course";
 import { Category } from "@/models/Category"
 import { connectToDb } from "@/utils/database";
-import mongoose, { Mongoose, Schema } from "mongoose";
+import mongoose from "mongoose";
 
 const users = [
   {

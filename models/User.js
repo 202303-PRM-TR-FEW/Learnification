@@ -1,20 +1,20 @@
-import mongoose, { Schema, models, model } from "mongoose";
+import { Schema, models, model } from "mongoose";
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
   id: {
     type: Schema.Types.ObjectId,
     required: true,
     unique: true,
   },
-  courseID: {
+  courseID: [{
     type: Schema.Types.ObjectId,
     ref: "Course",
-  },
-  achievementID: {
+  }],
+  achievementID: [{
     type: Schema.Types.ObjectId,
     ref: "Achievement",
     required: true,
-  },
+  }],
   username: {
     type: String,
     required: true,
@@ -38,11 +38,11 @@ const userSchema = new mongoose.Schema({
     default: 0,
   },
   followers: {
-    type: [Schema.Types.ObjectId],
+    type: Schema.Types.ObjectId,
     ref: "User",
   },
   following: {
-    type: [Schema.Types.ObjectId],
+    type: Schema.Types.ObjectId,
     ref: "User",
   },
   hoursSpent: {
@@ -50,7 +50,7 @@ const userSchema = new mongoose.Schema({
     default: 0,
   },
   finishedCourses: {
-    type: [Schema.Types.ObjectId],
+    type: Schema.Types.ObjectId,
     ref: "Course",
   },
   loginState: {

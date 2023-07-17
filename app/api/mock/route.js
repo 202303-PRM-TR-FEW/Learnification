@@ -3,7 +3,6 @@ import { Course } from '@/models/Course';
 import { Lesson } from '@/models/Lesson';
 import { Category } from '@/models/Category';
 import { Achievement } from '@/models/Achievement';
-import { OwnedCourse } from '@/models/OwnedCourse';
 import { Transaction } from '@/models/Transaction';
 import { connectToDb } from '@/utils/database';
 
@@ -33,20 +32,15 @@ export async function GET() {
     .populate('courseID')
 
   const achievement = await Achievement.find({})
-    .populate('userID')
-  
-  const ownedCourse = await OwnedCourse.find({})
-    .populate('userID')
-    .populate('courseID')
 
   const transaction = await Transaction.find({})
     .populate('userID')
     .populate('courseID')
 
   
-  console.log(`${users}\n${courses}\n${lesson}\n${category}\n${achievement}\n${ownedCourse}\n${transaction}`);
+  console.log(`${users}\n${courses}\n${lesson}\n${category}\n${achievement}\n${transaction}`);
 
-  return new Response(JSON.stringify({ users, courses, lesson, category, achievement, ownedCourse, transaction }), {
+  return new Response(JSON.stringify({ users, courses, lesson, category, achievement, transaction }), {
     status: 200,
     headers: {
       'Content-Type': 'application/json'
