@@ -3,8 +3,10 @@ import UserInfo from "../../../Components/ProfilePage/UserInfo";
 
 export default function Profile() {
     return (
-        <div>
-            <UserInfo/>
+        <div className="md:mt-6 w-full">
+            <div className="w-full mt-6 md:mt-0">
+                <UserInfo/>
+            </div>
         </div>
     );
 }
