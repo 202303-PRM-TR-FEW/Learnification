@@ -17,7 +17,7 @@ export default function RootLayout({ children, session }) {
         <SessionProvider session={session}>
           {children}
         </SessionProvider>
-        </body>
+      </body>
     </html>
   );
 }

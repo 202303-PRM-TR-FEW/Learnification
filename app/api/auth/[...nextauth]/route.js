@@ -24,7 +24,6 @@ const handler = NextAuth({
             authorize(credentials, req){
                 // query if the user exists
                 const user = { id: "1", name: "Furkan Cengiz", email: "muhammedcengiz1@gmail.com" }
-                console.log(credentials);
                 if(user.email === credentials.email)
                 return true
                 else return null
@@ -32,12 +31,11 @@ const handler = NextAuth({
         })
     ],
     callbacks:{
-        async signIn({ user, account, profile, email, credentials }){
-            // check if user is allowed to sign in and save their data to db
-            console.log(user);
+        async signIn({ user, profile }){
             try {
                 await connectToDb();
                 const existingUser = User.findOne({email: user.email})
+                // check if user is allowed to sign in and save their data to db
                 if(existingUser) return true
                 const newUser = new User({
                     _id: new mongoose.Types.ObjectId(),
@@ -52,7 +50,7 @@ const handler = NextAuth({
                 console.log(error);
                 return null
             } finally {
-                mongoose.disconnect()
+                await mongoose.disconnect()
             }
         }
     },
