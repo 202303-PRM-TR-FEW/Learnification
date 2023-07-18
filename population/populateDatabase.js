@@ -1,7 +1,8 @@
 import { User } from "@/models/User";
 import { Course } from "@/models/Course";
+import { Category } from "@/models/Category"
 import { connectToDb } from "@/utils/database";
-import mongoose, { Mongoose, Schema } from "mongoose";
+import mongoose from "mongoose";
 
 const users = [
   {
@@ -122,8 +123,12 @@ const users = [
 const courses = [
   {
     _id:new mongoose.Types.ObjectId(),
-    name: "Introduction to Programming",
-    teacherName: "Alex",
+    title: "Introduction to Programming",
+    tutor: {
+      name: "Alex",
+      imageUrl: "",
+    },
+    imageUrl: "",
     duration: 10,
     rating: 4.5,
     description: "Learn the basics of programming.",
@@ -132,8 +137,12 @@ const courses = [
   },
   {
     _id:new mongoose.Types.ObjectId(),
-    name: "Web Development 101",
-    teacherName: "Sophia",
+    title: "Web Development 101",
+    tutor: {
+      name: "Sophia",
+      imageUrl: "",
+    },
+    imageUrl: "",
     duration: 15,
     rating: 4.8,
     description: "Master the fundamentals of web development.",
@@ -142,8 +151,12 @@ const courses = [
   },
   {
     _id:new mongoose.Types.ObjectId(),
-    name: "Data Science Fundamentals",
-    teacherName: "David",
+    title: "Data Science Fundamentals",
+    tutor: {
+      name: "David",
+      imageUrl: "",
+    },
+    imageUrl: "",
     duration: 12,
     rating: 4.3,
     description: "Explore the world of data science and analytics.",
@@ -152,8 +165,12 @@ const courses = [
   },
   {
     _id:new mongoose.Types.ObjectId(),
-    name: "Mobile App Development",
-    teacherName: "Sarah",
+    title: "Mobile App Development",
+    tutor: {
+      name: "Sarah",
+      imageUrl: "",
+    },
+    imageUrl: "",
     duration: 18,
     rating: 4.6,
     description: "Build cross-platform mobile apps using React Native.",
@@ -163,11 +180,43 @@ const courses = [
 
 ];
 
+const categories = [
+  {
+    _id:new mongoose.Types.ObjectId(),
+    name:"Sales",
+  },
+  {
+    _id:new mongoose.Types.ObjectId(),
+    name:"HR",
+  },
+  {
+    _id:new mongoose.Types.ObjectId(),
+    name:"Drawing",
+  },
+  {
+    _id:new mongoose.Types.ObjectId(),
+    name:"Big Data",
+  },
+  {
+    _id:new mongoose.Types.ObjectId(),
+    name:"Design",
+  },
+  {
+    _id:new mongoose.Types.ObjectId(),
+    name:"Marketing",
+  },
+  {
+    _id:new mongoose.Types.ObjectId(),
+    name:"Astronomy",
+  },
+]
+
 const createSampleData = async () => {
   try {
     await connectToDb();
     await User.deleteMany({});
     await Course.deleteMany({});
+    await Category.deleteMany({});
     for (const course of courses) {
       const newCourse = new Course(course);
       await newCourse.save();
@@ -177,6 +226,10 @@ const createSampleData = async () => {
       newUser.finishedCourses.push(courses[0]._id);
       newUser.courses.push(courses[0]._id);
       await newUser.save();
+    }
+    for (const category of categories){
+      const newCategory = new Category(category);
+      await newCategory.save();
     }
     console.log("Data created successfully!");
   } catch (error) {

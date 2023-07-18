@@ -308,6 +308,27 @@ const CheckIcon = ({ width = 16, height = 16, ...props }) => (
     <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
   </svg>
 );
+
+const AddButton = () =>(
+  <span className="w-full flex justify-center">
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="10" height="10" viewBox="0,0,256,256" style={{fill:"#000000"}}>
+      <g fill="#ffffff" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style={{mixBlendMode: "normal"}}>
+        <g transform="scale(10.66667,10.66667)">
+          <path d="M11,2v9h-9v2h9v9h2v-9h9v-2h-9v-9z"></path>
+        </g>
+      </g>
+    </svg>
+  </span>
+)
+
+const DeleteButton = () =>(
+  <span className="w-full flex justify-center">
+    <svg fill="#737373" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="15px" height="15px">
+      <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"/>
+    </svg>
+  </span>
+)
+
 const Icons = {
   SalesIcon,
   HRIcon,
@@ -328,7 +349,9 @@ const Icons = {
   BrandIcon,
   RightArrowIcon,
   DownArrowIcon,
-  CheckIcon
+  CheckIcon, 
+  AddButton,
+  DeleteButton,
 };
 
 export default Icons;
