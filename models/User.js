@@ -1,11 +1,6 @@
 import { Schema, models, model } from "mongoose";
 
 const userSchema = new Schema({
-  _id: {
-    type: Schema.Types.ObjectId,
-    required: true,
-    unique: true,
-  },
   courses: [{
     type: Schema.Types.ObjectId,
     ref: "Course",
@@ -13,7 +8,6 @@ const userSchema = new Schema({
   achievements: [{
     type: Schema.Types.ObjectId,
     ref: "Achievement",
-    required: true,
   }],
   username: {
     type: String,
@@ -37,22 +31,26 @@ const userSchema = new Schema({
     type: Number,
     default: 0,
   },
-  followers: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
-  following: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
+  followers: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    }
+  ],
+  following: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    }
+  ],
   hoursSpent: {
     type: Number,
     default: 0,
   },
-  finishedCourses: {
+  finishedCourses: [{
     type: Schema.Types.ObjectId,
     ref: "Course",
-  },
+  }],
   loginState: {
     type: Boolean,
     default: false,

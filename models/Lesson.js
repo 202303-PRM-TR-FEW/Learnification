@@ -1,11 +1,6 @@
 import { Schema, models, model } from "mongoose";
 
 const lessonSchema = new Schema({
-  _id: {
-    type: Schema.Types.ObjectId,
-    required: true,
-    unique: true,
-  },
   courses: {
     type: Schema.Types.ObjectId,
     ref: "Course",

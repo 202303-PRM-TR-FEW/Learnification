@@ -1,18 +1,15 @@
 import { Schema, model, models } from "mongoose";
 const courseSchema = new Schema({
-  _id: {
-    type: Schema.Types.ObjectId,
-    required: true,
-    unique: true
-  },
   lessons: [{
     type: Schema.Types.ObjectId,
     ref: 'Lesson'
   }],
-  categories: {
-    type: Schema.Types.ObjectId,
-    ref: 'Category'
-  },
+  categories: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Category'
+    }
+  ],
   title: {
     type: String,
     required: true
@@ -28,11 +25,11 @@ const courseSchema = new Schema({
     },
   },
   imageUrl :{
-    type: String, 
+    type: String,
     required: true,
   },
   duration: {
-    type: Number,
+    type: String,
     required: true
   },
   rating: {
