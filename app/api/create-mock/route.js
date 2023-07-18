@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 export async function GET(){
     await connectToDb();
     await createSampleData();
-    return NextResponse(
+    return new NextResponse(
         {
             status: 200,
             body: "Database populated successfully"
