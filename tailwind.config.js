@@ -12,7 +12,10 @@ module.exports = {
         "primary-white": "#ffffff",
         "white-smoke": "#f5f5f5",
         "primary-saved": "rgb(251,251,251,0.4)",
-        "secondary-saved": "rgb(251,251,251,0.3)"
+        "secondary-saved": "rgb(251,251,251,0.3)",
+        "light-blue":"#cbe1fa",
+        "light-orange":"#fce7cd",
+        "light-green":"#e3f0d3"
       },
       textColor: {
         "primary-white": "#ffffff",

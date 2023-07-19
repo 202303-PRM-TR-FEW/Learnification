@@ -5,8 +5,10 @@ import Icons from "./Icons";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import { usePathname } from "next-intl/client";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 function SideBar() {
+  const { data } = useSession()
   const locale = useLocale();
   const path = usePathname();
   if (path.includes("tr")) path.replace("/tr", "") // it will replace the /tr with empty string so that we can use it in the Link component
@@ -59,6 +61,17 @@ function SideBar() {
               <Link href="/profile" className="mainLinks no-underline text-[#b1b1b1]">
                 <Icons.ProfileIcon t={useTranslations("SideBar")} />
               </Link>
+            </li>
+            <li>
+              {
+                data ? (<p className="mainLinks no-underline text-[#b1b1b1]" onClick={() => signOut()}>
+                  Log Out
+                </p>) : (
+                  <p className="mainLinks no-underline text-[#b1b1b1]" onClick={() => signIn()}>
+                    Log In
+                  </p>
+                )
+              }
             </li>
           </ul>
         </nav>

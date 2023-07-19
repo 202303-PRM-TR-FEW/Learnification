@@ -68,5 +68,11 @@
   },
   "CourseOverview": {
     "title": "Kurs İçeriği"
+  },
+  "Profile":{
+    "title":"İstatistikler",
+    "FINISHED COURSES": "Tamamlanan Kurslar",
+    "HOURS LEARNED": "Çalışılan Saatler",
+    "SKILLS ACHIEVED": "Kazanılan Yetenekler"
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import UserInfo from "../../../Components/ProfilePage/UserInfo";
+import TotalStatistics from '@/app/Components/TotalStatistics';
 
 export default function Profile() {
     return (
@@ -9,4 +10,11 @@ export default function Profile() {
             </div>
         </div>
     );
+  
+export default function Profile() {
+    return (
+        <div>
+            <TotalStatistics/>
+        </div>
+    )
 }

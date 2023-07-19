@@ -1,28 +1,35 @@
-import mongoose, { Schema, model, models } from "mongoose";
-const courseSchema = new mongoose.Schema({
-  _id: Schema.Types.ObjectId,
-  lessons: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Lesson'
-    }
-  ],
+import { Schema, model, models } from "mongoose";
+const courseSchema = new Schema({
+  lessons: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Lesson'
+  }],
   categories: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Category'
     }
   ],
-  name: {
+  title: {
     type: String,
     required: true
   },
-  teacherName: {
+  tutor: {
+    name: {
+      type: String,
+      required: true,
+    },
+    imageUrl: {
+      type: String,
+      required: true,
+    },
+  },
+  imageUrl :{
     type: String,
-    required: true
+    required: true,
   },
   duration: {
-    type: Number,
+    type: String,
     required: true
   },
   rating: {
@@ -37,12 +44,10 @@ const courseSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  recommendedCourses: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Course'
-    }
-  ]
+  recommendedCourses: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Course'
+  }]
 });
 
 export const Course = models.Course || model("Course", courseSchema);

@@ -1,17 +1,14 @@
-import mongoose, { Schema, models, model } from "mongoose";
+import { Schema, models, model } from "mongoose";
 
 const userSchema = new Schema({
-  _id: Schema.Types.ObjectId,
   courses: [{
     type: Schema.Types.ObjectId,
     ref: "Course",
   }],
-  achievements: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Achievement",
-    }
-  ],
+  achievements: [{
+    type: Schema.Types.ObjectId,
+    ref: "Achievement",
+  }],
   username: {
     type: String,
     required: true,
@@ -22,7 +19,7 @@ const userSchema = new Schema({
   },
   password: {
     type: String,
-    required: true,
+    required: false,
   },
   location: {
     type: String,
@@ -50,12 +47,10 @@ const userSchema = new Schema({
     type: Number,
     default: 0,
   },
-  finishedCourses: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Course",
-    }
-  ],
+  finishedCourses: [{
+    type: Schema.Types.ObjectId,
+    ref: "Course",
+  }],
   loginState: {
     type: Boolean,
     default: false,
