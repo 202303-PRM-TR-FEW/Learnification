@@ -30,6 +30,13 @@ const handler = NextAuth({
             }
         })
     ],
+    async session({ session }) {
+        const sessionUser = await User.findOne({
+            email: session.user.email
+        })
+        session.user.sessionId = sessionUser?._id.toString();
+        return session
+    },
     callbacks:{
         async signIn({ user, profile }){
             try {
@@ -42,8 +49,17 @@ const handler = NextAuth({
                     username: user.name,
                     email: user.email,
                     location: profile.locale,
-                    profilePicture: user.image
+                    profilePicture: user.image,
+                    courses: [],
+                    achievements: [],
+                    followers: [],
+                    following: [],
+                    finishedCourses: [],
+                    loginState: true,
+                    streak: 0,
+                    hoursSpent: 0
                 })
+                console.log(newUser);
                 await newUser.save();
                 return true
             } catch (error) {

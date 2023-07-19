@@ -70,5 +70,11 @@
   },
   "CourseOverview": {
     "title": "Course Overview"
+  },
+  "Profile":{
+    "title": "Total Statistics",
+    "FINISHED COURSES": "FINISHED COURSES",
+    "HOURS LEARNED": "HOURS LEARNED",
+    "SKILLS ACHIEVED": "SKILLS ACHIEVED"
   }
 }
