@@ -73,5 +73,14 @@
     "Design": "Design",
     "Astronomy": "Astronomy",
     "Big Data": "Big Data"
+  },
+  "CourseOverview": {
+    "title": "Course Overview"
+  },
+  "Profile":{
+    "title": "Total Statistics",
+    "FINISHED COURSES": "FINISHED COURSES",
+    "HOURS LEARNED": "HOURS LEARNED",
+    "SKILLS ACHIEVED": "SKILLS ACHIEVED"
   }
 }

@@ -72,5 +72,14 @@
     "Design": "Tasarım",
     "Astronomy": "Astronomi",
     "Big Data": "Büyük Veri"
+  },
+  "CourseOverview": {
+    "title": "Kurs İçeriği"
+  },
+  "Profile":{
+    "title":"İstatistikler",
+    "FINISHED COURSES": "Tamamlanan Kurslar",
+    "HOURS LEARNED": "Çalışılan Saatler",
+    "SKILLS ACHIEVED": "Kazanılan Yetenekler"
   }
 }
