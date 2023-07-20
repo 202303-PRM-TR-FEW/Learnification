@@ -50,6 +50,13 @@
       "Advanced": "Advanced"
     }
   },
+  "MyLearning":{
+    "title": "My Learning",
+    "statistics": "Statistics",
+    "Course Description": "Course Description",
+    "Review Course":"Review Course",
+    "Continue Learning":"Continue Learning"
+  },
   "SideBar": {
     "Home": "Home",
     "Search": "Search",
@@ -66,7 +73,6 @@
     "Design": "Design",
     "Astronomy": "Astronomy",
     "Big Data": "Big Data"
-    
   },
   "CourseOverview": {
     "title": "Course Overview"

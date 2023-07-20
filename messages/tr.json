@@ -50,6 +50,13 @@
       "Advanced": "İleri"
     }
   },
+  "MyLearning":{
+    "title": "Öğrenmekte Olduklarım",
+    "statistics": "İstatistikler",
+    "Course Description": "Kurs Açıklaması",
+    "Review Course":"Kursu İncele",
+    "Continue Learning":"Öğrenmeye Devam Et"
+  },
   "SideBar": {
     "Home": "Ana Sayfa",
     "Search": "Ara",

@@ -129,12 +129,12 @@ const AstronomyIcon = ({ width = 28, height = 28, ...props }) => (
 const LogoIcon = () => (
   <span>
     <svg className="w-[3em] h-[2em] px-[1em] py-[0.3em] lg:w-[4em] lg:h-[2m] lg:px-[1em] lg:py-[0.4em] bg-blue-500 rounded-[20px] overflow-visible z-50 fill-white" viewBox="0 0 576 512">
-        <path d="M575.81 217.98C572.64 157.41 518.28 112 457.63 112h-9.37c-52.82 0-104.25-16.25-147.74-46.24-41.99-28.96-96.04-41.62-153.21-28.7C129.3 41.12-.08 78.24 0 224c.04 70.95 38.68 132.8 95.99 166.01V464c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16v-54.26c15.36 3.96 31.4 6.26 48 6.26 5.44 0 10.68-.73 16-1.18V464c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16v-59.43c14.24-5.06 27.88-11.39 40.34-19.51C342.07 355.25 393.86 336 448.46 336c25.48 0 16.01-.31 23.05-.78l74.41 136.44c2.86 5.23 8.3 8.34 14.05 8.34 1.31 0 2.64-.16 3.95-.5 7.09-1.8 12.05-8.19 12.05-15.5 0 0 .14-240.24-.16-246.02zM463.97 248c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm80 153.25l-39.86-73.08c15.12-5.83 28.73-14.6 39.86-25.98v99.06z"></path>
+      <path d="M575.81 217.98C572.64 157.41 518.28 112 457.63 112h-9.37c-52.82 0-104.25-16.25-147.74-46.24-41.99-28.96-96.04-41.62-153.21-28.7C129.3 41.12-.08 78.24 0 224c.04 70.95 38.68 132.8 95.99 166.01V464c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16v-54.26c15.36 3.96 31.4 6.26 48 6.26 5.44 0 10.68-.73 16-1.18V464c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16v-59.43c14.24-5.06 27.88-11.39 40.34-19.51C342.07 355.25 393.86 336 448.46 336c25.48 0 16.01-.31 23.05-.78l74.41 136.44c2.86 5.23 8.3 8.34 14.05 8.34 1.31 0 2.64-.16 3.95-.5 7.09-1.8 12.05-8.19 12.05-15.5 0 0 .14-240.24-.16-246.02zM463.97 248c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm80 153.25l-39.86-73.08c15.12-5.83 28.73-14.6 39.86-25.98v99.06z"></path>
     </svg>
   </span>
 );
 
-const HomeIcon = ({t}) => (
+const HomeIcon = ({ t }) => (
   <>
     <span>
       <svg className="w-full h-6 lg:h-7 overflow-visible z-[1] fill-[#b1b1b1]" viewBox="0 0 576 512">
@@ -145,7 +145,7 @@ const HomeIcon = ({t}) => (
   </>
 );
 
-const SearchIcon = ({t}) => (
+const SearchIcon = ({ t }) => (
   <>
     <span>
       <svg className="w-full  h-6 lg:h-7 overflow-visible z-[1] fill-[#b1b1b1]" viewBox="0 0 512 512">
@@ -156,17 +156,17 @@ const SearchIcon = ({t}) => (
   </>
 )
 
-const CoursesIcon = ({t}) => (
+const CoursesIcon = ({ t }) => (
   <>
     <span>
       <svg className="w-full h-6 lg:h-7 overflow-visible z-[1] fill-[#b1b1b1]" viewBox="0 0 512 512">
-      <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path>
-    </svg>
-  </span>
-  <span className="hidden lg:block lg:text-sm">{t("Courses")}</span></>
+        <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path>
+      </svg>
+    </span>
+    <span className="hidden lg:block lg:text-sm">{t("Courses")}</span></>
 )
 
-const SavedIcon = ({t}) => (
+const SavedIcon = ({ t }) => (
   <>
     <span>
       <svg className="w-full h-6 lg:h-7 overflow-visible z-[1] fill-[#b1b1b1]" viewBox="0 0 384 512">
@@ -177,11 +177,11 @@ const SavedIcon = ({t}) => (
   </>
 )
 
-const ProfileIcon = ({t}) => (
+const ProfileIcon = ({ t }) => (
   <>
     <span>
       <svg className="w-full h-6 lg:h-7 overflow-visible z-[1] fill-[#b1b1b1]" viewBox="0 0 496 512">
-          <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"></path>
+        <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"></path>
       </svg>
     </span>
     <span className="hidden lg:block lg:text-center lg:text-sm">{t("Profile")}</span>
@@ -328,10 +328,10 @@ const CheckIcon = ({ width = 16, height = 16, ...props }) => (
   </svg>
 );
 
-const AddButton = () =>(
+const AddButton = () => (
   <span className="w-full flex justify-center">
-    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="10" height="10" viewBox="0,0,256,256" style={{fill:"#000000"}}>
-      <g fill="#ffffff" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style={{mixBlendMode: "normal"}}>
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="10" height="10" viewBox="0,0,256,256" style={{ fill: "#000000" }}>
+      <g fill="#ffffff" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style={{ mixBlendMode: "normal" }}>
         <g transform="scale(10.66667,10.66667)">
           <path d="M11,2v9h-9v2h9v9h2v-9h9v-2h-9v-9z"></path>
         </g>
@@ -340,10 +340,10 @@ const AddButton = () =>(
   </span>
 )
 
-const DeleteButton = () =>(
+const DeleteButton = () => (
   <span className="w-full flex justify-center">
-    <svg fill="#737373" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="15px" height="15px">
-      <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"/>
+    <svg fill="#737373" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="15px" height="15px">
+      <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z" />
     </svg>
   </span>
 )
@@ -398,6 +398,16 @@ const SkillsIcon = ({ width = 32, height = 32, ...props }) => (
     <path d="M572.1 82.38C569.5 71.59 559.8 64 548.7 64h-100.8c.2422-12.45 .1078-23.7-.1559-33.02C447.3 13.63 433.2 0 415.8 0H160.2C142.8 0 128.7 13.63 128.2 30.98C127.1 40.3 127.8 51.55 128.1 64H27.26C16.16 64 6.537 71.59 3.912 82.38C3.1 85.78-15.71 167.2 37.07 245.9c37.44 55.82 100.6 95.03 187.5 117.4c18.7 4.805 31.41 22.06 31.41 41.37C256 428.5 236.5 448 212.6 448H208c-26.51 0-47.99 21.49-47.99 48c0 8.836 7.163 16 15.1 16h223.1c8.836 0 15.1-7.164 15.1-16c0-26.51-21.48-48-47.99-48h-4.644c-23.86 0-43.36-19.5-43.36-43.35c0-19.31 12.71-36.57 31.41-41.37c86.96-22.34 150.1-61.55 187.5-117.4C591.7 167.2 572.9 85.78 572.1 82.38zM77.41 219.8C49.47 178.6 47.01 135.7 48.38 112h80.39c5.359 59.62 20.35 131.1 57.67 189.1C137.4 281.6 100.9 254.4 77.41 219.8zM498.6 219.8c-23.44 34.6-59.94 61.75-109 81.22C426.9 243.1 441.9 171.6 447.2 112h80.39C528.1 135.7 526.5 178.7 498.6 219.8z"></path>
   </svg>
 );
+const StatisticsIcon = ({ width = 24, height = 24, ...props }) => (
+  <svg
+    style={{ width: width, height: height, overflow: "visible", opacity: "unset", zIndex: 1, fill: "rgb(177, 177, 177)" }}
+    viewBox="0 0 512 512"
+    {...props}
+  >
+    <path d="M332.8 320h38.4c6.4 0 12.8-6.4 12.8-12.8V172.8c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v134.4c0 6.4 6.4 12.8 12.8 12.8zm96 0h38.4c6.4 0 12.8-6.4 12.8-12.8V76.8c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v230.4c0 6.4 6.4 12.8 12.8 12.8zm-288 0h38.4c6.4 0 12.8-6.4 12.8-12.8v-70.4c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v70.4c0 6.4 6.4 12.8 12.8 12.8zm96 0h38.4c6.4 0 12.8-6.4 12.8-12.8V108.8c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v198.4c0 6.4 6.4 12.8 12.8 12.8zM496 384H64V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v336c0 17.67 14.33 32 32 32h464c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z">
+    </path>
+  </svg>
+)
 
 const Icons = {
   SalesIcon,
@@ -422,10 +432,11 @@ const Icons = {
   AddButton,
   DeleteButton,
   CheckIcon,
-  LocationIcon
+  LocationIcon,
   CheckIconProfile,
   HourglassIcon,
-  SkillsIcon
+  SkillsIcon,
+  StatisticsIcon
 };
 
 export default Icons;

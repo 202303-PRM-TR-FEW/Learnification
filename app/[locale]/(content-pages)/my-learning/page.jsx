@@ -1,7 +1,9 @@
-import React from 'react'
-
 export default function MyLearning() {
     return (
-        <div>MyLearning</div>
+        <>
+            <h1 className="text-center">
+                Click on a course to see the details
+            </h1>
+        </>
     )
 }

@@ -1,8 +1,8 @@
 import { NextIntlClientProvider, useLocale } from "next-intl"
 import { notFound } from "next/navigation"
 import '../globals.css'
-import { Inter } from 'next/font/google'
-const inter = Inter({ subsets: ['latin'] })
+import { Rubik } from 'next/font/google'
+const rubik = Rubik({ subsets: ['latin'] })
 
 export const metadata = {
     title: 'LearnU',
@@ -22,7 +22,7 @@ export default async function LocaleLayout({ children, params }) {
     }
     return (
         <html lang="{locale}">
-            <body className={inter.className}>
+            <body className={rubik.className}>
                 <NextIntlClientProvider messages={messages} locale={locale}>
                     {children}
                 </NextIntlClientProvider>

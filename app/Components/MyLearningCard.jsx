@@ -12,22 +12,24 @@ export default function MyLearningCard({ key, course, courseName, teacherName, p
     };
 
     return (
-        <div key={key} className="shadow rounded-2xl lg:p-3 py-2 md:mr-2 h-auto relative flex flex-col">
-            <div className="flex">
-                <div className="mr-5 h-auto w-1/2 md:w-1/4 lg:w-1/2">
+        <div key={key} className="bg-primary-white shadow-light-gray rounded-2xl lg:p-3 py-2 h-auto relative flex flex-col mx-2 md:mx-0 lg:mr-2">
+            <div className="flex gap-x-2">
+                <div className="h-auto min-w-[100px] w-full max-[767px]:max-w-[200px] md:w-[200px] lg:w-[400px] ml-2 md:ml-0">
                     <img src={image}
                         alt='Course Main Image'
-                        className="w-full h-32 ml-2 md:w-44 md:h-32 lg:w-44 lg:mt-1 lg:h-32 rounded-2xl"
+                        className="w-full h-32 md:w-44 md:h-32 lg:w-full lg:mt-1 lg:h-32 rounded-2xl"
                     />
                 </div>
-                <div className="w-full">
-                    <h6 className="text-s lg:text-l font-bold break-words mt-1 md:mt-3 mb-1">{courseName}</h6>
-                    <p className="text-s lg:text-md text-zinc-600 mb-3">{teacherName}</p>
-                    <div className="bg-stone-200 h-3 w-11/12 rounded-lg">
-                        <div className="bg-blue-500 h-full rounded-lg mt-3" style={{ width: `${percentage}` }}></div>
-                        <p className="font-bold text-zinc-500 mt-3">{percentage} {t('MyLearning.Complete')}</p>
+                <div className="w-full flex flex-col justify-around md:justify-start md:gap-y-4">
+                    <div>
+                        <h6 className="text-s lg:text-l font-bold break-words mt-1 md:mt-3">{courseName}</h6>
+                        <p className="text-s lg:text-md text-zinc-600">{teacherName}</p>
                     </div>
-
+                    <div className="bg-stone-200 h-5 md:h-3 w-11/12 rounded-lg">
+                        <div className="bg-blue-500 h-full rounded-lg flex justify-end" style={{ width: `${percentage}` }}><span className="md:hidden text-white text-end w-full pr-1 text-sm">{percentage}</span></div>
+                        <p className="font-bold text-zinc-500 mt-3 hidden md:block">{percentage} {t('MyLearning.Complete')}</p>
+                    </div>
+                    
                 </div>
                 <div className="absolute top-0 right-0 m-2 cursor-pointer hidden md:block">
                     <div className={`flex justify-center items-center w-9 h-9 p-0 overflow-hidden text-blue-600 bg-gray-300 rounded-lg border-0 ${isBookmarked[course.bookMark] ? "opacity-100" : "opacity-25"}`}
