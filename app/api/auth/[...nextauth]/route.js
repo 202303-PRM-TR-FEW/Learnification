@@ -59,14 +59,11 @@ const handler = NextAuth({
                     streak: 0,
                     hoursSpent: 0
                 })
-                console.log(newUser);
                 await newUser.save();
                 return true
             } catch (error) {
                 console.log(error);
                 return null
-            } finally {
-                await mongoose.disconnect()
             }
         }
     },
