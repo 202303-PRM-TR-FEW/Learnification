@@ -1,7 +1,7 @@
 import React from 'react'
-
+import SignInUp from '@/app/Components/SignInUp'
 export default function Saved() {
     return (
-        <div>Saved</div>
+        <div><SignInUp /></div>
     )
 }
