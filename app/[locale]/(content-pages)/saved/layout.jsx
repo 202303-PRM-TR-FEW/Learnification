@@ -49,8 +49,8 @@ export default function Layout({ children }) {
             <div className='flex min-w-full'>
                 <div className='basis-full'>
                     {
-                        courses.map((course) => (
-                            <SavedCourseCard course={course} />
+                        courses.map((course, index) => (
+                            <SavedCourseCard key={index} course={course} />
                         ))
                     }
                 </div>
