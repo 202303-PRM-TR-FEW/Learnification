@@ -6,34 +6,42 @@ import LearnUButton from "./LearnUButton";
 
 export default function SignInUp() {
   const [isLoginFormVisible, setLoginFormVisible] = useState(true);
-
+  const [credentials, setCredentials] = useState({ email: '', password: '' });
   const handleToggleForm = () => {
     setLoginFormVisible(!isLoginFormVisible);
   };
 
-  const handleSignInWithProvider = async (provider) => {
-    await signIn(provider, { callbackUrl: '@/app/api/auth/[...nextauth]/route.js' }); 
-  };
+  // const handleSignInWithProvider = async (provider) => {
+  //   await signIn(provider, { callbackUrl: '@/app/api/auth/[...nextauth]/route.js' });
+  // };
+  function handleSubmit(e) {
+    e.preventDefault();
+    signIn('credentials', { ...credentials })
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center mx-2 md:mx-0">
       <div className="bg-white bg-opacity-50 backdrop-blur-xl p-8 rounded-2xl shadow-xl">
         {isLoginFormVisible ? (
-          <form> 
+          <form onSubmit={(e) => handleSubmit(e)}>
             <h2 className="text-sky-500 font-semibold text-2xl pb-5">Login</h2>
             <input
+              value={credentials.email}
+              onChange={(e) => setCredentials({ ...credentials, email: e.target.value })}
               type="text"
               placeholder="Username"
               required
               className="w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent"
             />
             <input
+              value={credentials.password}
+              onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
               type="password"
               placeholder="Password"
               required
               className="w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent"
             />
-            <LearnUButton text="Sign In" onClick={() => handleSignInWithProvider('credentials')} />
+            <LearnUButton text="Sign In" onClick={() => signIn('credentials')} />
             <p className="message text-gray-400 text-sm mt-6">
               Not registered?{' '}
               <Link href="#" onClick={handleToggleForm} className="text-blue-500">
@@ -62,7 +70,7 @@ export default function SignInUp() {
               required
               className="w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent"
             />
-            
+
             <LearnUButton text="Sign Up" onClick={() => handleSignInWithProvider('credentials')} />
             <p className="message text-gray-400 text-sm mt-6">
               Already registered?{' '}
