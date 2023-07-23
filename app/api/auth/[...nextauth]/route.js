@@ -5,6 +5,7 @@ import Credentials from "next-auth/providers/credentials";
 import { User } from "@/models/User";
 import mongoose from "mongoose";
 import { connectToDb } from "@/utils/database";
+import { AES, enc } from "crypto-js";
 const handler = NextAuth({
   providers: [
     GoogleProvider({
@@ -29,16 +30,26 @@ const handler = NextAuth({
           type: "password",
         },
       },
-      authorize(credentials, req) {
+      async authorize(credentials, req) {
         // query if the user exists
-        console.log(credentials);
-        const user = {
-          id: "1",
-          name: "Furkan Cengiz",
-          email: "muhammedcengiz1@gmail.com",
-        };
-        if (user.email === credentials.email) return true;
-        else return null;
+        const hasUser = await User.findOne({ email: credentials.email }).exec();
+        if (!hasUser || hasUser.password === null) return null;
+        const decryptedBytes = AES.decrypt(
+          credentials.password,
+          process.env.NEXT_PUBLIC_ENCRYPTION_KEY
+        );
+        const decrypedPassword = decryptedBytes.toString(enc.Utf8);
+        const decryptedBytesCredentials = AES.decrypt(
+          hasUser.password,
+          process.env.NEXT_PUBLIC_ENCRYPTION_KEY
+        );
+        const decrypedPasswordCredentials = decryptedBytesCredentials.toString(
+          enc.Utf8
+        );
+        const isPasswordCorrect =
+          decrypedPasswordCredentials === decrypedPassword;
+        if (!isPasswordCorrect) return null;
+        return true;
       },
     }),
   ],

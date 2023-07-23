@@ -1,14 +1,18 @@
 import { Schema, models, model } from "mongoose";
 
 const userSchema = new Schema({
-  courses: [{
-    type: Schema.Types.ObjectId,
-    ref: "Course",
-  }],
-  achievements: [{
-    type: Schema.Types.ObjectId,
-    ref: "Achievement",
-  }],
+  courses: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Course",
+    },
+  ],
+  achievements: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Achievement",
+    },
+  ],
   username: {
     type: String,
     required: true,
@@ -16,6 +20,7 @@ const userSchema = new Schema({
   email: {
     type: String,
     required: true,
+    unique: [true, "Email already exists"],
   },
   password: {
     type: String,
@@ -35,22 +40,24 @@ const userSchema = new Schema({
     {
       type: Schema.Types.ObjectId,
       ref: "User",
-    }
+    },
   ],
   following: [
     {
       type: Schema.Types.ObjectId,
       ref: "User",
-    }
+    },
   ],
   hoursSpent: {
     type: Number,
     default: 0,
   },
-  finishedCourses: [{
-    type: Schema.Types.ObjectId,
-    ref: "Course",
-  }],
+  finishedCourses: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Course",
+    },
+  ],
   loginState: {
     type: Boolean,
     default: false,
