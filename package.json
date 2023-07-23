@@ -15,13 +15,14 @@
     "@emotion/style": "^0.8.0",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.0",
-    "@mui/material": "^5.14.0",
+    "@mui/material": "^5.14.1",
+    "@mui/styled-engine-sc": "^5.12.0",
     "autoprefixer": "10.4.14",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
     "express": "^4.18.2",
-    "mongoose": "^7.3.4",
     "install": "^0.13.0",
+    "mongoose": "^7.3.4",
     "next": "^13.4.7",
     "next-auth": "^4.22.1",
     "next-intl": "^3.0.0-beta.7",
@@ -29,7 +30,8 @@
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sharp": "^0.32.3"
+    "sharp": "^0.32.3",
+    "styled-components": "^5.3.11"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
