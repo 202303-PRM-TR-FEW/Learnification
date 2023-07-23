@@ -80,6 +80,7 @@ input[type="checkbox"]:checked::before {
   align-items: center;
   color: #fff;
   transition: top 0.7s;
+  padding-left: 10px;
 }
 
 .primary {
