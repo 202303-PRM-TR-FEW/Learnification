@@ -32,6 +32,7 @@ const handler = NextAuth({
       },
       async authorize(credentials, req) {
         // query if the user exists
+        await connectToDb();
         const hasUser = await User.findOne({ email: credentials.email }).exec();
         if (!hasUser || hasUser.password === null) return null;
         const decryptedBytes = AES.decrypt(

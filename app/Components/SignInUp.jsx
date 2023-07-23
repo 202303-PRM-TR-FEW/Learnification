@@ -116,10 +116,10 @@ export default function SignInUp() {
             <LearnUButton text="Sign Up" />
             <p className="message text-gray-400 text-sm mt-6">
               Already registered?{' '}
-              <Link href="#" onClick={handleToggleForm} className="text-blue-500">
-                Sign In
-              </Link>
             </p>
+            <div onClick={handleToggleForm} className="text-blue-500">
+              Sign In
+            </div>
           </form>
         )}
       </div>
