@@ -17,7 +17,7 @@ export default function Profile() {
                     <Achievements/>
                 </div>
             </div>
-            <div className='w-full lg:w-2/5 md:max-w-none px-2 md:px-6 max-w-md'>
+            <div className='w-full mb-20 lg:w-2/5 md:max-w-none px-2 md:px-6 max-w-md'>
                 <FriendsComponent myButton="addDelete"/>
                 <FriendsComponent/>
                 <div className="mt-12 flex flex-col sm:flex-row itms-center justify-center gap-4">
