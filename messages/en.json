@@ -82,5 +82,12 @@
     "FINISHED COURSES": "FINISHED COURSES",
     "HOURS LEARNED": "HOURS LEARNED",
     "SKILLS ACHIEVED": "SKILLS ACHIEVED"
+  },
+  "Statistics":{
+    "title":"My Performance",
+    "Time Spent":"Time Spent",
+    "My Performance":"My Performance",
+    "Average/Day":"Average/Day",
+    "Finished Courses":"Finished Courses"
   }
 }
