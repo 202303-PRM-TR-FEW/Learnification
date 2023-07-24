@@ -15,7 +15,7 @@ export default async function Home() {
         <Categories />
         {!session ? (
           <div className="flex">
-            <Link className="mt-2 m-auto" href={"/api/auth/signin?callback=home"}>
+            <Link className="mt-2 m-auto" href={"sign-in?callback=home"}>
               <LearnUButton text={"Sign in to see your courses"} />
             </Link>
           </div>
