@@ -14,7 +14,7 @@ export default function TotalStatistics() {
 
   return (
     <div>
-      <h1 className="font-semibold ml-8 mt-16 mb-4 md:ml-12 md:mb-2 text-lg lg:text-2xl md:text-xl">{t("title")}</h1>
+      <h1 className="font-semibold ml-8 mt-4 mb-4 md:ml-12 md:mb-2 text-lg lg:text-2xl md:text-xl">{t("title")}</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 md:p-4 lg:p-4 gap-4 ml-8 mr-6">
       {totalStatistics.map((statistic, index) => (
         <div key={index} className="w-full h-full p-1 bg-white rounded-3xl overflow-hidden shadow-md">

@@ -7,7 +7,7 @@ import Achievements from '@/app/Components/ProfilePage/Achievements';
 
 export default function Profile() {
     return (
-        <div className='flex flex-col items-center lg:flex-row pt-16 w-full gap-y-16'>
+        <div className='flex flex-col items-center lg:flex-row pt-16 w-full gap-y-2'>
             <div className="w-full lg:w-3/5 flex flex-col items-center mr-6">
                 <UserInfo/>
                 <div className='w-full'>
