@@ -6,12 +6,12 @@ export default function Achievements() {
   const t = useTranslations("Profile");
 
   const achievements = [
-    { achievement: 'Commited Learner', icon: Icons.HourglassIcon, bgColor: 'bg-light-orange', counter: 2, goal: 3, description: "Reach a 3 days streak"},
-    { achievement: 'Point Collector', icon: Icons.SkillsIcon, bgColor: 'bg-light-green', counter: 1200, goal: 3000, description: "Earn 1800 more points"}
+    { achievement: 'Commited Learner', icon: Icons.HourglassIcon, bgColor: 'bg-light-orange', counter: 2, goal: 3, description: "Reach a 3 days streak" },
+    { achievement: 'Point Collector', icon: Icons.SkillsIcon, bgColor: 'bg-light-green', counter: 1200, goal: 3000, description: "Earn 1800 more points" }
   ];
   return (
-    <div className="rounded-3xl p-2 mt-4 mr-2">
-        <h1 className="text-lg lg:text-2xl ml-1 font-semibold mb-3">Achievements</h1>
+    <div className="rounded-3xl">
+      <h1 className="text-lg md:text-xl lg:text-2xl ml-1 font-semibold mb-3">Achievements</h1>
       {achievements.map((achievement, index) => (
         <div key={index} className="rounded-3xl bg-white shadow-md p-2 mb-4 flex items-center">
           <div className={`h-28 w-32 rounded-2xl flex items-center justify-center ${achievement.bgColor}`}>
@@ -23,14 +23,14 @@ export default function Achievements() {
               <p className="hidden sm:block text-gray-400">{`${achievement.counter}/${achievement.goal}`}</p>
             </div>
             <div className="relative h-5 sm:h-3 bg-gray-200 rounded" key={index}>
-              <div className={`absolute top-0 left-0 h-full rounded-full flex justify-end ${achievement.bgColor}`} style={{width:`${Math.round(achievement.counter*100/achievement.goal)}%`}}>
+              <div className={`absolute top-0 left-0 h-full rounded-full flex justify-end ${achievement.bgColor}`} style={{ width: `${Math.round(achievement.counter * 100 / achievement.goal)}%` }}>
                 <span className="sm:hidden text-gray-400 text-xs">{`${achievement.counter}/${achievement.goal}`}</span>
               </div>
             </div>
             <p className="text-gray-400">{achievement.description}</p>
           </div>
         </div>
-      ))}   
+      ))}
     </div>
   );
 }
