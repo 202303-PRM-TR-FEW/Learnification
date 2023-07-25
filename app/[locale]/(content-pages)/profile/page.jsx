@@ -17,10 +17,10 @@ export default function Profile() {
                     <Achievements/>
                 </div>
             </div>
-            <div className='w-full mb-20 lg:w-2/5 md:max-w-none px-2 md:px-6 max-w-md'>
+            <div className='w-full mb-20 lg:w-2/5 md:max-w-none px-2 md:px-6 max-w-md ml-4'>
                 <FriendsComponent myButton="addDelete"/>
                 <FriendsComponent/>
-                <div className="mt-12 flex flex-col sm:flex-row itms-center justify-center gap-4">
+                <div className="mt-8 flex flex-col sm:flex-row itms-center justify-center gap-4">
                     <LearnUButton text="FIND FRIENDS" bgColor="white"/>
                     <LearnUButton text="INVITE FRIENDS"/>
                 </div>

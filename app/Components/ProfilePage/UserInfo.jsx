@@ -17,7 +17,7 @@ export default function UserInfo() {
     );
 
     return (
-        <div className="w-full px-6">
+        <div className="w-full ml-8">
             <div className="flex flex-col xl:flex-row items-center justify-center w-full">
                 <Image className="h-32 w-32 md:h-44 md:w-44 lg:h-48 lg:w-48 xl:h-56 xl:w-80 bg-center bg-cover rounded-full md:mr-8" width={300}
       height={300} src='https://assets.api.uizard.io/api/cdn/stream/ecfce0e0-bae1-4e4b-9187-d14a85958155.jpg'></Image>

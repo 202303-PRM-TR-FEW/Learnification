@@ -39,8 +39,8 @@ function FriendSuggestion({ myButton }) {
 
   return (
     <div className="font-medium mb-2">
-      <h1 className="text-2xl mb-2">Friend Suggestion</h1>
-      <div className="grid grid-cols-1 divide-y bg-white py-1 px-6 rounded-3xl w-full lg:mb-24">
+      <h1 className="text-lg font-semibold md:text-2xl lg:text-3xl mb-2">Friend Suggestion</h1>
+      <div className="grid grid-cols-1 divide-y shadow-md bg-white py-1 px-6 rounded-3xl w-full lg:mb-24">
         {visibleSuggestions.map((suggestion, index) => (
           <div key={index} className="flex flex-col min-[400px]:flex-row w-full min-[400px]:items-center min-[400px]:justify-between py-2 max-[399px]:gap-y-2">
             <div className="flex items-center">

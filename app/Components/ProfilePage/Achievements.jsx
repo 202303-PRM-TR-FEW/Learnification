@@ -10,10 +10,10 @@ export default function Achievements() {
     { achievement: 'Point Collector', icon: Icons.SkillsIcon, bgColor: 'bg-light-green', counter: 1200, goal: 3000, description: "Earn 1800 more points"}
   ];
   return (
-    <div className="rounded-3xl p-4 mt-4">
-        <h1 className="text-lg lg:text-2xl font-semibold mb-3">Achievements</h1>
+    <div className="rounded-3xl p-2 mt-4 mr-2">
+        <h1 className="text-lg lg:text-2xl ml-1 font-semibold mb-3">Achievements</h1>
       {achievements.map((achievement, index) => (
-        <div key={index} className="rounded-3xl shadow-md p-2 mb-4 flex items-center">
+        <div key={index} className="rounded-3xl bg-white shadow-md p-2 mb-4 flex items-center">
           <div className={`h-28 w-32 rounded-2xl flex items-center justify-center ${achievement.bgColor}`}>
             {achievement.icon && <achievement.icon />}
           </div>
