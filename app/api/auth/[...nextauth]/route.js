@@ -33,24 +33,24 @@ const handler = NextAuth({
       async authorize(credentials, req) {
         // query if the user exists
         await connectToDb();
-        const hasUser = await User.findOne({ email: credentials.email }).exec();
-        if (!hasUser || hasUser.password === null) return null;
+        const user = await User.findOne({ email: credentials.email }).exec();
+        console.log(user)
+        if (!user || user.password === null) return null;
         const decryptedBytes = AES.decrypt(
           credentials.password,
           process.env.NEXT_PUBLIC_ENCRYPTION_KEY
         );
         const decrypedPassword = decryptedBytes.toString(enc.Utf8);
         const decryptedBytesCredentials = AES.decrypt(
-          hasUser.password,
+          user.password,
           process.env.NEXT_PUBLIC_ENCRYPTION_KEY
         );
         const decrypedPasswordCredentials = decryptedBytesCredentials.toString(
           enc.Utf8
         );
-        const isPasswordCorrect =
-          decrypedPasswordCredentials === decrypedPassword;
+        const isPasswordCorrect = decrypedPasswordCredentials === decrypedPassword;
         if (!isPasswordCorrect) return null;
-        return true;
+        return user;
       },
     }),
   ],
