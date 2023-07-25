@@ -47,7 +47,7 @@ export default function SignInUp() {
     }
   }
   return (
-    <div className="min-h-screen flex items-center justify-center mx-2 md:mx-0">
+    <div className="min-h-screen w-full flex items-center justify-center mx-2 md:mx-0">
       <div className="bg-white bg-opacity-50 backdrop-blur-xl p-8 rounded-2xl shadow-xl">
         <div className="flex flex-col sm:flex-row justify-around">
           <div onClick={() => signIn('github', { callbackUrl: callbackUrl })}>
