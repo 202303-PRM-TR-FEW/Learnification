@@ -81,5 +81,10 @@
     "FINISHED COURSES": "Tamamlanan Kurslar",
     "HOURS LEARNED": "Çalışılan Saatler",
     "SKILLS ACHIEVED": "Kazanılan Yetenekler"
+  },
+  "Statistics":{
+    "Time Spent": "Harcanan Zaman",
+    "Goal": "Hedef",
+    "Streak": "Günler"
   }
 }
