@@ -82,5 +82,10 @@
     "FINISHED COURSES": "FINISHED COURSES",
     "HOURS LEARNED": "HOURS LEARNED",
     "SKILLS ACHIEVED": "SKILLS ACHIEVED"
+  },
+  "Statistics":{
+    "Time Spent": "Time Spent",
+    "Goal": "Goal",
+    "Streak": "Streak"
   }
 }

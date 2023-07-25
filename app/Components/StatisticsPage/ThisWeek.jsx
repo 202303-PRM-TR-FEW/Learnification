@@ -1,36 +1,113 @@
 import React from "react";
+import Icons from ".././Icons";
+import { useTranslations } from "next-intl";
 
-export default function ThisWeek(){
+export default function ThisWeek() {
+  const t = useTranslations("Statistics");
 
-    const progressData = [
-    { day: 'Mon', progress: 80 },
-    { day: 'Tue', progress: 50 },
-    { day: 'Wed', progress: 30 },
-    { day: 'Thu', progress: 60 },
-    { day: 'Fri', progress: 90 },
-    { day: 'Sat', progress: 20 },
-    { day: 'Sun', progress: 40 },
-    ];
+  const progressData = [
+    { day: "Mon", progress: 80 },
+    { day: "Tue", progress: 50 },
+    { day: "Wed", progress: 30 },
+    { day: "Thu", progress: 60 },
+    { day: "Fri", progress: 90 },
+    { day: "Sat", progress: 20 },
+    { day: "Sun", progress: 40 },
+  ];
 
-    return (
-        <div className="bg-white rounded-3xl p-4 w-fit mt-12 ml-10">
+  const thisWeek = [
+    {
+      count: "2/3",
+      label: t("Goal"),
+      icon: Icons.AtIcon,
+      bgColor: "bg-light-blue",
+      textColor: "text-primary-blue",
+    },
+    {
+      count: "103 days",
+      label: t("Streak"),
+      icon: Icons.StarIconStatistics,
+      bgColor: "bg-light-green",
+      textColor: "text-primary-green",
+    },
+  ];
+
+  return (
+    <div className="mt-20 ml-4 mr-4 lg:mt-10">
+      <h1 className="mb-6 font-semibold text-xl md:text-2xl lg:text-3xl">
+        This Week
+      </h1>
+      <div className="bg-white rounded-3xl p-4 w-full">
         <div className="font-semibold ml-2">
-        <h6 className="text-xs mb-1 text-gray-600">TIME SPENT</h6>
-        <h1 className="text-lg mb-2">31.8 Hours</h1>
+          <h6 className="text-xs mb-1 text-gray-600">TIME SPENT</h6>
+          <h1 className="text-lg mb-2">31.8 Hours</h1>
         </div>
-        <div className="flex shrink w-full">
+        <div className="flex flex-wrap w-full max-md:gap-4 max-md:justify-around max-md:p-4">
           {progressData.map((data, index) => (
-            <div key={index} className="flex flex-col items-center mr-4">
-              <div className="w-4 h-40 bg-white-smoke rounded-lg relative ml-8">
-                <div
-                  className="absolute bottom-0 left-0 right-0 bg-primary-blue rounded-lg"
-                  style={{ height: `${data.progress}%` }}
-                />
+            <>
+              <div
+                key={index}
+                className="flex flex-col items-center mb-4 lg:mr-4 lg:ml-4 max-md:hidden"
+              >
+                <div className="w-4 h-40 bg-white-smoke rounded-lg relative ml-6 lg:ml-8">
+                  <div
+                    className="absolute bottom-0 left-0 right-0 bg-primary-blue rounded-lg"
+                    style={{ height: `${data.progress}%` }}
+                  />
+                </div>
+                <div className="mt-2 ml-6 lg:ml-6">{data.day}</div>
               </div>
-              <div className="mb-2 ml-8">{data.day}</div>
-            </div>
+              <div className="md:hidden ">
+                <div
+                  className="w-32 h-32 rounded-full drop-shadow-xl"
+                  style={{
+                    background: `conic-gradient(#0ea5e9 ${
+                      (360 * data.progress) / 100
+                    }deg, #fff 0deg)`,
+                  }}
+                >
+                  <div className=" w-28 h-28 rounded-full relative top-2 left-2 bg-white drop-shadow-xl">
+                    {
+                      <p className="relative top-11 left-10 text-xl font-semibold">
+                        {data.progress}%
+                      </p>
+                    }
+                  </div>
+                </div>
+                <div className="text-center py-2 text-lg font-semibold">{data.day}</div>
+              </div>
+            </>
           ))}
         </div>
       </div>
-    );
-};
+      <div className="mb-20 mt-10 md:mt-1 md:-ml-6">
+        <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:p-4 lg:p-4 gap-4">
+            {thisWeek.map((data, index) => (
+              <div
+                key={index}
+                className="w-full h-full p-1 bg-white rounded-3xl overflow-hidden shadow-md lg:ml-2 xl:ml-1"
+              >
+                <div className="flex items-center justify-center">
+                  <div className="mr-2">{data.icon && <data.icon />}</div>
+                  <h6 className="text-gray-600">{data.label}</h6>
+                </div>
+                <div className="mt-1 mb-3 mr-1 ml-1 lg:ml-4">
+                  <div
+                    className={`h-20 md:w-44 lg:w-64 xl:w-72 rounded-2xl flex items-center justify-center ${data.bgColor}`}
+                  >
+                    <p
+                      className={`mt-1 text-base font-semibold  ${data.textColor}`}
+                    >
+                      {data.count}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
