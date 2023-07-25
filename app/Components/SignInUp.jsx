@@ -47,9 +47,11 @@ export default function SignInUp() {
     }
   }
   return (
-    <div className="min-h-screen w-full flex items-center justify-center mx-2 md:mx-0">
+    <div className={
+      `h-screen w-full max-md:px-4 ${isLoginFormVisible ? 'mb-24 max-sm:mb-16 md:mb-0' : 'mb-32 max-sm:mb-24 md:mb-0'} max-sm:pt-8 flex items-center justify-center`
+    }>
       <div className="bg-white bg-opacity-50 backdrop-blur-xl p-8 rounded-2xl shadow-xl">
-        <div className="flex flex-col sm:flex-row justify-around">
+        <div className="flex flex-col sm:flex-row justify-center md:justify-around items-center">
           <div onClick={() => signIn('github', { callbackUrl: callbackUrl })}>
             <LearnUButton className={"my-4"} text="Sign In with GitHub" />
           </div>
@@ -77,13 +79,15 @@ export default function SignInUp() {
               required
               className="w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent"
             />
-            <LearnUButton text="Sign In" onClick={() => signIn('credentials')} />
-            <p className="message text-gray-400 text-sm mt-6">
-              Not registered?{' '}
-              <Link href="#" onClick={handleToggleForm} className="text-blue-500">
+            <LearnUButton className="max-sm:w-full" text="Sign In" onClick={() => signIn('credentials')} />
+            <div>
+              <p className="message text-gray-400 mt-6 inline-block mr-2">
+                Not registered?{' '}
+              </p>
+              <p href="#" onClick={handleToggleForm} className="text-blue-500 animatedUnderline inline-block">
                 Create an account
-              </Link>
-            </p>
+              </p>
+            </div>
           </form>
         ) : (
           <form onSubmit={(e) => handleSubmitSignUp(e)}>
@@ -114,11 +118,14 @@ export default function SignInUp() {
             />
             {error && <p className="text-red-500 text-sm">{error}</p>}
             <LearnUButton text="Sign Up" />
-            <p className="message text-gray-400 text-sm mt-6">
-              Already registered?{' '}
-            </p>
-            <div onClick={handleToggleForm} className="text-blue-500">
-              Sign In
+            <div className="">
+              <p className="message text-gray-400 mt-6 inline-block mr-2">
+                Already registered?{' '}
+              </p>
+              <p onClick={handleToggleForm}
+                className="text-blue-500 animatedUnderline">
+                Sign In
+              </p>
             </div>
           </form>
         )}
