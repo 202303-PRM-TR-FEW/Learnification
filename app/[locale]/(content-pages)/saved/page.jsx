@@ -6,6 +6,33 @@ import { useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { useCallback } from 'react'
 import { useState } from 'react';
+
+function CourseViewImage({ imgUrl }) {
+    const t = useTranslations("SavedCourses")
+    return (
+        <div
+            className='relative w-full min-h-[200px] xl:h-[300px] rounded-2xl bg-no-repeat bg-cover bg-center flex items-center justify-center'
+            style={{ backgroundImage: `url(${imgUrl})` }}
+        >
+            <div className='text-white-smoke text-center'>
+                <button
+                    className='relative left-2 w-[0px] h-[0px]
+                    border-solid border-[15px] border-l-[30px]
+                    border-b-transparent border-t-transparent
+                    border-r-transparent border-l-white
+                    transition-all duration-300
+                    hover:border-l-primary-blue
+                    '
+                >
+                </button>
+                <p className='text-xl text-center block font-semibold mt-1'>
+                    {t("Play Preview")}
+                </p>
+            </div>
+        </div>
+    )
+}
+
 export default function Saved() {
     // we're gonna fetch courses here
     const courses = [
@@ -73,9 +100,8 @@ export default function Saved() {
     const path = usePathname()
     const defaultIndex = 0;
     const initialIndex = searchParams.get('courseIndex') || defaultIndex;
-
     const [expandedCourseIndex, setExpandedCourseIndex] = useState(initialIndex);
-
+    const selectedCourse = courses[expandedCourseIndex];
     const createQueryString = useCallback((name, value) => {
         const params = new URLSearchParams(searchParams)
         params.set(name, value)
@@ -107,7 +133,7 @@ export default function Saved() {
                                 <div className='my-4'>
                                     {expandedCourseIndex === index && (
                                         <div className='block lg:hidden bg-primary-white rounded-2xl'>
-                                            <CourseView course={course} >
+                                            <CourseView backgroundImageElement={<CourseViewImage imgUrl={course.imageUrl} />} course={course} >
                                                 {/* Children of the CourseView */}
                                                 <div className='flex flex-col sm:flex-row gap-4 px-8 mt-auto pb-4'>
                                                     <LearnUButton className={"basis-full"} text={t("Review Course")} />
@@ -127,7 +153,8 @@ export default function Saved() {
                 <div className='hidden min-h-screen lg:block md:basis-full bg-primary-white'>
                     <div className='flex min-h-full flex-col p-4'>
                         {
-                            <CourseView course={courses[expandedCourseIndex]}>
+                            <CourseView course={selectedCourse}
+                                backgroundImageElement={<CourseViewImage imgUrl={selectedCourse.imageUrl} />}>
                                 {/* Children of the CourseView */}
                                 <div className='flex max-xl:flex-col gap-4 px-8 mt-auto'>
                                     <LearnUButton className={"basis-full"} text={t("Review Course")} />
