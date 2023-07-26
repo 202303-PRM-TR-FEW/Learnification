@@ -3,7 +3,7 @@ import CourseView from '@/app/Components/CourseView';
 import LearnUButton from '@/app/Components/LearnUButton';
 import SavedCourseCard from '@/app/Components/SavedCoursesPage/SavedCourseCard';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback } from 'react'
 import { useState } from 'react';
 export default function Saved() {
     // we're gonna fetch courses here
@@ -69,15 +69,16 @@ export default function Saved() {
     const searchParams = useSearchParams()
     const router = useRouter()
     const path = usePathname()
+    const defaultIndex = 0;
+    const initialIndex = searchParams.get('courseIndex') || defaultIndex;
 
-    const [expandedCourseIndex, setExpandedCourseIndex] = useState(
-        searchParams.get('courseIndex') || 0
-    );
+    const [expandedCourseIndex, setExpandedCourseIndex] = useState(initialIndex);
 
     const createQueryString = useCallback((name, value) => {
         const params = new URLSearchParams(searchParams)
         params.set(name, value)
-        return params.toString()
+        const paramsAsString = params.toString()
+        return paramsAsString
     }, [expandedCourseIndex])
 
     const handleCourseClick = (e, index) => {
@@ -96,10 +97,12 @@ export default function Saved() {
                         courses.map((course, index) => (
                             <div key={index}>
                                 <SavedCourseCard index={index} handleClick={handleCourseClick} key={index} course={course} />
+                                {/* MOBILE DESIGN STARTS HERE */}
                                 <div className='my-4'>
                                     {expandedCourseIndex === index && (
                                         <div className='block lg:hidden bg-primary-white rounded-2xl'>
                                             <CourseView course={course} >
+                                                {/* Children of the CourseView */}
                                                 <div className='flex flex-col sm:flex-row gap-4 px-8 mt-auto pb-4'>
                                                     <LearnUButton className={"basis-full"} text="Review Course" />
                                                     <LearnUButton className={"basis-full"} text="Continue Learning" />
@@ -108,15 +111,18 @@ export default function Saved() {
                                         </div>
                                     )}
                                 </div>
+                                {/* MOBILE DESIGN ENDS HERE */}
                             </div>
                         ))
                     }
 
                 </div>
+                {/* LAPTOP DESIGN STARTS HERE */}
                 <div className='hidden min-h-screen lg:block md:basis-full bg-primary-white'>
                     <div className='flex min-h-full flex-col p-4'>
                         {
                             <CourseView course={courses[expandedCourseIndex]}>
+                                {/* Children of the CourseView */}
                                 <div className='flex max-xl:flex-col gap-4 px-8 mt-auto'>
                                     <LearnUButton className={"basis-full"} text="Review Course" />
                                     <LearnUButton className={"basis-full"} text="Continue Learning" />
@@ -125,6 +131,7 @@ export default function Saved() {
                         }
                     </div>
                 </div>
+                {/* LAPTOP DESIGN ENDS HERE */}
             </div>
         </main>
     )
