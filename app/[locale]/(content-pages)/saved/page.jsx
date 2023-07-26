@@ -1,5 +1,6 @@
 "use client"
 import CourseView from '@/app/Components/CourseView';
+import LearnUButton from '@/app/Components/LearnUButton';
 import SavedCourseCard from '@/app/Components/SavedCoursesPage/SavedCourseCard';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { useCallback, useEffect } from 'react'
@@ -88,17 +89,22 @@ export default function Saved() {
     };
 
     return (
-        <main className='min-w-full md:pl-12'>
-            <div className='flex min-w-full'>
-                <div className='basis-full'>
+        <main className='w-full md:pl-12 px-[4%] md:px-[2%] lg:px-0'>
+            <div className='flex min-w-full gap-4 max-md:pb-20'>
+                <div className='basis-full lg:basis-3/4'>
                     {
                         courses.map((course, index) => (
                             <div key={index}>
                                 <SavedCourseCard index={index} handleClick={handleCourseClick} key={index} course={course} />
-                                <div>
+                                <div className='my-4'>
                                     {expandedCourseIndex === index && (
-                                        <div className='block lg:hidden'>
-                                            <CourseView course={course} />
+                                        <div className='block lg:hidden bg-primary-white rounded-2xl'>
+                                            <CourseView course={course} >
+                                                <div className='flex flex-col sm:flex-row gap-4 px-8 mt-auto pb-4'>
+                                                    <LearnUButton className={"basis-full"} text="Review Course" />
+                                                    <LearnUButton className={"basis-full"} text="Continue Learning" />
+                                                </div>
+                                            </CourseView>
                                         </div>
                                     )}
                                 </div>
@@ -107,10 +113,17 @@ export default function Saved() {
                     }
 
                 </div>
-                <div className='hidden lg:block md:basis-full'>
-                    {
-                        <CourseView course={courses[expandedCourseIndex]} />
-                    }
+                <div className='hidden min-h-screen lg:block md:basis-full bg-primary-white'>
+                    <div className='flex min-h-full flex-col p-4'>
+                        {
+                            <CourseView course={courses[expandedCourseIndex]}>
+                                <div className='flex max-xl:flex-col gap-4 px-8 mt-auto'>
+                                    <LearnUButton className={"basis-full"} text="Review Course" />
+                                    <LearnUButton className={"basis-full"} text="Continue Learning" />
+                                </div>
+                            </CourseView>
+                        }
+                    </div>
                 </div>
             </div>
         </main>
