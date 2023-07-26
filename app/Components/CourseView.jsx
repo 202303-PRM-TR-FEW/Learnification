@@ -27,7 +27,7 @@ export default function CourseView({ course, children }) {
                         <Icons.StarIcon empty width={16} height={16} /><span>{course.rating}/5</span>
                     </p>
                 </div>
-                <h2 className='sm:text-xl text-black'>
+                <h2 className='font-normal sm:text-xl text-black'>
                     {
                         t("Course Description")
                     }

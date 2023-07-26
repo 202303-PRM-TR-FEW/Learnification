@@ -19,7 +19,7 @@ export default function SavedCourseCard({ course, className, handleClick, index 
                     {course.title}
                 </h2>
                 <h3 className='text-sm text-gray-500'>
-                    {course.tutorName}
+                    {course.tutor.name}
                 </h3>
                 <div className='mt-auto'>
                     <LearnUButton className={'max-md:w-full'} text={'BUY'} paddingInline={15} paddingBlock={0} />
