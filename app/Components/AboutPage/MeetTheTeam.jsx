@@ -5,10 +5,9 @@ import Icons from "../Icons";
 
 const MeetTheTeam = () => {
   const members = TeamArray();
-  console.log(members);
   return (
-    <div className="mt-8">
-      <ul className="flex flex-wrap justify-center gap-16 bg-blue-500 rounded-[50px] ">
+    <div className="mt-8 mb-20 md:mb-8 ">
+      <ul className="flex flex-wrap justify-center gap-16 gradient-bg rounded-[50px] ">
         {members.map((member) => (
           <li
             key={member.id}
@@ -26,7 +25,7 @@ const MeetTheTeam = () => {
                 {member.name}
               </h3>
               <p className="mb-2">{member.title}</p>
-              <div className="flex justify-center gap-2">
+              <div className="flex justify-center align-baseline gap-2">
                 <a href={member.links.github}>
                   <Icons.GithubIcon />
                 </a>
