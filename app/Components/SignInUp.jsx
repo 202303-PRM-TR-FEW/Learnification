@@ -1,18 +1,20 @@
 'use client'
 import React, { useState } from "react";
-import { signIn } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
 import LearnUButton from "./LearnUButton";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { AES } from "crypto-js";
 
 export default function SignInUp() {
+
+  const { data } = useSession()
+  const router = useRouter()
   const [isLoginFormVisible, setLoginFormVisible] = useState(true);
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const [signUpCredentials, setSignUpCredentials] = useState({ username: '', email: '', password: '' });
   const [error, setError] = useState(null);
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('callbackUrl') || '/home'
-  console.log(callbackUrl);
   const handleToggleForm = () => {
     setLoginFormVisible(!isLoginFormVisible);
   };
@@ -35,7 +37,6 @@ export default function SignInUp() {
         'Content-Type': 'application/json'
       }
     })
-    console.log(res);
     if (res.ok) {
       setError(null)
       const user = await res.json()
@@ -44,6 +45,9 @@ export default function SignInUp() {
     else if (res.status === 400) {
       setError('Email already exists')
     }
+  }
+  if (data) {
+    router.push(callbackUrl)
   }
   return (
     <div className={
