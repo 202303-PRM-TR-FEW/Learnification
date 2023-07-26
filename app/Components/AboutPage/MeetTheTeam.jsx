@@ -6,8 +6,8 @@ import Icons from "../Icons";
 const MeetTheTeam = () => {
   const members = TeamArray();
   return (
-    <div className="mt-8 mb-20 md:mb-8 ">
-      <ul className="flex flex-wrap justify-center gap-16 gradient-bg rounded-[50px] ">
+    <div className="team-members mt-8 mb-20">
+      <ul className="flex flex-wrap justify-center gap-16 gradient-bg rounded-[50px] py-8 ">
         {members.map((member) => (
           <li
             key={member.id}
@@ -21,9 +21,7 @@ const MeetTheTeam = () => {
               />
             </div>
             <div className="caption text-center opacity-0">
-              <h3 className="font-bold text-blue-500 mb-2">
-                {member.name}
-              </h3>
+              <h3 className="font-bold text-blue-500 mb-2">{member.name}</h3>
               <p className="mb-2">{member.title}</p>
               <div className="flex justify-center align-baseline gap-2">
                 <a href={member.links.github}>

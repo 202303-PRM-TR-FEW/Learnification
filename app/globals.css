@@ -100,12 +100,20 @@ input[type="checkbox"]:checked::before {
 
 .profile-card {
   box-shadow: -5px 8px 45px rgba(51, 51, 51, 0.126);
-  transition: all 0.4s;
+  transition: box-shadow 0.3s ease-in-out, border-radius 0.3s ease-in-out,
+    height 0.3s ease-in-out;
+  will-change: transform;
 }
 .profile-card:hover {
   border-radius: 30px;
   height: 260px;
+  box-shadow: -5px 8px 45px rgba(51, 51, 51, 0.226);
 }
+
+.profile-card img {
+  transition: border-radius 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
 .profile-card:hover img {
   border-radius: 30px;
   transform: translateY(-70px);
@@ -113,7 +121,8 @@ input[type="checkbox"]:checked::before {
 
 .caption {
   transform: translateY(-90px);
-  transition: all 0.5s;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  opacity: 0;
   pointer-events: none;
 }
 .profile-card:hover .caption {
@@ -125,19 +134,19 @@ input[type="checkbox"]:checked::before {
   transition: all 0.4s;
 }
 .gradient-bg {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #2e8dff, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #2e8dff, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
