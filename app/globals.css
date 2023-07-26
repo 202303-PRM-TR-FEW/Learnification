@@ -62,3 +62,38 @@ input[type="checkbox"]:checked::before {
   transform-origin: bottom left;
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
+.lang-btn {
+  width: 100px;
+  height: 50px;
+  font-size: 18px;
+  position: relative;
+  overflow: hidden;
+  cursor:pointer;
+}
+
+.text {
+  width: 90px;
+  height: 50px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: top 0.7s;
+  padding-left: 10px;
+}
+
+.primary {
+  top: 0px;
+}
+
+.secondary {
+  top: 80px;
+}
+.lang-btn:hover .primary {
+  top:-80px
+}
+
+.lang-btn:hover .secondary {
+  top:0px
+}
