@@ -5,10 +5,6 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { useCallback, useEffect } from 'react'
 import { useState } from 'react';
 export default function Saved() {
-
-    const searchParams = useSearchParams()
-    const router = useRouter()
-    const path = usePathname()
     // we're gonna fetch courses here
     const courses = [
         {
@@ -69,7 +65,13 @@ export default function Saved() {
             recommendedCourses: [],
         },
     ]
-    const [expandedCourseIndex, setExpandedCourseIndex] = useState(0);
+    const searchParams = useSearchParams()
+    const router = useRouter()
+    const path = usePathname()
+
+    const [expandedCourseIndex, setExpandedCourseIndex] = useState(
+        searchParams.get('courseIndex') || 0
+    );
 
     const createQueryString = useCallback((name, value) => {
         const params = new URLSearchParams(searchParams)
@@ -79,17 +81,11 @@ export default function Saved() {
 
     const handleCourseClick = (e, index) => {
         e.preventDefault();
-        setExpandedCourseIndex(index === expandedCourseIndex ? 0 : index);
+        setExpandedCourseIndex(index);
         router.push(
-            `${path}?${createQueryString('courseIndex', index === expandedCourseIndex ? '' : index)}`,
+            `${path}?${createQueryString('courseIndex', index)}`,
         )
     };
-    useEffect(() => {
-        const index = searchParams.get('courseIndex')
-        if (index) {
-            setExpandedCourseIndex(index)
-        }
-    }, [searchParams])
 
     return (
         <main className='min-w-full md:pl-12'>
@@ -97,7 +93,7 @@ export default function Saved() {
                 <div className='basis-full'>
                     {
                         courses.map((course, index) => (
-                            <div>
+                            <div key={index}>
                                 <SavedCourseCard index={index} handleClick={handleCourseClick} key={index} course={course} />
                                 <div>
                                     {expandedCourseIndex === index && (
