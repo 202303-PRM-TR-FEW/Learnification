@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from "react";
-import Link from "next/link";
 import { signIn } from 'next-auth/react';
 import LearnUButton from "./LearnUButton";
 import { useSearchParams } from "next/navigation";
