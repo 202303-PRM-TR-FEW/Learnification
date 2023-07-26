@@ -16,12 +16,15 @@
     --background-end-rgb: 245, 245, 245;
   }
 }
-html{
+
+html {
   scroll-behavior: smooth !important;
 }
+
 .btn {
   @apply font-bold py-1.5 rounded-xl border-2 px-10;
 }
+
 .btn-primary {
   @apply text-white transition-all border-primary-blue duration-300 bg-primary-blue hover:bg-primary-white hover:text-primary-blue hover:border-primary-blue active:scale-95 active:duration-150;
 }
@@ -45,7 +48,7 @@ html{
 }
 
 input[type="checkbox"] {
-  @apply appearance-none bg-white text-current w-[1.15rem] h-[1.15rem] grid place-content-center rounded border-[0.15em]  border-[rgb(177,177,177)];
+  @apply appearance-none bg-white text-current w-[1.15rem] h-[1.15rem] grid place-content-center rounded border-[0.15em] border-[rgb(177,177,177)];
 }
 
 input[type="checkbox"]::before {
@@ -56,19 +59,21 @@ input[type="checkbox"]::before {
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em var(--form-control-color);
 }
+
 input[type="checkbox"]:checked::before {
   transform: scale(1);
   background-color: CanvasText;
   transform-origin: bottom left;
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
+
 .lang-btn {
   width: 100px;
   height: 50px;
   font-size: 18px;
   position: relative;
   overflow: hidden;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .text {
@@ -90,10 +95,15 @@ input[type="checkbox"]:checked::before {
 .secondary {
   top: 80px;
 }
+
 .lang-btn:hover .primary {
-  top:-80px
+  top: -80px
 }
 
 .lang-btn:hover .secondary {
-  top:0px
+  top: 0px
+}
+
+.animatedUnderline {
+  @apply inline-block cursor-pointer relative after:content-[''] after:transition-transform after:duration-300 after:ease-out after:w-full after:h-[2px] after:absolute after:bottom-0 after:left-0 after:bg-primary-blue after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-bottom-left;
 }
