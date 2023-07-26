@@ -3,9 +3,9 @@ import { connectToDb } from "@/utils/database";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
-export async function GET(){
+export async function GET() {
     await connectToDb();
-    // await createSampleData(); no need for population anymore
+    //await createSampleData(); //no need for population anymore
     await mongoose.connection.close()
     return new NextResponse(
         {

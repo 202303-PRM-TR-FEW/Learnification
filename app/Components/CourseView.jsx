@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React from 'react'
 import Tutor from './HomePage/Tutor'
 import Icons from './Icons'
