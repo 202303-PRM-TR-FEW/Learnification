@@ -26,11 +26,11 @@ html {
 }
 
 .btn-primary {
-  @apply text-white transition-all border-primary-blue duration-300 bg-primary-blue hover:bg-primary-white hover:text-primary-blue hover:border-primary-blue active:scale-95 active:duration-150;
+  @apply text-white transition-all border-primary-blue duration-300 bg-primary-blue hover: bg-primary-white hover:text-primary-blue hover:border-primary-blue active:scale-95 active:duration-150;
 }
 
 .btn-secondary {
-  @apply transition-all duration-300 text-primary-blue bg-primary-white border-primary-blue hover:bg-primary-blue hover:text-primary-white hover:border-primary-blue active:scale-95 active:duration-150;
+  @apply transition-all duration-300 text-primary-blue bg-primary-white border-primary-blue hover: bg-primary-blue hover:text-primary-white hover:border-primary-blue active:scale-95 active:duration-150;
 }
 
 .mainLinks:hover svg,
@@ -48,7 +48,7 @@ html {
 }
 
 input[type="checkbox"] {
-  @apply appearance-none bg-white text-current w-[1.15rem] h-[1.15rem] grid place-content-center rounded border-[0.15em] border-[rgb(177,177,177)];
+  @apply appearance-none bg-white text-current w-[1.15rem] h-[1.15rem] grid place-content-center rounded border-[0.15em] border-[rgb(177, 177, 177)];
 }
 
 input[type="checkbox"]::before {
@@ -67,9 +67,43 @@ input[type="checkbox"]:checked::before {
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
 
+.lang-btn {
+  width: 100px;
+  height: 50px;
+  font-size: 18px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.text {
+  width: 90px;
+  height: 50px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: top 0.7s;
+  padding-left: 10px;
+}
+
+.primary {
+  top: 0px;
+}
+
+.secondary {
+  top: 80px;
+}
+
+.lang-btn:hover .primary {
+  top: -80px
+}
+
+.lang-btn:hover .secondary {
+  top: 0px
+}
+
 .animatedUnderline {
-  @apply inline-block cursor-pointer relative after:content-['']
-  after:transition-transform after:duration-300
-  after:ease-out after:w-full after:h-[2px] after:absolute after:bottom-0 after:left-0
-  after:bg-primary-blue after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-bottom-left
+  @apply inline-block cursor-pointer relative after: content-[''] after:transition-transform after:duration-300 after:ease-out after:w-full after:h-[2px] after:absolute after:bottom-0 after:left-0 after:bg-primary-blue after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-bottom-left
 }

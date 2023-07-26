@@ -81,5 +81,12 @@
     "FINISHED COURSES": "Tamamlanan Kurslar",
     "HOURS LEARNED": "Çalışılan Saatler",
     "SKILLS ACHIEVED": "Kazanılan Yetenekler"
+  },
+  "Statistics":{
+    "title":"Performansım",
+    "Time Spent":"Harcanan Zaman",
+    "My Performance":"Performansım",
+    "Average/Day":"Günlük Ortalama",
+    "Finished Courses":"Bitirilen Kurslar"
   }
 }
