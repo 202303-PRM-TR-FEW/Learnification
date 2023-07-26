@@ -2,11 +2,16 @@ import React from 'react'
 import LearnUButton from '../LearnUButton'
 import Bookmark from '../Bookmark'
 
-export default function SavedCourseCard({ course, className }) {
+export default function SavedCourseCard({ course, className, handleClick, index }) {
+
+
+
     return (
-        <div className={`${className} flex bg-primary-white pl-2 py-2 pr-4 rounded-2xl relative`}>
+        <div
+            className={`${className} flex bg-primary-white pl-2 py-2 pr-4 rounded-2xl relative`}>
             <div
-                className='basis-3/4 w-[125px] h-[125px] bg-no-repeat bg-cover bg-center bg rounded-2xl'
+                onClick={(e) => handleClick(e, index)}
+                className='basis-3/4 w-[125px] h-[125px] bg-no-repeat bg-cover bg-center bg rounded-2xl cursor-pointer'
                 style={{ backgroundImage: `url(${course.imageUrl})` }}>
             </div>
             <div className='flex flex-col pl-4 p-2 basis-full'>

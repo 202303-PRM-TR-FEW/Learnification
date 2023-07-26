@@ -10,9 +10,8 @@ export default function CourseView({ course }) {
             {/* <Image src={course.image} width={400} sizes='100wh' height={400} alt={course.courseName} className='w-full h-auto rounded-2xl' /> */}
             <div
                 className='relative w-full min-h-[200px] xl:h-[400px] rounded-2xl bg-no-repeat bg-cover bg-center'
-                style={{ backgroundImage: `url(${course.image})` }}
+                style={{ backgroundImage: `url(${course.imageUrl})` }}
             >
-
             </div>
             <div className='p-8'>
                 <h1 className='sm:text-2xl font-[500]'>
