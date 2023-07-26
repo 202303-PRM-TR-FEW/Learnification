@@ -117,7 +117,7 @@ export default function SignInUp() {
               className="w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent"
             />
             {error && <p className="text-red-500 text-sm">{error}</p>}
-            <LearnUButton text="Sign Up" />
+            <LearnUButton className="max-sm:w-full" text="Sign Up" />
             <div className="">
               <p className="message text-gray-400 mt-6 inline-block mr-2">
                 Already registered?{' '}
