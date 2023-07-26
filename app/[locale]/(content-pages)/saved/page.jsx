@@ -2,6 +2,7 @@
 import CourseView from '@/app/Components/CourseView';
 import LearnUButton from '@/app/Components/LearnUButton';
 import SavedCourseCard from '@/app/Components/SavedCoursesPage/SavedCourseCard';
+import { useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { useCallback } from 'react'
 import { useState } from 'react';
@@ -66,6 +67,7 @@ export default function Saved() {
             recommendedCourses: [],
         },
     ]
+    const t = useTranslations("SavedCourses")
     const searchParams = useSearchParams()
     const router = useRouter()
     const path = usePathname()
@@ -92,7 +94,11 @@ export default function Saved() {
     return (
         <main className='w-full md:pl-12 px-[4%] md:px-[2%] lg:px-0'>
             <div className='flex min-w-full gap-4 max-md:pb-20'>
-                <div className='basis-full lg:basis-3/4'>
+
+                <div className='basis-full lg:basis-10/12'>
+                    <h1 className='font-medium text-3xl my-4'>
+                        {t("title")}
+                    </h1>
                     {
                         courses.map((course, index) => (
                             <div key={index}>
@@ -104,8 +110,8 @@ export default function Saved() {
                                             <CourseView course={course} >
                                                 {/* Children of the CourseView */}
                                                 <div className='flex flex-col sm:flex-row gap-4 px-8 mt-auto pb-4'>
-                                                    <LearnUButton className={"basis-full"} text="Review Course" />
-                                                    <LearnUButton className={"basis-full"} text="Continue Learning" />
+                                                    <LearnUButton className={"basis-full"} text={t("Review Course")} />
+                                                    <LearnUButton className={"basis-full"} text={t("Continue Learning")} />
                                                 </div>
                                             </CourseView>
                                         </div>
@@ -124,8 +130,8 @@ export default function Saved() {
                             <CourseView course={courses[expandedCourseIndex]}>
                                 {/* Children of the CourseView */}
                                 <div className='flex max-xl:flex-col gap-4 px-8 mt-auto'>
-                                    <LearnUButton className={"basis-full"} text="Review Course" />
-                                    <LearnUButton className={"basis-full"} text="Continue Learning" />
+                                    <LearnUButton className={"basis-full"} text={t("Review Course")} />
+                                    <LearnUButton className={"basis-full"} text={t("Continue Learning")} />
                                 </div>
                             </CourseView>
                         }

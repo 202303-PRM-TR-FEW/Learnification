@@ -13,29 +13,29 @@
       "More": "Daha Fazla Göster"
     },
     "MyLearning": {
-        "title": "Benim Öğrenmem",
-        "BecomingAPhotographer": "Bir Fotoğrafçı Olmak", 
-        "DesignThinking": "Tasarım Düşüncesi 2.0", 
-        "Complete": "Tamamlandı",
-        "Save": "Kaydet",
-        "SeeAll": "Hepsini Gör"
+      "title": "Benim Öğrenmem",
+      "BecomingAPhotographer": "Bir Fotoğrafçı Olmak",
+      "DesignThinking": "Tasarım Düşüncesi 2.0",
+      "Complete": "Tamamlandı",
+      "Save": "Kaydet",
+      "SeeAll": "Hepsini Gör"
     }
   },
-  "Search":{
+  "Search": {
     "Search Input": {
-        "title": "Favorilerini Bul",
-        "placeholder": "Kurs Ara",
-        "button": "Ara"
+      "title": "Favorilerini Bul",
+      "placeholder": "Kurs Ara",
+      "button": "Ara"
     },
     "Top Searches": {
-        "title": "Popüler Aramalar",
-        "Marketing Strategy": "Pazarlama Stratejisi",
-        "UX Design": "UX Tasarımı",
-        "Excel": "Excel",
-        "Adobe Photoshop": "Adobe Photoshop",
-        "CRM": "Müşteri İlişkileri Yönetimi",
-        "Photography": "Fotoğrafçılık",
-        "Content Making": "İçerik Üretimi"
+      "title": "Popüler Aramalar",
+      "Marketing Strategy": "Pazarlama Stratejisi",
+      "UX Design": "UX Tasarımı",
+      "Excel": "Excel",
+      "Adobe Photoshop": "Adobe Photoshop",
+      "CRM": "Müşteri İlişkileri Yönetimi",
+      "Photography": "Fotoğrafçılık",
+      "Content Making": "İçerik Üretimi"
     },
     "Categories": {
       "title": "Kategoriler"
@@ -50,12 +50,17 @@
       "Advanced": "İleri"
     }
   },
-  "MyLearning":{
+  "MyLearning": {
     "title": "Öğrenmekte Olduklarım",
     "statistics": "İstatistikler",
     "Course Description": "Kurs Açıklaması",
-    "Review Course":"Kursu İncele",
-    "Continue Learning":"Öğrenmeye Devam Et"
+    "Review Course": "Kursu İncele",
+    "Continue Learning": "Öğrenmeye Devam Et"
+  },
+  "SavedCourses": {
+    "title": "Kaydedilen Kurslar",
+    "Review Course": "Kursu İncele",
+    "Continue Learning": "Öğrenmeye Devam Et"
   },
   "SideBar": {
     "Home": "Ana Sayfa",
@@ -76,8 +81,8 @@
   "CourseOverview": {
     "title": "Kurs İçeriği"
   },
-  "Profile":{
-    "title":"İstatistikler",
+  "Profile": {
+    "title": "İstatistikler",
     "FINISHED COURSES": "Tamamlanan Kurslar",
     "HOURS LEARNED": "Çalışılan Saatler",
     "SKILLS ACHIEVED": "Kazanılan Yetenekler"
