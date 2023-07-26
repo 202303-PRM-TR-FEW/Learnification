@@ -84,6 +84,13 @@
     "HOURS LEARNED": "HOURS LEARNED",
     "SKILLS ACHIEVED": "SKILLS ACHIEVED"
   },
+  "Statistics":{
+    "title":"My Performance",
+    "Time Spent":"Time Spent",
+    "My Performance":"My Performance",
+    "Average/Day":"Average/Day",
+    "Finished Courses":"Finished Courses"
+  },
   "About": {
     "title": "About Us",
     "description": "This project aims to create an interactive learning app that provides a personalized educational experience for users of all ages and skill levels. The app will offer a wide range of courses and resources spanning various subjects, empowering individuals to acquire knowledge, develop skills, and explore educational interests at their own pace. Its target audience includes students, professionals, and lifelong learners seeking a flexible and accessible platform to expand their knowledge and skills."

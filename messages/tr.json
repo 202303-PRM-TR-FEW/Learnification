@@ -83,6 +83,13 @@
     "HOURS LEARNED": "Çalışılan Saatler",
     "SKILLS ACHIEVED": "Kazanılan Yetenekler"
   },
+  "Statistics":{
+    "title":"Performansım",
+    "Time Spent":"Harcanan Zaman",
+    "My Performance":"Performansım",
+    "Average/Day":"Günlük Ortalama",
+    "Finished Courses":"Bitirilen Kurslar"
+  },
   "About": {
     "title": "Hakkımızda",
     "description": "Bu proje, her yaş ve yetenek seviyesinden kullanıcılar için kişiselleştirilmiş bir eğitim deneyimi sunan etkileşimli bir öğrenme uygulaması oluşturmayı amaçlamaktadır. Uygulama, çeşitli konuları kapsayan geniş bir ders ve kaynak yelpazesi sunacak, bireylere kendi hızlarında bilgi edinmelerine, becerilerini geliştirmelerine ve eğitim ilgi alanlarını keşfetmelerine olanak tanıyacaktır. Hedef kitlesi, bilgi ve becerilerini genişletmek için esnek ve erişilebilir bir platform arayan öğrenciler, profesyoneller ve ömür boyu öğrenmeyi amaçlayan bireylerden oluşmaktadır."
