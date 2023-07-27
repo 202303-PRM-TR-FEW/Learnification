@@ -6,13 +6,13 @@ export default function ThisWeek() {
   const t = useTranslations("Statistics");
 
   const progressData = [
-    { day: "Mon", progress: 80 },
-    { day: "Tue", progress: 50 },
-    { day: "Wed", progress: 30 },
-    { day: "Thu", progress: 60 },
-    { day: "Fri", progress: 90 },
-    { day: "Sat", progress: 20 },
-    { day: "Sun", progress: 40 },
+    { day: t("Weekdays.Monday"), progress: 80 },
+    { day: t("Weekdays.Tuesday"), progress: 50 },
+    { day: t("Weekdays.Wednesday"), progress: 30 },
+    { day: t("Weekdays.Thursday"), progress: 60 },
+    { day: t("Weekdays.Friday"), progress: 90 },
+    { day: t("Weekdays.Saturday"), progress: 20 },
+    { day: t("Weekdays.Sunday"), progress: 40 },
   ];
 
   const thisWeek = [
@@ -24,7 +24,7 @@ export default function ThisWeek() {
       textColor: "text-primary-blue",
     },
     {
-      count: "103 days",
+      count: `103 ${t("Days")}`,
       label: t("Streak"),
       icon: Icons.StarIconStatistics,
       bgColor: "bg-light-green",
@@ -35,12 +35,12 @@ export default function ThisWeek() {
   return (
     <div className="mt-20 ml-4 mr-4 lg:mt-10">
       <h1 className="mb-6 font-semibold text-xl md:text-2xl lg:text-3xl">
-        This Week
+        {t("This Week")}
       </h1>
       <div className="bg-white rounded-3xl p-4 w-full">
         <div className="font-semibold ml-2">
-          <h6 className="text-xs mb-1 text-gray-600">TIME SPENT</h6>
-          <h1 className="text-lg mb-2">31.8 Hours</h1>
+          <h6 className="text-xs mb-1 text-gray-600">{t("Time Spent")}</h6>
+          <h1 className="text-lg mb-2">31.8 {t("Hours")}</h1>
         </div>
         <div className="flex flex-wrap w-full max-md:gap-4 max-md:justify-around max-md:p-4">
           {progressData.map((data, index) => (
@@ -57,7 +57,7 @@ export default function ThisWeek() {
                 </div>
                 <div className="mt-2 ml-6 lg:ml-6">{data.day}</div>
               </div>
-              <div className="md:hidden ">
+              <div className="md:hidden">
                 <div
                   className="w-32 h-32 rounded-full drop-shadow-xl"
                   style={{
@@ -74,7 +74,7 @@ export default function ThisWeek() {
                     }
                   </div>
                 </div>
-                <div className="text-center py-2 text-lg font-semibold">{data.day}</div>
+                <div className="text-center text-lg font-semibold py-4">{data.day}</div>
               </div>
             </>
           ))}
@@ -92,9 +92,9 @@ export default function ThisWeek() {
                   <div className="mr-2">{data.icon && <data.icon />}</div>
                   <h6 className="text-gray-600">{data.label}</h6>
                 </div>
-                <div className="mt-1 mb-3 mr-1 ml-1 lg:ml-4">
+                <div className="p-2 w-full">
                   <div
-                    className={`h-20 md:w-44 lg:w-64 xl:w-72 rounded-2xl flex items-center justify-center ${data.bgColor}`}
+                    className={`h-20 w-full rounded-2xl flex items-center justify-center ${data.bgColor}`}
                   >
                     <p
                       className={`mt-1 text-base font-semibold  ${data.textColor}`}

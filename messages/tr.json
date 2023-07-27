@@ -83,8 +83,20 @@
     "SKILLS ACHIEVED": "Kazanılan Yetenekler"
   },
   "Statistics":{
-    "Time Spent": "Harcanan Zaman",
+    "Time Spent": "HARCANAN ZAMAN",
     "Goal": "Hedef",
-    "Streak": "Günler"
+    "Streak": "Günler",
+    "This Week": "Bu Hafta",
+    "Hours": "Saat",
+    "Days": "Günler",
+    "Weekdays": {
+      "Monday": "Pazartesi",
+      "Tuesday": "Salı",
+      "Wednesday": "Çarşamba",
+      "Thursday": "Perşembe",
+      "Friday": "Cumā",
+      "Saturday": "Cumartesi",
+      "Sunday": "Pazar"
+    } 
   }
 }

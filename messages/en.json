@@ -84,8 +84,20 @@
     "SKILLS ACHIEVED": "SKILLS ACHIEVED"
   },
   "Statistics":{
-    "Time Spent": "Time Spent",
+    "Time Spent": "TIME SPENT",
     "Goal": "Goal",
-    "Streak": "Streak"
+    "Streak": "Streak",
+    "This Week": "This Week",
+    "Hours": "Hours",
+    "Days": "Days",
+    "Weekdays" :{
+      "Monday": "Mon",
+      "Tuesday": "Tue",
+      "Wednesday": "Wed",
+      "Thursday": "Thu",
+      "Friday": "Fri",
+      "Saturday": "Sat",
+      "Sunday": "Sun"
+    } 
   }
 }
