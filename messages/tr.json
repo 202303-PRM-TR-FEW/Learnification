@@ -89,9 +89,16 @@
     "This Week": "Bu Hafta",
     "Hours": "Saat",
     "Days": "Günler",
-    "My Performance":"Performansım",
+    "Title":"Performansım",
     "Average/Day":"Günlük Ortalama",
     "Finished Courses":"Bitirilen Kurslar",
+    "My Activity": "Etkinliğim",
+    "Days Ago": "gün geçmişti",
+    "VIEW ALL ACTIVITY": "TÜM ETKİNLİKLERİ GÖRÜNTÜLE",
+    "VIEW LESS ACTIVITY": "DAHA AZ ETKİNLİK GÖRÜNTÜLE",
+    "Last Year Comparison": "Geçen Yıl Karşılaştırması",
+    "Study Time": "Çalışma Süresi",
+    "Hours Learned": "Öğrenilmiş Saatler",
     "Weekdays": {
       "Monday": "Pazartesi",
       "Tuesday": "Salı",
@@ -101,5 +108,5 @@
       "Saturday": "Cumartesi",
       "Sunday": "Pazar"
     } 
-  },
+  }
 }
