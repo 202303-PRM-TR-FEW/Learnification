@@ -50,7 +50,7 @@ const Header = () => {
 
           <div className={`flex justify-between ${isNavOpen ? "showNav" : "hideNav"}`} > 
             <div
-              className="absolute top-0 right-0 p-[1.2rem] bg-white"
+              className="absolute top-0 right-0 p-[1.2rem] bg-white-smoke"
               onClick={() => setIsNavOpen(false)}
             >
               <svg
@@ -66,7 +66,7 @@ const Header = () => {
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             </div>
-            <ul className="flex gap-2 p-4 bg-white">
+            <ul className="flex gap-2 p-4 bg-white-smoke">
               <li >
               <Link href={path} locale={locale === "en" ? "tr" : "en"}>
           <button
