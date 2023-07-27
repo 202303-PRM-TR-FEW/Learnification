@@ -33,23 +33,23 @@ export default function ThisWeek() {
   ];
 
   return (
-    <div className="mt-20 ml-4 mr-4 lg:mt-10">
-      <h1 className="mb-6 font-semibold text-xl md:text-2xl lg:text-3xl">
+    <div className="ml-4 mr-4">
+      <h1 className="mb-6 font-semibold text-2xl">
         {t("This Week")}
       </h1>
-      <div className="bg-white rounded-3xl p-4 w-full">
+      <div className="bg-white rounded-3xl p-3 w-full">
         <div className="font-semibold ml-2">
           <h6 className="text-xs mb-1 text-gray-600">{t("Time Spent")}</h6>
           <h1 className="text-lg mb-2">31.8 {t("Hours")}</h1>
         </div>
-        <div className="flex flex-wrap w-full max-md:gap-4 max-md:justify-around max-md:p-4">
+        <div className="flex flex-wrap w-full max-md:gap-4 justify-around p-4">
           {progressData.map((data, index) => (
             <>
               <div
                 key={index}
-                className="flex flex-col items-center mb-4 lg:mr-4 lg:ml-4 max-md:hidden"
+                className="flex flex-col items-center mb-4 max-lg:hidden"
               >
-                <div className="w-4 h-40 bg-white-smoke rounded-lg relative ml-6 lg:ml-8">
+                <div className="w-4 h-72 bg-white-smoke rounded-lg relative">
                   <div
                     className="absolute bottom-0 left-0 right-0 bg-primary-blue rounded-lg"
                     style={{ height: `${data.progress}%` }}
@@ -57,7 +57,7 @@ export default function ThisWeek() {
                 </div>
                 <div className="mt-2 ml-6 lg:ml-6">{data.day}</div>
               </div>
-              <div className="md:hidden">
+              <div className="lg:hidden">
                 <div
                   className="w-32 h-32 rounded-full drop-shadow-xl"
                   style={{
@@ -80,13 +80,13 @@ export default function ThisWeek() {
           ))}
         </div>
       </div>
-      <div className="mb-20 mt-10 md:mt-1 md:-ml-6">
+      <div className="py-6">
         <div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:p-4 lg:p-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
             {thisWeek.map((data, index) => (
               <div
                 key={index}
-                className="w-full h-full p-1 bg-white rounded-3xl overflow-hidden shadow-md lg:ml-2 xl:ml-1"
+                className="w-full h-full bg-white rounded-3xl overflow-hidden shadow-md"
               >
                 <div className="flex items-center justify-center">
                   <div className="mr-2">{data.icon && <data.icon />}</div>
