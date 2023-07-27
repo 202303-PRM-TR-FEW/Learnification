@@ -57,7 +57,7 @@ export default function ThisWeek() {
                 </div>
                 <div className="mt-2 ml-6 lg:ml-6">{data.day}</div>
               </div>
-              <div className="md:hidden ">
+              <div className="md:hidden">
                 <div
                   className="w-32 h-32 rounded-full drop-shadow-xl"
                   style={{
@@ -74,7 +74,7 @@ export default function ThisWeek() {
                     }
                   </div>
                 </div>
-                <div className="text-center py-2 text-lg font-semibold">{data.day}</div>
+                <div className="text-center text-lg font-semibold py-4">{data.day}</div>
               </div>
             </>
           ))}
