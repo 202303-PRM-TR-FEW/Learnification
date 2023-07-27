@@ -68,8 +68,8 @@ input[type="checkbox"]:checked::before {
 }
 
 .lang-btn {
-  width: 100px;
-  height: 50px;
+  width: 80px;
+  height: 35px;
   font-size: 18px;
   position: relative;
   overflow: hidden;
@@ -77,15 +77,15 @@ input[type="checkbox"]:checked::before {
 }
 
 .text {
-  width: 90px;
-  height: 50px;
+  width: 75px;
+  height: 35px;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
   transition: top 0.7s;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .primary {
@@ -106,4 +106,21 @@ input[type="checkbox"]:checked::before {
 
 .animatedUnderline {
   @apply inline-block cursor-pointer relative after:content-[''] after:transition-transform after:duration-300 after:ease-out after:w-full after:h-[2px] after:absolute after:bottom-0 after:left-0 after:bg-primary-blue after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-bottom-left;
+}
+.hideNav {
+  display: none;
+}
+.showNav {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 10vh;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items:first baseline;
 }
