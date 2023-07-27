@@ -1,0 +1,7 @@
+{
+    "[css]": {
+        "editor.suggest.insertMode": "replace",
+        "editor.formatOnSave": false,
+        "editor.formatOnPaste": false
+    }
+}
