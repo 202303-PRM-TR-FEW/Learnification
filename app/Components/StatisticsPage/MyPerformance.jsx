@@ -1,5 +1,5 @@
 import React from "react";
-import Icons from "./Icons";
+import Icons from "../Icons";
 import { useTranslations } from "next-intl";
 
 export default function MyPerformance() {
