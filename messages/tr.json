@@ -89,6 +89,9 @@
     "This Week": "Bu Hafta",
     "Hours": "Saat",
     "Days": "Günler",
+    "My Performance":"Performansım",
+    "Average/Day":"Günlük Ortalama",
+    "Finished Courses":"Bitirilen Kurslar",
     "Weekdays": {
       "Monday": "Pazartesi",
       "Tuesday": "Salı",
@@ -98,5 +101,5 @@
       "Saturday": "Cumartesi",
       "Sunday": "Pazar"
     } 
-  }
+  },
 }

@@ -90,6 +90,9 @@
     "This Week": "This Week",
     "Hours": "Hours",
     "Days": "Days",
+    "My Performance":"My Performance",
+    "Average/Day":"Average/Day",
+    "Finished Courses":"Finished Courses",
     "Weekdays" :{
       "Monday": "Mon",
       "Tuesday": "Tue",
@@ -99,5 +102,5 @@
       "Saturday": "Sat",
       "Sunday": "Sun"
     } 
-  }
+  },
 }
