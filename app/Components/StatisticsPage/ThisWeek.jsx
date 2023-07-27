@@ -42,14 +42,14 @@ export default function ThisWeek() {
           <h6 className="text-xs mb-1 text-gray-600">{t("Time Spent")}</h6>
           <h1 className="text-lg mb-2">31.8 {t("Hours")}</h1>
         </div>
-        <div className="flex flex-wrap w-full max-md:gap-4 max-lg:justify-around max-md:p-4">
+        <div className="flex flex-wrap w-full max-md:gap-4 justify-around p-4">
           {progressData.map((data, index) => (
             <>
               <div
                 key={index}
-                className="flex flex-col items-center mb-4 lg:mr-4 lg:ml-4 max-lg:hidden"
+                className="flex flex-col items-center mb-4 max-lg:hidden"
               >
-                <div className="w-4 h-72 bg-white-smoke rounded-lg relative ml-6 lg:ml-8">
+                <div className="w-4 h-72 bg-white-smoke rounded-lg relative">
                   <div
                     className="absolute bottom-0 left-0 right-0 bg-primary-blue rounded-lg"
                     style={{ height: `${data.progress}%` }}
