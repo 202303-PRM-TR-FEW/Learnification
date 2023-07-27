@@ -22,7 +22,7 @@ export default function MyActivity() {
   };
   return (
     <div className="font-medium mb-2 px-2">
-      <h1 className="text-2xl mb-2">My Activity</h1>
+      <h1 className="text-2xl mb-6">My Activity</h1>
       <div className="grid grid-cols-1 divide-y bg-white py-1 px-6 rounded-3xl w-full sm:w-full">
         {visibleActivities.map((activity, index) => (
           <div
