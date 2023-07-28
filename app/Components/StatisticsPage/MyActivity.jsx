@@ -1,0 +1,62 @@
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import uxessentials from "@/public/uxessentials.jpeg";
+import { useTranslations } from "next-intl";
+
+export default function MyActivity() {
+  const t = useTranslations("Statistics");
+  const activities = [
+    { day: t("Weekdays.Monday"), classes: [{ image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }, { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }] },
+    { day: t("Weekdays.Thursday"), classes: [{ image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }, { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }] },
+    { day: `10 ${t("Days Ago")}`, classes: [
+        { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }, { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" },
+        { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }, { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" },
+        { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }, { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" },
+      ]
+    },
+  ];
+  const [showAll, setShowAll] = useState(false);
+  const visibleActivities = showAll ? activities : activities.slice(0, 2);
+  const toggleShowAll = () => {
+    setShowAll((prevShowAll) => !prevShowAll);
+  };
+  return (
+    <div className="font-medium mb-2 px-2">
+      <h1 className="text-2xl mb-6">{t("My Activity")}</h1>
+      <div className="grid grid-cols-1 divide-y bg-white py-1 px-6 rounded-3xl w-full sm:w-full">
+        {visibleActivities.map((activity, index) => (
+          <div
+            key={index}
+            className="flex flex-col w-full min-[400px]:justify-between py-2 gap-y-4"
+          >
+            <h6 className="text-sm text-gray-500">{activity.day}</h6>
+            {activity.classes.map((classData, innerIndex) => (
+              <div className="flex items-center" key={innerIndex}>
+                <div className="rounded-xl overflow-hidden w-fit h-14 mr-8">
+                  <Image
+                    src={classData.image}
+                    width={60}
+                    height={60}
+                    sizes="100vw"
+                    alt="Lesson Pic"
+                  />
+                </div>
+                <div>
+                <h3>{classData.name}</h3>
+                <p className="font-light text-sm text-gray-500">{classData.tutor}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+        <button
+          className="py-3 w-full text-start max-[399px]:text-center text-sky-500"
+          onClick={toggleShowAll}
+        >
+          {showAll ? t("VIEW LESS ACTIVITY") : t("VIEW ALL ACTIVITY")}
+        </button>
+      </div>
+    </div>
+  );
+}

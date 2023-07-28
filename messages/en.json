@@ -68,7 +68,8 @@
     "Search": "Search",
     "Courses": "Courses",
     "Saved": "Saved",
-    "Profile": "Profile"
+    "Profile": "Profile",
+    "About": "About"
   },
   "CategoriesArray": {
     "title": "Categories",
@@ -88,5 +89,36 @@
     "FINISHED COURSES": "FINISHED COURSES",
     "HOURS LEARNED": "HOURS LEARNED",
     "SKILLS ACHIEVED": "SKILLS ACHIEVED"
-  }
+  },
+  "Statistics":{
+    "Time Spent": "TIME SPENT",
+    "Goal": "Goal",
+    "Streak": "Streak",
+    "This Week": "This Week",
+    "Hours": "Hours",
+    "Days": "Days",
+    "Title":"My Performance",
+    "Average/Day":"Average/Day",
+    "Finished Courses":"Finished Courses",
+    "My Activity": "My Activity",
+    "Days Ago": "Days Ago",
+    "VIEW ALL ACTIVITY": "VIEW ALL ACTIVITY",
+    "VIEW LESS ACTIVITY": "VIEW LESS ACTIVITY",
+    "Last Year Comparison": "Last Year Comparison",
+    "Study Time": "Study Time",
+    "Hours Learned": "Hours Learned",
+    "Weekdays" :{
+      "Monday": "Mon",
+      "Tuesday": "Tue",
+      "Wednesday": "Wed",
+      "Thursday": "Thu",
+      "Friday": "Fri",
+      "Saturday": "Sat",
+      "Sunday": "Sun"
+    } 
+  },
+  "About": {
+    "title": "About Us",
+    "description": "This project aims to create an interactive learning app that provides a personalized educational experience for users of all ages and skill levels. The app will offer a wide range of courses and resources spanning various subjects, empowering individuals to acquire knowledge, develop skills, and explore educational interests at their own pace. Its target audience includes students, professionals, and lifelong learners seeking a flexible and accessible platform to expand their knowledge and skills."
+}
 }

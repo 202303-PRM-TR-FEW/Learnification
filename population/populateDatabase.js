@@ -52,9 +52,9 @@ const users = [
 
 const courses = [
   {
-    _id:new mongoose.Types.ObjectId(),
+    _id: new mongoose.Types.ObjectId(),
     imageUrl:
-        "https://images.unsplash.com/photo-1626908013351-800ddd734b8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxMXx8bWF4aW1hbGZvY3VzfGVufDF8fHx8MTY1MjIyMDQyNA&ixlib=rb-1.2.1&q=80&w=1080",
+      "https://images.unsplash.com/photo-1626908013351-800ddd734b8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxMXx8bWF4aW1hbGZvY3VzfGVufDF8fHx8MTY1MjIyMDQyNA&ixlib=rb-1.2.1&q=80&w=1080",
     title: "Power BI",
     duration: "1h 53m",
     rating: 4.9,
@@ -83,7 +83,7 @@ const courses = [
     description: "Learn how to use Agile Project Management, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
   },
   {
-    _id:new mongoose.Types.ObjectId(),
+    _id: new mongoose.Types.ObjectId(),
     title: "Pivot Tables",
     tutor: {
       name: "Jane Doe",
@@ -97,7 +97,7 @@ const courses = [
     recommendedCourses: [],
   },
   {
-    _id:new mongoose.Types.ObjectId(),
+    _id: new mongoose.Types.ObjectId(),
     title: "Powe BI",
     tutor: {
       name: "Ian Brown",
@@ -108,7 +108,7 @@ const courses = [
     rating: 4.1,
     description: "Build cross-platform mobile apps using React Native.",
     price: 100,
-    description:"Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
+    description: "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
     recommendedCourses: [],
   },
 
@@ -116,52 +116,52 @@ const courses = [
 
 const categories = [
   {
-    _id:new mongoose.Types.ObjectId(),
-    name:"Sales",
+    _id: new mongoose.Types.ObjectId(),
+    name: "Sales",
   },
   {
-    _id:new mongoose.Types.ObjectId(),
-    name:"HR",
+    _id: new mongoose.Types.ObjectId(),
+    name: "HR",
   },
   {
-    _id:new mongoose.Types.ObjectId(),
-    name:"Drawing",
+    _id: new mongoose.Types.ObjectId(),
+    name: "Drawing",
   },
   {
-    _id:new mongoose.Types.ObjectId(),
-    name:"Big Data",
+    _id: new mongoose.Types.ObjectId(),
+    name: "Big Data",
   },
   {
-    _id:new mongoose.Types.ObjectId(),
-    name:"Design",
+    _id: new mongoose.Types.ObjectId(),
+    name: "Design",
   },
   {
-    _id:new mongoose.Types.ObjectId(),
-    name:"Marketing",
+    _id: new mongoose.Types.ObjectId(),
+    name: "Marketing",
   },
   {
-    _id:new mongoose.Types.ObjectId(),
-    name:"Astronomy",
+    _id: new mongoose.Types.ObjectId(),
+    name: "Astronomy",
   },
 ]
 
 const createSampleData = async () => {
   try {
     await connectToDb();
-    await User.deleteMany({});
+    // await User.deleteMany({});
     await Course.deleteMany({});
     await Category.deleteMany({});
     for (const course of courses) {
       const newCourse = new Course(course);
       await newCourse.save();
     }
-    for (const user of users) {
-      const newUser = new User(user);
-      newUser.finishedCourses.push(courses[0]._id);
-      newUser.courses.push(courses[0]._id);
-      await newUser.save();
-    }
-    for (const category of categories){
+    // for (const user of users) {
+    //   const newUser = new User(user);
+    //   newUser.finishedCourses.push(courses[0]._id);
+    //   newUser.courses.push(courses[0]._id);
+    //   await newUser.save();
+    // }
+    for (const category of categories) {
       const newCategory = new Category(category);
       await newCategory.save();
     }

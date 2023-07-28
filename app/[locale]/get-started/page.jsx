@@ -5,6 +5,7 @@ import LearnUButton from '../../Components/LearnUButton'
 import '../../globals.css'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+
 export default function Home() {
   const t = useTranslations('GetStarted')
   return (
