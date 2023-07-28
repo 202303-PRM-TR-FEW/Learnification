@@ -532,6 +532,24 @@ const DoubleTickIcon = ({ width = 32, height = 32, ...props }) => (
 <path d="M182.6 246.6C170.1 259.1 149.9 259.1 137.4 246.6L57.37 166.6C44.88 154.1 44.88 133.9 57.37 121.4C69.87 108.9 90.13 108.9 102.6 121.4L159.1 178.7L297.4 41.37C309.9 28.88 330.1 28.88 342.6 41.37C355.1 53.87 355.1 74.13 342.6 86.63L182.6 246.6zM182.6 470.6C170.1 483.1 149.9 483.1 137.4 470.6L9.372 342.6C-3.124 330.1-3.124 309.9 9.372 297.4C21.87 284.9 42.13 284.9 54.63 297.4L159.1 402.7L393.4 169.4C405.9 156.9 426.1 156.9 438.6 169.4C451.1 181.9 451.1 202.1 438.6 214.6L182.6 470.6z"></path>
 </svg>
 );
+const AtIcon = ({ width = 16, height = 16, ...props }) => (
+  <svg
+    style={{ width: width, height: height, overflow: "visible", opacity: "unset", zIndex: 1, fill: "rgb(97, 97, 97)" }}
+    viewBox="0 0 496 512"
+    {...props}
+  >
+   <path d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184 0-101.69 82.29-184 184-184 101.69 0 184 82.29 184 184 0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128 128-57.31 128-128-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z"></path>
+  </svg>
+);
+
+const StarIconStatistics = ({ width = 16, height = 16, ...props }) => (
+  <svg
+    style={{ width: width, height: height, overflow: "visible", opacity: "unset", zIndex: 1, fill: "rgb(97, 97, 97)" }}
+    viewBox="0 0 576 512"
+    {...props}
+  >
+<path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>  </svg>
+);
 const GithubIcon = ({ width = 24, height = 24, ...props }) => (
   <svg
   style={{
@@ -603,7 +621,6 @@ const LinkedinIcon = ({ width = 26, height = 26, ...props }) => (
   </g>
 </svg>
 );
-
 const Icons = {
   SalesIcon,
   HRIcon,
@@ -634,6 +651,8 @@ const Icons = {
   StatisticsIcon,
   BookIcon,
   DoubleTickIcon,
+  AtIcon,
+  StarIconStatistics,
   GithubIcon,
   LinkedinIcon,
   AboutIcon,

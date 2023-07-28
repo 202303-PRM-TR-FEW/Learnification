@@ -2,19 +2,20 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import uxessentials from "@/public/uxessentials.jpeg";
-
-const activities = [
-  { day: "MONDAY", classes: [{ image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }, { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }] },
-  { day: "THURSDAY", classes: [{ image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }, { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }] },
-  { day: "10 DAYS AGO", classes: [
-      { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }, { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" },
-      { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }, { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" },
-      { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }, { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" },
-    ]
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function MyActivity() {
+  const t = useTranslations("Statistics");
+  const activities = [
+    { day: t("Weekdays.Monday"), classes: [{ image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }, { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }] },
+    { day: t("Weekdays.Thursday"), classes: [{ image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }, { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }] },
+    { day: `10 ${t("Days Ago")}`, classes: [
+        { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }, { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" },
+        { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }, { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" },
+        { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" }, { image: uxessentials, name: "UX Essentials", tutor: "Don Drapper" },
+      ]
+    },
+  ];
   const [showAll, setShowAll] = useState(false);
   const visibleActivities = showAll ? activities : activities.slice(0, 2);
   const toggleShowAll = () => {
@@ -22,7 +23,7 @@ export default function MyActivity() {
   };
   return (
     <div className="font-medium mb-2 px-2">
-      <h1 className="text-2xl mb-2">My Activity</h1>
+      <h1 className="text-2xl mb-6">{t("My Activity")}</h1>
       <div className="grid grid-cols-1 divide-y bg-white py-1 px-6 rounded-3xl w-full sm:w-full">
         {visibleActivities.map((activity, index) => (
           <div
@@ -53,7 +54,7 @@ export default function MyActivity() {
           className="py-3 w-full text-start max-[399px]:text-center text-sky-500"
           onClick={toggleShowAll}
         >
-          {showAll ? "VIEW LESS ACTIVITY" : "VIEW ALL ACTIVITY"}
+          {showAll ? t("VIEW LESS ACTIVITY") : t("VIEW ALL ACTIVITY")}
         </button>
       </div>
     </div>

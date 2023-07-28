@@ -21,6 +21,7 @@ module.exports = {
         "primary-white": "#ffffff",
         "primary-blue": "#2e8dff",
         "white-smoke": "#f5f5f5",
+        "primary-green": "rgb(159, 203, 102)",
       },
       borderColor: {
         'primary-blue': '#2e8dff',
