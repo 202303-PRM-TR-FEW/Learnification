@@ -13,9 +13,9 @@ module.exports = {
         "white-smoke": "#f5f5f5",
         "primary-saved": "rgb(251,251,251,0.4)",
         "secondary-saved": "rgb(251,251,251,0.3)",
-        "light-blue":"#cbe1fa",
-        "light-orange":"#fce7cd",
-        "light-green":"#e3f0d3"
+        "light-blue": "#cbe1fa",
+        "light-orange": "#fce7cd",
+        "light-green": "#e3f0d3",
       },
       textColor: {
         "primary-white": "#ffffff",
@@ -24,7 +24,7 @@ module.exports = {
         "primary-green": "rgb(159, 203, 102)",
       },
       borderColor: {
-        'primary-blue': '#2e8dff',
+        "primary-blue": "#2e8dff",
       },
       boxShadow: {
         "light-gray": "0px 0px 20px rgba(0, 0, 0, 0.1)",
@@ -34,7 +34,8 @@ module.exports = {
       },
       fill: {
         "white-smoke": "#f5f5f5",
-      }
+        "primary-blue": "#2e8dff",
+      },
     },
   },
   plugins: [],
