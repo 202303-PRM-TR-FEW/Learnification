@@ -83,10 +83,30 @@
     "SKILLS ACHIEVED": "Kazanılan Yetenekler"
   },
   "Statistics":{
-    "title":"Performansım",
-    "Time Spent":"Harcanan Zaman",
-    "My Performance":"Performansım",
+    "Time Spent": "GEÇIRILEN ZAMAN",
+    "Goal": "Hedef",
+    "Streak": "Seri",
+    "This Week": "Bu Hafta",
+    "Hours": "Saat",
+    "Days": "Günler",
+    "Title":"Performansım",
     "Average/Day":"Günlük Ortalama",
-    "Finished Courses":"Bitirilen Kurslar"
+    "Finished Courses":"Bitirilen Kurslar",
+    "My Activity": "Etkinliğim",
+    "Days Ago": "gün geçmişti",
+    "VIEW ALL ACTIVITY": "TÜM ETKİNLİKLERİ GÖRÜNTÜLE",
+    "VIEW LESS ACTIVITY": "DAHA AZ ETKİNLİK GÖRÜNTÜLE",
+    "Last Year Comparison": "Geçen Yıl Karşılaştırması",
+    "Study Time": "Çalışma Süresi",
+    "Hours Learned": "Öğrenilmiş Saatler",
+    "Weekdays": {
+      "Monday": "Pzt",
+      "Tuesday": "Sal",
+      "Wednesday": "Çar",
+      "Thursday": "Per",
+      "Friday": "Cum",
+      "Saturday": "Cmt",
+      "Sunday": "Paz"
+    } 
   }
 }
