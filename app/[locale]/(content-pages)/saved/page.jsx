@@ -93,6 +93,62 @@ export default function Saved() {
             description: "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
             recommendedCourses: [],
         },
+        {
+            title: "Powe BI",
+            tutor: {
+                name: "Ian Brown",
+                imageUrl: "https://images.unsplash.com/photo-1590086782957-93c06ef21604?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxMnx8bWFufGVufDF8fHx8MTY3Mjk2ODk3NQ&ixlib=rb-4.0.3&q=80&w=1080",
+            },
+            imageUrl: "https://images.unsplash.com/photo-1493612276216-ee3925520721?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxNXx8Y29udGVudHxlbnwxfHx8fDE2NzI5OTU1OTA&ixlib=rb-4.0.3&q=80&w=1080",
+            duration: "1h 17m",
+            rating: 4.1,
+            description: "Build cross-platform mobile apps using React Native.",
+            price: 100,
+            description: "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
+            recommendedCourses: [],
+        },
+        {
+            title: "Powe BI",
+            tutor: {
+                name: "Ian Brown",
+                imageUrl: "https://images.unsplash.com/photo-1590086782957-93c06ef21604?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxMnx8bWFufGVufDF8fHx8MTY3Mjk2ODk3NQ&ixlib=rb-4.0.3&q=80&w=1080",
+            },
+            imageUrl: "https://images.unsplash.com/photo-1493612276216-ee3925520721?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxNXx8Y29udGVudHxlbnwxfHx8fDE2NzI5OTU1OTA&ixlib=rb-4.0.3&q=80&w=1080",
+            duration: "1h 17m",
+            rating: 4.1,
+            description: "Build cross-platform mobile apps using React Native.",
+            price: 100,
+            description: "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
+            recommendedCourses: [],
+        },
+        {
+            title: "Powe BI",
+            tutor: {
+                name: "Ian Brown",
+                imageUrl: "https://images.unsplash.com/photo-1590086782957-93c06ef21604?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxMnx8bWFufGVufDF8fHx8MTY3Mjk2ODk3NQ&ixlib=rb-4.0.3&q=80&w=1080",
+            },
+            imageUrl: "https://images.unsplash.com/photo-1493612276216-ee3925520721?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxNXx8Y29udGVudHxlbnwxfHx8fDE2NzI5OTU1OTA&ixlib=rb-4.0.3&q=80&w=1080",
+            duration: "1h 17m",
+            rating: 4.1,
+            description: "Build cross-platform mobile apps using React Native.",
+            price: 100,
+            description: "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
+            recommendedCourses: [],
+        },
+        {
+            title: "Powe BI",
+            tutor: {
+                name: "Ian Brown",
+                imageUrl: "https://images.unsplash.com/photo-1590086782957-93c06ef21604?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxMnx8bWFufGVufDF8fHx8MTY3Mjk2ODk3NQ&ixlib=rb-4.0.3&q=80&w=1080",
+            },
+            imageUrl: "https://images.unsplash.com/photo-1493612276216-ee3925520721?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxNXx8Y29udGVudHxlbnwxfHx8fDE2NzI5OTU1OTA&ixlib=rb-4.0.3&q=80&w=1080",
+            duration: "1h 17m",
+            rating: 4.1,
+            description: "Build cross-platform mobile apps using React Native.",
+            price: 100,
+            description: "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
+            recommendedCourses: [],
+        },
     ]
     const t = useTranslations("SavedCourses")
     const searchParams = useSearchParams()
@@ -121,7 +177,7 @@ export default function Saved() {
         <main className='w-full md:pl-12 px-[4%] md:px-[2%] lg:px-0'>
             <div className='flex min-w-full gap-4 max-md:pb-20'>
 
-                <div className='basis-full lg:basis-10/12'>
+                <div className='basis-full lg:basis-10/12 lg:h-screen lg:overflow-y-scroll'>
                     <h1 className='font-medium text-3xl my-4'>
                         {t("title")}
                     </h1>
@@ -150,8 +206,8 @@ export default function Saved() {
 
                 </div>
                 {/* LAPTOP DESIGN STARTS HERE */}
-                <div className='hidden min-h-screen lg:block md:basis-full bg-primary-white'>
-                    <div className='flex min-h-full flex-col p-4'>
+                <div className='hidden h-screen lg:block md:basis-full bg-primary-white sticky top-0'>
+                    <div className='flex h-full flex-col p-4'>
                         {
                             <CourseView course={selectedCourse}
                                 backgroundImageElement={<CourseViewImage imgUrl={selectedCourse.imageUrl} />}>
