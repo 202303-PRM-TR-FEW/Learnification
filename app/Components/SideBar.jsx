@@ -50,6 +50,14 @@ function SideBar() {
                 <Icons.ProfileIcon t={useTranslations("SideBar")} />
               </Link>
             </li>
+            <li>
+              <Link
+                href="/about"
+                className="mainLinks no-underline text-[#b1b1b1]"
+              >
+                <Icons.AboutIcon t={useTranslations("SideBar")} />
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

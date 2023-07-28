@@ -62,7 +62,8 @@
     "Search": "Ara",
     "Courses": "Kurslar",
     "Saved": "Kaydedilenler",
-    "Profile": "Profil"
+    "Profile": "Profil",
+    "About":"Hakkımızda"
   },
   "CategoriesArray": {
     "Sales": "Satışlar",
@@ -83,22 +84,22 @@
     "SKILLS ACHIEVED": "Kazanılan Yetenekler"
   },
   "Statistics":{
-    "Time Spent": "GEÇIRILEN ZAMAN",
+    "Time Spent": "GEÇİRİLEN ZAMAN",
     "Goal": "Hedef",
     "Streak": "Seri",
     "This Week": "Bu Hafta",
     "Hours": "Saat",
-    "Days": "Günler",
+    "Days": "Gün",
     "Title":"Performansım",
     "Average/Day":"Günlük Ortalama",
     "Finished Courses":"Bitirilen Kurslar",
     "My Activity": "Etkinliğim",
-    "Days Ago": "gün geçmişti",
+    "Days Ago": "gün önce",
     "VIEW ALL ACTIVITY": "TÜM ETKİNLİKLERİ GÖRÜNTÜLE",
     "VIEW LESS ACTIVITY": "DAHA AZ ETKİNLİK GÖRÜNTÜLE",
-    "Last Year Comparison": "Geçen Yıl Karşılaştırması",
+    "Last Year Comparison": "Geçen Yıl İle Karşılaştırma",
     "Study Time": "Çalışma Süresi",
-    "Hours Learned": "Öğrenilmiş Saatler",
+    "Hours Learned": "Öğrenilen Saatler",
     "Weekdays": {
       "Monday": "Pzt",
       "Tuesday": "Sal",
@@ -108,5 +109,9 @@
       "Saturday": "Cmt",
       "Sunday": "Paz"
     } 
+  },
+  "About": {
+    "title": "Hakkımızda",
+    "description": "Bu proje, her yaş ve yetenek seviyesinden kullanıcılar için kişiselleştirilmiş bir eğitim deneyimi sunan etkileşimli bir öğrenme uygulaması oluşturmayı amaçlamaktadır. Uygulama, çeşitli konuları kapsayan geniş bir ders ve kaynak yelpazesi sunacak, bireylere kendi hızlarında bilgi edinmelerine, becerilerini geliştirmelerine ve eğitim ilgi alanlarını keşfetmelerine olanak tanıyacaktır. Hedef kitlesi, bilgi ve becerilerini genişletmek için esnek ve erişilebilir bir platform arayan öğrenciler, profesyoneller ve ömür boyu öğrenmeyi amaçlayan bireylerden oluşmaktadır."
   }
 }
