@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
 /**
  *
@@ -12,14 +12,18 @@ import React from 'react'
  * @param {string} type button type
  * @returns a button with the specified properties
  */
-export default function LearnUButton({ text, paddingBlock = 10, paddingInline = 40, bgColor = "blue", borderRadius = 12, width = "", className }) {
+const LearnUButton = forwardRef(({ text, paddingBlock = 10, paddingInline = 40, bgColor = "blue", borderRadius = 12, width = "", className }, ref) => {
     return (
         <>
+
             <button
+                ref={ref}
                 className={`${width === "full" ? "w-full" : ""} btn ${bgColor === "blue" ? "btn-primary" : "btn-secondary"} ${className}`}
                 style={{ paddingInline: paddingInline, borderRadius: borderRadius, paddingBlock: paddingBlock }}>
                 {text}
             </button >
         </>
     )
-}
+})
+
+export default LearnUButton

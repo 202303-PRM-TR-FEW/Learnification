@@ -4,7 +4,7 @@ import LearnUButton from '@/app/Components/LearnUButton';
 import SavedCourseCard from '@/app/Components/SavedCoursesPage/SavedCourseCard';
 import { useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback, useEffect, useRef } from 'react'
 import { useState } from 'react';
 
 function CourseViewImage({ imgUrl }) {
@@ -166,16 +166,21 @@ export default function Saved() {
         const paramsAsString = params.toString()
         return paramsAsString
     }, [expandedCourseIndex])
-
+    const bookmarkRef = useRef()
+    const buttonRef = useRef()
     const handleCourseClick = (e, index) => {
         e.preventDefault();
-        setExpandedCourseIndex(index);
+        // exclude the bookmarkRef and buttonRef from the click event
+        const isButton = e.target.outerHTML === buttonRef.current.outerHTML
+        const isBookmark = e.target.outerHTML === bookmarkRef.current.outerHTML
+        if (isBookmark || isButton) return
+        setExpandedCourseIndex(() => index);
         router.push(
             `${path}?${createQueryString('courseIndex', index)}`,
         )
     };
     useEffect(() => {
-        const index = searchParams.get('courseIndex')
+        const index = parseInt(searchParams.get('courseIndex'))
         if (index && index <= courses.length - 1) {
             setExpandedCourseIndex(index)
             return
@@ -187,14 +192,14 @@ export default function Saved() {
         <main className='w-full md:pl-12 px-[4%] md:px-[2%] lg:px-0'>
             <div className='flex min-w-full gap-4 max-md:pb-20'>
 
-                <div className='basis-full lg:basis-10/12 lg:h-screen lg:overflow-y-scroll'>
+                <div className='basis-full lg:basis-10/12 lg:h-screen lg:overflow-y-scroll px-1'>
                     <h1 className='font-medium text-3xl my-4'>
                         {t("title")}
                     </h1>
                     {
                         courses.map((course, index) => (
                             <div key={index}>
-                                <SavedCourseCard index={index} handleClick={handleCourseClick} key={index} course={course} />
+                                <SavedCourseCard expandedCourseIndex={expandedCourseIndex} bookmarkRef={bookmarkRef} buttonRef={buttonRef} index={index} handleClick={handleCourseClick} key={index} course={course} />
                                 {/* MOBILE DESIGN STARTS HERE */}
                                 <div className='my-4'>
                                     {expandedCourseIndex === index && (
