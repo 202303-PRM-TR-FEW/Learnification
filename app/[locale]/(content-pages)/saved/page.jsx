@@ -4,7 +4,7 @@ import LearnUButton from '@/app/Components/LearnUButton';
 import SavedCourseCard from '@/app/Components/SavedCoursesPage/SavedCourseCard';
 import { useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useState } from 'react';
 
 function CourseViewImage({ imgUrl }) {
@@ -157,7 +157,9 @@ export default function Saved() {
     const defaultIndex = 0;
     const initialIndex = searchParams.get('courseIndex') || defaultIndex;
     const [expandedCourseIndex, setExpandedCourseIndex] = useState(initialIndex);
-    const selectedCourse = courses[expandedCourseIndex];
+    const selectedCourse = courses[
+        expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
+    ];
     const createQueryString = useCallback((name, value) => {
         const params = new URLSearchParams(searchParams)
         params.set(name, value)
@@ -172,6 +174,14 @@ export default function Saved() {
             `${path}?${createQueryString('courseIndex', index)}`,
         )
     };
+    useEffect(() => {
+        const index = searchParams.get('courseIndex')
+        if (index && index <= courses.length - 1) {
+            setExpandedCourseIndex(index)
+            return
+        }
+        setExpandedCourseIndex(defaultIndex)
+    }, [searchParams.get('courseIndex')])
 
     return (
         <main className='w-full md:pl-12 px-[4%] md:px-[2%] lg:px-0'>
