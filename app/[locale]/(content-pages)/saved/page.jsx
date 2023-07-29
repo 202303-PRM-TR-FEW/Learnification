@@ -11,7 +11,7 @@ function CourseViewImage({ imgUrl }) {
     const t = useTranslations("SavedCourses")
     return (
         <div
-            className='relative w-full min-h-[200px] xl:h-[300px] rounded-2xl bg-no-repeat bg-cover bg-center flex items-center justify-center'
+            className='relative w-full min-h-[200px] xl:h-[300px] 2xl:h-[450px] rounded-2xl bg-no-repeat bg-cover bg-center flex items-center justify-center'
             style={{ backgroundImage: `url(${imgUrl})` }}
         >
             <div className='text-white-smoke text-center'>
