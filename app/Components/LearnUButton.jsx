@@ -26,4 +26,6 @@ const LearnUButton = forwardRef(({ text, paddingBlock = 10, paddingInline = 40, 
     )
 })
 
+// set display name to overcome the error of not having a display name
+LearnUButton.displayName = 'LearnUButton';
 export default LearnUButton

@@ -16,5 +16,6 @@ const Bookmark = forwardRef(({ course }, ref) => {
         </div>
     )
 })
-
+// set display name to overcome the error of not having a display name
+Bookmark.displayName = 'Bookmark';
 export default Bookmark
