@@ -89,9 +89,8 @@ function SideBar() {
                 <li>
                   <Link href={path} locale={locale === "en" ? "tr" : "en"}>
                     <button
-                      className={`rounded-2xl lang-btn text-white ${
-                        locale === "en" ? "bg-red-500" : "bg-blue-500"
-                      }`}
+                      className={`rounded-2xl lang-btn text-white ${locale === "en" ? "bg-red-500" : "bg-blue-500"
+                        }`}
                       onClick={handleSwitchChange}
                     >
                       <div className="primary text">{activeLang}</div>
@@ -102,14 +101,14 @@ function SideBar() {
                 <li>
                   {data ? (
                     <button
-                      className="rounded-2xl lang-btn text-white bg-blue-500 border border-white hover:bg-white hover:text-blue-500 hover:border-blue-500"
+                      className="rounded-2xl lang-btn text-white bg-blue-500 border border-white hover:bg-white hover:text-blue-500 hover:border-blue-500 transition-colors duration-300"
                       onClick={() => signOut()}
                     >
                       Log Out
                     </button>
                   ) : (
                     <button
-                      className="rounded-2xl lang-btn text-white bg-blue-500 border border-white hover:bg-white hover:text-blue-500 hover:border-blue-500"
+                      className="rounded-2xl lang-btn text-white bg-blue-500 border border-white hover:bg-white hover:text-blue-500 hover:border-blue-500 transition-colors duration-300"
                       onClick={() => signIn()}
                     >
                       Log In
