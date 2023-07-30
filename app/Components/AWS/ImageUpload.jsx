@@ -6,8 +6,8 @@ const S3_BUCKET = "learnu7bucket";
 const REGION = "us-east-1";
 
 AWS.config.update({
-    accessKeyId: "AKIAZKNP445LH4NTFYLO",
-    secretAccessKey: "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",
+    accessKeyId: process.env.NEXT_PUBLIC_ACCESS_KEY_ID,
+    secretAccessKey: process.env.NEXT_PUBLIC_SECRET_ACCESS_KEY,
 });
 
 const myBucket = new AWS.S3({
@@ -38,7 +38,7 @@ const ImageUpload = () => {
         setProgress(Math.round((evt.loaded / evt.total) * 100));
       })
       .send((err) => {
-        if (err) console.log(err);
+        if (err) console.log(err, NEXT_PUBLIC_SECRET_ACCESS_KEY);
         else fetchImages(); 
       });
   };
