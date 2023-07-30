@@ -8,8 +8,7 @@ export default function Layout({ children }) {
         <Header />
       </div>
       <div
-        className="bg-white-smoke min-h-screen md:flex md:items-start
-        md:pr-[50px] lg:pr-[100px]"
+        className="bg-white-smoke min-h-screen md:flex md:items-start"
       >
         <SideBar />
         {children}
