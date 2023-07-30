@@ -157,19 +157,44 @@ input[type="checkbox"]:checked::before {
       background-position: 0% 50%;
     }
   }
-.hideNav {
-  display: none;
+
+#nav-icon {
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
 }
-.showNav {
-  display: block;
+
+#nav-icon span {
   position: absolute;
-  width: 100%;
-  height: 10vh;
-  top: 0;
+  border-radius: 9px;
+  opacity: 1;
   left: 0;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content:space-between;
-  align-items:first baseline;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon span:nth-child(2) {
+  top: 18px;
+}
+
+#nav-icon span:nth-child(3) {
+  top: 36px;
+}
+
+#nav-icon.open span:nth-child(1) {
+  top: 18px;
+  transform: rotate(135deg);
+}
+
+#nav-icon.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+#nav-icon.open span:nth-child(3) {
+  top: 18px;
+  transform: rotate(-135deg);
 }
