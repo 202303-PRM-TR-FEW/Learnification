@@ -4,7 +4,7 @@ import Header from "@/app/Components/Header";
 export default function Layout({ children }) {
   return (
     <div className="flex flex-col">
-      <div className="bg-white-smoke">
+      <div className="bg-white-smoke lg:hidden">
         <Header />
       </div>
       <div
