@@ -6,15 +6,22 @@ import { useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { useCallback, useEffect, useRef } from 'react'
 import { useState } from 'react';
+import Image from 'next/image';
 
 function CourseViewImage({ imgUrl }) {
     const t = useTranslations("SavedCourses")
     return (
         <div
-            className='relative w-full min-h-[200px] xl:h-[300px] 2xl:h-[450px] rounded-2xl bg-no-repeat bg-cover bg-center flex items-center justify-center'
-            style={{ backgroundImage: `url(${imgUrl})` }}
+            className='relative w-full h-[250px] lg:h-[350px] xl:h-[400px] 2xl:h-[500px] rounded-2xl'
         >
-            <div className='text-white-smoke text-center'>
+            <Image
+                src={imgUrl}
+                width={1920}
+                height={1080}
+                alt="Course Image"
+                className="w-full h-full object-cover rounded-2xl"
+            />
+            <div className='text-white-smoke text-center absolute z-50 inset-1 m-auto max-w-max max-h-max'>
                 <button
                     className='relative left-2 w-[0px] h-[0px]
                     border-solid border-[15px] border-l-[30px]
