@@ -52,7 +52,7 @@
   },
   "MyLearning": {
     "title": "Öğrenmekte Olduklarım",
-    "statistics": "İstatistikler",
+    "Statistics": "İstatistikler",
     "Course Description": "Kurs Açıklaması",
     "Review Course": "Kursu İncele",
     "Continue Learning": "Öğrenmeye Devam Et"
@@ -69,7 +69,7 @@
     "Courses": "Kurslar",
     "Saved": "Kaydedilenler",
     "Profile": "Profil",
-    "About":"Hakkımızda"
+    "About": "Hakkımızda"
   },
   "CategoriesArray": {
     "Sales": "Satışlar",
@@ -89,16 +89,16 @@
     "HOURS LEARNED": "Çalışılan Saatler",
     "SKILLS ACHIEVED": "Kazanılan Yetenekler"
   },
-  "Statistics":{
+  "Statistics": {
     "Time Spent": "GEÇİRİLEN ZAMAN",
     "Goal": "Hedef",
     "Streak": "Seri",
     "This Week": "Bu Hafta",
     "Hours": "Saat",
     "Days": "Gün",
-    "Title":"Performansım",
-    "Average/Day":"Günlük Ortalama",
-    "Finished Courses":"Bitirilen Kurslar",
+    "Title": "Performansım",
+    "Average/Day": "Günlük Ortalama",
+    "Finished Courses": "Bitirilen Kurslar",
     "My Activity": "Etkinliğim",
     "Days Ago": "gün önce",
     "VIEW ALL ACTIVITY": "TÜM ETKİNLİKLERİ GÖRÜNTÜLE",
@@ -114,7 +114,7 @@
       "Friday": "Cum",
       "Saturday": "Cmt",
       "Sunday": "Paz"
-    } 
+    }
   },
   "About": {
     "title": "Hakkımızda",

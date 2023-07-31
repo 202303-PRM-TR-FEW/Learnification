@@ -7,6 +7,8 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import { useTranslations } from "use-intl"
 import { useLocale } from "next-intl"
+import Link from "next/link"
+import Icons from "@/app/Components/Icons"
 function CourseViewImage({ imgUrl }) {
     return (
         <div
@@ -188,9 +190,16 @@ export default function MyLearning() {
         <main className="w-full md:pl-12 px-[4%] md:px-[2%] lg:px-0">
             <div className="flex min-w-full gap-4 max-md:pb-20">
                 <div className='basis-full lg:basis-10/12 lg:h-screen lg:overflow-y-scroll px-4'>
-                    <h1 className='font-medium text-3xl my-4'>
-                        {t("title")}
-                    </h1>
+                    <div className="w-full flex items-center">
+                        <h1 className='font-medium text-3xl my-8'>
+                            {t("title")}
+                        </h1>
+                        <h2 className="ml-auto text-lg animatedUnderline">
+                            <Link href={"statistics"} lang={locale}>
+                                {<Icons.StatisticsIcon />} <span>{t("Statistics")}</span>
+                            </Link>
+                        </h2>
+                    </div>
                     {
                         courses.map((course, index) =>
                         (
