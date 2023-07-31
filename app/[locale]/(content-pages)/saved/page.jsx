@@ -1,7 +1,7 @@
 "use client"
 import CourseView from '@/app/Components/CourseView';
 import LearnUButton from '@/app/Components/LearnUButton';
-import SavedCourseCard from '@/app/Components/SavedCoursesPage/SavedCourseCard';
+import CoursePreview from '@/app/Components/CoursePreview';
 import { useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { useCallback, useEffect, useRef } from 'react'
@@ -199,11 +199,11 @@ export default function Saved() {
                     {
                         courses.map((course, index) => (
                             <div key={index}>
-                                <SavedCourseCard expandedCourseIndex={expandedCourseIndex} bookmarkRef={bookmarkRef} index={index} handleClick={handleCourseClick} key={index} course={course} >
+                                <CoursePreview expandedCourseIndex={expandedCourseIndex} bookmarkRef={bookmarkRef} index={index} handleClick={handleCourseClick} key={index} course={course} >
                                     <div className='mt-auto'>
                                         <LearnUButton ref={buttonRef} className={'max-md:w-full'} text={'BUY'} paddingInline={15} paddingBlock={0} />
                                     </div>
-                                </SavedCourseCard>
+                                </CoursePreview>
                                 {/* MOBILE DESIGN STARTS HERE */}
                                 <div className='my-4'>
                                     {expandedCourseIndex === index && (

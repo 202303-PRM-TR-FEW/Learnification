@@ -1,7 +1,7 @@
 import React from 'react'
-import Bookmark from '../Bookmark'
+import Bookmark from './Bookmark'
 
-export default function SavedCourseCard({ course, className, handleClick, index, bookmarkRef, expandedCourseIndex, children }) {
+export default function CoursePreview({ course, className, handleClick, index, bookmarkRef, expandedCourseIndex, children }) {
     return (
         <div
             onClick={(e) => { handleClick(e, index) }}
