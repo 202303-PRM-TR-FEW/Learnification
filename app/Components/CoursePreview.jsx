@@ -5,7 +5,7 @@ export default function CoursePreview({ course, className, handleClick, index, b
     return (
         <div
             onClick={(e) => { handleClick(e, index) }}
-            className={`${className} ${expandedCourseIndex === index ? 'outline outline-2 outline-blue-500 opacity-100' : 'outline-0 opacity-70'} flex bg-primary-white pl-2 py-2 pr-4 rounded-2xl relative cursor-pointer transition-opacity duration-300`}>
+            className={`${className} ${expandedCourseIndex === index ? 'outline outline-2 outline-blue-500 opacity-100' : 'outline-0 opacity-70'} flex bg-primary-white p-2 pr-0 rounded-2xl relative cursor-pointer transition-opacity duration-300`}>
             <div
                 className='basis-3/4 w-[125px] h-[125px] bg-no-repeat bg-cover bg-center bg rounded-2xl'
                 style={{ backgroundImage: `url(${course.imageUrl})` }}>
@@ -21,7 +21,7 @@ export default function CoursePreview({ course, className, handleClick, index, b
                     children
                 }
             </div>
-            <div className='ml-auto'>
+            <div className='absolute top-2 right-2'>
                 <Bookmark ref={bookmarkRef} />
             </div>
         </div>

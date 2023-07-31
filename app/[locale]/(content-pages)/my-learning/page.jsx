@@ -6,6 +6,7 @@ import Image from "next/image"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import { useTranslations } from "use-intl"
+import { useLocale } from "next-intl"
 function CourseViewImage({ imgUrl }) {
     return (
         <div
@@ -37,6 +38,7 @@ export default function MyLearning() {
             },
             description: "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
             recommendedCourses: [],
+            finishedPercentage: 50,
         },
         {
             imageUrl:
@@ -52,6 +54,7 @@ export default function MyLearning() {
             },
             recommendedCourses: [],
             description: "Learn how to use Agile Project Management, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
+            finishedPercentage: 24,
         },
         {
             title: "Pivot Tables",
@@ -65,6 +68,7 @@ export default function MyLearning() {
             description: "Explore the world of data science and analytics.",
             price: 24,
             recommendedCourses: [],
+            finishedPercentage: 76,
         },
         {
             title: "Powe BI",
@@ -79,6 +83,7 @@ export default function MyLearning() {
             price: 100,
             description: "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
             recommendedCourses: [],
+            finishedPercentage: 12,
         },
         {
             title: "Powe BI",
@@ -93,6 +98,7 @@ export default function MyLearning() {
             price: 100,
             description: "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
             recommendedCourses: [],
+            finishedPercentage: 90,
         },
         {
             title: "Powe BI",
@@ -107,6 +113,7 @@ export default function MyLearning() {
             price: 100,
             description: "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
             recommendedCourses: [],
+            finishedPercentage: 30,
         },
         {
             title: "Powe BI",
@@ -121,6 +128,7 @@ export default function MyLearning() {
             price: 100,
             description: "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
             recommendedCourses: [],
+            finishedPercentage: 21,
         },
         {
             title: "Powe BI",
@@ -135,6 +143,7 @@ export default function MyLearning() {
             price: 100,
             description: "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
             recommendedCourses: [],
+            finishedPercentage: 44,
         },
     ]
     const t = useTranslations("MyLearning")
@@ -143,6 +152,7 @@ export default function MyLearning() {
     const path = usePathname()
     const defaultIndex = 0;
     const initialIndex = searchParams.get('courseIndex') || defaultIndex;
+    const locale = useLocale();
     const [expandedCourseIndex, setExpandedCourseIndex] = useState(initialIndex);
     const selectedCourse = courses[
         expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
@@ -154,13 +164,13 @@ export default function MyLearning() {
         return paramsAsString
     }, [expandedCourseIndex])
     const bookmarkRef = useRef()
-    const buttonRef = useRef()
+    // const buttonRef = useRef()
     const handleCourseClick = (e, index) => {
         e.preventDefault();
         // exclude the bookmarkRef and buttonRef from the click event
-        const isButton = e.target.outerHTML === buttonRef.current.outerHTML
+        // const isButton = e.target.outerHTML === buttonRef.current.outerHTML
         const isBookmark = e.target.outerHTML === bookmarkRef.current.outerHTML
-        if (isBookmark || isButton) return
+        if (isBookmark) return
         setExpandedCourseIndex(() => index);
         router.push(
             `${path}?${createQueryString('courseIndex', index)}`,
@@ -177,16 +187,27 @@ export default function MyLearning() {
     return (
         <main className="w-full md:pl-12 px-[4%] md:px-[2%] lg:px-0">
             <div className="flex min-w-full gap-4 max-md:pb-20">
-                <div className='basis-full lg:basis-10/12 lg:h-screen lg:overflow-y-scroll px-1'>
+                <div className='basis-full lg:basis-10/12 lg:h-screen lg:overflow-y-scroll px-4'>
                     <h1 className='font-medium text-3xl my-4'>
                         {t("title")}
                     </h1>
                     {
-                        courses.map((course, index) => (
+                        courses.map((course, index) =>
+                        (
                             <div key={index}>
                                 <CoursePreview expandedCourseIndex={expandedCourseIndex} bookmarkRef={bookmarkRef} index={index} handleClick={handleCourseClick} key={index} course={course} >
                                     <div className='mt-auto'>
-                                        <LearnUButton ref={buttonRef} className={'max-md:w-full'} text={'BUY'} paddingInline={15} paddingBlock={0} />
+                                        <div className="w-full h-2 rounded-lg flex bg-white-smoke">
+                                            <span className={`bg-primary-blue rounded-lg`}
+                                                style={{ width: `${course.finishedPercentage}%` }}
+                                            >
+                                            </span>
+                                        </div>
+                                        <p className="font-medium text-primary-gray mt-1">
+                                            {
+                                                locale === "en" ? `${course.finishedPercentage}% completed` : `%${course.finishedPercentage} tamamlandı`
+                                            }
+                                        </p>
                                     </div>
                                 </CoursePreview>
                                 {/* MOBILE DESIGN STARTS HERE */}
