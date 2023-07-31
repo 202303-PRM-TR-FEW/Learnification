@@ -192,8 +192,8 @@ export default function Saved() {
         <main className='w-full md:pl-12 px-[4%] md:px-[2%] lg:px-0'>
             <div className='flex min-w-full gap-4 max-md:pb-20'>
 
-                <div className='basis-full lg:basis-10/12 lg:h-screen lg:overflow-y-scroll px-1'>
-                    <h1 className='font-medium text-3xl my-4'>
+                <div className='basis-full lg:basis-10/12 lg:h-screen lg:overflow-y-scroll px-4'>
+                    <h1 className='font-medium text-3xl mt-16 mb-8'>
                         {t("title")}
                     </h1>
                     {
@@ -201,7 +201,7 @@ export default function Saved() {
                             <div key={index}>
                                 <CoursePreview expandedCourseIndex={expandedCourseIndex} bookmarkRef={bookmarkRef} index={index} handleClick={handleCourseClick} key={index} course={course} >
                                     <div className='mt-auto'>
-                                        <LearnUButton ref={buttonRef} className={'max-md:w-full'} text={'BUY'} paddingInline={15} paddingBlock={0} />
+                                        <LearnUButton ref={buttonRef} className={'max-md:w-full uppercase'} text={t("Buy")} paddingInline={15} paddingBlock={0} />
                                     </div>
                                 </CoursePreview>
                                 {/* MOBILE DESIGN STARTS HERE */}
@@ -211,8 +211,8 @@ export default function Saved() {
                                             <CourseView backgroundImageElement={<CourseViewImage imgUrl={course.imageUrl} />} course={course} >
                                                 {/* Children of the CourseView */}
                                                 <div className='flex flex-col sm:flex-row gap-4 px-8 mt-auto pb-4'>
-                                                    <LearnUButton className={"basis-full"} text={t("Review Course")} />
-                                                    <LearnUButton className={"basis-full"} text={t("Continue Learning")} />
+                                                    <LearnUButton className={"basis-full uppercase"} text={t("Preview")} />
+                                                    <LearnUButton className={"basis-full uppercase"} text={t("Buy Now")} />
                                                 </div>
                                             </CourseView>
                                         </div>
@@ -232,8 +232,8 @@ export default function Saved() {
                                 backgroundImageElement={<CourseViewImage imgUrl={selectedCourse.imageUrl} />}>
                                 {/* Children of the CourseView */}
                                 <div className='flex max-xl:flex-col gap-4 px-8 mt-auto'>
-                                    <LearnUButton className={"basis-full"} text={t("Review Course")} />
-                                    <LearnUButton className={"basis-full"} text={t("Continue Learning")} />
+                                    <LearnUButton className={"basis-full uppercase"} text={t("Preview")} />
+                                    <LearnUButton className={"basis-full uppercase"} text={t("Buy Now")} />
                                 </div>
                             </CourseView>
                         }

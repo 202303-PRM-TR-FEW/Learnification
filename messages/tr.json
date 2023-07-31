@@ -58,9 +58,10 @@
   },
   "SavedCourses": {
     "title": "Kaydedilen Kurslar",
-    "Review Course": "Kursu İncele",
-    "Continue Learning": "Öğrenmeye Devam Et",
-    "Play Preview": "Önizlemeyi Oynat"
+    "Preview": "Önizle",
+    "Buy Now": "Şimdi Satın Al",
+    "Play Preview": "Önizlemeyi Oynat",
+    "Buy": "Satın Al"
   },
   "SideBar": {
     "Home": "Ana Sayfa",

@@ -58,9 +58,10 @@
   },
   "SavedCourses": {
     "title": "Saved Courses",
-    "Review Course": "Review Course",
-    "Continue Learning": "Continue Learning",
-    "Play Preview": "Play Preview"
+    "Preview": "Preview",
+    "Buy Now": "Buy Now",
+    "Play Preview": "Play Preview",
+    "Buy": "Buy"
   },
   "SideBar": {
     "Home": "Home",
