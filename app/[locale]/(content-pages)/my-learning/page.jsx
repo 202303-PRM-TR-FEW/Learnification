@@ -217,7 +217,6 @@ export default function MyLearning() {
                                             <CourseView backgroundImageElement={<CourseViewImage imgUrl={course.imageUrl} />} course={course} >
                                                 {/* Children of the CourseView */}
                                                 <div className='flex flex-col sm:flex-row gap-4 px-8 mt-auto pb-4'>
-                                                    <LearnUButton className={"basis-full"} text={t("Review Course")} />
                                                     <LearnUButton className={"basis-full"} text={t("Continue Learning")} />
                                                 </div>
                                             </CourseView>
@@ -238,7 +237,6 @@ export default function MyLearning() {
                                 backgroundImageElement={<CourseViewImage imgUrl={selectedCourse.imageUrl} />}>
                                 {/* Children of the CourseView */}
                                 <div className='flex max-xl:flex-col gap-4 px-8 mt-auto'>
-                                    <LearnUButton className={"basis-full"} text={t("Review Course")} />
                                     <LearnUButton className={"basis-full"} text={t("Continue Learning")} />
                                 </div>
                             </CourseView>
