@@ -16,7 +16,7 @@ export default function CoursePreview({ course, className, handleClick, index, b
                     width={1920}
                     height={1080}
                     className='w-full h-full object-cover rounded-2xl'
-                    quality={100}
+                    sizes='125px'
                 />
             </div>
             <div className='flex flex-col pl-4 p-2 basis-full'>

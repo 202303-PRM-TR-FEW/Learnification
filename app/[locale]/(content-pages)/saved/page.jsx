@@ -20,6 +20,7 @@ function CourseViewImage({ imgUrl }) {
                 height={1080}
                 alt="Course Image"
                 className="w-full h-full object-cover rounded-2xl"
+                sizes='(min-width: 1536px) 500px, (min-width: 1280px) 400px, (min-width: 1024px) 350px, (min-width: 768px) 250px, 100vw'
             />
             <div className='text-white-smoke text-center absolute z-50 inset-1 m-auto max-w-max max-h-max'>
                 <button
