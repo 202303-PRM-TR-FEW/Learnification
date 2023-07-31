@@ -2,15 +2,22 @@
 import CoursePreview from "@/app/Components/CoursePreview"
 import CourseView from "@/app/Components/CourseView"
 import LearnUButton from "@/app/Components/LearnUButton"
+import Image from "next/image"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import { useTranslations } from "use-intl"
 function CourseViewImage({ imgUrl }) {
     return (
         <div
-            className='relative w-full min-h-[200px] xl:h-[300px] 2xl:h-[450px] rounded-2xl bg-no-repeat bg-cover bg-center flex items-center justify-center'
-            style={{ backgroundImage: `url(${imgUrl})` }}
+            className='w-full h-[250px] lg:h-[350px] xl:h-[400px] 2xl:h-[500px] rounded-2xl'
         >
+            <Image
+                src={imgUrl}
+                width={1920}
+                height={1080}
+                alt="Course Image"
+                className="w-full h-full object-cover rounded-2xl"
+            />
         </div>
     )
 }
