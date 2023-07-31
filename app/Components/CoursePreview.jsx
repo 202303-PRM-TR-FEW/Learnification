@@ -1,5 +1,6 @@
 import React from 'react'
 import Bookmark from './Bookmark'
+import Image from 'next/image'
 
 export default function CoursePreview({ course, className, handleClick, index, bookmarkRef, expandedCourseIndex, children }) {
     return (
@@ -9,6 +10,14 @@ export default function CoursePreview({ course, className, handleClick, index, b
             <div
                 className='basis-3/4 w-[125px] h-[125px] bg-no-repeat bg-cover bg-center bg rounded-2xl'
                 style={{ backgroundImage: `url(${course.imageUrl})` }}>
+                <Image
+                    src={course.imageUrl}
+                    alt='Course Preview Image'
+                    width={1920}
+                    height={1080}
+                    className='w-full h-full object-cover rounded-2xl'
+                    quality={100}
+                />
             </div>
             <div className='flex flex-col pl-4 p-2 basis-full'>
                 <h2 className='inline-block max-w-max text-md sm:text-lg font-semibold cursor-text'>
