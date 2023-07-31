@@ -18,7 +18,7 @@ export const uploadFile = (file, setImages) => {
     ACL: "bucket-owner-full-control",
     Body: file,
     Bucket: S3_BUCKET,
-    Key: file.name,
+    Key: "uploadedImage.png",
   };
 
   myBucket
@@ -41,8 +41,9 @@ export const fetchImages = (setImages) => {
     if (err) {
       console.log(err, err.stack);
     } else {
+      const filteredImages = data.Contents.filter((img) => img.Key === "uploadedImage.png");
       setImages(
-        data.Contents.map((img) => ({
+        filteredImages.map((img) => ({
           url: `https://${params.Bucket}.s3.${REGION}.amazonaws.com/${img.Key}`,
           key: img.Key,
         }))
@@ -50,4 +51,3 @@ export const fetchImages = (setImages) => {
     }
   });
 };
-
