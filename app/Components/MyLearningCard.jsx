@@ -15,8 +15,8 @@ export default function MyLearningCard({ key, course, courseName, teacherName, p
         <div key={key} className="bg-primary-white shadow-light-gray rounded-2xl lg:p-3 py-2 h-auto relative flex flex-col mx-2 md:mx-0 lg:mr-2">
             <div className="flex gap-x-2">
                 <div className="h-auto min-w-[100px] w-full max-[767px]:max-w-[200px] md:w-[200px] lg:w-[400px] ml-2 md:ml-0">
-                    <img src={image}
-                        alt='Course Main Image'
+                    <Image src={image}
+                        alt='Course Preview Image'
                         className="w-full h-32 md:w-44 md:h-32 lg:w-full lg:mt-1 lg:h-32 rounded-2xl"
                     />
                 </div>
@@ -29,7 +29,7 @@ export default function MyLearningCard({ key, course, courseName, teacherName, p
                         <div className="bg-blue-500 h-full rounded-lg flex justify-end" style={{ width: `${percentage}` }}><span className="md:hidden text-white text-end w-full pr-1 text-sm">{percentage}</span></div>
                         <p className="font-bold text-zinc-500 mt-3 hidden md:block">{percentage} {t('MyLearning.Complete')}</p>
                     </div>
-                    
+
                 </div>
                 <div className="absolute top-0 right-0 m-2 cursor-pointer hidden md:block">
                     <div className={`flex justify-center items-center w-9 h-9 p-0 overflow-hidden text-blue-600 bg-gray-300 rounded-lg border-0 ${isBookmarked[course.bookMark] ? "opacity-100" : "opacity-25"}`}
