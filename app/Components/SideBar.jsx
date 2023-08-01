@@ -55,7 +55,7 @@ function SideBar() {
               </li>
               <li>
                 <Link
-                  href="/courses/courseId"
+                  href="/my-learning"
                   className="mainLinks no-underline text-[#b1b1b1]"
                 >
                   <Icons.CoursesIcon t={useTranslations("SideBar")} />
