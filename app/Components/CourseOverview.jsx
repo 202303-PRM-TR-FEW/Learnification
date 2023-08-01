@@ -4,7 +4,7 @@ import CourseDetails from "./CourseDetails";
 import Icons from "./Icons";
 import { useTranslations } from "next-intl";
 
-export default function CourseOverview() {
+export default function CourseOverview({ showCheckIcon = true }) {
   const lessons = CourseDetails();
   const t = useTranslations("CourseOverview");
 
@@ -28,7 +28,7 @@ export default function CourseOverview() {
         >
           <div className="flex justify-between py-3 px-6">
             <h3 className="text-black flex font-bold">
-              <Icons.CheckIcon />
+            {showCheckIcon && <Icons.CheckIcon/>}
               <span className="pl-2">
                 {lesson.id > 0 && `${lesson.id}. `}
                 {lesson.title}
@@ -58,7 +58,7 @@ export default function CourseOverview() {
                   <li key={video.id} className="pl-6 my-4">
                     <div>
                       <h4 className="flex">
-                        <Icons.CheckIcon width={14} height={14} />
+                      {showCheckIcon && <Icons.CheckIcon width={14} height={14} />}
                         <span className="pl-2">
                           {lesson.id > 0 && `${video.id}. `}
                           {video.title}

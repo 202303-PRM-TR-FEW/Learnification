@@ -1,12 +1,11 @@
 "use client";
 import CourseView from "@/app/Components/CourseView";
-import LearnUButton from "@/app/Components/LearnUButton";
-import CoursePreview from "@/app/Components/CoursePreview";
 import { useTranslations } from "next-intl";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import React, { useCallback, useEffect, useRef } from "react";
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import CourseOverview from "@/app/Components/CourseOverview";
+import LearnUButton from "@/app/Components/LearnUButton";
 
 function CourseViewImage({ imgUrl }) {
   const t = useTranslations("SavedCourses");
@@ -23,22 +22,19 @@ function CourseViewImage({ imgUrl }) {
       <div className="text-white-smoke text-center absolute z-50 inset-1 m-auto max-w-max max-h-max">
         <button
           className="relative left-2 w-[0px] h-[0px]
-                    border-solid border-[15px] border-l-[30px]
-                    border-b-transparent border-t-transparent
-                    border-r-transparent border-l-white
-                    transition-all duration-300
-                    hover:border-l-primary-blue
-                    "
+                  border-solid border-[15px] border-l-[30px]
+                  border-b-transparent border-t-transparent
+                  border-r-transparent border-l-white
+                  transition-all duration-300
+                  hover:border-l-primary-blue
+                  "
         ></button>
-        <p className="text-xl text-center block font-semibold mt-1">
-          {t("Play Preview")}
-        </p>
       </div>
     </div>
   );
 }
 
-export default function Saved() {
+export default function page() {
   // we're gonna fetch courses here
   const courses = [
     {
@@ -176,8 +172,6 @@ export default function Saved() {
   ];
   const t = useTranslations("SavedCourses");
   const searchParams = useSearchParams();
-  const router = useRouter();
-  const path = usePathname();
   const defaultIndex = 0;
   const initialIndex = searchParams.get("courseIndex") || defaultIndex;
   const [expandedCourseIndex, setExpandedCourseIndex] = useState(initialIndex);
@@ -185,26 +179,6 @@ export default function Saved() {
     courses[
       expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
     ];
-  const createQueryString = useCallback(
-    (name, value) => {
-      const params = new URLSearchParams(searchParams);
-      params.set(name, value);
-      const paramsAsString = params.toString();
-      return paramsAsString;
-    },
-    [expandedCourseIndex]
-  );
-  const bookmarkRef = useRef();
-  const buttonRef = useRef();
-  const handleCourseClick = (e, index) => {
-    e.preventDefault();
-    // exclude the bookmarkRef and buttonRef from the click event
-    const isButton = e.target.outerHTML === buttonRef.current.outerHTML;
-    const isBookmark = e.target.outerHTML === bookmarkRef.current.outerHTML;
-    if (isBookmark || isButton) return;
-    setExpandedCourseIndex(() => index);
-    router.push(`${path}?${createQueryString("courseIndex", index)}`);
-  };
   useEffect(() => {
     const index = parseInt(searchParams.get("courseIndex"));
     if (index && index <= courses.length - 1) {
@@ -213,95 +187,27 @@ export default function Saved() {
     }
     setExpandedCourseIndex(defaultIndex);
   }, [searchParams.get("courseIndex")]);
-
-  const handlePreviewClick = useCallback(() => {
-    const route = "course-detail?courseIndex=" + expandedCourseIndex;
-    router.push(route);
-  }, [expandedCourseIndex]);
-
   return (
-    <main className="w-full md:pl-12 px-[4%] md:px-[2%] lg:px-0">
-      <div className="flex min-w-full gap-4 max-md:pb-20">
-        <div className="basis-full lg:basis-10/12 lg:h-screen lg:overflow-y-scroll px-4">
-          <h1 className="font-medium text-3xl mt-16 mb-8">{t("title")}</h1>
-          {courses.map((course, index) => (
-            <div key={index}>
-              <CoursePreview
-                expandedCourseIndex={expandedCourseIndex}
-                bookmarkRef={bookmarkRef}
-                index={index}
-                handleClick={handleCourseClick}
-                key={index}
-                course={course}
-              >
-                <div className="mt-auto">
-                  <LearnUButton
-                    ref={buttonRef}
-                    className={"max-md:w-full uppercase"}
-                    text={t("Buy")}
-                    paddingInline={15}
-                    paddingBlock={0}
-                  />
-                </div>
-              </CoursePreview>
-              {/* MOBILE DESIGN STARTS HERE */}
-              <div className="my-4">
-                {expandedCourseIndex === index && (
-                  <div className="block lg:hidden bg-primary-white rounded-2xl">
-                    <CourseView
-                      backgroundImageElement={
-                        <CourseViewImage imgUrl={course.imageUrl} />
-                      }
-                      course={course}
-                    >
-                      {/* Children of the CourseView */}
-                      <div className="flex flex-col sm:flex-row gap-4 px-8 mt-auto pb-4">
-                        <LearnUButton
-                          className={"basis-full uppercase"}
-                          text={t("Preview")}
-                          onClick={handlePreviewClick}
-                        />
-                        <LearnUButton
-                          className={"basis-full uppercase"}
-                          text={t("Buy Now")}
-                        />
-                      </div>
-                    </CourseView>
-                  </div>
-                )}
-              </div>
-              {/* MOBILE DESIGN ENDS HERE */}
-            </div>
-          ))}
+    <main className="grid lg:grid-cols-2 px-8 lg:p-0">
+      <section className="lg:pt-6 lg:pr-4">
+        <CourseView
+          course={selectedCourse}
+          backgroundImageElement={
+            <CourseViewImage imgUrl={selectedCourse.imageUrl} />
+          }
+        ></CourseView>
+      </section>
+      <section className="h-screen bg-primary-white rounded-2xl lg:rounded-none mb-20 lg:mb-0 flex flex-col justify-around">
+        <div>
+        <CourseOverview showCheckIcon={false} />
         </div>
-        {/* LAPTOP DESIGN STARTS HERE */}
-        <div className="hidden h-screen lg:block md:basis-full bg-primary-white sticky top-0">
-          <div className="flex h-full flex-col p-4">
-            {
-              <CourseView
-                course={selectedCourse}
-                backgroundImageElement={
-                  <CourseViewImage imgUrl={selectedCourse.imageUrl} />
-                }
-              >
-                {/* Children of the CourseView */}
-                <div className="flex max-xl:flex-col gap-4 px-8 mt-auto">
-                  <LearnUButton
-                    className={"basis-full uppercase"}
-                    text={t("Preview")}
-                    onClick={handlePreviewClick}
-                  />
-                  <LearnUButton
-                    className={"basis-full uppercase"}
-                    text={t("Buy Now")}
-                  />
-                </div>
-              </CourseView>
-            }
-          </div>
+        <div className="flex gap-4 px-8 pb-8 mt-auto">
+          <LearnUButton
+            className={"basis-full uppercase"}
+            text={t("Buy Now")}
+          />
         </div>
-        {/* LAPTOP DESIGN ENDS HERE */}
-      </div>
+      </section>
     </main>
   );
 }
