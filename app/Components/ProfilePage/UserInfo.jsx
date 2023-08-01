@@ -34,20 +34,20 @@ export default function UserInfo() {
   return (
     <div className="w-full">
       <div className="flex flex-col xl:flex-row items-center justify-center w-full">
-        <div className="h-[9em] w-[10em] xl:w-[12em] pr-2">
+        <div className="h-[9em] w-[10em] md:w-[14em] md:h-[13em] xl:w-[18em] xl:h-[12em] pr-2">
           {images.map((image, index) => (
             <Image
               key={index}
               src={image.url}
               alt={image.key}
-              width={290}
-              height={290}
+              width={80}
+              height={80}
               className="rounded-full w-full h-full"
             />
           ))}
           <label
             htmlFor="fileUpload"
-            className="bg-green-300 rounded-full px-2 text-white relative bottom-8 left-20 cursor-pointer text-3xl"
+            className="bg-green-300 rounded-full px-2 text-white relative bottom-8 left-28 cursor-pointer text-3xl"
           >
             +
           </label>
