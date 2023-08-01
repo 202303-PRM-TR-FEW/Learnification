@@ -1,9 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import {
-  uploadFile,
-  fetchImages,
-} from "@/app/Components/AWS/uploadFetchImages";
+import { uploadFile, fetchImages } from "@/app/Components/AWS/uploadFetchImages";
 import Icons from "@/app/Components/Icons";
 import Image from "next/image";
 
