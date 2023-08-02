@@ -25,6 +25,7 @@ export default function FeaturedCourse({ course }) {
               height={1080}
               className="w-full h-full object-cover rounded-2xl"
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              loading="eager"
             />
             <div className="absolute top-2 right-2 p-3 rounded-xl bg-slate-400 bg-opacity-30">
               <Icons.SaveIcon width={18} height={18} />

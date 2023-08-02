@@ -172,7 +172,7 @@ export default function MyLearning() {
         e.preventDefault();
         // exclude the bookmarkRef and buttonRef from the click event
         // const isButton = e.target.outerHTML === buttonRef.current.outerHTML
-        const isBookmark = e.target.outerHTML === bookmarkRef.current.outerHTML
+        const isBookmark = e.target.outerHTML === bookmarkRef.current.innerHTML
         if (isBookmark) return
         setExpandedCourseIndex(() => index);
         router.push(

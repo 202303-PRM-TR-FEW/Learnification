@@ -19,6 +19,9 @@
 html{
   scroll-behavior: smooth !important;
 }
+img {
+  user-select: none;
+}
 
 .btn {
   @apply font-bold py-1.5 rounded-xl border-2 px-10;
