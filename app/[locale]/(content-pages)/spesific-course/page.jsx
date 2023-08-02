@@ -199,7 +199,7 @@ export default function page() {
           }
         ></CourseView>
       </section>
-      <section className="lg:h-screen bg-primary-white rounded-2xl lg:rounded-none mb-20 lg:mb-0 ">
+      <section className="lg:h-screen bg-primary-white rounded-2xl lg:rounded-none mb-20 lg:mb-0 overflow-auto">
       <CourseOverview showCheckIcon={true} />
       </section>
     </main>

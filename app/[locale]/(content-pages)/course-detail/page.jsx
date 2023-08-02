@@ -197,13 +197,13 @@ export default function page() {
           }
         ></CourseView>
       </section>
-      <section className="h-screen bg-primary-white rounded-2xl lg:rounded-none mb-20 lg:mb-0 flex flex-col justify-around">
-        <div>
+      <section className="h-screen bg-primary-white rounded-2xl lg:rounded-none mb-20 lg:mb-0 flex flex-col justify-between">
+        <div className="overflow-auto">
         <CourseOverview showCheckIcon={false} />
         </div>
-        <div className="flex gap-4 px-8 pb-8 mt-auto">
+        <div>
           <LearnUButton
-            className={"basis-full uppercase"}
+            className={"w-full basis-full uppercase lg:mb-2"}
             text={t("Buy Now")}
           />
         </div>

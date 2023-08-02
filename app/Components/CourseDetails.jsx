@@ -105,6 +105,25 @@ const CourseDetails = () => {
         },
       ],
     },
+    ,
+    {
+      id: 4,
+      title: "Lesson 4",
+      videos: [
+        {
+          id: 1,
+          title: "Video 1",
+          url: "https://example.com/video1.mp4",
+          duration: "6m 40s",
+        },
+        {
+          id: 2,
+          title: "Video 2",
+          url: "https://example.com/video1.mp4",
+          duration: "4m 55s",
+        },
+      ],
+    },
   ];
 
   return lessons;
