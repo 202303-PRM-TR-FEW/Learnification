@@ -67,8 +67,8 @@ input[type="checkbox"]:checked::before {
 }
 
 .lang-btn {
-  width: 100px;
-  height: 50px;
+  width: 80px;
+  height: 35px;
   font-size: 18px;
   position: relative;
   overflow: hidden;
@@ -76,15 +76,15 @@ input[type="checkbox"]:checked::before {
 }
 
 .text {
-  width: 90px;
-  height: 50px;
+  width: 75px;
+  height: 35px;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
   transition: top 0.7s;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .primary {
@@ -157,3 +157,44 @@ input[type="checkbox"]:checked::before {
       background-position: 0% 50%;
     }
   }
+
+#nav-icon {
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+}
+
+#nav-icon span {
+  position: absolute;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon span:nth-child(2) {
+  top: 18px;
+}
+
+#nav-icon span:nth-child(3) {
+  top: 36px;
+}
+
+#nav-icon.open span:nth-child(1) {
+  top: 18px;
+  transform: rotate(135deg);
+}
+
+#nav-icon.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+#nav-icon.open span:nth-child(3) {
+  top: 18px;
+  transform: rotate(-135deg);
+}

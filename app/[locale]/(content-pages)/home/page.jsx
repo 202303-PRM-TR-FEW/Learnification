@@ -10,7 +10,7 @@ export default async function Home() {
   const session = await getServerSession() // we get the session data on the server side like this
   return (
     <>
-      <div className="basis-full mt-2 px-6 sm:px-12 pb-20 bg-neutral-100">
+      <div className="basis-full mt-2 px-6 sm:px-12 pb-20 bg-neutral-100 md:pr-[50px] lg:pr-[100px]">
         <FeaturedCourses />
         <Categories />
         {!session ? (
