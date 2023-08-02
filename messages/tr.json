@@ -87,7 +87,18 @@
     "title": "İstatistikler",
     "FINISHED COURSES": "Tamamlanan Kurslar",
     "HOURS LEARNED": "Çalışılan Saatler",
-    "SKILLS ACHIEVED": "Kazanılan Yetenekler"
+    "SKILLS ACHIEVED": "Kazanılan Yetenekler",
+    "Friend Suggestions" : "Arkadaş Önerileri",
+    "Friends" : "Arkadaşlar",
+    "PROFILE" : "PROFIL",
+    "VIEW ALL" : "TÜMÜNÜ GÖR",
+    "VIEW LESS" : "DAHA AZ GÖR",
+    "FIND FRIENDS" : "Arkadaş Bul",
+    "INVITE FRIENDS" : "Arkadaş Davet Et",
+    "My courses" : "Derslerim",
+    "My followers" : "Takipçilerim",
+    "Following" : "Takip Edilenler",
+    "Achievements" : "Başarılar"
   },
   "Statistics": {
     "Time Spent": "GEÇİRİLEN ZAMAN",

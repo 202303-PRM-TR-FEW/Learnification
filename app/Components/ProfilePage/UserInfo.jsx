@@ -3,10 +3,12 @@ import React, { useState, useEffect } from "react";
 import { uploadFile, fetchImages } from "@/app/Components/AWS/uploadFetchImages";
 import Icons from "@/app/Components/Icons";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function UserInfo() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [images, setImages] = useState([]);
+  const t = useTranslations("Profile")
 
   const handleFileInput = (e) => {
     const file = e.target.files[0];
@@ -19,9 +21,9 @@ export default function UserInfo() {
   }, []);
 
   const statsData = [
-    { count: 0, label: "MY COURSES" },
-    { count: 2, label: "MY FOLLOWERS" },
-    { count: 32, label: "FOLLOWING" },
+    { count: 0, label: t("My courses")},
+    { count: 2, label: t("My followers")},
+    { count: 32, label: t("Following") },
   ];
 
   const StatsBox = ({ count, label }) => (

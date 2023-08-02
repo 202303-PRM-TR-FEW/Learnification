@@ -11,7 +11,7 @@ export default function Achievements() {
   ];
   return (
     <div className="rounded-3xl">
-      <h1 className="text-lg md:text-xl lg:text-2xl ml-1 font-semibold mb-3">Achievements</h1>
+      <h1 className="text-lg md:text-xl lg:text-2xl ml-1 font-semibold mb-3">{t("Achievements")}</h1>
       {achievements.map((achievement, index) => (
         <div key={index} className="rounded-3xl bg-white shadow-md p-2 mb-4 flex items-center">
           <div className={`h-28 w-32 rounded-2xl flex items-center justify-center ${achievement.bgColor}`}>
