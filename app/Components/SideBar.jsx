@@ -14,7 +14,6 @@ function SideBar() {
   const locale = useLocale();
   const path = usePathname();
   const { data } = useSession();
-  if (path.includes("tr")) path.replace("/tr", ""); // it will replace the /tr with empty string so that we can use it in the Link component
 
   useEffect(() => {
     setActiveLang(locale === "en" ? "Türkçe" : "English");
@@ -24,6 +23,9 @@ function SideBar() {
   const handleSwitchChange = () => {
     setActiveLang((prevLang) => (prevLang === "Türkçe" ? "English" : "Türkçe"));
   };
+  
+  if (path.includes("tr")) path.replace("/tr", ""); // it will replace the /tr with empty string so that we can use it in the Link component
+
   return (
     <>
       <div>
@@ -69,14 +71,16 @@ function SideBar() {
                   <Icons.SavedIcon t={useTranslations("SideBar")} />
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/profile"
-                  className="mainLinks no-underline text-[#b1b1b1]"
-                >
-                  <Icons.ProfileIcon t={useTranslations("SideBar")} />
-                </Link>
-              </li>
+              {data && 
+                <li>
+                  <Link
+                    href="/profile"
+                    className="mainLinks no-underline text-[#b1b1b1]"
+                  >
+                    <Icons.ProfileIcon t={useTranslations("SideBar")} />
+                  </Link>
+                </li>
+              }
               <li>
                 <Link
                   href="/about"
