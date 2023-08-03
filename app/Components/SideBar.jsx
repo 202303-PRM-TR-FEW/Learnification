@@ -33,13 +33,11 @@ function SideBar() {
         <div className="flex justify-center md:flex-col md:mt-[4em] md:w-20 md:mr-20">
           <nav className="fixed bottom-2 md:static z-40">
             <ul className="flex justify-around md:justify-evenly w-[85vw] list-none md:bg-transparent bg-black/75 backdrop-blur-xl p-[1em] rounded-[40px] md:flex-col md:items-center md:h-[25em] md:w-[7em] z-40">
-              <div className="hidden lg:flex lg:justify-start lg:pb-8">
+              <li className="hidden lg:flex lg:justify-start lg:pb-8">
                 <div className="lg:flex lg:justify-center lg:items-center lg:w-12 lg:h-8 lg:bg-blue-500 lg:rounded-3xl">
-                  <Link href="/">
-                    <Icons.BrandIcon />
-                  </Link>
+                  <Icons.BrandIcon />
                 </div>
-              </div>
+              </li>
               <li>
                 <Link
                   href="/home"
@@ -106,8 +104,8 @@ function SideBar() {
                   </span>
                 </Link>
               </li>
-              <div className="hidden lg:flex lg:flex-col lg:gap-4 lg:pt-4">
-                <li>
+              <li className="hidden lg:flex lg:flex-col lg:gap-4 lg:pt-4">
+                <div>
                   <Link href={path} locale={locale === "en" ? "tr" : "en"}>
                     <button
                       className={`rounded-2xl lang-btn text-white ${locale === "en" ? "bg-red-500" : "bg-blue-500"
@@ -118,8 +116,8 @@ function SideBar() {
                       <div className="secondary text">{activeGreeting}</div>
                     </button>
                   </Link>
-                </li>
-                <li>
+                </div>
+                <div>
                   {data ? (
                     <button
                       className="rounded-2xl lang-btn text-white bg-blue-500 border border-white hover:bg-white hover:text-blue-500 hover:border-blue-500 transition-colors duration-300"
@@ -135,8 +133,8 @@ function SideBar() {
                       Log In
                     </button>
                   )}
-                </li>
-              </div>
+                </div>
+              </li>
             </ul>
           </nav>
         </div>

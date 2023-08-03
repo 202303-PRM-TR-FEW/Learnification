@@ -10,7 +10,7 @@ export default function Tutor({ tutor }) {
     <>
       <div className="w-10 h-10 rounded-full overflow-hidden">
         <Image src={tutor?.imageUrl} alt={tutor?.name} width={60} height={60}
-          className="object-contain"
+          className="object-cover w-full h-full aspect-square"
         />
       </div>
       <div className="ml-2 pr-2">

@@ -6,15 +6,17 @@ export default function CoursePreview({ course, className, handleClick, index, b
     return (
         <div
             onClick={(e) => { handleClick(e, index) }}
-            className={`${className} ${expandedCourseIndex === index ? 'outline outline-2 outline-blue-500 opacity-100' : 'outline-0 opacity-70'} flex bg-primary-white p-2 pr-0 rounded-2xl relative cursor-pointer transition-opacity duration-300`}>
+            className={`${className}
+            ${!(expandedCourseIndex && index) ? "" : expandedCourseIndex === index ? 'outline outline-2 outline-blue-500 opacity-100' : 'outline-0 opacity-70'}
+            flex bg-primary-white p-2 pr-0 rounded-2xl relative cursor-pointer transition-opacity duration-300`}>
             <div
-                className='basis-3/4 w-[125px] h-[125px] bg-no-repeat bg-cover bg-center bg rounded-2xl'>
+                className='basis-3/4 max-w-[200px] h-[125px] rounded-2xl'>
                 <Image
                     src={course.imageUrl}
                     alt='Course Preview Image'
                     width={1920}
                     height={1080}
-                    className='w-full h-full object-cover rounded-2xl'
+                    className='w-full h-full object-cover rounded-2xl aspect-square'
                     sizes='(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw'
                 />
             </div>
