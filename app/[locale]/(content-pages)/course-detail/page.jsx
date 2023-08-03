@@ -33,7 +33,7 @@ function CourseViewImage({ imgUrl }) {
   );
 }
 
-export default function page() {
+export default function CourseDetail() {
   // we're gonna fetch courses here
   const courses = [
     {
