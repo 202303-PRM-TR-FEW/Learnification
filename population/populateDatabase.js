@@ -1,8 +1,8 @@
 import { User } from "@/models/User";
 import { Course } from "@/models/Course";
-import { Category } from "@/models/Category"
-import { Sections } from "@/models/Sections"
-import { Lesson } from "/models/Lesson"
+import { Category } from "@/models/Category";
+import { Sections } from "@/models/Sections";
+import { Lesson } from "/models/Lesson";
 import { connectToDb } from "@/utils/database";
 import mongoose from "mongoose";
 
@@ -48,9 +48,8 @@ const users = [
     hoursSpent: 0,
     finishedCourses: [],
     loginState: false,
-  }
+  },
 ];
-
 
 const courses = [
   {
@@ -66,7 +65,8 @@ const courses = [
       imageUrl:
         "https://assets.api.uizard.io/api/cdn/stream/e0a18e97-fd79-46de-abbf-93741b790082.jpg",
     },
-    description: "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
+    description:
+      "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
     recommendedCourses: [],
   },
   {
@@ -82,16 +82,19 @@ const courses = [
         "https://assets.api.uizard.io/api/cdn/stream/e0a18e97-fd79-46de-abbf-93741b790082.jpg",
     },
     recommendedCourses: [],
-    description: "Learn how to use Agile Project Management, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
+    description:
+      "Learn how to use Agile Project Management, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
   },
   {
     _id: new mongoose.Types.ObjectId(),
     title: "Pivot Tables",
     tutor: {
       name: "Jane Doe",
-      imageUrl: "https://images.unsplash.com/photo-1527423460268-0b3795a97e7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxNDh8fGxhZHl8ZW58MXx8fHwxNjcyOTk1Njcw&ixlib=rb-4.0.3&q=80&w=1080",
+      imageUrl:
+        "https://images.unsplash.com/photo-1527423460268-0b3795a97e7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxNDh8fGxhZHl8ZW58MXx8fHwxNjcyOTk1Njcw&ixlib=rb-4.0.3&q=80&w=1080",
     },
-    imageUrl: "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwyfHxleGNlbHxlbnwxfHx8fDE2NzI5OTU0NTg&ixlib=rb-4.0.3&q=80&w=1080",
+    imageUrl:
+      "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwyfHxleGNlbHxlbnwxfHx8fDE2NzI5OTU0NTg&ixlib=rb-4.0.3&q=80&w=1080",
     duration: "1h 24m",
     rating: 4.6,
     description: "Explore the world of data science and analytics.",
@@ -103,17 +106,19 @@ const courses = [
     title: "Powe BI",
     tutor: {
       name: "Ian Brown",
-      imageUrl: "https://images.unsplash.com/photo-1590086782957-93c06ef21604?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxMnx8bWFufGVufDF8fHx8MTY3Mjk2ODk3NQ&ixlib=rb-4.0.3&q=80&w=1080",
+      imageUrl:
+        "https://images.unsplash.com/photo-1590086782957-93c06ef21604?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxMnx8bWFufGVufDF8fHx8MTY3Mjk2ODk3NQ&ixlib=rb-4.0.3&q=80&w=1080",
     },
-    imageUrl: "https://images.unsplash.com/photo-1493612276216-ee3925520721?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxNXx8Y29udGVudHxlbnwxfHx8fDE2NzI5OTU1OTA&ixlib=rb-4.0.3&q=80&w=1080",
+    imageUrl:
+      "https://images.unsplash.com/photo-1493612276216-ee3925520721?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxNXx8Y29udGVudHxlbnwxfHx8fDE2NzI5OTU1OTA&ixlib=rb-4.0.3&q=80&w=1080",
     duration: "1h 17m",
     rating: 4.1,
     description: "Build cross-platform mobile apps using React Native.",
     price: 100,
-    description: "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
+    description:
+      "Learn how to use Power BI, from beginner basics to advanced techniques, with online video tutorials taught by industry experts.",
     recommendedCourses: [],
   },
-
 ];
 
 const categories = [
@@ -145,52 +150,98 @@ const categories = [
     _id: new mongoose.Types.ObjectId(),
     name: "Astronomy",
   },
-]
+];
 
 /* need to prepare data for insertion */
 const sections = [
   {
     _id: new mongoose.Types.ObjectId(),
     lesson: [],
-    title: "Camera Configuration"
+    title: "Camera Configuration",
   },
-]
+];
 
 const lesson = [
-  {
-    _id: new mongoose.Types.ObjectId(),
-    sections: sections._id,
-    name: "Essentials of camera configuration",
-    duration: 265,
-    video: "",
-    completionState: false,
-  },
-  {
-    _id: new mongoose.Types.ObjectId(),
-    sections: sections._id,
-    name: "Setting camera storage",
-    duration: 432,
-    video: "",
-    completionState: false,
-  },
-  {
-    _id: new mongoose.Types.ObjectId(),
-    sections: sections._id,
-    name: "Types of media",
-    duration: 408,
-    video: "",
-    completionState: false,
-  },
-  {
-    _id: new mongoose.Types.ObjectId(),
-    sections: sections._id,
-    name: "Understanding camera lenses",
-    duration: 141,
-    video: "",
-    completionState: false,
-  },
-]
-
+  [
+    {
+      name: "EXPOSURE explained",
+      duration: 1,
+      video:
+        "https://www.youtube.com/watch?v=3k2lFp47e6A&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=1",
+      completionState: false,
+    },
+    {
+      name: "APERTURE explained",
+      duration: 125,
+      video:
+        "https://www.youtube.com/watch?v=xgNAX-hKPU0&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=2",
+      completionState: false,
+    },
+    {
+      name: "ISO explained",
+      duration: 145,
+      video:
+        "https://www.youtube.com/watch?v=dXFYuj6f2MM&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=3",
+      completionState: false,
+    },
+    {
+      name: "The EFFECTS of APERTURE and SHUTTER SPEED",
+      duration: 1,
+      video:
+        "https://www.youtube.com/watch?v=Ns82n-RZzrU&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=4",
+      completionState: false,
+    },
+    {
+      name: "APERTURE and its EFFECTS Part I",
+      duration: 284,
+      video:
+        "https://www.youtube.com/watch?v=NVI-TkW5pXU&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=5",
+      completionState: false,
+    },
+    {
+      name: "APERTURE and its EFFECTS Part II",
+      duration: 260,
+      video:
+        "https://www.youtube.com/watch?v=3RHOBJLbNhg&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=6",
+      completionState: false,
+    },
+    {
+      name: "APERTURE and its EFFECTS Part III",
+      duration: 252,
+      video:
+        "https://www.youtube.com/watch?v=eMSVD6_v9Xo&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=7",
+      completionState: false,
+    },
+    {
+      name: "SHUTTER SPEED and its EFFECTS Part I",
+      duration: 166,
+      video:
+        "https://www.youtube.com/watch?v=T9cuhx_vY3Q&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=8",
+      completionState: false,
+    },
+    {
+      name: "SHUTTER SPEED and its EFFECTS Part II",
+      duration: 183,
+      video:
+        "https://www.youtube.com/watch?v=gt5eUquQuUc&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=9",
+      completionState: false,
+    },
+    {
+      name: "ISO",
+      duration: 425,
+      video:
+        "https://www.youtube.com/watch?v=7FPzcNEq6Xg&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=10",
+      completionState: false,
+    },
+    {
+      name: "Focus Points and Focus Rules",
+      duration: 262,
+      video:
+        "https://www.youtube.com/watch?v=IkF8DK0g0Hg&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=11",
+      completionState: false,
+    },
+  ],
+];
 
 const createSampleData = async () => {
   try {
@@ -198,8 +249,8 @@ const createSampleData = async () => {
     // await User.deleteMany({});
     await Course.deleteMany({});
     await Category.deleteMany({});
-    await Lesson.deleteMany({})
-    await Sections.deleteMany({})
+    await Lesson.deleteMany({});
+    await Sections.deleteMany({});
     for (const course of courses) {
       const newCourse = new Course(course);
       await newCourse.save();
