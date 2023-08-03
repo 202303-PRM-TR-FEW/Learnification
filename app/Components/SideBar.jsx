@@ -9,12 +9,12 @@ import { usePathname } from "next-intl/client";
 import { signIn, signOut, useSession } from "next-auth/react";
 
 function SideBar() {
+  const t = useTranslations("SideBar");
   const [activeLang, setActiveLang] = useState("Türkçe");
   const [activeGreeting, setActiveGreeting] = useState("Selam!");
   const locale = useLocale();
   const path = usePathname();
   const { data } = useSession();
-  if (path.includes("tr")) path.replace("/tr", ""); // it will replace the /tr with empty string so that we can use it in the Link component
 
   useEffect(() => {
     setActiveLang(locale === "en" ? "Türkçe" : "English");
@@ -24,6 +24,9 @@ function SideBar() {
   const handleSwitchChange = () => {
     setActiveLang((prevLang) => (prevLang === "Türkçe" ? "English" : "Türkçe"));
   };
+  
+  if (path.includes("tr")) path.replace("/tr", ""); // it will replace the /tr with empty string so that we can use it in the Link component
+
   return (
     <>
       <div>
@@ -42,7 +45,10 @@ function SideBar() {
                   href="/home"
                   className="mainLinks no-underline text-[#b1b1b1]"
                 >
-                  <Icons.HomeIcon t={useTranslations("SideBar")} />
+                  <Icons.HomeIcon />
+                  <span className="hidden lg:block lg:text-center lg:text-sm">
+                    {t("Home")}
+                  </span>
                 </Link>
               </li>
               <li>
@@ -50,7 +56,10 @@ function SideBar() {
                   href="/search"
                   className="mainLinks no-underline text-[#b1b1b1]"
                 >
-                  <Icons.SearchIcon t={useTranslations("SideBar")} />
+                  <Icons.SearchIcon/>
+                  <span className="hidden lg:block lg:text-center lg:text-sm">
+                    {t("Search")}
+                  </span>
                 </Link>
               </li>
               <li>
@@ -58,7 +67,8 @@ function SideBar() {
                   href="/my-learning"
                   className="mainLinks no-underline text-[#b1b1b1]"
                 >
-                  <Icons.CoursesIcon t={useTranslations("SideBar")} />
+                  <Icons.CoursesIcon/>
+                  <span className="hidden lg:block lg:text-sm">{t("Courses")}</span>
                 </Link>
               </li>
               <li>
@@ -66,23 +76,34 @@ function SideBar() {
                   href="/saved"
                   className="mainLinks no-underline text-[#b1b1b1]"
                 >
-                  <Icons.SavedIcon t={useTranslations("SideBar")} />
+                  <Icons.SavedIcon/>
+                  <span className="hidden lg:block lg:text-center lg:text-sm">
+                    {t("Saved")}
+                  </span>
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/profile"
-                  className="mainLinks no-underline text-[#b1b1b1]"
-                >
-                  <Icons.ProfileIcon t={useTranslations("SideBar")} />
-                </Link>
-              </li>
+              {data && 
+                <li>
+                  <Link
+                    href="/profile"
+                    className="mainLinks no-underline text-[#b1b1b1]"
+                  >
+                    <Icons.ProfileIcon/>
+                    <span className="hidden lg:block lg:text-center lg:text-sm">
+                      {t("Profile")}
+                    </span>
+                  </Link>
+                </li>
+              }
               <li>
                 <Link
                   href="/about"
                   className="mainLinks no-underline text-[#b1b1b1]"
                 >
-                  <Icons.AboutIcon t={useTranslations("SideBar")} />
+                  <Icons.AboutIcon/>
+                  <span className="hidden lg:block lg:text-center lg:text-sm">
+                    {t("About")}
+                  </span>
                 </Link>
               </li>
               <div className="hidden lg:flex lg:flex-col lg:gap-4 lg:pt-4">

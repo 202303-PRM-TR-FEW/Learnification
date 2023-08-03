@@ -30,7 +30,7 @@ export default function SignInUp() {
   }
   async function handleSubmitSignUp(e) {
     e.preventDefault();
-    const res = await fetch('api/auth/sign-up', {
+    const res = await fetch('/api/auth/sign-up', {
       method: 'POST',
       body: JSON.stringify(signUpCredentials),
       headers: {
