@@ -1,16 +1,11 @@
 "use client";
 import CourseView from "@/app/Components/CourseView";
-import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import CourseOverview from "@/app/Components/CourseOverview";
-import Icons from "@/app/Components/Icons";
-
-
 
 function CourseViewImage({ imgUrl }) {
-  const t = useTranslations("SavedCourses");
   return (
     <div className="relative w-full h-[250px] lg:h-[350px] xl:h-[400px] 2xl:h-[500px] rounded-2xl">
       <Image
@@ -189,6 +184,7 @@ export default function page() {
     }
     setExpandedCourseIndex(defaultIndex);
   }, [searchParams.get("courseIndex")]);
+  
   return (
     <main className="grid grid-cols-1 gap-4 lg:grid-cols-2 px-8 lg:p-0">
       <section className="lg:pt-6 lg:pr-4">
