@@ -1,6 +1,8 @@
 import { User } from "@/models/User";
 import { Course } from "@/models/Course";
 import { Category } from "@/models/Category"
+import { Sections } from "@/models/Sections"
+import { Lesson } from "/models/Lesson"
 import { connectToDb } from "@/utils/database";
 import mongoose from "mongoose";
 
@@ -145,12 +147,59 @@ const categories = [
   },
 ]
 
+/* need to prepare data for insertion */
+const sections = [
+  {
+    _id: new mongoose.Types.ObjectId(),
+    lesson: [],
+    title: "Camera Configuration"
+  },
+]
+
+const lesson = [
+  {
+    _id: new mongoose.Types.ObjectId(),
+    sections: sections._id,
+    name: "Essentials of camera configuration",
+    duration: 4.25,
+    video: "",
+    completionState: false,
+  },
+  {
+    _id: new mongoose.Types.ObjectId(),
+    sections: sections._id,
+    name: "Setting camera storage",
+    duration: 7.12,
+    video: "",
+    completionState: false,
+  },
+  {
+    _id: new mongoose.Types.ObjectId(),
+    sections: sections._id,
+    name: "Types of media",
+    duration: 6.48,
+    video: "",
+    completionState: false,
+  },
+  {
+    _id: new mongoose.Types.ObjectId(),
+    sections: sections._id,
+    name: "Understanding camera lenses",
+    duration: 2.41,
+    video: "",
+    completionState: false,
+  },
+]
+
+
 const createSampleData = async () => {
   try {
     await connectToDb();
     // await User.deleteMany({});
     await Course.deleteMany({});
     await Category.deleteMany({});
+    await Lesson.deleteMany({})
+    await Sections.deleteMany({})
     for (const course of courses) {
       const newCourse = new Course(course);
       await newCourse.save();
@@ -164,6 +213,16 @@ const createSampleData = async () => {
     for (const category of categories) {
       const newCategory = new Category(category);
       await newCategory.save();
+    }
+
+    for (const section of sections) {
+      const newSection = new Sections(section);
+      await newSection.save();
+    }
+
+    for (const lesson of lessons) {
+      const newLesson = new Lesson(lesson);
+      await newLesson.save();
     }
     console.log("Data created successfully!");
   } catch (error) {

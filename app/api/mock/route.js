@@ -4,7 +4,9 @@ import { Lesson } from '@/models/Lesson';
 import { Category } from '@/models/Category';
 import { Achievement } from '@/models/Achievement';
 import { Transaction } from '@/models/Transaction';
+import { Sections } from "@/models/Sections"
 import { connectToDb } from '@/utils/database';
+
 
 export async function GET() {
   await connectToDb();
@@ -18,13 +20,12 @@ export async function GET() {
     .exec();
 
   const courses = await Course.find({})
-    .populate('lessons')
+    .populate('sections')
     .populate('categories')
     .populate('recommendedCourses')
     .exec();
     
   const lesson = await Lesson.find({})
-    .populate('courses')
     .populate('sections')
     .exec();
   
@@ -37,10 +38,13 @@ export async function GET() {
     .populate('users')
     .populate('courses')
 
-  
-  console.log(`${users}\n${courses}\n${lesson}\n${category}\n${achievement}\n${transaction}`);
+  const sections = await Sections.find({})
+    .populate('lessons')
 
-  return new Response(JSON.stringify({ users, courses, lesson, category, achievement, transaction }), {
+  
+  console.log(`${users}\n${courses}\n${lesson}\n${category}\n${achievement}\n${transaction}\n${sections}`);
+
+  return new Response(JSON.stringify({ users, courses, lesson, category, achievement, transaction, sections }), {
     status: 200,
     headers: {
       'Content-Type': 'application/json'
