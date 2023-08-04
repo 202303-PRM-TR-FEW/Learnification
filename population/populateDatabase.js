@@ -153,6 +153,7 @@ const categories = [
 ];
 
 /* need to prepare data for insertion */
+/* duration in seconds */
 const sections = [
   {
     _id: new mongoose.Types.ObjectId(),
@@ -165,7 +166,7 @@ const lesson = [
   [
     {
       name: "EXPOSURE explained",
-      duration: 1,
+      duration: 59,
       video:
         "https://www.youtube.com/watch?v=3k2lFp47e6A&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=1",
       completionState: false,
@@ -186,7 +187,7 @@ const lesson = [
     },
     {
       name: "The EFFECTS of APERTURE and SHUTTER SPEED",
-      duration: 1,
+      duration: 53,
       video:
         "https://www.youtube.com/watch?v=Ns82n-RZzrU&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=4",
       completionState: false,
@@ -238,6 +239,194 @@ const lesson = [
       duration: 262,
       video:
         "https://www.youtube.com/watch?v=IkF8DK0g0Hg&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=11",
+      completionState: false,
+    },
+  ],
+  [
+    {
+      name: "Getting Started in User Experience Design",
+      duration: 577,
+      video:
+        "https://www.youtube.com/watch?v=_lyzy-vChh4&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R",
+      completionState: false,
+    },
+    {
+      name: "5 UX Design Tips & Techniques",
+      duration: 262,
+      video:
+        "https://www.youtube.com/watch?v=w6qyekgIo8I&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=2",
+      completionState: false,
+    },
+    {
+      name: "Front-End Development and UX/UI Design",
+      duration: 1675,
+      video:
+        "https://www.youtube.com/watch?v=Ku6vPZXaUwg&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=4",
+      completionState: false,
+    },
+    {
+      name: "The 10 Principles for Good Design",
+      duration: 582,
+      video:
+        "https://www.youtube.com/watch?v=38r_3ZKZIgg&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=4",
+      completionState: false,
+    },
+    {
+      name: "UX Design vs UI Design",
+      duration: 936,
+      video:
+        "https://www.youtube.com/watch?v=RtPnVtXw6HU&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=5",
+      completionState: false,
+    },
+    {
+      name: "UX Design Book Review",
+      duration: 382,
+      video:
+        "https://www.youtube.com/watch?v=vBzBgewl4ac&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=6",
+      completionState: false,
+    },
+    {
+      name: "How to Wireframe a Website or App",
+      duration: 472,
+      video:
+        "https://www.youtube.com/watch?v=e2Oynq-mOLk&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=7",
+      completionState: false,
+    },
+    {
+      name: "Design Sketching for Web Designers & Product Designers",
+      duration: 291,
+      video:
+        "https://www.youtube.com/watch?v=a9h7sI7tbA0&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=8",
+      completionState: false,
+    },
+    {
+      name: "3 Psychology Principles in UX Design",
+      duration: 215,
+      video:
+        "https://www.youtube.com/watch?v=e_g8FxbrCWY&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=9",
+      completionState: false,
+    },
+    {
+      name: "The basics of Baseline Grids in UI & Web Design",
+      duration: 573,
+      video:
+        "https://www.youtube.com/watch?v=rGq1GllRLjk&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=10",
+      completionState: false,
+    },
+    {
+      name: "Prototype & Test in 10 minutes or less",
+      duration: 716,
+      video:
+        "https://www.youtube.com/watch?v=pijzYKAOluw&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=11",
+      completionState: false,
+    },
+  ],
+  [
+    {
+      name: "Digital Marketing 101",
+      duration: 1052,
+      video:
+        "https://www.youtube.com/watch?v=h95cQkEWBx0&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P",
+      completionState: false,
+    },
+    {
+      name: "Introduction To Marketing",
+      duration: 385,
+      video:
+        "https://www.youtube.com/watch?v=8Sj2tbh-ozE&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=2",
+      completionState: false,
+    },
+    {
+      name: "How To Advertise For A Small Business",
+      duration: 809,
+      video:
+        "https://www.youtube.com/watch?v=2g2fSvvcN2Q&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=3",
+      completionState: false,
+    },
+    {
+      name: "How To Create A Marketing Plan",
+      duration: 884,
+      video:
+        "https://www.youtube.com/watch?v=pbNlQs2eBDY&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=4",
+      completionState: false,
+    },
+    {
+      name: "Marketing 101 Crash Course",
+      duration: 878,
+      video:
+        "https://www.youtube.com/watch?v=b8oP6oeJ5WM&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=5",
+      completionState: false,
+    },
+    {
+      name: "4 Principles Of Marketing Strategy",
+      duration: 1134,
+      video:
+        "https://www.youtube.com/watch?v=n8M00vmp6v0&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=6",
+      completionState: false,
+    },
+    {
+      name: "5 Marketing Tips You Need To Know To GROW YOUR BUSINESS",
+      duration: 750,
+      video:
+        "https://www.youtube.com/watch?v=7cCjX5MY28A&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=7",
+      completionState: false,
+    },
+    {
+      name: "Understanding Marketing Fundamentals",
+      duration: 794,
+      video:
+        "https://www.youtube.com/watch?v=_R-f_AlRLT8&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=8",
+      completionState: false,
+    },
+  ],
+  [
+    {
+      name: "Learn How to Draw for Beginners",
+      duration: 576,
+      video:
+        "https://www.youtube.com/watch?v=Wz6DrQeQ5rI&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51",
+      completionState: false,
+    },
+    {
+      name: "How to draw Anything with Construction",
+      duration: 519,
+      video:
+        "https://www.youtube.com/watch?v=iTey_rv-Trc&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=2",
+      completionState: false,
+    },
+    {
+      name: "How to Draw Heads",
+      duration: 575,
+      video:
+        "https://www.youtube.com/watch?v=pW9YCEZ5UjA&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=3",
+      completionState: false,
+    },
+    {
+      name: "Drawing Faces",
+      duration: 574,
+      video:
+        "https://www.youtube.com/watch?v=yX0S_WWiopM&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=4",
+      completionState: false,
+    },
+    {
+      name: "Drawing Better Poses",
+      duration: 756,
+      video:
+        "https://www.youtube.com/watch?v=6uVeYrHk8f0&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=5",
+      completionState: false,
+    },
+    {
+      name: "Perspective Drawing",
+      duration: 615,
+      video:
+        "https://www.youtube.com/watch?v=qq8SO9tMI8k&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=6",
+      completionState: false,
+    },
+    {
+      name: "Drawing Objects in Perspective",
+      duration: 539,
+      video:
+        "https://www.youtube.com/watch?v=5cJO0UVJGP4&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=7",
       completionState: false,
     },
   ],
