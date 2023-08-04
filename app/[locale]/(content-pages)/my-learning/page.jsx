@@ -3,12 +3,13 @@ import CoursePreview from "@/app/Components/CoursePreview"
 import CourseView from "@/app/Components/CourseView"
 import LearnUButton from "@/app/Components/LearnUButton"
 import Image from "next/image"
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { redirect, usePathname, useRouter, useSearchParams } from "next/navigation"
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import { useTranslations } from "use-intl"
 import { useLocale } from "next-intl"
 import Link from "next/link"
 import Icons from "@/app/Components/Icons"
+import { useSession } from "next-auth/react"
 function CourseViewImage({ imgUrl }) {
     return (
         <div
@@ -149,6 +150,8 @@ export default function MyLearning() {
             finishedPercentage: 44,
         },
     ]
+    const session = useSession()
+    if (!session.data) redirect('/sign-in?callbackUrl=/my-learning')
     const t = useTranslations("MyLearning")
     const searchParams = useSearchParams()
     const router = useRouter()

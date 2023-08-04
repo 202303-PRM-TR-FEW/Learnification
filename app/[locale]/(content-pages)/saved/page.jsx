@@ -3,12 +3,15 @@ import CourseView from '@/app/Components/CourseView';
 import LearnUButton from '@/app/Components/LearnUButton';
 import CoursePreview from '@/app/Components/CoursePreview';
 import { useTranslations } from 'next-intl';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { redirect, usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { useCallback, useEffect, useRef } from 'react'
 import { useState } from 'react';
 import Image from 'next/image';
+import { useSession } from 'next-auth/react';
 
 function CourseViewImage({ imgUrl }) {
+    const session = useSession()
+    if (!session.data) redirect('/sign-in?callbackUrl=/saved')
     const t = useTranslations("SavedCourses")
     return (
         <div
