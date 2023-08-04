@@ -18,7 +18,13 @@ const authMiddleware = withAuth(
   },
   {
     callbacks: {
-      authorized: ({ token }) => token != null
+      authorized: async ({ token }) => {
+        if (token) {
+          await fetch("https://jsonplaceholder.typicode.com/todos/1")
+          return true;
+        }
+        return false;
+      }
     },
     pages: {
       signIn: '/sign-in'
