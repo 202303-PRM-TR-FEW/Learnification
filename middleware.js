@@ -13,9 +13,7 @@ const authMiddleware = withAuth(
   // Note that this callback is only invoked if
   // the `authorized` callback has returned `true`
   // and not for pages listed in `pages`.
-  function onSuccess(req) {
-    return intlMiddleware(req);
-  },
+  (req) => intlMiddleware(req),
   {
     callbacks: {
       authorized: ({ token }) => token != null
@@ -36,7 +34,7 @@ export default function middleware(req) {
   if (isPublicPage) {
     return intlMiddleware(req);
   } else {
-    return authMiddleware(req);
+    return (authMiddleware)(req);
   }
 }
 
