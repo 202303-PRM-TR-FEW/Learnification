@@ -1,9 +1,33 @@
 import { Schema, model, models } from "mongoose";
+
 const courseSchema = new Schema({
-  sections: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Section'
-  }],
+  sections: [
+    {
+      title: {
+        type: String
+      },
+      lessons: [
+        {
+          title: {
+            type: String
+          },
+          duration: {
+            type: Number
+          },
+          urls: [
+            {
+              type: String
+            }
+          ], 
+          completionState: [
+            {
+              type: Boolean
+            }
+          ]
+        }
+      ]
+    }
+  ],
   categories: [
     {
       type: Schema.Types.ObjectId,
@@ -17,16 +41,16 @@ const courseSchema = new Schema({
   tutor: {
     name: {
       type: String,
-      required: true,
+      required: true
     },
     imageUrl: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
-  imageUrl :{
+  imageUrl: {
     type: String,
-    required: true,
+    required: true
   },
   duration: {
     type: String,
