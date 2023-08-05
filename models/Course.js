@@ -4,74 +4,74 @@ const courseSchema = new Schema({
   sections: [
     {
       title: {
-        type: String
+        type: String,
       },
       lessons: [
         {
           title: {
-            type: String
+            type: String,
           },
           duration: {
-            type: Number
+            type: Number,
           },
           urls: [
             {
-              type: String
-            }
-          ], 
+              type: String,
+            },
+          ],
           completionState: [
             {
-              type: Boolean
-            }
-          ]
-        }
-      ]
-    }
+              type: Boolean,
+            },
+          ],
+        },
+      ],
+    },
   ],
-  categories: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Category'
-    }
-  ],
+  category: {
+    type: String,
+    ref: "Category",
+  },
   title: {
     type: String,
-    required: true
+    required: true,
   },
   tutor: {
     name: {
       type: String,
-      required: true
+      required: true,
     },
     imageUrl: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   imageUrl: {
     type: String,
-    required: true
+    required: true,
   },
   duration: {
     type: String,
-    required: true
+    required: true,
   },
   rating: {
     type: Number,
-    default: 0
+    default: 0,
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   price: {
     type: Number,
-    required: true
+    required: true,
   },
-  recommendedCourses: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Course'
-  }]
+  recommendedCourses: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Course",
+    },
+  ],
 });
 
 export const Course = models.Course || model("Course", courseSchema);

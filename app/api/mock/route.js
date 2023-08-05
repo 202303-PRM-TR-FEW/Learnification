@@ -18,8 +18,6 @@ export async function GET() {
     .exec();
 
   const courses = await Course.find({})
-    .populate('sections')
-    .populate('categories')
     .populate('recommendedCourses')
     .exec();
 
