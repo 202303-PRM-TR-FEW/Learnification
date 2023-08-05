@@ -32,7 +32,10 @@ export default function SignInUp() {
   const handleToggleForm = () => {
     setLoginFormVisible(!isLoginFormVisible);
   };
-
+  async function handleProviderSignIn(provider) {
+    await signIn(provider, { redirect: false })
+    notify("Logged in successfully, redirecting...", "success")
+  }
   function handleSubmitCredentials(e) {
     e.preventDefault();
     if (credentials.email === "" || credentials.password === "") {
@@ -82,10 +85,10 @@ export default function SignInUp() {
     }>
       <div className="bg-white bg-opacity-50 backdrop-blur-xl p-8 rounded-2xl shadow-xl">
         <div className="flex flex-col sm:flex-row justify-center md:justify-around items-center">
-          <div onClick={() => signIn('github', { callbackUrl: callbackUrl })}>
+          <div onClick={() => handleProviderSignIn('github')}>
             <LearnUButton className={"my-4"} text="Sign In with GitHub" />
           </div>
-          <div onClick={() => signIn('google', { callbackUrl: callbackUrl })}>
+          <div onClick={() => handleProviderSignIn('google')}>
             <LearnUButton className={"my-4"} text="Sign In with Google" />
           </div>
         </div>

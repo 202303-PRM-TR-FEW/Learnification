@@ -165,7 +165,6 @@ export default function MyLearning() {
     const selectedCourse = courses[
         expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
     ];
-    const session = useSession()
     const createQueryString = useCallback((name, value) => {
         const params = new URLSearchParams(searchParams)
         params.set(name, value)
