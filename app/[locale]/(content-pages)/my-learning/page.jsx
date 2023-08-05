@@ -9,6 +9,9 @@ import { useTranslations } from "use-intl"
 import { useLocale } from "next-intl"
 import Link from "next/link"
 import Icons from "@/app/Components/Icons"
+import { toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+import { useSession } from "next-auth/react"
 function CourseViewImage({ imgUrl }) {
     return (
         <div
@@ -160,6 +163,7 @@ export default function MyLearning() {
     const selectedCourse = courses[
         expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
     ];
+    const session = useSession()
     const createQueryString = useCallback((name, value) => {
         const params = new URLSearchParams(searchParams)
         params.set(name, value)

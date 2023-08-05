@@ -4,10 +4,24 @@ import { signIn, useSession } from 'next-auth/react';
 import LearnUButton from "./LearnUButton";
 import { useSearchParams, useRouter } from "next/navigation";
 import { AES } from "crypto-js";
-
+import { toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 export default function SignInUp() {
 
-  const { data } = useSession()
+
+  const notify = (message, type = "info" || "success" || "warning" || "error" || "default") => toast(message, {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    type,
+    theme: "light"
+  })
+
+
+  const session = useSession()
   const router = useRouter()
   const [isLoginFormVisible, setLoginFormVisible] = useState(true);
   const [credentials, setCredentials] = useState({ email: '', password: '' });
@@ -26,7 +40,14 @@ export default function SignInUp() {
     }
     const encryptedPassword = AES.encrypt(credentials.password, process.env.NEXT_PUBLIC_ENCRYPTION_KEY).toString()
     const userCrendentials = { ...credentials, password: encryptedPassword }
-    signIn('credentials', { callbackUrl: callbackUrl, ...userCrendentials })
+    signIn('credentials', { ...userCrendentials, redirect: false }).then((res) => {
+      if (res.error) {
+        notify("Invalid credentials", "error")
+      }
+      else {
+        notify("Logged in successfully", "success")
+      }
+    })
   }
   async function handleSubmitSignUp(e) {
     e.preventDefault();
@@ -40,13 +61,19 @@ export default function SignInUp() {
     if (res.ok) {
       setError(null)
       const user = await res.json()
-      await signIn('credentials', { callbackUrl: callbackUrl, ...user })
+      notify("Account created successfully")
+      signIn('credentials', { ...user, redirect: false }).then((res) => {
+        notify("Logged in successfully")
+        setTimeout(() => {
+          router.push(callbackUrl)
+        }, 2000)
+      })
     }
     else if (res.status === 400) {
       setError('Email already exists')
     }
   }
-  if (data) {
+  if (session.status === 'authenticated') {
     router.push(callbackUrl)
   }
   return (
