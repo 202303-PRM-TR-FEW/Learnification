@@ -1,7 +1,9 @@
 import { NextIntlClientProvider, useLocale } from "next-intl";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import "../globals.css";
 import { Rubik } from "next/font/google";
+import Loading from "../Components/LoadingPage/Loading";
 const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata = {
@@ -14,7 +16,7 @@ export default async function LocaleLayout({ children, params }) {
   if (params.locale !== locale) {
     return notFound();
   }
-  let messages;
+  let messages = {};
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
@@ -24,7 +26,7 @@ export default async function LocaleLayout({ children, params }) {
     <html lang="{locale}">
       <body className={rubik.className}>
         <NextIntlClientProvider messages={messages} locale={locale}>
-          {children}
+        <Suspense fallback={<Loading/>}>{children}</Suspense>  
         </NextIntlClientProvider>
       </body>
     </html>
