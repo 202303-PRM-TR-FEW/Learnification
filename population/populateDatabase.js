@@ -802,7 +802,6 @@ const courses = [
     price: 28,
     recommendedCourses: [],
   },
-
   {
     sections: [
       {
@@ -933,6 +932,259 @@ const courses = [
     description:
       "Embark on an awe-inspiring journey through the cosmos with our captivating online course, 'Journey to the Cosmos: Exploring the Wonders of Astronomy.' Whether you're a curious stargazer, an aspiring astrophysicist, or simply someone eager to unravel the mysteries of the universe, this course is your gateway to unlocking the secrets of the night sky and beyond.",
     price: 60,
+    recommendedCourses: [],
+  },
+  {
+    sections: [
+      {
+        title: "Introduction",
+        lessons: [
+          {
+            name: "AMAZON AFFILIATE MARKETING for Beginners",
+            duration: "777",
+            video:
+              "https://www.youtube.com/watch?v=ZzcgdNpw_cI&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q",
+            completionState: false,
+          },
+        ],
+      },
+      {
+        title: "Technics In Depth",
+        lessons: [
+          {
+            name: "How to find MOST PROFITABLE Niches",
+            duration: "985",
+            video:
+              "https://www.youtube.com/watch?v=b1SD4PAXBQs&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=2",
+            completionState: false,
+          },
+          {
+            name: "How To Create AMAZON AFFILIATE WEBSITE",
+            duration: "1932",
+            video:
+              "https://www.youtube.com/watch?v=WfmoqKNUwBg&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=3",
+            completionState: false,
+          },
+          {
+            name: "FREE Keyword Research for SEO",
+            duration: "1031",
+            video:
+              "https://www.youtube.com/watch?v=NFX5p1G1t1Q&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=4",
+            completionState: false,
+          },
+          {
+            name: "How to Write SEO FRIENDLY ARTICLE on Wordpress",
+            duration: "1486",
+            video:
+              "https://www.youtube.com/watch?v=WfAjE5-2Vcs&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=5",
+            completionState: false,
+          },
+          {
+            name: "How To Create AMAZON AFFILIATE ACCOUNT",
+            duration: "829",
+            video:
+              "https://www.youtube.com/watch?v=pRx8SZ2lC94&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=6",
+            completionState: false,
+          },
+          {
+            name: "What is SEO? Black Hat SEO? Search Engine Optimization",
+            duration: "972",
+            video:
+              "https://www.youtube.com/watch?v=_Zav7CDI65I&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=7",
+            completionState: false,
+          },
+          {
+            name: "How to CREATE BACKLINKS",
+            duration: "1384",
+            video:
+              "https://www.youtube.com/watch?v=EHGodf4vmys&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=8",
+            completionState: false,
+          },
+        ],
+      },
+    ],
+    category: "Marketing",
+    title: "Amazon Marketing",
+    tutor: {
+      name: "Ankur Aggarwal",
+      imageUrl:
+        "https://scontent.fist7-2.fna.fbcdn.net/v/t39.30808-6/224800914_214220284040432_5766062880802533689_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DjSDh40E1LUAX-oEhgV&_nc_ht=scontent.fist7-2.fna&oh=00_AfCaO9WHwsqDU_PcVJBpUHUK9_OQxXrPINzZlPU-CRkzPw&oe=64D44C7E",
+    },
+    imageUrl: "https://i.ytimg.com/vi/pRx8SZ2lC94/maxresdefault.jpg",
+    duration: 9396,
+    rating: 4.2,
+    description:
+      "Do you want to learn how to use Amazon's advertising platform to grow your e-commerce business? If so, then this course is for you! In this course, you will learn everything you need to know about Amazon advertising, from creating and optimizing campaigns to tracking your results. You will also learn about the different types of Amazon ads, including Sponsored Products, Headline Search, and Product Display.",
+    price: 18,
+    recommendedCourses: [],
+  },
+  {
+    sections: [
+      {
+        title: "Python/SQL Fundamentals",
+        lessons: [
+          {
+            name: "MySQL With Python And Data Science",
+            duration: "822",
+            video:
+              "https://www.youtube.com/watch?v=us1XyayQ6fU&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl",
+            completionState: false,
+          },
+          {
+            name: "Create and Drop Database and Table",
+            duration: "1373",
+            video:
+              "https://www.youtube.com/watch?v=9DwlJSlwvqY&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=2",
+            completionState: false,
+          },
+          {
+            name: "MYSQL NULL Values, UPDATE,DELETE,ALTER Query",
+            duration: "938",
+            video:
+              "https://www.youtube.com/watch?v=7s0kdfiTLRE&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=3",
+            completionState: false,
+          },
+        ],
+      },
+      {
+        title: "Constrains",
+        lessons: [
+          {
+            name: "SQL Constraints Part1",
+            duration: "1305",
+            video:
+              "https://www.youtube.com/watch?v=cKNQRAMoQHw&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=4",
+            completionState: false,
+          },
+          {
+            name: "Primary Key, Foreign Key, Check And Default Constraints",
+            duration: "1424",
+            video:
+              "https://www.youtube.com/watch?v=z-Zg39LzcW8&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=5",
+            completionState: false,
+          },
+          {
+            name: "Indexing In MySQL",
+            duration: "655",
+            video:
+              "https://www.youtube.com/watch?v=xDDlB51dX5E&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=6",
+            completionState: false,
+          },
+        ],
+      },
+      {
+        title: "Interview Preparations",
+        lessons: [
+          {
+            name: "Interview Preparation MySql Views",
+            duration: "970",
+            video:
+              "https://www.youtube.com/watch?v=p7pYiynUNAo&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=7",
+            completionState: false,
+          },
+          {
+            name: "Discussing All Types Of Joins",
+            duration: "784",
+            video:
+              "https://www.youtube.com/watch?v=_OfQeKAUFtA&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=8",
+            completionState: false,
+          },
+          {
+            name: "MYSQL Stored Procedures",
+            duration: "601",
+            video:
+              "https://www.youtube.com/watch?v=vFZ5rtf71WU&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=9",
+            completionState: false,
+          },
+          {
+            name: "MySQL Interview Question With Solutions",
+            duration: "1409",
+            video:
+              "https://www.youtube.com/watch?v=KTdItTJVvFQ&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=10",
+            completionState: false,
+          },
+          {
+            name: "MySQL Interview Question With Solutions",
+            duration: "1264",
+            video:
+              "https://www.youtube.com/watch?v=nEYdSiKygCI&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=11",
+            completionState: false,
+          },
+        ],
+      },
+    ],
+    category: "Big Data",
+    title: "SQL/Python Data Extraction",
+    tutor: {
+      name: "Krish Naik",
+      imageUrl:
+        "https://yt3.googleusercontent.com/QNtBLeISPlGM3_fRns1wnC0VvdVfSlRa8UA8G6AJNTRLTdGoODL7z32fP3hRpoGscfhM9FrGdA=s900-c-k-c0x00ffffff-no-rj",
+    },
+    imageUrl: "https://www.freecodecamp.org/news/content/images/2020/08/Untitled-design-1-.png",
+    duration: 11545,
+    rating: 3.9,
+    description:
+      "Do you want to learn how to use SQL and Python to analyze data? If so, then this course is for you! In this course, you will learn the basics of SQL and Python, as well as how to use them together to extract, transform, and analyze data. You will also learn about the different types of data analysis tasks that you can perform with SQL and Python, such as data cleaning, data mining, and statistical analysis.",
+    price: 15,
+    recommendedCourses: [],
+  },
+  {
+    sections: [
+      {
+        title: "Secrets of Sales",
+        lessons: [
+          {
+            name: 'How to script your sales pitch process to close more sales',
+           duration: '244',
+           video:'https://www.youtube.com/watch?v=cjmtUrPXDPI&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6',
+           completionState: false,
+            },
+           {
+            name: 'Close the Sale Faster with These 2 Powerfully Effective Closing Techniques',
+           duration: '354',
+           video:'https://www.youtube.com/watch?v=IjZ6bEPxi5w&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=2',
+           completionState: false,
+            },
+           {
+            name: 'How to Make Buying Easy for the Customer & Make More Sales',
+           duration: '303',
+           video:'https://www.youtube.com/watch?v=gpfY4ZNbdSc&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=3',
+           completionState: false,
+            },
+           {
+            name: 'Recognize Buying Signals',
+           duration: '287',
+           video:'https://www.youtube.com/watch?v=jnKObmrwzLY&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=4',
+           completionState: false,
+            },
+           {
+            name: 'How To Set More Sales Meetings',
+           duration: '116',
+           video:'https://www.youtube.com/watch?v=HsNrWXFk5Vo&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=5',
+           completionState: false,
+            },
+           {
+            name: 'How To Prepare For A Sales Call',
+           duration: '138',
+           video:'https://www.youtube.com/watch?v=qSuPDf1vXQw&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=6',
+           completionState: false,
+            },
+          ]
+      },
+    ],
+    category: "Sales",
+    title: "Scripts and Tricks for a Successful Sale",
+    tutor: {
+      name: "Owen Hemsath",
+      imageUrl:
+        "https://yt3.googleusercontent.com/ytc/AOPolaTSmSDvHQ0idqh99DfCtvhEOHqyni_VnNkC9jrS6A=s176-c-k-c0x00ffffff-no-rj",
+    },
+    imageUrl: "https://i.ytimg.com/vi/AQm5pzSd8ww/hqdefault.jpg",
+    duration: 1442,
+    rating: 3.6,
+    description:
+      "Do you want to learn how to close more deals? If so, then this course is for you! In this course, you will learn the tricks and scripts that top salespeople use to close more deals. You will also learn how to build rapport, ask the right questions, and overcome objections.",
+    price: 0,
     recommendedCourses: [],
   },
 ];

@@ -14,16 +14,12 @@ const courseSchema = new Schema({
           duration: {
             type: Number,
           },
-          urls: [
-            {
-              type: String,
-            },
-          ],
-          completionState: [
-            {
-              type: Boolean,
-            },
-          ],
+          urls: {
+            type: String,
+          },
+          completionState: {
+            type: Boolean,
+          },
         },
       ],
     },
