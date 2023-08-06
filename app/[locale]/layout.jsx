@@ -2,6 +2,7 @@ import { NextIntlClientProvider, useLocale } from "next-intl"
 import { notFound } from "next/navigation"
 import '../globals.css'
 import { Rubik } from 'next/font/google'
+import { ToastContainer } from "react-toastify"
 const rubik = Rubik({ subsets: ['latin'] })
 
 export const metadata = {
@@ -25,6 +26,7 @@ export default async function LocaleLayout({ children, params }) {
             <body className={rubik.className}>
                 <NextIntlClientProvider messages={messages} locale={locale}>
                     {children}
+                    <ToastContainer />
                 </NextIntlClientProvider>
             </body>
         </html>
