@@ -4,23 +4,9 @@ import { signIn, useSession } from 'next-auth/react';
 import LearnUButton from "./LearnUButton";
 import { useSearchParams, useRouter } from "next/navigation";
 import { AES } from "crypto-js";
-import { toast } from "react-toastify"
+import notify from '@/utils/notifications'
 import 'react-toastify/dist/ReactToastify.css';
 export default function SignInUp() {
-
-
-  const notify = (message, type = "info" || "success" || "warning" || "error" || "default") => toast(message, {
-    position: "top-center",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: false,
-    draggable: true,
-    type,
-    theme: "light"
-  })
-
-
   const session = useSession()
   const router = useRouter()
   const [isLoginFormVisible, setLoginFormVisible] = useState(true);
