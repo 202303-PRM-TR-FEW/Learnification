@@ -6,17 +6,27 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
 import { CircularProgress } from "@mui/material";
-
+import defaultPicture from "../../../public/default-profile-picture.webp"
 export default function UserInfo() {
   const { data, status } = useSession();
   const [selectedFile, setSelectedFile] = useState(null);
   const [images, setImages] = useState([]);
   const t = useTranslations("Profile")
 
-  const handleFileInput = (e) => {
+  const handleFileInput = async (e) => {
     const file = e.target.files[0];
-    setSelectedFile(file);
-    uploadFile(file, setImages);
+    console.log("path", file.path)
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("email", data?.session.user.email);
+    const response = await fetch("/api/upload-profile-picture", {
+      method: "POST",
+      body: formData,
+    })
+    const resData = await response.json()
+    console.log(resData)
+    // setSelectedFile(file);
+    // uploadFile(file, setImages);
   };
 
   useEffect(() => {
@@ -40,29 +50,32 @@ export default function UserInfo() {
     <CircularProgress />
   </div>
   const user = data?.session.user
+  console.log(user)
   return (
     <div className="w-full">
       <div className="flex flex-col xl:flex-row items-center justify-center w-full">
         <div className="h-[9em] w-[10em] md:w-[14em] md:h-[13em] xl:w-[18em] xl:h-[12em] pr-2">
           {
-            <Image
+            user?.image ? <Image
               src={user?.image}
               alt={"user profile picture"}
               width={80}
               height={80}
+              sizes="25vw"
+              quality={100}
               className="rounded-full w-full h-full"
-            />
+            /> : (
+              <Image
+                className="rounded-full w-full h-full"
+                src={defaultPicture}
+                alt={"default user profile picture"}
+                width={80}
+                height={80}
+                sizes="25vw"
+                quality={100}
+              />
+            )
           }
-          {/* {images.map((image, index) => (
-            <Image
-              key={index}
-              src={user?.image}
-              alt={"user profile picture"}
-              width={80}
-              height={80}
-              className="rounded-full w-full h-full"
-            />
-          ))} */}
           <label
             htmlFor="fileUpload"
             className="bg-green-300 rounded-full px-2 text-white relative bottom-8 left-28 cursor-pointer text-3xl"

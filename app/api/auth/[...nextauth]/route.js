@@ -58,7 +58,7 @@ const handler = NextAuth({
     async signIn({ user, profile }) {
       try {
         await connectToDb();
-        const existingUser = User.findOne({ email: user.email }).exec();
+        const existingUser = await User.findOne({ email: user.email }).exec();
         // check if user is allowed to sign in and save their data to db
         if (existingUser) return existingUser;
         const newUser = new User({
@@ -85,14 +85,14 @@ const handler = NextAuth({
     },
     session: async (session) => {
       await connectToDb();
-      const sessionUser = await User.findOne({
+      const userFromDB = await User.findOne({
         email: session.session.user.email
       }).exec();
-      await User.updateOne({ email: session.session.user.email }, { location: "Türkiye" }).exec()
-      session.session.user.name = sessionUser.username;
-      session.session.user.email = sessionUser.email;
-      session.session.user.image = sessionUser.profilePicture;
-      session.session.user.location = sessionUser.location;
+      const hasPictureInDB = userFromDB.profilePicture !== null;
+      session.session.user.name = userFromDB.username;
+      session.session.user.email = userFromDB.email;
+      session.session.user.image = hasPictureInDB ? userFromDB.profilePicture : session.session.user.image;
+      session.session.user.location = userFromDB.location
       return session
     }
   },
