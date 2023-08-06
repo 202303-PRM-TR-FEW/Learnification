@@ -6,6 +6,8 @@ import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
 import { CircularProgress } from "@mui/material";
 import defaultPicture from "../../../public/default-profile-picture.webp"
+import notify from "@/utils/notifications";
+import 'react-toastify/dist/ReactToastify.css';
 export default function UserInfo() {
   const { data, status, update } = useSession();
   const t = useTranslations("Profile")
@@ -22,8 +24,11 @@ export default function UserInfo() {
     })
     if (response.ok) {
       const newUserData = await response.json()
-      update(newUserData)
+      await update(newUserData)
+      notify(t("ImageSuccessMessage"), "success")
+      return
     }
+    notify(t("ImageErrorMessage"), "error")
   };
 
   const statsData = [
@@ -46,6 +51,9 @@ export default function UserInfo() {
   console.log(user)
   return (
     <div className="w-full">
+      <button className="bg-cyan-700 p-4 rounded-lg" onClick={() => notify("clicked", "success")}>
+        notify
+      </button>
       <div className="flex flex-col xl:flex-row items-center justify-center w-full">
         <div className="h-[9em] w-[10em] md:w-[14em] md:h-[13em] xl:w-[18em] xl:h-[12em] pr-2">
           {
