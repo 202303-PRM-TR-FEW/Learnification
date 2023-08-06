@@ -4,8 +4,11 @@ import { uploadFile, fetchImages } from "@/app/Components/AWS/uploadFetchImages"
 import Icons from "@/app/Components/Icons";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useSession } from "next-auth/react";
+import { CircularProgress } from "@mui/material";
 
 export default function UserInfo() {
+  const { data, status } = useSession();
   const [selectedFile, setSelectedFile] = useState(null);
   const [images, setImages] = useState([]);
   const t = useTranslations("Profile")
@@ -21,8 +24,8 @@ export default function UserInfo() {
   }, []);
 
   const statsData = [
-    { count: 0, label: t("My courses")},
-    { count: 2, label: t("My followers")},
+    { count: 0, label: t("My courses") },
+    { count: 2, label: t("My followers") },
     { count: 32, label: t("Following") },
   ];
 
@@ -33,20 +36,33 @@ export default function UserInfo() {
     </div>
   );
 
+  if (status === 'loading') return <div>
+    <CircularProgress />
+  </div>
+  const user = data?.session.user
   return (
     <div className="w-full">
       <div className="flex flex-col xl:flex-row items-center justify-center w-full">
         <div className="h-[9em] w-[10em] md:w-[14em] md:h-[13em] xl:w-[18em] xl:h-[12em] pr-2">
-          {images.map((image, index) => (
+          {
             <Image
-              key={index}
-              src={image.url}
-              alt={image.key}
+              src={user?.image}
+              alt={"user profile picture"}
               width={80}
               height={80}
               className="rounded-full w-full h-full"
             />
-          ))}
+          }
+          {/* {images.map((image, index) => (
+            <Image
+              key={index}
+              src={user?.image}
+              alt={"user profile picture"}
+              width={80}
+              height={80}
+              className="rounded-full w-full h-full"
+            />
+          ))} */}
           <label
             htmlFor="fileUpload"
             className="bg-green-300 rounded-full px-2 text-white relative bottom-8 left-28 cursor-pointer text-3xl"
@@ -63,11 +79,17 @@ export default function UserInfo() {
         <div className="w-full h-1/3 mt-4">
           <div className="lg:col-span-2 md:col-span-2">
             <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold  text-center md:text-start">
-              Sally Robins
+              {
+                user?.name
+              }
             </h1>
             <div className="flex justify-center md:justify-start font-semibold md:ml-0 lg:ml-0 lg:mt-1 pr-8">
               <Icons.LocationIcon />
-              <h6 className="lg:ml-2">NEW YORK</h6>
+              <h6 className="lg:ml-2">
+                {
+                  user?.location
+                }
+              </h6>
             </div>
           </div>
           <div className="flex justify-center md:justify-start">

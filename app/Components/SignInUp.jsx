@@ -11,7 +11,7 @@ export default function SignInUp() {
   const router = useRouter()
   const [isLoginFormVisible, setLoginFormVisible] = useState(true);
   const [credentials, setCredentials] = useState({ email: '', password: '' });
-  const [signUpCredentials, setSignUpCredentials] = useState({ username: '', email: '', password: '' });
+  const [signUpCredentials, setSignUpCredentials] = useState({ name: '', email: '', password: '' });
   const [error, setError] = useState(null);
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('callbackUrl') || '/home'
@@ -96,10 +96,10 @@ export default function SignInUp() {
           <form onSubmit={(e) => handleSubmitSignUp(e)}>
             <h2 className="text-sky-500 font-semibold text-2xl pb-5">Register</h2>
             <input
-              value={signUpCredentials.username}
-              onChange={(e) => setSignUpCredentials({ ...signUpCredentials, username: e.target.value })}
+              value={signUpCredentials.name}
+              onChange={(e) => setSignUpCredentials({ ...signUpCredentials, name: e.target.value })}
               type="text"
-              placeholder="Username *"
+              placeholder="Name *"
               required
               className="w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent"
             />

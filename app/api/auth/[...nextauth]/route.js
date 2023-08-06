@@ -54,20 +54,13 @@ const handler = NextAuth({
       },
     }),
   ],
-  async session({ session }) {
-    const sessionUser = await User.findOne({
-      email: session.user.email,
-    });
-    session.user.sessionId = sessionUser?._id.toString();
-    return session;
-  },
   callbacks: {
     async signIn({ user, profile }) {
       try {
         await connectToDb();
-        const existingUser = User.findOne({ email: user.email });
+        const existingUser = User.findOne({ email: user.email }).exec();
         // check if user is allowed to sign in and save their data to db
-        if (existingUser) return true;
+        if (existingUser) return existingUser;
         const newUser = new User({
           _id: new mongoose.Types.ObjectId(),
           username: user.name,
@@ -84,12 +77,24 @@ const handler = NextAuth({
           hoursSpent: 0,
         });
         await newUser.save();
-        return true;
+        return newUser;
       } catch (error) {
         console.log(error);
         return null;
       }
     },
+    session: async (session) => {
+      await connectToDb();
+      const sessionUser = await User.findOne({
+        email: session.session.user.email
+      }).exec();
+      await User.updateOne({ email: session.session.user.email }, { location: "Türkiye" }).exec()
+      session.session.user.name = sessionUser.username;
+      session.session.user.email = sessionUser.email;
+      session.session.user.image = sessionUser.profilePicture;
+      session.session.user.location = sessionUser.location;
+      return session
+    }
   },
   pages: {
     signIn: "/sign-in",
