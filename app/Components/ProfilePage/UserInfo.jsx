@@ -51,9 +51,6 @@ export default function UserInfo() {
   console.log(user)
   return (
     <div className="w-full">
-      <button className="bg-cyan-700 p-4 rounded-lg" onClick={() => notify("clicked", "success")}>
-        notify
-      </button>
       <div className="flex flex-col xl:flex-row items-center justify-center w-full">
         <div className="h-[9em] w-[10em] md:w-[14em] md:h-[13em] xl:w-[18em] xl:h-[12em] pr-2">
           {
