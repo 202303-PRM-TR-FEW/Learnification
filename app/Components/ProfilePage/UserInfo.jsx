@@ -1,6 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { uploadFile, fetchImages } from "@/app/Components/AWS/uploadFetchImages";
+import React from "react";
 import Icons from "@/app/Components/Icons";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -8,9 +7,7 @@ import { useSession } from "next-auth/react";
 import { CircularProgress } from "@mui/material";
 import defaultPicture from "../../../public/default-profile-picture.webp"
 export default function UserInfo() {
-  const { data, status } = useSession();
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [images, setImages] = useState([]);
+  const { data, status, update } = useSession();
   const t = useTranslations("Profile")
 
   const handleFileInput = async (e) => {
@@ -23,15 +20,11 @@ export default function UserInfo() {
       method: "POST",
       body: formData,
     })
-    const resData = await response.json()
-    console.log(resData)
-    // setSelectedFile(file);
-    // uploadFile(file, setImages);
+    if (response.ok) {
+      const newUserData = await response.json()
+      update(newUserData)
+    }
   };
-
-  useEffect(() => {
-    fetchImages(setImages);
-  }, []);
 
   const statsData = [
     { count: 0, label: t("My courses") },
