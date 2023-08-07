@@ -13,10 +13,9 @@ export default function UserInfo() {
   const t = useTranslations("Profile")
 
   const handleFileInput = async (e) => {
-    const file = e.target.files[0];
-    console.log("path", file.path)
+    const image = e.target.files[0];
     const formData = new FormData();
-    formData.append("file", file);
+    formData.append("image", image);
     formData.append("email", data?.session.user.email);
     const response = await fetch("/api/upload-profile-picture", {
       method: "POST",

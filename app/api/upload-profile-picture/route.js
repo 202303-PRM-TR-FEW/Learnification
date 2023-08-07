@@ -6,9 +6,9 @@ import convertImageToBuffer from "@/utils/imageToBuffer"
 export async function POST(req) {
     const formData = await req.formData()
     const email = formData.get('email')
-    const file = formData.get('file')
-    const imageName = file.name
-    const buffer = await convertImageToBuffer(file)
+    const image = formData.get('image')
+    const imageName = image.name
+    const buffer = await convertImageToBuffer(image)
     try {
         let imageUrl = await uploadImage(buffer, imageName)
         await connectToDb()
