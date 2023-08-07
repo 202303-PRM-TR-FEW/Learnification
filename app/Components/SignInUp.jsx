@@ -4,28 +4,14 @@ import { signIn, useSession } from 'next-auth/react';
 import LearnUButton from "./LearnUButton";
 import { useSearchParams, useRouter } from "next/navigation";
 import { AES } from "crypto-js";
-import { toast } from "react-toastify"
+import notify from '@/utils/notifications'
 import 'react-toastify/dist/ReactToastify.css';
 export default function SignInUp() {
-
-
-  const notify = (message, type = "info" || "success" || "warning" || "error" || "default") => toast(message, {
-    position: "top-center",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: false,
-    draggable: true,
-    type,
-    theme: "light"
-  })
-
-
   const session = useSession()
   const router = useRouter()
   const [isLoginFormVisible, setLoginFormVisible] = useState(true);
   const [credentials, setCredentials] = useState({ email: '', password: '' });
-  const [signUpCredentials, setSignUpCredentials] = useState({ username: '', email: '', password: '' });
+  const [signUpCredentials, setSignUpCredentials] = useState({ name: '', email: '', password: '' });
   const [error, setError] = useState(null);
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('callbackUrl') || '/home'
@@ -126,10 +112,10 @@ export default function SignInUp() {
           <form onSubmit={(e) => handleSubmitSignUp(e)}>
             <h2 className="text-sky-500 font-semibold text-2xl pb-5">Register</h2>
             <input
-              value={signUpCredentials.username}
-              onChange={(e) => setSignUpCredentials({ ...signUpCredentials, username: e.target.value })}
+              value={signUpCredentials.name}
+              onChange={(e) => setSignUpCredentials({ ...signUpCredentials, name: e.target.value })}
               type="text"
-              placeholder="Username *"
+              placeholder="Name *"
               required
               className="w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent"
             />

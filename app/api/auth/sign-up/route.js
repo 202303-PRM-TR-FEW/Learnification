@@ -5,11 +5,11 @@ import { AES } from "crypto-js";
 export async function POST(req) {
   const secret = process.env.NEXT_PUBLIC_ENCRYPTION_KEY;
   try {
-    const { email, password, username } = await req.json();
+    const { email, password, name } = await req.json();
     const encryptedPassword = AES.encrypt(password, secret);
     await connectToDb();
     const newUser = await User.create({
-      username,
+      username: name,
       email,
       password: encryptedPassword,
     });
