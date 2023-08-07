@@ -1,6 +1,5 @@
 import { User } from '@/models/User';
 import { Course } from '@/models/Course';
-import { Category } from '@/models/Category';
 import { Achievement } from '@/models/Achievement';
 import { Transaction } from '@/models/Transaction';
 import { connectToDb } from '@/utils/database';

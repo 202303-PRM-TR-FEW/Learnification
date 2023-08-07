@@ -1,8 +1,5 @@
 import { User } from "@/models/User";
 import { Course } from "@/models/Course";
-import { Category } from "@/models/Category";
-import { Sections } from "@/models/Sections";
-import { Lesson } from "/models/Lesson";
 import { connectToDb } from "@/utils/database";
 import mongoose from "mongoose";
 
@@ -51,37 +48,6 @@ const users = [
   },
 ];
 
-const categories = [
-  {
-    _id: new mongoose.Types.ObjectId(),
-    name: "Sales",
-  },
-  {
-    _id: new mongoose.Types.ObjectId(),
-    name: "HR",
-  },
-  {
-    _id: new mongoose.Types.ObjectId(),
-    name: "Drawing",
-  },
-  {
-    _id: new mongoose.Types.ObjectId(),
-    name: "Big Data",
-  },
-  {
-    _id: new mongoose.Types.ObjectId(),
-    name: "Design",
-  },
-  {
-    _id: new mongoose.Types.ObjectId(),
-    name: "Marketing",
-  },
-  {
-    _id: new mongoose.Types.ObjectId(),
-    name: "Astronomy",
-  },
-];
-
 /* need to prepare data for insertion */
 /* duration in seconds */
 
@@ -92,30 +58,30 @@ const courses = [
         title: "Components Explained",
         lessons: [
           {
-            name: "EXPOSURE explained",
+            title: "EXPOSURE explained",
             duration: 59,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=3k2lFp47e6A&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=1",
             completionState: false,
           },
           {
-            name: "APERTURE explained",
+            title: "APERTURE explained",
             duration: 125,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=xgNAX-hKPU0&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=2",
             completionState: false,
           },
           {
-            name: "ISO explained",
+            title: "ISO explained",
             duration: 145,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=dXFYuj6f2MM&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=3",
             completionState: false,
           },
           {
-            name: "The EFFECTS of APERTURE and SHUTTER SPEED",
+            title: "The EFFECTS of APERTURE and SHUTTER SPEED",
             duration: 53,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=Ns82n-RZzrU&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=4",
             completionState: false,
           },
@@ -125,23 +91,23 @@ const courses = [
         title: "Aperture In Depth",
         lessons: [
           {
-            name: "APERTURE and its EFFECTS Part I",
+            title: "APERTURE and its EFFECTS Part I",
             duration: 284,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=NVI-TkW5pXU&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=5",
             completionState: false,
           },
           {
-            name: "APERTURE and its EFFECTS Part II",
+            title: "APERTURE and its EFFECTS Part II",
             duration: 260,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=3RHOBJLbNhg&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=6",
             completionState: false,
           },
           {
-            name: "APERTURE and its EFFECTS Part III",
+            title: "APERTURE and its EFFECTS Part III",
             duration: 252,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=eMSVD6_v9Xo&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=7",
             completionState: false,
           },
@@ -151,16 +117,16 @@ const courses = [
         title: "Shutter Speed In Depth",
         lessons: [
           {
-            name: "SHUTTER SPEED and its EFFECTS Part I",
+            title: "SHUTTER SPEED and its EFFECTS Part I",
             duration: 166,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=T9cuhx_vY3Q&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=8",
             completionState: false,
           },
           {
-            name: "SHUTTER SPEED and its EFFECTS Part II",
+            title: "SHUTTER SPEED and its EFFECTS Part II",
             duration: 183,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=gt5eUquQuUc&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=9",
             completionState: false,
           },
@@ -170,16 +136,16 @@ const courses = [
         title: "ISO In Depth",
         lessons: [
           {
-            name: "ISO",
+            title: "ISO",
             duration: 425,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=7FPzcNEq6Xg&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=10",
             completionState: false,
           },
           {
-            name: "Focus Points and Focus Rules",
+            title: "Focus Points and Focus Rules",
             duration: 262,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=IkF8DK0g0Hg&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=11",
             completionState: false,
           },
@@ -209,37 +175,37 @@ const courses = [
         title: "Introduction To UI/UX",
         lessons: [
           {
-            name: "Getting Started in User Experience Design",
+            title: "Getting Started in User Experience Design",
             duration: 577,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=_lyzy-vChh4&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R",
             completionState: false,
           },
           {
-            name: "5 UX Design Tips & Techniques",
+            title: "5 UX Design Tips & Techniques",
             duration: 262,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=w6qyekgIo8I&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=2",
             completionState: false,
           },
           {
-            name: "Front-End Development and UX/UI Design",
+            title: "Front-End Development and UX/UI Design",
             duration: 1675,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=Ku6vPZXaUwg&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=4",
             completionState: false,
           },
           {
-            name: "The 10 Principles for Good Design",
+            title: "The 10 Principles for Good Design",
             duration: 582,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=38r_3ZKZIgg&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=4",
             completionState: false,
           },
           {
-            name: "UX Design vs UI Design",
+            title: "UX Design vs UI Design",
             duration: 936,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=RtPnVtXw6HU&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=5",
             completionState: false,
           },
@@ -249,23 +215,23 @@ const courses = [
         title: "Deeper Inside UI/UX Design",
         lessons: [
           {
-            name: "UX Design Book Review",
+            title: "UX Design Book Review",
             duration: 382,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=vBzBgewl4ac&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=6",
             completionState: false,
           },
           {
-            name: "How to Wireframe a Website or App",
+            title: "How to Wireframe a Website or App",
             duration: 472,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=e2Oynq-mOLk&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=7",
             completionState: false,
           },
           {
-            name: "Design Sketching for Web Designers & Product Designers",
+            title: "Design Sketching for Web Designers & Product Designers",
             duration: 291,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=a9h7sI7tbA0&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=8",
             completionState: false,
           },
@@ -275,23 +241,23 @@ const courses = [
         title: "Think Like a UI/UX Designer",
         lessons: [
           {
-            name: "3 Psychology Principles in UX Design",
+            title: "3 Psychology Principles in UX Design",
             duration: 215,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=e_g8FxbrCWY&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=9",
             completionState: false,
           },
           {
-            name: "The basics of Baseline Grids in UI & Web Design",
+            title: "The basics of Baseline Grids in UI & Web Design",
             duration: 573,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=rGq1GllRLjk&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=10",
             completionState: false,
           },
           {
-            name: "Prototype & Test in 10 minutes or less",
+            title: "Prototype & Test in 10 minutes or less",
             duration: 716,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=pijzYKAOluw&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=11",
             completionState: false,
           },
@@ -320,16 +286,16 @@ const courses = [
         title: "Marketing: Genesis",
         lessons: [
           {
-            name: "Digital Marketing 101",
+            title: "Digital Marketing 101",
             duration: 1052,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=h95cQkEWBx0&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P",
             completionState: false,
           },
           {
-            name: "Introduction To Marketing",
+            title: "Introduction To Marketing",
             duration: 385,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=8Sj2tbh-ozE&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=2",
             completionState: false,
           },
@@ -339,23 +305,23 @@ const courses = [
         title: "Marketing: Gateway To Success",
         lessons: [
           {
-            name: "How To Advertise For A Small Business",
+            title: "How To Advertise For A Small Business",
             duration: 809,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=2g2fSvvcN2Q&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=3",
             completionState: false,
           },
           {
-            name: "How To Create A Marketing Plan",
+            title: "How To Create A Marketing Plan",
             duration: 884,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=pbNlQs2eBDY&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=4",
             completionState: false,
           },
           {
-            name: "Marketing 101 Crash Course",
+            title: "Marketing 101 Crash Course",
             duration: 878,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=b8oP6oeJ5WM&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=5",
             completionState: false,
           },
@@ -365,23 +331,23 @@ const courses = [
         title: "Marketing: Fundamentals, Tips and Principalities",
         lessons: [
           {
-            name: "4 Principles Of Marketing Strategy",
+            title: "4 Principles Of Marketing Strategy",
             duration: 1134,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=n8M00vmp6v0&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=6",
             completionState: false,
           },
           {
-            name: "5 Marketing Tips You Need To Know To GROW YOUR BUSINESS",
+            title: "5 Marketing Tips You Need To Know To GROW YOUR BUSINESS",
             duration: 750,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=7cCjX5MY28A&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=7",
             completionState: false,
           },
           {
-            name: "Understanding Marketing Fundamentals",
+            title: "Understanding Marketing Fundamentals",
             duration: 794,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=_R-f_AlRLT8&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=8",
             completionState: false,
           },
@@ -410,9 +376,9 @@ const courses = [
         title: "Introduction",
         lessons: [
           {
-            name: "Big Data and Hadoop Introduction",
+            title: "Big Data and Hadoop Introduction",
             duration: 564,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=F4z_ex2mjro&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7",
             completionState: false,
           },
@@ -422,16 +388,16 @@ const courses = [
         title: "Hadoop Components and Architecture",
         lessons: [
           {
-            name: "Hadoop Components and Architecture Part 1",
+            title: "Hadoop Components and Architecture Part 1",
             duration: 857,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=aa7j7A-PPiw&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=2",
             completionState: false,
           },
           {
-            name: "Hadoop Components and Architecture Part 2",
+            title: "Hadoop Components and Architecture Part 2",
             duration: 617,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=fN9GA6twEQg&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=3",
             completionState: false,
           },
@@ -441,23 +407,23 @@ const courses = [
         title: "Linux World",
         lessons: [
           {
-            name: "Installing Ubuntu VM on windows machine",
+            title: "Installing Ubuntu VM on windows machine",
             duration: 525,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=afweBBGQYZ0&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=4",
             completionState: false,
           },
           {
-            name: "Windows vs Linux Operating System",
+            title: "Windows vs Linux Operating System",
             duration: 441,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=8fvNsNDq-sY&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=5",
             completionState: false,
           },
           {
-            name: "Linux Command Tutorial For Beginners",
+            title: "Linux Command Tutorial For Beginners",
             duration: 680,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=te71qgVCDlY&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=6",
             completionState: false,
           },
@@ -467,16 +433,16 @@ const courses = [
         title: "Hadoop World",
         lessons: [
           {
-            name: "Hadoop Installation Guide Step by Step",
+            title: "Hadoop Installation Guide Step by Step",
             duration: 1469,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=Ih5cuJYYz6Y&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=7",
             completionState: false,
           },
           {
-            name: "Hadoop Commands with example",
+            title: "Hadoop Commands with example",
             duration: 792,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=Sos1QKaZySo&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=8",
             completionState: false,
           },
@@ -486,23 +452,23 @@ const courses = [
         title: "Hive World",
         lessons: [
           {
-            name: "Hive Tutorial For Beginners",
+            title: "Hive Tutorial For Beginners",
             duration: 521,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=rypH1TCXVQY&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=9",
             completionState: false,
           },
           {
-            name: "Hive Installation Demo On Ubuntu",
+            title: "Hive Installation Demo On Ubuntu",
             duration: 682,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=wPIawRML168&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=10",
             completionState: false,
           },
           {
-            name: "Hive Query Language",
+            title: "Hive Query Language",
             duration: 1346,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=zEl6zSKMhTg&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=11",
             completionState: false,
           },
@@ -512,23 +478,23 @@ const courses = [
         title: "Sqoop World",
         lessons: [
           {
-            name: "Sqoop Architecture",
+            title: "Sqoop Architecture",
             duration: 435,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=kSk8ILi5yT8&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=12",
             completionState: false,
           },
           {
-            name: "MySQL Installation on Ubuntu Step by Step",
+            title: "MySQL Installation on Ubuntu Step by Step",
             duration: 376,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=DO3MTLnT16M&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=13",
             completionState: false,
           },
           {
-            name: "Sqoop Installation Steps",
+            title: "Sqoop Installation Steps",
             duration: 591,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=6X0qJ_UV7JE&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=14",
             completionState: false,
           },
@@ -557,9 +523,9 @@ const courses = [
         title: "Entering Arts World",
         lessons: [
           {
-            name: "Learn How to Draw for Beginners",
+            title: "Learn How to Draw for Beginners",
             duration: 576,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=Wz6DrQeQ5rI&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51",
             completionState: false,
           },
@@ -569,30 +535,30 @@ const courses = [
         title: "Baby Steps Through Fundamentals",
         lessons: [
           {
-            name: "How to draw Anything with Construction",
+            title: "How to draw Anything with Construction",
             duration: 519,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=iTey_rv-Trc&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=2",
             completionState: false,
           },
           {
-            name: "How to Draw Heads",
+            title: "How to Draw Heads",
             duration: 575,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=pW9YCEZ5UjA&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=3",
             completionState: false,
           },
           {
-            name: "Drawing Faces",
+            title: "Drawing Faces",
             duration: 574,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=yX0S_WWiopM&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=4",
             completionState: false,
           },
           {
-            name: "Drawing Better Poses",
+            title: "Drawing Better Poses",
             duration: 756,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=6uVeYrHk8f0&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=5",
             completionState: false,
           },
@@ -602,16 +568,16 @@ const courses = [
         title: "Perspective of an Artist",
         lessons: [
           {
-            name: "Perspective Drawing",
+            title: "Perspective Drawing",
             duration: 615,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=qq8SO9tMI8k&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=6",
             completionState: false,
           },
           {
-            name: "Drawing Objects in Perspective",
+            title: "Drawing Objects in Perspective",
             duration: 539,
-            video:
+            urls:
               "https://www.youtube.com/watch?v=5cJO0UVJGP4&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=7",
             completionState: false,
           },
@@ -638,16 +604,16 @@ const courses = [
         title: "Introduction To HR",
         lessons: [
           {
-            name: "Introduction to Human Resource Management",
+            title: "Introduction to Human Resource Management",
             duration: "332",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=T7bSMzg7x-s&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy",
             completionState: false,
           },
           {
-            name: 'The Manager"s Role in Strategic Human Resource Management',
+            title: 'The Manager"s Role in Strategic Human Resource Management',
             duration: "442",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=qEN4MVBacys&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=2",
             completionState: false,
           },
@@ -657,30 +623,30 @@ const courses = [
         title: "Analysing and Selecting Employees",
         lessons: [
           {
-            name: "Job Analysis and the Talent Management Process",
+            title: "Job Analysis and the Talent Management Process",
             duration: "562",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=y7GpP8oMkVQ&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=3",
             completionState: false,
           },
           {
-            name: "Personnel Planning and Recruitment",
+            title: "Personnel Planning and Recruitment",
             duration: "650",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=kTXdTOZZ6Ek&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=4",
             completionState: false,
           },
           {
-            name: "Employee testing and selection",
+            title: "Employee testing and selection",
             duration: "542",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=LJsgAcx8v-M&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=5",
             completionState: false,
           },
           {
-            name: "Interviewing Candidates",
+            title: "Interviewing Candidates",
             duration: "261",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=LARCn4yWP54&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=6",
             completionState: false,
           },
@@ -690,23 +656,23 @@ const courses = [
         title: "HR Fundamentals",
         lessons: [
           {
-            name: "Training and Developing Employees",
+            title: "Training and Developing Employees",
             duration: "723",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=TJbyV5ydgMw&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=7",
             completionState: false,
           },
           {
-            name: "Performance Management and Appraisal",
+            title: "Performance Management and Appraisal",
             duration: "673",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=jQNZY5e-jX8&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=8",
             completionState: false,
           },
           {
-            name: "Establishing effective pay programs",
+            title: "Establishing effective pay programs",
             duration: "673",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=MEFju-U7wh4&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=9",
             completionState: false,
           },
@@ -735,51 +701,51 @@ const courses = [
         title: "The Sales Combination Parts",
         lessons: [
           {
-            name: "Back to Basics Part 1",
+            title: "Back to Basics Part 1",
             duration: "1725",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=MCpi7xZz8bg&list=PLCwOIOwZBb1j_dSPpoz1e02l64TMzbp3x",
             completionState: false,
           },
           {
-            name: "Back to Basics Part 2A",
+            title: "Back to Basics Part 2A",
             duration: "781",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=8GNAYwOPbP4&list=PLCwOIOwZBb1j_dSPpoz1e02l64TMzbp3x&index=2",
             completionState: false,
           },
           {
-            name: "Back to Basics Part 2B",
+            title: "Back to Basics Part 2B",
             duration: "2098",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=u-qOXACgdQ0&list=PLCwOIOwZBb1j_dSPpoz1e02l64TMzbp3x&index=3",
             completionState: false,
           },
           {
-            name: "Back to Basics Part 3A",
+            title: "Back to Basics Part 3A",
             duration: "2082",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=lEn1txclNTU&list=PLCwOIOwZBb1j_dSPpoz1e02l64TMzbp3x&index=4",
             completionState: false,
           },
           {
-            name: "Back to Basics Part 3B",
+            title: "Back to Basics Part 3B",
             duration: "1212",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=QLlV2Hynf1g&list=PLCwOIOwZBb1j_dSPpoz1e02l64TMzbp3x&index=5",
             completionState: false,
           },
           {
-            name: "Partner With Me As Your Sales Coach and Trainer",
+            title: "Partner With Me As Your Sales Coach and Trainer",
             duration: "124",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=E8-biaMPCgw&list=PLCwOIOwZBb1j_dSPpoz1e02l64TMzbp3x&index=6",
             completionState: false,
           },
           {
-            name: "Back to Basics Part 4A",
+            title: "Back to Basics Part 4A",
             duration: "1413",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=ZNl2Bc8rt1o&list=PLCwOIOwZBb1j_dSPpoz1e02l64TMzbp3x&index=7",
             completionState: false,
           },
@@ -808,30 +774,30 @@ const courses = [
         title: "Celestial sphere",
         lessons: [
           {
-            name: "Celestial sphere: Definitions and Equatorial Coordinates",
+            title: "Celestial sphere: Definitions and Equatorial Coordinates",
             duration: "643",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=CaeOG6mTM-w&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu",
             completionState: false,
           },
           {
-            name: "Celestial sphere: Horizontal Coordinates",
+            title: "Celestial sphere: Horizontal Coordinates",
             duration: "471",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=x8cIqKmJf_s&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=2",
             completionState: false,
           },
           {
-            name: "Celestial Sphere: Ecliptic Coordinates",
+            title: "Celestial Sphere: Ecliptic Coordinates",
             duration: "358",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=d8HFDHq-HwQ&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=3",
             completionState: false,
           },
           {
-            name: "Celestial Sphere: Hour Coordinates and Galactic coordinates",
+            title: "Celestial Sphere: Hour Coordinates and Galactic coordinates",
             duration: "353",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=CXiWPOOHh1U&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=4",
             completionState: false,
           },
@@ -841,30 +807,30 @@ const courses = [
         title: "Astro-Laws",
         lessons: [
           {
-            name: "The spherical triangle",
+            title: "The spherical triangle",
             duration: "482",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=2szAVccopOs&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=5",
             completionState: false,
           },
           {
-            name: "Fundamental Law of Cosines",
+            title: "Fundamental Law of Cosines",
             duration: "576",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=nYW5uHKVW5Q&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=6",
             completionState: false,
           },
           {
-            name: "The dual (or polar) triangle.",
+            title: "The dual (or polar) triangle.",
             duration: "391",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=uOW3yyo8-ps&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=7",
             completionState: false,
           },
           {
-            name: "Law of Sines",
+            title: "Law of Sines",
             duration: "243",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=2MhOzVOjf6o&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=8",
             completionState: false,
           },
@@ -874,44 +840,44 @@ const courses = [
         title: "Astro-Equations",
         lessons: [
           {
-            name: "Gauss Groups",
+            title: "Gauss Groups",
             duration: "260",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=tN3J5OXTojU&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=9",
             completionState: false,
           },
           {
-            name: "Hour to Horizontal",
+            title: "Hour to Horizontal",
             duration: "589",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=M4Z3kFC4E80&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=10",
             completionState: false,
           },
           {
-            name: "Horizontal to Equatorial",
+            title: "Horizontal to Equatorial",
             duration: "182",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=kvlrh994k4s&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=11",
             completionState: false,
           },
           {
-            name: "Coordinates of the Sun",
+            title: "Coordinates of the Sun",
             duration: "536",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=cQiMhvfUspA&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=12",
             completionState: false,
           },
           {
-            name: "Equatorial to Galactic Coordinates",
+            title: "Equatorial to Galactic Coordinates",
             duration: "411",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=XrA27sWZsE0&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=13",
             completionState: false,
           },
           {
-            name: "Astronomical Time and Longitude",
+            title: "Astronomical Time and Longitude",
             duration: "311",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=W43ocK1EjeY&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=14",
             completionState: false,
           },
@@ -940,9 +906,9 @@ const courses = [
         title: "Introduction",
         lessons: [
           {
-            name: "AMAZON AFFILIATE MARKETING for Beginners",
+            title: "AMAZON AFFILIATE MARKETING for Beginners",
             duration: "777",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=ZzcgdNpw_cI&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q",
             completionState: false,
           },
@@ -952,51 +918,51 @@ const courses = [
         title: "Technics In Depth",
         lessons: [
           {
-            name: "How to find MOST PROFITABLE Niches",
+            title: "How to find MOST PROFITABLE Niches",
             duration: "985",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=b1SD4PAXBQs&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=2",
             completionState: false,
           },
           {
-            name: "How To Create AMAZON AFFILIATE WEBSITE",
+            title: "How To Create AMAZON AFFILIATE WEBSITE",
             duration: "1932",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=WfmoqKNUwBg&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=3",
             completionState: false,
           },
           {
-            name: "FREE Keyword Research for SEO",
+            title: "FREE Keyword Research for SEO",
             duration: "1031",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=NFX5p1G1t1Q&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=4",
             completionState: false,
           },
           {
-            name: "How to Write SEO FRIENDLY ARTICLE on Wordpress",
+            title: "How to Write SEO FRIENDLY ARTICLE on Wordpress",
             duration: "1486",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=WfAjE5-2Vcs&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=5",
             completionState: false,
           },
           {
-            name: "How To Create AMAZON AFFILIATE ACCOUNT",
+            title: "How To Create AMAZON AFFILIATE ACCOUNT",
             duration: "829",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=pRx8SZ2lC94&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=6",
             completionState: false,
           },
           {
-            name: "What is SEO? Black Hat SEO? Search Engine Optimization",
+            title: "What is SEO? Black Hat SEO? Search Engine Optimization",
             duration: "972",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=_Zav7CDI65I&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=7",
             completionState: false,
           },
           {
-            name: "How to CREATE BACKLINKS",
+            title: "How to CREATE BACKLINKS",
             duration: "1384",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=EHGodf4vmys&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=8",
             completionState: false,
           },
@@ -1024,23 +990,23 @@ const courses = [
         title: "Python/SQL Fundamentals",
         lessons: [
           {
-            name: "MySQL With Python And Data Science",
+            title: "MySQL With Python And Data Science",
             duration: "822",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=us1XyayQ6fU&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl",
             completionState: false,
           },
           {
-            name: "Create and Drop Database and Table",
+            title: "Create and Drop Database and Table",
             duration: "1373",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=9DwlJSlwvqY&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=2",
             completionState: false,
           },
           {
-            name: "MYSQL NULL Values, UPDATE,DELETE,ALTER Query",
+            title: "MYSQL NULL Values, UPDATE,DELETE,ALTER Query",
             duration: "938",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=7s0kdfiTLRE&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=3",
             completionState: false,
           },
@@ -1050,23 +1016,23 @@ const courses = [
         title: "Constrains",
         lessons: [
           {
-            name: "SQL Constraints Part1",
+            title: "SQL Constraints Part1",
             duration: "1305",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=cKNQRAMoQHw&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=4",
             completionState: false,
           },
           {
-            name: "Primary Key, Foreign Key, Check And Default Constraints",
+            title: "Primary Key, Foreign Key, Check And Default Constraints",
             duration: "1424",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=z-Zg39LzcW8&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=5",
             completionState: false,
           },
           {
-            name: "Indexing In MySQL",
+            title: "Indexing In MySQL",
             duration: "655",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=xDDlB51dX5E&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=6",
             completionState: false,
           },
@@ -1076,37 +1042,37 @@ const courses = [
         title: "Interview Preparations",
         lessons: [
           {
-            name: "Interview Preparation MySql Views",
+            title: "Interview Preparation MySql Views",
             duration: "970",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=p7pYiynUNAo&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=7",
             completionState: false,
           },
           {
-            name: "Discussing All Types Of Joins",
+            title: "Discussing All Types Of Joins",
             duration: "784",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=_OfQeKAUFtA&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=8",
             completionState: false,
           },
           {
-            name: "MYSQL Stored Procedures",
+            title: "MYSQL Stored Procedures",
             duration: "601",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=vFZ5rtf71WU&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=9",
             completionState: false,
           },
           {
-            name: "MySQL Interview Question With Solutions",
+            title: "MySQL Interview Question With Solutions",
             duration: "1409",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=KTdItTJVvFQ&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=10",
             completionState: false,
           },
           {
-            name: "MySQL Interview Question With Solutions",
+            title: "MySQL Interview Question With Solutions",
             duration: "1264",
-            video:
+            urls:
               "https://www.youtube.com/watch?v=nEYdSiKygCI&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=11",
             completionState: false,
           },
@@ -1134,39 +1100,39 @@ const courses = [
         title: "Secrets of Sales",
         lessons: [
           {
-            name: 'How to script your sales pitch process to close more sales',
+            title: 'How to script your sales pitch process to close more sales',
            duration: '244',
-           video:'https://www.youtube.com/watch?v=cjmtUrPXDPI&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6',
+           urls:'https://www.youtube.com/watch?v=cjmtUrPXDPI&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6',
            completionState: false,
             },
            {
-            name: 'Close the Sale Faster with These 2 Powerfully Effective Closing Techniques',
+            title: 'Close the Sale Faster with These 2 Powerfully Effective Closing Techniques',
            duration: '354',
-           video:'https://www.youtube.com/watch?v=IjZ6bEPxi5w&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=2',
+           urls:'https://www.youtube.com/watch?v=IjZ6bEPxi5w&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=2',
            completionState: false,
             },
            {
-            name: 'How to Make Buying Easy for the Customer & Make More Sales',
+            title: 'How to Make Buying Easy for the Customer & Make More Sales',
            duration: '303',
-           video:'https://www.youtube.com/watch?v=gpfY4ZNbdSc&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=3',
+           urls:'https://www.youtube.com/watch?v=gpfY4ZNbdSc&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=3',
            completionState: false,
             },
            {
-            name: 'Recognize Buying Signals',
+            title: 'Recognize Buying Signals',
            duration: '287',
-           video:'https://www.youtube.com/watch?v=jnKObmrwzLY&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=4',
+           urls:'https://www.youtube.com/watch?v=jnKObmrwzLY&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=4',
            completionState: false,
             },
            {
-            name: 'How To Set More Sales Meetings',
+            title: 'How To Set More Sales Meetings',
            duration: '116',
-           video:'https://www.youtube.com/watch?v=HsNrWXFk5Vo&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=5',
+           urls:'https://www.youtube.com/watch?v=HsNrWXFk5Vo&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=5',
            completionState: false,
             },
            {
-            name: 'How To Prepare For A Sales Call',
+            title: 'How To Prepare For A Sales Call',
            duration: '138',
-           video:'https://www.youtube.com/watch?v=qSuPDf1vXQw&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=6',
+           urls:'https://www.youtube.com/watch?v=qSuPDf1vXQw&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=6',
            completionState: false,
             },
           ]
@@ -1192,18 +1158,11 @@ const courses = [
 const createSampleData = async () => {
   try {
     await connectToDb();
-    // await User.deleteMany({});
     await Course.deleteMany({});
     for (const course of courses) {
       const newCourse = new Course(course);
       await newCourse.save();
     }
-    // for (const user of users) {
-    //   const newUser = new User(user);
-    //   newUser.finishedCourses.push(courses[0]._id);
-    //   newUser.courses.push(courses[0]._id);
-    //   await newUser.save();
-    // }
     console.log("Data created successfully!");
   } catch (error) {
     console.error("Error creating data:", error);
