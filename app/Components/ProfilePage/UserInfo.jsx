@@ -9,8 +9,24 @@ import defaultPicture from "../../../public/default-profile-picture.webp"
 import notify from "@/utils/notifications";
 import 'react-toastify/dist/ReactToastify.css';
 export default function UserInfo() {
+
   const { data, status, update } = useSession();
   const t = useTranslations("Profile")
+  const user = data?.session.user
+
+  const statsData = [
+    { count: 0, label: t("My courses") },
+    { count: 2, label: t("My followers") },
+    { count: 32, label: t("Following") },
+  ];
+
+  const StatsBox = ({ count, label }) => (
+    <div className="text-center font-semibold md:text-md p-2 ">
+      <h6 className="text-xl">{count}</h6>
+      <h6 className="text-gray-600 text-sm">{label}</h6>
+    </div>
+  );
+
 
   const handleFileInput = async (e) => {
     const image = e.target.files[0];
@@ -30,28 +46,16 @@ export default function UserInfo() {
     notify(t("ImageErrorMessage"), "error")
   };
 
-  const statsData = [
-    { count: 0, label: t("My courses") },
-    { count: 2, label: t("My followers") },
-    { count: 32, label: t("Following") },
-  ];
 
-  const StatsBox = ({ count, label }) => (
-    <div className="text-center font-semibold md:text-md p-2 ">
-      <h6 className="text-xl">{count}</h6>
-      <h6 className="text-gray-600 text-sm">{label}</h6>
-    </div>
-  );
 
   if (status === 'loading') return <div>
     <CircularProgress />
   </div>
-  const user = data?.session.user
-  console.log(user)
+
   return (
     <div className="w-full">
       <div className="flex flex-col xl:flex-row items-center justify-center w-full">
-        <div className="h-[9em] w-[10em] md:w-[14em] md:h-[13em] xl:w-[18em] xl:h-[12em] pr-2">
+        <div className="h-[9rem] w-[10rem] md:w-[14rem] md:h-[13rem] xl:w-[16rem] xl:h-[12rem]">
           {
             user?.image ? <Image
               src={user?.image}
@@ -60,12 +64,12 @@ export default function UserInfo() {
               height={80}
               sizes="25vw"
               quality={100}
-              className="rounded-full w-full h-full"
+              className="w-full h-full object-cover aspect-square rounded-full"
             /> : (
               <Image
                 className="rounded-full w-full h-full"
                 src={defaultPicture}
-                alt={"default user profile picture"}
+                alt={t("DefaultProfilePictureAlt")}
                 width={80}
                 height={80}
                 sizes="25vw"
@@ -90,14 +94,14 @@ export default function UserInfo() {
           <div className="lg:col-span-2 md:col-span-2">
             <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold  text-center md:text-start">
               {
-                user?.name
+                user.name || t("NoName")
               }
             </h1>
-            <div className="flex justify-center md:justify-start font-semibold md:ml-0 lg:ml-0 lg:mt-1 pr-8">
+            <div className="flex items-center justify-center md:justify-start font-semibold md:ml-0 lg:ml-0 lg:mt-1">
               <Icons.LocationIcon />
-              <h6 className="lg:ml-2">
+              <h6 className="ml-2">
                 {
-                  user?.location
+                  user.location || t("NoLocation")
                 }
               </h6>
             </div>

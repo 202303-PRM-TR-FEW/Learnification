@@ -101,7 +101,10 @@
     "Following": "Following",
     "Achievements": "Achievements",
     "ImageSuccessMessage": "Image uploaded successfully",
-    "ImageErrorMessage": "Image upload failed"
+    "ImageErrorMessage": "Image upload failed",
+    "NoLocation": "No location",
+    "NoName": "Name not found",
+    "DefaultProfilePictureAlt": "Default profile picture"
   },
   "Statistics": {
     "Time Spent": "TIME SPENT",

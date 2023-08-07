@@ -100,7 +100,10 @@
     "Following": "Takip Edilenler",
     "Achievements": "Başarılar",
     "ImageSuccessMessage": "Profil resmi başarıyla güncellendi.",
-    "ImageErrorMessage": "Profil resmi güncellenirken bir hata oluştu."
+    "ImageErrorMessage": "Profil resmi güncellenirken bir hata oluştu.",
+    "NoLocation": "Konum bilgisi bulunamadı.",
+    "NoName": "İsim bilgisi bulunamadı.",
+    "DefaultProfilePictureAlt": "Varsayılan profil resmi"
   },
   "Statistics": {
     "Time Spent": "GEÇİRİLEN ZAMAN",
