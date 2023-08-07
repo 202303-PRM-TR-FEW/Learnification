@@ -11,6 +11,7 @@
     "test": "jest --watch"
   },
   "dependencies": {
+    "@inrupt/jest-jsdom-polyfills": "^2.1.2",
     "@mui/icons-material": "^5.14.0",
     "@mui/material": "^5.14.1",
     "@mui/styled-engine-sc": "^5.12.0",

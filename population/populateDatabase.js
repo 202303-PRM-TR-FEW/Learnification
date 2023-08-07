@@ -710,7 +710,7 @@ const courses = [
     tutor: {
       name: "Michael Neuendorff",
       imageUrl:
-        "hhttps://media.licdn.com/dms/image/C5603AQEPg2O3J8eEVQ/profile-displayphoto-shrink_800_800/0/1575702465946?e=2147483647&v=beta&t=FNqCssvtA2CDnITbccMTk0O0UF8NJM6QE8OvV3CkkDA",
+        "https://media.licdn.com/dms/image/C5603AQEPg2O3J8eEVQ/profile-displayphoto-shrink_800_800/0/1575702465946?e=2147483647&v=beta&t=FNqCssvtA2CDnITbccMTk0O0UF8NJM6QE8OvV3CkkDA",
     },
     imageUrl:
       "https://st2.depositphotos.com/4428871/9782/i/950/depositphotos_97826796-stock-photo-sales-training-sale-word-cloud.jpg",

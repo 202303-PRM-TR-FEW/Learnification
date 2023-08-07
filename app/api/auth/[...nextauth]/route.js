@@ -6,6 +6,7 @@ import { User } from "@/models/User";
 import mongoose from "mongoose";
 import { connectToDb } from "@/utils/database";
 import { AES, enc } from "crypto-js";
+import { generateFreeCourseIds } from "@/utils/freeCourses";
 const handler = NextAuth({
   providers: [
     GoogleProvider({
@@ -61,6 +62,8 @@ const handler = NextAuth({
         const existingUser = await User.findOne({ email: user.email }).exec();
         // check if user is allowed to sign in and save their data to db
         if (existingUser) return existingUser;
+        const { courseIds, status } = await generateFreeCourseIds();
+        console.log(courseIds);
         const newUser = new User({
           _id: new mongoose.Types.ObjectId(),
           username: user.name,
@@ -76,6 +79,8 @@ const handler = NextAuth({
           streak: 0,
           hoursSpent: 0,
         });
+        if (status === "success") newUser.courses.push(...courseIds);
+        console.log(newUser);
         await newUser.save();
         return newUser;
       } catch (error) {

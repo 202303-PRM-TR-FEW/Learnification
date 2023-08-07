@@ -1,10 +1,11 @@
 import { Schema, models, model } from "mongoose";
+import { Course } from "./Course";
 
 const userSchema = new Schema({
   courses: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Course",
+      ref: Course
     },
   ],
   achievements: [
