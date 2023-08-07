@@ -59,6 +59,12 @@ const userSchema = new Schema({
       ref: "Course",
     },
   ],
+  savedCourses: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Course"
+    }
+  ],
   loginState: {
     type: Boolean,
     default: false,
