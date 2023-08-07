@@ -3,16 +3,19 @@ import CourseView from '@/app/Components/CourseView';
 import LearnUButton from '@/app/Components/LearnUButton';
 import CoursePreview from '@/app/Components/CoursePreview';
 import { useTranslations } from 'next-intl';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { redirect, usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { useCallback, useEffect, useRef } from 'react'
 import { useState } from 'react';
 import Image from 'next/image';
+import { useSession } from 'next-auth/react';
 
 function CourseViewImage({ imgUrl }) {
+    const session = useSession()
+    if (!session.data) redirect('/sign-in?callbackUrl=/saved')
     const t = useTranslations("SavedCourses")
     return (
         <div
-            className='relative w-full h-[250px] lg:h-[350px] xl:h-[400px] 2xl:h-[500px] rounded-2xl'
+            className='relative w-full h-[250px] lg:min-h-[200px] basis-full rounded-2xl'
         >
             <Image
                 src={imgUrl}
@@ -233,8 +236,8 @@ export default function Saved() {
 
                 </div>
                 {/* LAPTOP DESIGN STARTS HERE */}
-                <div className='hidden h-screen lg:block md:basis-full bg-primary-white sticky top-0'>
-                    <div className='flex h-full flex-col p-4'>
+                <div className='hidden h-screen lg:block md:basis-full bg-primary-white'>
+                    <div className='flex flex-col h-full p-4'>
                         {
                             <CourseView course={selectedCourse}
                                 backgroundImageElement={<CourseViewImage imgUrl={selectedCourse.imageUrl} />}>

@@ -19,7 +19,7 @@ export async function GET() {
   const courses = await Course.find({})
     .populate('recommendedCourses')
     .exec();
-
+  
   const achievement = await Achievement.find({})
 
   const transaction = await Transaction.find({})

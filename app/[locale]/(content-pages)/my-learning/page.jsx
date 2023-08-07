@@ -3,16 +3,19 @@ import CoursePreview from "@/app/Components/CoursePreview"
 import CourseView from "@/app/Components/CourseView"
 import LearnUButton from "@/app/Components/LearnUButton"
 import Image from "next/image"
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { redirect, usePathname, useRouter, useSearchParams } from "next/navigation"
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import { useTranslations } from "use-intl"
 import { useLocale } from "next-intl"
 import Link from "next/link"
 import Icons from "@/app/Components/Icons"
+import { toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+import { useSession } from "next-auth/react"
 function CourseViewImage({ imgUrl }) {
     return (
         <div
-            className='w-full h-[250px] lg:h-[350px] xl:h-[400px] 2xl:h-[500px] rounded-2xl'
+            className='w-full h-[250px] lg:min-h-[200px] basis-full rounded-2xl'
         >
             <Image
                 src={imgUrl}
@@ -149,6 +152,8 @@ export default function MyLearning() {
             finishedPercentage: 44,
         },
     ]
+    const session = useSession()
+    if (!session.data) redirect('/sign-in?callbackUrl=/my-learning')
     const t = useTranslations("MyLearning")
     const searchParams = useSearchParams()
     const router = useRouter()
@@ -172,7 +177,7 @@ export default function MyLearning() {
         e.preventDefault();
         // exclude the bookmarkRef and buttonRef from the click event
         // const isButton = e.target.outerHTML === buttonRef.current.outerHTML
-        const isBookmark = e.target.outerHTML === bookmarkRef.current.outerHTML
+        const isBookmark = e.target.outerHTML === bookmarkRef.current.innerHTML
         if (isBookmark) return
         setExpandedCourseIndex(() => index);
         router.push(
@@ -191,11 +196,11 @@ export default function MyLearning() {
         <main className="w-full md:pl-12 px-[4%] md:px-[2%] lg:px-0">
             <div className="flex min-w-full gap-4 max-md:pb-20">
                 <div className='basis-full lg:basis-10/12 lg:h-screen lg:overflow-y-scroll px-4'>
-                    <div className="w-full flex items-center mt-16 mb-8">
-                        <h1 className='font-medium text-3xl'>
+                    <div className="w-full flex flex-col gap-4 lg:gap-0 lg:flex-row items-center mt-16 mb-4 lg:mb-8">
+                        <h1 className='font-medium text-lg lg:text-xl 2xl:text-3xl'>
                             {t("title")}
                         </h1>
-                        <h2 className="ml-auto text-lg animatedUnderline">
+                        <h2 className="lg:ml-auto text-lg animatedUnderline">
                             <Link href={"statistics"} lang={locale}>
                                 {<Icons.StatisticsIcon />} <span>{t("Statistics")}</span>
                             </Link>
@@ -240,7 +245,7 @@ export default function MyLearning() {
 
                 </div>
                 {/* LAPTOP DESIGN STARTS HERE */}
-                <div className='hidden h-screen lg:block md:basis-full bg-primary-white sticky top-0'>
+                <div className='hidden h-screen lg:block md:basis-full bg-primary-white'>
                     <div className='flex h-full flex-col p-4'>
                         {
                             <CourseView course={selectedCourse}
