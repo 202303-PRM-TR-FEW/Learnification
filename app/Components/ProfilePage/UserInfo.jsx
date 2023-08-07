@@ -87,6 +87,7 @@ export default function UserInfo() {
             id="fileUpload"
             className="hidden"
             type="file"
+            accept="image/jpeg, image/png, image/jpg, image/webp"
             onChange={handleFileInput}
           />
         </div>
