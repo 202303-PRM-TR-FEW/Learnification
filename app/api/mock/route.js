@@ -22,12 +22,12 @@ export async function GET() {
     .populate('categories')
     .populate('recommendedCourses')
     .exec();
-    
+
   const lesson = await Lesson.find({})
     .populate('courses')
     .populate('sections')
     .exec();
-  
+
   const category = await Category.find({})
     .populate('courses')
 
@@ -37,7 +37,7 @@ export async function GET() {
     .populate('users')
     .populate('courses')
 
-  
+
   console.log(`${users}\n${courses}\n${lesson}\n${category}\n${achievement}\n${transaction}`);
 
   return new Response(JSON.stringify({ users, courses, lesson, category, achievement, transaction }), {
