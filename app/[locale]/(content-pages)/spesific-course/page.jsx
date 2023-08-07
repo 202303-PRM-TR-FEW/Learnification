@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import CourseOverview from "@/app/Components/CourseOverview";
 
-function CourseViewImage({ imgUrl }) {
+function CourseViewImage({ imgUrl, courseId }) {
   return (
     <div className="relative w-full h-[250px] lg:h-[350px] xl:h-[400px] 2xl:h-[500px] rounded-2xl">
       <Image
