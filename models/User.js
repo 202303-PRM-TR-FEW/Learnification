@@ -6,7 +6,7 @@ const userSchema = new Schema({
   courses: [
     {
       type: Schema.Types.ObjectId,
-      ref: Course,
+      ref: Course
     },
   ],
   achievements: [

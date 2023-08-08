@@ -1,52 +1,5 @@
-import { User } from "@/models/User";
 import { Course } from "@/models/Course";
 import { connectToDb } from "@/utils/database";
-import mongoose from "mongoose";
-
-const users = [
-  {
-    _id: new mongoose.Types.ObjectId(),
-    username: "Amdjed",
-    email: "Amdjed@gmail.com",
-    password: "password123",
-    location: "Istanbul",
-    profilePicture: "",
-    streak: 0,
-    followers: [],
-    following: [],
-    hoursSpent: 0,
-    finishedCourses: [],
-    loginState: false,
-  },
-  {
-    _id: new mongoose.Types.ObjectId(),
-    username: "Tugba",
-    email: "Tugba@gmail.com",
-    password: "password123",
-    location: "Istanbul",
-    profilePicture: "",
-    streak: 0,
-    followers: [],
-    following: [],
-    hoursSpent: 0,
-    finishedCourses: [],
-    loginState: false,
-  },
-  {
-    _id: new mongoose.Types.ObjectId(),
-    username: "Ebla",
-    email: "Ebla@gmail.com",
-    password: "password123",
-    location: "Istanbul",
-    profilePicture: "",
-    streak: 0,
-    followers: [],
-    following: [],
-    hoursSpent: 0,
-    finishedCourses: [],
-    loginState: false,
-  },
-];
 
 /* need to prepare data for insertion */
 /* duration in seconds */
