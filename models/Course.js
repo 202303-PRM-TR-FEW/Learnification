@@ -26,7 +26,6 @@ const courseSchema = new Schema({
   ],
   category: {
     type: String,
-    ref: "Category",
   },
   title: {
     type: String,
