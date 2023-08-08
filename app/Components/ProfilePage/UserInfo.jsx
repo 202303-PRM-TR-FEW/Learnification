@@ -1,28 +1,22 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { uploadFile, fetchImages } from "@/app/Components/AWS/uploadFetchImages";
+import React from "react";
 import Icons from "@/app/Components/Icons";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-
+import { useSession } from "next-auth/react";
+import { CircularProgress } from "@mui/material";
+import defaultPicture from "../../../public/default-profile-picture.webp"
+import notify from "@/utils/notifications";
+import 'react-toastify/dist/ReactToastify.css';
 export default function UserInfo() {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [images, setImages] = useState([]);
+
+  const { data, status, update } = useSession();
   const t = useTranslations("Profile")
-
-  const handleFileInput = (e) => {
-    const file = e.target.files[0];
-    setSelectedFile(file);
-    uploadFile(file, setImages);
-  };
-
-  useEffect(() => {
-    fetchImages(setImages);
-  }, []);
+  const user = data?.session.user
 
   const statsData = [
-    { count: 0, label: t("My courses")},
-    { count: 2, label: t("My followers")},
+    { count: 0, label: t("My courses") },
+    { count: 2, label: t("My followers") },
     { count: 32, label: t("Following") },
   ];
 
@@ -33,20 +27,56 @@ export default function UserInfo() {
     </div>
   );
 
+
+  const handleFileInput = async (e) => {
+    const image = e.target.files[0];
+    const formData = new FormData();
+    formData.append("image", image);
+    formData.append("email", data?.session.user.email);
+    const response = await fetch("/api/upload-profile-picture", {
+      method: "POST",
+      body: formData,
+    })
+    if (response.ok) {
+      const newUserData = await response.json()
+      await update(newUserData)
+      notify(t("ImageSuccessMessage"), "success")
+      return
+    }
+    notify(t("ImageErrorMessage"), "error")
+  };
+
+
+
+  if (status === 'loading') return <div>
+    <CircularProgress />
+  </div>
+
   return (
     <div className="w-full">
       <div className="flex flex-col xl:flex-row items-center justify-center w-full">
-        <div className="h-[9em] w-[10em] md:w-[14em] md:h-[13em] xl:w-[18em] xl:h-[12em] pr-2">
-          {images.map((image, index) => (
-            <Image
-              key={index}
-              src={image.url}
-              alt={image.key}
+        <div className="h-[9rem] w-[10rem] md:w-[14rem] md:h-[13rem] xl:w-[16rem] xl:h-[12rem]">
+          {
+            user?.image ? <Image
+              src={user?.image}
+              alt={"user profile picture"}
               width={80}
               height={80}
-              className="rounded-full w-full h-full"
-            />
-          ))}
+              sizes="25vw"
+              quality={100}
+              className="w-full h-full object-cover aspect-square rounded-full"
+            /> : (
+              <Image
+                className="rounded-full w-full h-full"
+                src={defaultPicture}
+                alt={t("DefaultProfilePictureAlt")}
+                width={80}
+                height={80}
+                sizes="25vw"
+                quality={100}
+              />
+            )
+          }
           <label
             htmlFor="fileUpload"
             className="bg-green-300 rounded-full px-2 text-white relative bottom-8 left-28 cursor-pointer text-3xl"
@@ -57,17 +87,24 @@ export default function UserInfo() {
             id="fileUpload"
             className="hidden"
             type="file"
+            accept="image/jpeg, image/png, image/jpg, image/webp"
             onChange={handleFileInput}
           />
         </div>
         <div className="w-full h-1/3 mt-4">
           <div className="lg:col-span-2 md:col-span-2">
             <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold  text-center md:text-start">
-              Sally Robins
+              {
+                user.name || t("NoName")
+              }
             </h1>
-            <div className="flex justify-center md:justify-start font-semibold md:ml-0 lg:ml-0 lg:mt-1 pr-8">
+            <div className="flex items-center justify-center md:justify-start font-semibold md:ml-0 lg:ml-0 lg:mt-1">
               <Icons.LocationIcon />
-              <h6 className="lg:ml-2">NEW YORK</h6>
+              <h6 className="ml-2">
+                {
+                  user.location || t("NoLocation")
+                }
+              </h6>
             </div>
           </div>
           <div className="flex justify-center md:justify-start">

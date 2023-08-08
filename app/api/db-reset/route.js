@@ -1,6 +1,5 @@
 import { Course } from "@/models/Course";
 import { User } from "@/models/User";
-import { Category } from "@/models/Category";
 import { connectToDb } from "@/utils/database";
 import { NextResponse } from "next/server";
 

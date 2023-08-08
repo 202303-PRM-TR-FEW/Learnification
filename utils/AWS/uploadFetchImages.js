@@ -3,15 +3,26 @@ import AWS from "aws-sdk";
 const S3_BUCKET = "learnu7bucket";
 const REGION = "us-east-1";
 
-AWS.config.update({
-  accessKeyId: process.env.NEXT_PUBLIC_ACCESS_KEY_ID,
-  secretAccessKey: process.env.NEXT_PUBLIC_SECRET_ACCESS_KEY,
-});
-
 const myBucket = new AWS.S3({
   params: { Bucket: S3_BUCKET },
   region: REGION,
+  accessKeyId: process.env.ACCESS_KEY_ID,
+  secretAccessKey: process.env.SECRET_ACCESS_KEY,
 });
+
+
+export async function uploadImage(file, imageName) {
+  const params = {
+    ACL: "bucket-owner-full-control",
+    Body: file,
+    Bucket: S3_BUCKET,
+    Key: imageName
+  };
+  const uploadedFile = myBucket.upload({
+    ...params,
+  }).promise()
+  return (await uploadedFile).Location
+}
 
 export const uploadFile = (file, setImages) => {
   const params = {
@@ -27,7 +38,7 @@ export const uploadFile = (file, setImages) => {
       console.log(Math.round((evt.loaded / evt.total) * 100));
     })
     .send((err) => {
-      if (err) console.log(err, NEXT_PUBLIC_SECRET_ACCESS_KEY);
+      if (err) console.log(err, process.env.SECRET_ACCESS_KEY);
       else fetchImages(setImages);
     });
 };

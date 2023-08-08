@@ -28,6 +28,7 @@ const userSchema = new Schema({
   },
   location: {
     type: String,
+    default: "",
   },
   profilePicture: {
     type: String,
@@ -58,6 +59,12 @@ const userSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "Course",
     },
+  ],
+  savedCourses: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Course"
+    }
   ],
   loginState: {
     type: Boolean,

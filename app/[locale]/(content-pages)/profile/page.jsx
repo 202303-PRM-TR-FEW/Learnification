@@ -27,7 +27,6 @@ function FriendsPart() {
 
 export default async function Profile() {
   const data = await getServerSession()
-  console.log(data)
   if (!data) {
     redirect('/sign-in?callbackUrl=/profile')
   }
