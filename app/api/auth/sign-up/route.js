@@ -13,6 +13,7 @@ export async function POST(req) {
       email,
       password: encryptedPassword,
     });
+    const imageFile = files.image;
     await newUser.save();
     return new Response(JSON.stringify(newUser), {
       status: 200,

@@ -85,6 +85,9 @@ export default function SignInUp() {
     const image = e.target.files[0];
 
     if (image) {
+      const imageURL = URL.createObjectURL(image);
+      setuploadedImage(imageURL);
+
       const formData = new FormData();
       formData.append("image", image);
 
@@ -96,7 +99,7 @@ export default function SignInUp() {
 
         if (response.ok) {
           const responseData = await response.json();
-          console.log("Image uploaded successfully:", responseData);
+          console.log("Image uploaded successfully:", responseData.image);
         } else {
           console.error("Failed to upload image");
         }
