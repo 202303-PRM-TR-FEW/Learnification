@@ -1,15 +1,40 @@
-import React from "react";
+"use client"
+import React, { useEffect } from "react";
 import Tutor from "./Tutor";
 import LearnUButton from "../LearnUButton";
 import Icons from "../Icons";
 import Image from "next/image";
-
+import { useSession } from "next-auth/react";
+import notify from "@/utils/notifications";
+import 'react-toastify/dist/ReactToastify.css';
 /**
  *
  * @param {object} course course object
  * @returns a featured course card
  */
 export default function FeaturedCourse({ course }) {
+  useEffect(() => {
+  }, [])
+  async function saveCourse() {
+    const res = await fetch("/api/save-course", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        course
+      }),
+    })
+    if (!res.ok) {
+      const { message } = await res.json()
+      notify(message, "error")
+      return
+    }
+    const { message } = await res.json()
+    notify(message, "success")
+    setIsSaved(true)
+  }
+  const [isSaved, setIsSaved] = React.useState()
   return (
     <>
       <div className="bg-primary-white rounded-2xl shadow-light-gray">
@@ -27,8 +52,10 @@ export default function FeaturedCourse({ course }) {
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
               loading="eager"
             />
-            <div className="absolute top-2 right-2 p-3 rounded-xl bg-slate-400 bg-opacity-30">
-              <Icons.SaveIcon width={18} height={18} />
+            <div onClick={() => saveCourse()} className="absolute top-2 right-2 p-3 rounded-xl bg-slate-400 bg-opacity-30">
+              <Icons.SaveIcon
+                fill={isSaved ? "blue" : "white"}
+                width={18} height={18} />
             </div>
             <div className="max-w-max flex items-center bg-primary-white rounded-[50px] p-1 pr-4 absolute shadow-light-gray -bottom-5 -z-0">
               <Tutor tutor={course?.tutor} />
