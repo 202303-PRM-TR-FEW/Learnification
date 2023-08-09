@@ -11,8 +11,17 @@ export default async function FeaturedCourses() {
   const host = headers().get('host');
   const protocol = host.includes('localhost') ? 'http' : 'https';
   const res = user ? await getFeaturedCourses(host, protocol, user.email) : await getFeaturedCoursesWOEmail(host, protocol);
-
+  const savedCourseApiUrl = `${protocol}://${host}/api/saved-courses`
   const { courses: featuredCourses } = await res.json();
+  let userSavedCourseIds = []
+  if (user) {
+    const savedCourseResponse = await fetch(savedCourseApiUrl, {
+      method: 'POST',
+      body: JSON.stringify({ email: user.email }),
+    })
+    console.log(savedCourseResponse.status)
+    userSavedCourseIds = await savedCourseResponse.json()
+  }
   return (
     <>
       <FeaturedCoursesHeader />
@@ -20,7 +29,7 @@ export default async function FeaturedCourses() {
         featuredCourses && (
           <div className="grid sm:grid-cols-2 2xl:grid-cols-4 gap-2 sm:gap-4 2xl:gap-6">
             {featuredCourses.map((course, index) => (
-              <FeaturedCourse course={course} key={index} />
+              <FeaturedCourse userSavedCourseIds={userSavedCourseIds} course={course} key={index} />
             ))}
           </div>
         )

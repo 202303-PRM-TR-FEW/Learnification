@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Tutor from "./Tutor";
 import LearnUButton from "../LearnUButton";
 import Icons from "../Icons";
@@ -12,9 +12,9 @@ import 'react-toastify/dist/ReactToastify.css';
  * @param {object} course course object
  * @returns a featured course card
  */
-export default function FeaturedCourse({ course }) {
-  useEffect(() => {
-  }, [])
+export default function FeaturedCourse({ course, userSavedCourseIds }) {
+  const isCourseSaved = userSavedCourseIds?.includes(course?._id)
+  const [isSaved, setIsSaved] = useState(isCourseSaved)
   async function saveCourse() {
     const res = await fetch("/api/save-course", {
       method: "POST",
@@ -30,11 +30,10 @@ export default function FeaturedCourse({ course }) {
       notify(message, "error")
       return
     }
-    const { message } = await res.json()
+    const { message, isCourseSaved } = await res.json()
     notify(message, "success")
-    setIsSaved(true)
+    setIsSaved(isCourseSaved)
   }
-  const [isSaved, setIsSaved] = React.useState()
   return (
     <>
       <div className="bg-primary-white rounded-2xl shadow-light-gray">
