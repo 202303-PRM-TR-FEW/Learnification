@@ -13,7 +13,6 @@ import React, { useCallback, useEffect, useRef } from "react";
 import { useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
-import Link from "next/link";
 
 function CourseViewImage({ imgUrl }) {
   const session = useSession();
@@ -205,6 +204,7 @@ export default function Saved() {
   );
   const bookmarkRef = useRef();
   const buttonRef = useRef();
+
   const handleCourseClick = (e, index) => {
     e.preventDefault();
     // exclude the bookmarkRef and buttonRef from the click event
@@ -223,10 +223,11 @@ export default function Saved() {
     setExpandedCourseIndex(defaultIndex);
   }, [searchParams.get("courseIndex")]);
 
-  // const handlePreviewClick = useCallback(() => {
-  //   const route = "course-detail?courseIndex=" + expandedCourseIndex;
-  //   router.push(route);
-  // }, [expandedCourseIndex]);
+ const handlePreviewClick = (e, courseId) => {
+  e.preventDefault();
+  const route = `/course-detail/${courseId}`;
+  router.push(route);
+ }
 
   return (
     <main className="w-full md:pl-12 px-[4%] md:px-[2%] lg:px-0">
@@ -265,12 +266,12 @@ export default function Saved() {
                     >
                       {/* Children of the CourseView */}
                       <div className="flex flex-col sm:flex-row gap-4 px-8 mt-auto pb-4">
-                        <Link href={`/course-detail/${courseIndex}`}>
                           <LearnUButton
                             className={"basis-full uppercase"}
                             text={t("Preview")}
+                            onClick={(e) => handlePreviewClick(e, index)}
                           />
-                        </Link>
+
                         <LearnUButton
                           className={"basis-full uppercase"}
                           text={t("Buy Now")}
@@ -296,12 +297,11 @@ export default function Saved() {
               >
                 {/* Children of the CourseView */}
                 <div className="flex max-xl:flex-col gap-4 px-8 mt-auto">
-                  <Link href={`/course-detail/${courseIndex}`}>
                     <LearnUButton
                       className={"basis-full uppercase"}
                       text={t("Preview")}
+                      onClick={(e) => handlePreviewClick(e, index)}
                     />
-                  </Link>
                   <LearnUButton
                     className={"basis-full uppercase"}
                     text={t("Buy Now")}

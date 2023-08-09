@@ -9,9 +9,9 @@ import { useTranslations } from "use-intl"
 import { useLocale } from "next-intl"
 import Link from "next/link"
 import Icons from "@/app/Components/Icons"
-import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import { useSession } from "next-auth/react"
+
 function CourseViewImage({ imgUrl }) {
     return (
         <div
@@ -193,10 +193,11 @@ export default function MyLearning() {
         setExpandedCourseIndex(defaultIndex)
     }, [searchParams.get('courseIndex')]);
 
-    const handleContinueLearningClick = useCallback(() => {
-      const route = "spesific-course?courseIndex=" + expandedCourseIndex;
-      router.push(route);
-    }, [expandedCourseIndex]);
+    const handlePreviewClick = (e, courseId) => {
+        e.preventDefault();
+        const route = `/spesific-course/${courseId}`;
+        router.push(route);
+       }
     return (
         <main className="w-full md:pl-12 px-[4%] md:px-[2%] lg:px-0">
             <div className="flex min-w-full gap-4 max-md:pb-20">
@@ -237,7 +238,7 @@ export default function MyLearning() {
                                             <CourseView backgroundImageElement={<CourseViewImage imgUrl={course.imageUrl} />} course={course} >
                                                 {/* Children of the CourseView */}
                                                 <div className='flex flex-col sm:flex-row gap-4 px-8 mt-auto pb-4'>
-                                                    <LearnUButton className={"basis-full uppercase"} text={t("Continue Learning")}  onClick={handleContinueLearningClick}/>
+                                                    <LearnUButton className={"basis-full uppercase"} text={t("Continue Learning")}   onClick={(e) => handlePreviewClick(e, index)}/>
                                                 </div>
                                             </CourseView>
                                         </div>
@@ -257,7 +258,7 @@ export default function MyLearning() {
                                 backgroundImageElement={<CourseViewImage imgUrl={selectedCourse.imageUrl} />}>
                                 {/* Children of the CourseView */}
                                 <div className='flex max-xl:flex-col gap-4 px-8 mt-auto'>
-                                    <LearnUButton className={"basis-full uppercase"} text={t("Continue Learning")}  onClick={handleContinueLearningClick}/>
+                                    <LearnUButton className={"basis-full uppercase"} text={t("Continue Learning")}   onClick={(e) => handlePreviewClick(e, index)}/>
                                 </div>
                             </CourseView>
                         }

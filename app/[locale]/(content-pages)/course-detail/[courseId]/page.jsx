@@ -1,11 +1,8 @@
-"use client";
 import CourseView from "@/app/Components/CourseView";
-import { useTranslations } from "next-intl";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import Image from "next/image";
 import CourseOverview from "@/app/Components/CourseOverview";
 import LearnUButton from "@/app/Components/LearnUButton";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 function CourseViewImage({ imgUrl }) {
   return (
@@ -33,8 +30,9 @@ function CourseViewImage({ imgUrl }) {
   );
 }
 
-export default function CourseDetail() {
-  // we're gonna fetch courses here
+export default function CourseDetail({ params: { courseId } }) {
+  const courseIdNum = parseInt(courseId);
+
   const courses = [
     {
       imageUrl:
@@ -169,23 +167,10 @@ export default function CourseDetail() {
       recommendedCourses: [],
     },
   ];
+
+  const selectedCourse = courses[courseIdNum];
+
   const t = useTranslations("SavedCourses");
-  const searchParams = useSearchParams();
-  const defaultIndex = 0;
-  const initialIndex = searchParams.get("courseIndex") || defaultIndex;
-  const [expandedCourseIndex, setExpandedCourseIndex] = useState(initialIndex);
-  const selectedCourse =
-    courses[
-      expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
-    ];
-  useEffect(() => {
-    const index = parseInt(searchParams.get("courseIndex"));
-    if (index && index <= courses.length - 1) {
-      setExpandedCourseIndex(index);
-      return;
-    }
-    setExpandedCourseIndex(defaultIndex);
-  }, [searchParams.get("courseIndex")]);
   return (
     <main className="grid lg:grid-cols-2 px-8 lg:p-0">
       <section className="lg:pt-6 lg:pr-4">
@@ -198,7 +183,7 @@ export default function CourseDetail() {
       </section>
       <section className="h-screen bg-primary-white rounded-2xl lg:rounded-none mb-20 lg:mb-0 flex flex-col justify-between">
         <div className="overflow-auto">
-        <CourseOverview showCheckIcon={false} />
+          <CourseOverview showCheckIcon={false} />
         </div>
         <div>
           <LearnUButton

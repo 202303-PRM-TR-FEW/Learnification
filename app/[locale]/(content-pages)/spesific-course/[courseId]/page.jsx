@@ -1,11 +1,8 @@
-"use client";
 import CourseView from "@/app/Components/CourseView";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import CourseOverview from "@/app/Components/CourseOverview";
 
-function CourseViewImage({ imgUrl, courseId }) {
+function CourseViewImage({ imgUrl }) {
   return (
     <div className="relative w-full h-[250px] lg:h-[350px] xl:h-[400px] 2xl:h-[500px] rounded-2xl">
       <Image
@@ -31,7 +28,9 @@ function CourseViewImage({ imgUrl, courseId }) {
   );
 }
 
-export default function SpecificCourse() {
+export default function SpecificCourse({ params: { courseId } }) {
+
+  const courseIdNum = parseInt(courseId);
   // we're gonna fetch courses here
   const courses = [
     {
@@ -167,23 +166,7 @@ export default function SpecificCourse() {
       recommendedCourses: [],
     },
   ];
-
-  const searchParams = useSearchParams();
-  const defaultIndex = 0;
-  const initialIndex = searchParams.get("courseIndex") || defaultIndex;
-  const [expandedCourseIndex, setExpandedCourseIndex] = useState(initialIndex);
-  const selectedCourse =
-    courses[
-      expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
-    ];
-  useEffect(() => {
-    const index = parseInt(searchParams.get("courseIndex"));
-    if (index && index <= courses.length - 1) {
-      setExpandedCourseIndex(index);
-      return;
-    }
-    setExpandedCourseIndex(defaultIndex);
-  }, [searchParams.get("courseIndex")]);
+  const selectedCourse = courses[courseIdNum];
   
   return (
     <main className="grid grid-cols-1 gap-4 lg:grid-cols-2 px-8 lg:p-0">
