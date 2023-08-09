@@ -4,10 +4,12 @@ import LearnUButton from "./LearnUButton";
 import { useTranslations } from "next-intl";
 import MyLearningCard from "./MyLearningCard";
 import Link from "next/link";
+import { CircularProgress } from "@mui/material";
 
 export default function MyLearning() {
   const t = useTranslations("Home");
   const [myLearningCourses, setMyLearningCourses] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchMyLearningCourses() {
@@ -15,13 +17,14 @@ export default function MyLearning() {
         const response = await fetch("/api/home/my-learning");
         if (response.ok) {
           const courses = await response.json();
-          console.log(courses);
           setMyLearningCourses(courses);
         } else {
           console.error("Failed to fetch courses");
         }
       } catch (error) {
         console.error("An error occurred:", error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -34,15 +37,19 @@ export default function MyLearning() {
         {t("MyLearning.title")}
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {myLearningCourses?.length === 0 ? (
+        {isLoading ? (
+          <div>
+            <CircularProgress />
+          </div>
+        ) : myLearningCourses.length === 0 ? (
           <p className="text-2xl text-red-500">No courses selected yet</p>
-        ) : myLearningCourses?.length > 2 ? (
+        ) : myLearningCourses.length > 2 ? (
           <>
             <MyLearningCard course={myLearningCourses[0]} />
             <MyLearningCard course={myLearningCourses[1]} />
           </>
         ) : (
-          myLearningCourses?.map((course, index) => (
+          myLearningCourses.map((course, index) => (
             <MyLearningCard key={index} course={course} />
           ))
         )}
@@ -56,5 +63,3 @@ export default function MyLearning() {
     </div>
   );
 }
-
-
