@@ -12,13 +12,14 @@ describe('getUserCourses', () => {
         })
     }),
         it('should return an array of courseIds that user has', async () => {
-            const { courses: courseIds } = await User.findOne({ email }).select("courses").exec()
-            expect(courseIds).toBeInstanceOf(Array)
+            const { courses: userCourseIds } = await User.findOne({ email }).select("courses").exec()
+            expect(userCourseIds).toBeInstanceOf(Array)
         }),
         it('should return an array of courseIds with the type of string', async () => {
-            const { courses: courseIds } = await User.findOne({ email }).select("courses").exec()
-            for (const courseId of courseIds.toString()) {
-                expect(typeof courseId).toBe("string")
+            const { courses } = await User.findOne({ email }).select('courses').exec()
+            const userCourseIds = courses.map((courseId) => courseId.toString())
+            for (const userCourseId of userCourseIds) {
+                expect(typeof userCourseId).toBe("string")
             }
         })
 })

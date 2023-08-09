@@ -3,15 +3,16 @@ import { connectToDb } from "./database"
 const getUserCourseIds = async (email) => {
     await connectToDb()
     try {
-        const { course: courseIds } = await User.findOne({ email }).select('courses').exec()
+        const { courses } = await User.findOne({ email }).select('courses').exec()
+        const userCourseIds = courses.map((courseId) => courseId.toString())
         return {
-            courseIds,
+            userCourseIds,
             status: "success"
         }
     } catch (error) {
         return {
             status: "error",
-            courseIds: []
+            userCourseIds: []
         }
     }
 }
