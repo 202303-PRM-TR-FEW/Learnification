@@ -12,17 +12,17 @@ export default function CourseView({ course, children, backgroundImageElement })
             }
             <div className='p-8'>
                 <h1 className='sm:text-2xl font-[500]'>
-                    {course.title}
+                    {course?.title}
                 </h1>
                 <div className='max-w-max flex items-center bg-primary-white rounded-[50px] p-1 pr-4 shadow-light-gray my-4'>
-                    <Tutor tutor={course.tutor} />
+                    <Tutor tutor={course?.tutor} />
                 </div>
                 <div className='text-gray-500 mb-4'>
                     <p className='flex items-center gap-1 mr-auto'>
-                        <Icons.ClockIcon /> <span>{course.duration}</span>
+                        <Icons.ClockIcon /> <span>{course?.duration}</span>
                     </p>
                     <p className='flex items-center gap-1 mr-auto'>
-                        <Icons.StarIcon empty width={16} height={16} /><span>{course.rating}/5</span>
+                        <Icons.StarIcon empty width={16} height={16} /><span>{course?.rating}/5</span>
                     </p>
                 </div>
                 <h2 className='font-normal sm:text-xl text-black'>
@@ -31,7 +31,7 @@ export default function CourseView({ course, children, backgroundImageElement })
                     }
                 </h2>
                 <p className='text-gray-500'>
-                    {course.description}
+                    {course?.description}
                 </p>
             </div>
             {
