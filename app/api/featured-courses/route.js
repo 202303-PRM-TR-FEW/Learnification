@@ -31,3 +31,17 @@ export async function POST(req) {
         }
     });
 }
+
+export async function GET() {
+    await connectToDb();
+    const courses = await Course.find({}).exec();
+    const randomizedCoures = courses.sort(() => Math.random() - 0.5).slice(0, 4)
+    return new NextResponse(JSON.stringify({
+        courses: randomizedCoures
+    }), {
+        status: 200,
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    });
+}
