@@ -1,52 +1,5 @@
-import { User } from "@/models/User";
 import { Course } from "@/models/Course";
 import { connectToDb } from "@/utils/database";
-import mongoose from "mongoose";
-
-const users = [
-  {
-    _id: new mongoose.Types.ObjectId(),
-    username: "Amdjed",
-    email: "Amdjed@gmail.com",
-    password: "password123",
-    location: "Istanbul",
-    profilePicture: "",
-    streak: 0,
-    followers: [],
-    following: [],
-    hoursSpent: 0,
-    finishedCourses: [],
-    loginState: false,
-  },
-  {
-    _id: new mongoose.Types.ObjectId(),
-    username: "Tugba",
-    email: "Tugba@gmail.com",
-    password: "password123",
-    location: "Istanbul",
-    profilePicture: "",
-    streak: 0,
-    followers: [],
-    following: [],
-    hoursSpent: 0,
-    finishedCourses: [],
-    loginState: false,
-  },
-  {
-    _id: new mongoose.Types.ObjectId(),
-    username: "Ebla",
-    email: "Ebla@gmail.com",
-    password: "password123",
-    location: "Istanbul",
-    profilePicture: "",
-    streak: 0,
-    followers: [],
-    following: [],
-    hoursSpent: 0,
-    finishedCourses: [],
-    loginState: false,
-  },
-];
 
 /* need to prepare data for insertion */
 /* duration in seconds */
@@ -757,7 +710,7 @@ const courses = [
     tutor: {
       name: "Michael Neuendorff",
       imageUrl:
-        "hhttps://media.licdn.com/dms/image/C5603AQEPg2O3J8eEVQ/profile-displayphoto-shrink_800_800/0/1575702465946?e=2147483647&v=beta&t=FNqCssvtA2CDnITbccMTk0O0UF8NJM6QE8OvV3CkkDA",
+        "https://media.licdn.com/dms/image/C5603AQEPg2O3J8eEVQ/profile-displayphoto-shrink_800_800/0/1575702465946?e=2147483647&v=beta&t=FNqCssvtA2CDnITbccMTk0O0UF8NJM6QE8OvV3CkkDA",
     },
     imageUrl:
       "https://st2.depositphotos.com/4428871/9782/i/950/depositphotos_97826796-stock-photo-sales-training-sale-word-cloud.jpg",
@@ -1101,41 +1054,41 @@ const courses = [
         lessons: [
           {
             title: 'How to script your sales pitch process to close more sales',
-           duration: '244',
-           urls:'https://www.youtube.com/watch?v=cjmtUrPXDPI&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6',
-           completionState: false,
-            },
-           {
+            duration: '244',
+            urls: 'https://www.youtube.com/watch?v=cjmtUrPXDPI&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6',
+            completionState: false,
+          },
+          {
             title: 'Close the Sale Faster with These 2 Powerfully Effective Closing Techniques',
-           duration: '354',
-           urls:'https://www.youtube.com/watch?v=IjZ6bEPxi5w&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=2',
-           completionState: false,
-            },
-           {
+            duration: '354',
+            urls: 'https://www.youtube.com/watch?v=IjZ6bEPxi5w&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=2',
+            completionState: false,
+          },
+          {
             title: 'How to Make Buying Easy for the Customer & Make More Sales',
-           duration: '303',
-           urls:'https://www.youtube.com/watch?v=gpfY4ZNbdSc&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=3',
-           completionState: false,
-            },
-           {
+            duration: '303',
+            urls: 'https://www.youtube.com/watch?v=gpfY4ZNbdSc&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=3',
+            completionState: false,
+          },
+          {
             title: 'Recognize Buying Signals',
-           duration: '287',
-           urls:'https://www.youtube.com/watch?v=jnKObmrwzLY&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=4',
-           completionState: false,
-            },
-           {
+            duration: '287',
+            urls: 'https://www.youtube.com/watch?v=jnKObmrwzLY&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=4',
+            completionState: false,
+          },
+          {
             title: 'How To Set More Sales Meetings',
-           duration: '116',
-           urls:'https://www.youtube.com/watch?v=HsNrWXFk5Vo&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=5',
-           completionState: false,
-            },
-           {
+            duration: '116',
+            urls: 'https://www.youtube.com/watch?v=HsNrWXFk5Vo&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=5',
+            completionState: false,
+          },
+          {
             title: 'How To Prepare For A Sales Call',
-           duration: '138',
-           urls:'https://www.youtube.com/watch?v=qSuPDf1vXQw&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=6',
-           completionState: false,
-            },
-          ]
+            duration: '138',
+            urls: 'https://www.youtube.com/watch?v=qSuPDf1vXQw&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=6',
+            completionState: false,
+          },
+        ]
       },
     ],
     category: "Sales",

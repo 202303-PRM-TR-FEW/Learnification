@@ -1,16 +1,18 @@
 import { Schema, models, model } from "mongoose";
+import { Course } from "./Course";
+import { Achievement } from "./Achievement";
 
 const userSchema = new Schema({
   courses: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Course",
+      ref: Course
     },
   ],
   achievements: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Achievement",
+      ref: Achievement,
     },
   ],
   username: {
@@ -57,13 +59,13 @@ const userSchema = new Schema({
   finishedCourses: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Course",
+      ref: Course,
     },
   ],
   savedCourses: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Course"
+      ref: Course
     }
   ],
   loginState: {
