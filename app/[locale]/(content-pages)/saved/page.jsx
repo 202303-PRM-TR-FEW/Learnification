@@ -269,7 +269,7 @@ export default function Saved() {
                           <LearnUButton
                             className={"basis-full uppercase"}
                             text={t("Preview")}
-                            onClick={(e) => handlePreviewClick(e, index)}
+                            onClick={(e) => handlePreviewClick(e, course._id)}
                           />
 
                         <LearnUButton
@@ -300,7 +300,7 @@ export default function Saved() {
                     <LearnUButton
                       className={"basis-full uppercase"}
                       text={t("Preview")}
-                      onClick={(e) => handlePreviewClick(e, index)}
+                      onClick={(e) => handlePreviewClick(e, selectedCourse?._id)}
                     />
                   <LearnUButton
                     className={"basis-full uppercase"}

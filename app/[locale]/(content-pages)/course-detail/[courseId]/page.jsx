@@ -15,17 +15,6 @@ function CourseViewImage({ imgUrl }) {
         className="w-full h-full object-cover rounded-2xl"
         sizes="(min-width: 1280px) 80vw, (min-width: 1024px) 50vw, (min-width: 768px) 80vw, 100vw"
       />
-      <div className="text-white-smoke text-center absolute z-50 inset-1 m-auto max-w-max max-h-max">
-        <button
-          className="relative left-2 w-[0px] h-[0px]
-                  border-solid border-[15px] border-l-[30px]
-                  border-b-transparent border-t-transparent
-                  border-r-transparent border-l-white
-                  transition-all duration-300
-                  hover:border-l-primary-blue
-                  "
-        ></button>
-      </div>
     </div>
   );
 }
@@ -184,6 +173,10 @@ export default function CourseDetail({ params: { courseId } }) {
       <section className="h-screen bg-primary-white rounded-2xl lg:rounded-none mb-20 lg:mb-0 flex flex-col justify-between">
         <div className="overflow-auto">
           <CourseOverview showCheckIcon={false} />
+
+          {/* After saved courses are fetched, uncomment the line of code below and delete above the line of code to see lessons. */}
+
+          {/* <CourseOverview showCheckIcon={false} course={selectedCourse} /> */}
         </div>
         <div>
           <LearnUButton

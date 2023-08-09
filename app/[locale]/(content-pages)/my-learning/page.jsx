@@ -18,17 +18,32 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSession } from "next-auth/react";
 function CourseViewImage({ imgUrl }) {
+  const t = useTranslations("SavedCourses");
   return (
-    <div className="w-full h-[250px] lg:min-h-[200px] basis-full rounded-2xl">
-      <Image
-        src={imgUrl}
-        width={1920}
-        height={1080}
-        alt="Course Image"
-        className="w-full h-full object-cover rounded-2xl"
-        sizes="(min-width: 1280px) 80vw, (min-width: 1024px) 50vw, (min-width: 768px) 80vw, 100vw"
-      />
+    <div className="relative w-full h-[250px] lg:min-h-[200px] basis-full rounded-2xl">
+    <Image
+      src={imgUrl}
+      width={1920}
+      height={1080}
+      alt="Course Image"
+      className="w-full h-full object-cover rounded-2xl"
+      sizes="(min-width: 1280px) 80vw, (min-width: 1024px) 50vw, (min-width: 768px) 80vw, 100vw"
+    />
+    <div className="text-white-smoke text-center absolute z-50 inset-1 m-auto max-w-max max-h-max">
+      <button
+        className="relative left-2 w-[0px] h-[0px]
+                  border-solid border-[15px] border-l-[30px]
+                  border-b-transparent border-t-transparent
+                  border-r-transparent border-l-white
+                  transition-all duration-300
+                  hover:border-l-primary-blue
+                  "
+      ></button>
+      <p className="text-xl text-center block font-semibold mt-1">
+        {t("Play Preview")}
+      </p>
     </div>
+  </div>
   );
 }
 export default function MyLearning() {
@@ -152,7 +167,7 @@ export default function MyLearning() {
                         <LearnUButton
                           className={"basis-full uppercase"}
                           text={t("Continue Learning")}
-                          onClick={(e) => handlePreviewClick(e, index)}
+                          onClick={(e) => handlePreviewClick(e, course._id)}
                         />
                       </div>
                     </CourseView>
@@ -178,7 +193,7 @@ export default function MyLearning() {
                   <LearnUButton
                     className={"basis-full uppercase"}
                     text={t("Continue Learning")}
-                    onClick={(e) => handlePreviewClick(e, index)}
+                    onClick={(e) => handlePreviewClick(e, selectedCourse?._id)}
                   />
                 </div>
               </CourseView>

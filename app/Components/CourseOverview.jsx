@@ -1,15 +1,11 @@
 "use client";
 import { useState } from "react";
-import CourseDetails from "./CourseDetails";
 import Icons from "./Icons";
 import { useTranslations } from "next-intl";
 
 export default function CourseOverview({course, showCheckIcon = true}) {
-  // const lessons = CourseDetails();
   const t = useTranslations("CourseOverview");
-
   const [openLessons, setOpenLessons] = useState({});
-
   const handleLessonClick = (lessonId) => {
     setOpenLessons((prevState) => ({
       ...prevState,
@@ -20,7 +16,7 @@ export default function CourseOverview({course, showCheckIcon = true}) {
   return (
     <ul className="text-gray-600 shadow rounded-lg p-2">
       <h1 className="text-2xl font-bold">{t("title")}</h1>
-      {course.sections.map((section, index) => (
+      {course?.sections.map((section, index) => (
         <li
           key={index}
           className="flex flex-col shadow rounded-3xl p-2 my-3 mx-6 overflow-hidden cursor-pointer"
@@ -30,7 +26,7 @@ export default function CourseOverview({course, showCheckIcon = true}) {
             <h3 className="text-black flex font-bold">
             {showCheckIcon && <Icons.CheckIcon/>}
               <span className="pl-2">
-                {index > 0 && `${index}. `}
+                {`${index + 1}. `}
                 {section.title}
               </span>
             </h3>
@@ -54,13 +50,13 @@ export default function CourseOverview({course, showCheckIcon = true}) {
           {openLessons[index] && (
             <div className="overflow-auto max-h-56">
               <ul className="">
-                {section.lessons.map((lesson) => (
-                  <li key={lesson.id} className="pl-6 my-4">
+                {section.lessons.map((lesson, index) => (
+                  <li key={lesson._id} className="pl-6 my-4">
                     <div>
                       <h4 className="flex">
                       {showCheckIcon && <Icons.CheckIcon width={14} height={14} />}
                         <span className="pl-2">
-                          {index > 0 && `${lesson.id}. `}
+                          {`${index + 1}. `}
                           {lesson.title}
                         </span>
                       </h4>
