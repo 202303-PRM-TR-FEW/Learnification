@@ -83,9 +83,26 @@ export default function SignInUp() {
   }
   const handleFileInput = async (e) => {
     const image = e.target.files[0];
+
     if (image) {
-      const imageURL = URL.createObjectURL(image);
-      setuploadedImage(imageURL);
+      const formData = new FormData();
+      formData.append("image", image);
+
+      try {
+        const response = await fetch("/api/auth/sign-up", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (response.ok) {
+          const responseData = await response.json();
+          console.log("Image uploaded successfully:", responseData);
+        } else {
+          console.error("Failed to upload image");
+        }
+      } catch (error) {
+        console.error("An error occurred:", error);
+      }
     }
   };
 
