@@ -19,7 +19,6 @@ export default async function FeaturedCourses() {
       method: 'POST',
       body: JSON.stringify({ email: user.email }),
     })
-    console.log(savedCourseResponse.status)
     userSavedCourseIds = await savedCourseResponse.json()
   }
   return (
