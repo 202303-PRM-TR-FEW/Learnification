@@ -67,9 +67,6 @@ export default function SignInUp() {
     const res = await fetch("/api/auth/sign-up", {
       method: "POST",
       body: formData,
-      headers: {
-        "Content-Type": "application/json",
-      },
     });
     if (res.ok) {
       setError(null);
@@ -94,6 +91,7 @@ export default function SignInUp() {
     if (image) {
       const imageURL = URL.createObjectURL(image);
       setuploadedImage(imageURL);
+      setSignUpCredentials({ ...signUpCredentials, image: image });
     }
   };
 
