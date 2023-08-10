@@ -30,18 +30,18 @@ export default function MyLearning() {
 
     fetchMyLearningCourses();
   }, []);
-
+  if (isLoading) return (
+    <div className="flex justify-center items-center h-96">
+      <CircularProgress />
+    </div>
+  )
   return (
     <div>
       <h1 className="mt-10 mb-5 font-bold text-2xl text-gray-950">
         {t("MyLearning.title")}
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {isLoading ? (
-          <div>
-            <CircularProgress />
-          </div>
-        ) : myLearningCourses.length === 0 ? (
+        {myLearningCourses.length === 0 ? (
           <p className="text-2xl text-red-500">No courses selected yet</p>
         ) : myLearningCourses.length > 2 ? (
           <>

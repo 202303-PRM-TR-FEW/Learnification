@@ -6,8 +6,8 @@ export async function GET() {
     const session = await getServerSession();
     await connectToDb();
 
-    if (!session?.user?.email){
-        return new Response(JSON.stringify({error: "User not authenticated"}), {
+    if (!session?.user?.email) {
+        return new Response(JSON.stringify({ error: "User not authenticated" }), {
             status: 401,
             headers: {
                 "Content-Type": "application/json"
@@ -15,10 +15,9 @@ export async function GET() {
         });
     }
 
-    const userHaveCourses = await User.findOne({email: session.user.email}).populate('courses').exec();
-
+    const userHaveCourses = await User.findOne({ email: session.user.email }).populate('courses').select('courses').exec()
     return new Response(JSON.stringify(userHaveCourses.courses), {
-        status: 200, 
+        status: 200,
         headers: {
             "Content-Type": "application/json"
         }
