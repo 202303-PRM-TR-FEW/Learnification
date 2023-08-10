@@ -1,8 +1,11 @@
+"use client";
 import CourseView from "@/app/Components/CourseView";
 import CourseOverview from "@/app/Components/CourseOverview";
 import LearnUButton from "@/app/Components/LearnUButton";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import Loading from "@/app/Components/LoadingPage/Loading";
 
 function CourseViewImage({ imgUrl }) {
   return (
@@ -20,59 +23,57 @@ function CourseViewImage({ imgUrl }) {
 }
 
 export default function CourseDetail({ params: { courseId } }) {
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // After saved courses are fetched, uncomment the line of code below and edit accordingly.
-  
-  // const [selectedCourse, setSelectedCourse] = useState(null);
-
-  // useEffect(() => {
-  //   async function fetchCourses() {
-  //     try {
-  //       const response = await fetch("/api/my-learning");
-  //       if (response.ok) {
-  //         const data = await response.json();
-  //         const course = data.find(course => course._id === courseId);
-          
-  //         if (course) {
-  //           setSelectedCourse(course);
-  //         } else {
-  //           console.log(`Course with ID ${courseId} not found`);
-  //         }
-          
-  //       } else {
-  //         console.error("Failed to fetch courses");
-  //       }
-  //     } catch (error) {
-  //       console.error("Error fetching courses:", error);
-  //     }
-  //   }
-
-  //   fetchCourses();
-  // }, [courseId]);
+  useEffect(() => {
+    async function fetchCourses() {
+      try {
+        const response = await fetch(`/api/populate-saved-courses/${courseId}`);
+        if (response.ok) {
+          const data = await response.json();
+          setSelectedCourse(data);
+          setIsLoading(false);
+        } else {
+          setIsLoading(false);
+          console.error("Failed to fetch course");
+        }
+      } catch (error) {
+        setIsLoading(false);
+        console.error("Error fetching course:", error);
+      }
+    }
+    fetchCourses();
+  }, [courseId]);
 
   const t = useTranslations("SavedCourses");
   return (
-    <main className="grid lg:grid-cols-2 px-8 lg:p-0">
-      <section className="lg:pt-6 lg:pr-4">
-        <CourseView
-          course={selectedCourse}
-          backgroundImageElement={
-            <CourseViewImage imgUrl={selectedCourse.imageUrl} />
-          }
-        ></CourseView>
-      </section>
-      <section className="h-screen bg-primary-white rounded-2xl lg:rounded-none mb-20 lg:mb-0 flex flex-col justify-between">
-        <div className="overflow-auto">
-          <CourseOverview showCheckIcon={false} course={selectedCourse} />
-
-        </div>
-        <div>
-          <LearnUButton
-            className={"w-full basis-full uppercase lg:mb-2"}
-            text={t("Buy Now")}
-          />
-        </div>
-      </section>
-    </main>
+    <>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <main className="grid lg:grid-cols-2 px-8 lg:p-0">
+          <section className="lg:pt-6 lg:pr-4">
+            <CourseView
+              course={selectedCourse}
+              backgroundImageElement={
+                <CourseViewImage imgUrl={selectedCourse?.imageUrl} />
+              }
+            ></CourseView>
+          </section>
+          <section className="h-screen bg-primary-white rounded-2xl lg:rounded-none mb-20 lg:mb-0 flex flex-col justify-between">
+            <div className="overflow-auto">
+              <CourseOverview showCheckIcon={false} course={selectedCourse} />
+            </div>
+            <div className="flex max-xl:flex-col gap-4 px-8 mt-auto pb-4 lg:pb-0">
+              <LearnUButton
+                className={"w-full basis-full uppercase lg:mb-2"}
+                text={t("Buy Now")}
+              />
+            </div>
+          </section>
+        </main>
+      )}
+    </>
   );
 }
