@@ -8,6 +8,7 @@ import React, { useCallback, useEffect, useRef } from 'react'
 import { useState } from 'react';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
+import notify from '@/utils/notifications';
 
 function CourseViewImage({ imgUrl }) {
     const t = useTranslations("SavedCourses")
@@ -47,11 +48,11 @@ export default function Saved() {
     const { status } = useSession();
     useEffect(() => {
         if (status === "unauthenticated") {
-            notify("You need to sign in to view your learning progress", "error");
+            notify("You need to sign in to view your saved courses", "error");
             redirect("/sign-in?callbackUrl=/my-learning");
         }
     }, [status])
-    
+
     const [courses, setCourses] = useState([]);
     useEffect(() => {
         async function fetchSavedCourses() {
