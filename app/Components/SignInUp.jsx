@@ -17,6 +17,7 @@ export default function SignInUp() {
     email: "",
     password: "",
     country: "",
+    image: "",
   });
   const [error, setError] = useState(null);
   const searchParams = useSearchParams();
@@ -57,9 +58,15 @@ export default function SignInUp() {
   }
   async function handleSubmitSignUp(e) {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("name", signUpCredentials.name);
+    formData.append("email", signUpCredentials.email);
+    formData.append("password", signUpCredentials.password);
+    formData.append("country", signUpCredentials.country);
+    formData.append("image", signUpCredentials.image);
     const res = await fetch("/api/auth/sign-up", {
       method: "POST",
-      body: JSON.stringify(signUpCredentials),
+      body: formData,
       headers: {
         "Content-Type": "application/json",
       },
@@ -87,25 +94,6 @@ export default function SignInUp() {
     if (image) {
       const imageURL = URL.createObjectURL(image);
       setuploadedImage(imageURL);
-
-      const formData = new FormData();
-      formData.append("image", image);
-
-      try {
-        const response = await fetch("/api/auth/sign-up", {
-          method: "POST",
-          body: formData,
-        });
-
-        if (response.ok) {
-          const responseData = await response.json();
-          console.log("Image uploaded successfully:", responseData.image);
-        } else {
-          console.error("Failed to upload image");
-        }
-      } catch (error) {
-        console.error("An error occurred:", error);
-      }
     }
   };
 
@@ -240,8 +228,15 @@ export default function SignInUp() {
                 className="hidden"
                 type="file"
                 accept="image/jpeg, image/png, image/jpg, image/webp"
-                onChange={handleFileInput}
+                onChange={(e) => {
+                  handleFileInput(e);
+                  setSignUpCredentials({
+                    ...signUpCredentials,
+                    image: e.target.value,
+                  });
+                }}
               />
+
               {uploadedImage && (
                 <div>
                   <Image
