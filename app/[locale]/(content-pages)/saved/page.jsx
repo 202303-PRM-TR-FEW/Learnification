@@ -11,7 +11,6 @@ import { useSession } from 'next-auth/react';
 
 function CourseViewImage({ imgUrl }) {
     const t = useTranslations("SavedCourses")
-    const session = useSession()
     return (
         <div
             className='relative w-full h-[250px] lg:min-h-[200px] basis-full rounded-2xl'
@@ -45,6 +44,14 @@ function CourseViewImage({ imgUrl }) {
 
 export default function Saved() {
     // we're gonna fetch courses here
+    const { status } = useSession();
+    useEffect(() => {
+        if (status === "unauthenticated") {
+            notify("You need to sign in to view your learning progress", "error");
+            redirect("/sign-in?callbackUrl=/my-learning");
+        }
+    }, [status])
+    
     const [courses, setCourses] = useState([]);
     useEffect(() => {
         async function fetchSavedCourses() {
