@@ -44,8 +44,7 @@ function CourseViewImage({ imgUrl }) {
         </div>
     );
 }
-
-export default function Saved() {
+export default function SavedCourses({ courses }) {
     // we're gonna fetch courses here
     const { status } = useSession();
     useEffect(() => {
@@ -55,25 +54,25 @@ export default function Saved() {
         }
     }, [status])
 
-    const [courses, setCourses] = useState([]);
-    useEffect(() => {
-        async function fetchSavedCourses() {
-            try {
-                const response = await fetch('/api/populate-saved-courses');
-                if (response.ok) {
-                    const data = await response.json();
-                    console.log(data);
-                    setCourses(data.savedCourses);
-                } else {
-                    console.error('Failed to fetch saved courses');
-                }
-            } catch (error) {
-                console.error('Error fetching saved courses:', error);
-            }
-        }
+    // const [courses, setCourses] = useState([]);
+    // useEffect(() => {
+    //     async function fetchSavedCourses() {
+    //         try {
+    //             const response = await fetch('/api/populate-saved-courses');
+    //             if (response.ok) {
+    //                 const data = await response.json();
+    //                 console.log(data);
+    //                 setCourses(data.savedCourses);
+    //             } else {
+    //                 console.error('Failed to fetch saved courses');
+    //             }
+    //         } catch (error) {
+    //             console.error('Error fetching saved courses:', error);
+    //         }
+    //     }
 
-        fetchSavedCourses();
-    }, []);
+    //     fetchSavedCourses();
+    // }, []);
     const t = useTranslations("SavedCourses")
     const searchParams = useSearchParams()
     const router = useRouter()
