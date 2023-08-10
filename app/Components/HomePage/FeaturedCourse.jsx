@@ -53,7 +53,7 @@ export default function FeaturedCourse({ course, userSavedCourseIds }) {
             />
             <div onClick={() => saveCourse()} className="absolute top-2 right-2 p-3 rounded-xl bg-slate-400 bg-opacity-30">
               <Icons.SaveIcon
-                fill={isSaved ? "blue" : "white"}
+                fill={isSaved ? "rgb(59, 130, 246)" : "white"}
                 width={18} height={18} />
             </div>
             <div className="max-w-max flex items-center bg-primary-white rounded-[50px] p-1 pr-4 absolute shadow-light-gray -bottom-5 -z-0">

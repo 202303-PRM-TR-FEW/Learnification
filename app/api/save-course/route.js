@@ -25,9 +25,7 @@ export async function POST(req, res) {
     }
     const { savedCourses } = user;
     if (savedCourses.includes(course._id)) {
-        console.log(savedCourses)
         const filteredSavedCourses = savedCourses.filter(savedCourse => savedCourse.toString() !== course._id.toString())
-        console.log(filteredSavedCourses)
         user.savedCourses = [...filteredSavedCourses]
         await user.save()
         return new Response(JSON.stringify({
