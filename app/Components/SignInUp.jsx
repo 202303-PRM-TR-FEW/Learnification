@@ -26,7 +26,7 @@ export default function SignInUp() {
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
-      .then((data) => setCountries(data));
+      .then((data) => setCountries(data.sort((a, b) => a.name.common > b.name.common ? 1 : -1)));
   }, []);
   const callbackUrl = searchParams.get("callbackUrl") || "/home";
   const handleToggleForm = () => {

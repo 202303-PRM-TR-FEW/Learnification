@@ -29,7 +29,7 @@ export async function POST(req) {
       email,
       password: encryptedPassword,
       courses: status === "success" ? courseIds : [],
-      country,
+      location: country,
       profilePicture: imageUrl
     });
     await newUser.save();
