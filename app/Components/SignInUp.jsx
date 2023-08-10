@@ -87,7 +87,7 @@ export default function SignInUp() {
   }
   const handleFileInput = async (e) => {
     const image = e.target.files[0];
-
+    console.log(image);
     if (image) {
       const imageURL = URL.createObjectURL(image);
       setuploadedImage(imageURL);
@@ -232,10 +232,6 @@ export default function SignInUp() {
                 accept="image/jpeg, image/png, image/jpg, image/webp"
                 onChange={(e) => {
                   handleFileInput(e);
-                  setSignUpCredentials({
-                    ...signUpCredentials,
-                    image: e.target.value,
-                  });
                 }}
               />
 
