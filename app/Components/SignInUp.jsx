@@ -87,7 +87,6 @@ export default function SignInUp() {
   }
   const handleFileInput = async (e) => {
     const image = e.target.files[0];
-    console.log(image);
     if (image) {
       const imageURL = URL.createObjectURL(image);
       setuploadedImage(imageURL);
