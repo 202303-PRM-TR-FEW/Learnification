@@ -17,6 +17,8 @@ import Icons from "@/app/Components/Icons";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSession } from "next-auth/react";
+import notify from "@/utils/notifications";
+import 'react-toastify/dist/ReactToastify.css';
 function CourseViewImage({ imgUrl }) {
   return (
     <div className="w-full h-[250px] lg:min-h-[200px] basis-full rounded-2xl">
@@ -33,7 +35,12 @@ function CourseViewImage({ imgUrl }) {
 }
 export default function MyLearning() {
   const { status } = useSession();
-  if (status === "unauthenticated") redirect("/sign-in?callbackUrl=/my-learning");
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      notify("You need to sign in to view your learning progress", "error");
+      redirect("/sign-in?callbackUrl=/my-learning");
+    }
+  }, [status])
   const [courses, setCourses] = useState([]);
   useEffect(() => {
     async function fetchCourses() {
