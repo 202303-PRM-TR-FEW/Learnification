@@ -32,6 +32,8 @@ function CourseViewImage({ imgUrl }) {
   );
 }
 export default function MyLearning() {
+  const { status } = useSession();
+  if (status === "unauthenticated") redirect("/sign-in?callbackUrl=/my-learning");
   const [courses, setCourses] = useState([]);
   useEffect(() => {
     async function fetchCourses() {
@@ -51,9 +53,6 @@ export default function MyLearning() {
 
     fetchCourses();
   }, []);
-
-  const session = useSession();
-  if (!session.data) redirect("/sign-in?callbackUrl=/my-learning");
   const t = useTranslations("MyLearning");
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -64,7 +63,7 @@ export default function MyLearning() {
   const [expandedCourseIndex, setExpandedCourseIndex] = useState(initialIndex);
   const selectedCourse =
     courses[
-      expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
+    expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
     ];
   const createQueryString = useCallback(
     (name, value) => {
