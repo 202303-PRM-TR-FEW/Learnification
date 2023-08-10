@@ -49,7 +49,7 @@ export default function Saved() {
     useEffect(() => {
         if (status === "unauthenticated") {
             notify("You need to sign in to view your saved courses", "error");
-            redirect("/sign-in?callbackUrl=/my-learning");
+            redirect("/sign-in?callbackUrl=/saved");
         }
     }, [status])
 
