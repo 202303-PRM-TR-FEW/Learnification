@@ -1,54 +1,36 @@
 "use client";
-import { React, useEffect, useState } from "react";
+import React from "react";
 import LearnUButton from "./LearnUButton";
 import { useTranslations } from "next-intl";
 import MyLearningCard from "./MyLearningCard";
 import Link from "next/link";
 import { CircularProgress } from "@mui/material";
 
-export default function MyLearning() {
+const MyLearning = ({ myLearningCourses, isLoading }) => {
   const t = useTranslations("Home");
-  const [myLearningCourses, setMyLearningCourses] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-96">
+        <CircularProgress />
+      </div>
+    );
+  }
 
-  useEffect(() => {
-    async function fetchMyLearningCourses() {
-      try {
-        const response = await fetch("/api/home/my-learning");
-        if (response.ok) {
-          const courses = await response.json();
-          setMyLearningCourses(courses);
-        } else {
-          console.error("Failed to fetch courses");
-        }
-      } catch (error) {
-        console.error("An error occurred:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    fetchMyLearningCourses();
-  }, []);
-  if (isLoading) return (
-    <div className="flex justify-center items-center h-96">
-      <CircularProgress />
-    </div>
-  )
   return (
     <div>
       <h1 className="mt-10 mb-5 font-bold text-2xl text-gray-950">
         {t("MyLearning.title")}
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {myLearningCourses.length === 0 ? (
+        {myLearningCourses && myLearningCourses.length === 0 ? (
           <p className="text-2xl text-red-500">No courses selected yet</p>
-        ) : myLearningCourses.length > 2 ? (
+        ) : myLearningCourses && myLearningCourses.length > 2 ? (
           <>
             <MyLearningCard course={myLearningCourses[0]} />
             <MyLearningCard course={myLearningCourses[1]} />
           </>
         ) : (
+          myLearningCourses &&
           myLearningCourses.map((course, index) => (
             <MyLearningCard key={index} course={course} />
           ))
@@ -62,4 +44,6 @@ export default function MyLearning() {
       </div>
     </div>
   );
-}
+};
+
+export default MyLearning;
