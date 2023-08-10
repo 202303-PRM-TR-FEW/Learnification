@@ -26,7 +26,10 @@ const courseSchema = new Schema({
   ],
   category: {
     type: String,
-    ref: "Category",
+  },
+  finishedPercentage: {
+    type: Number,
+    default: 0
   },
   title: {
     type: String,

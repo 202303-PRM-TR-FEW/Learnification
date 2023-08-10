@@ -1,5 +1,6 @@
 import { User } from "@/models/User";
 import { connectToDb } from "@/utils/database";
+import { generateFreeCourseIds } from "@/utils/freeCourses";
 import { AES } from "crypto-js";
 
 export async function POST(req) {
@@ -8,10 +9,12 @@ export async function POST(req) {
     const { email, password, name } = await req.json();
     const encryptedPassword = AES.encrypt(password, secret);
     await connectToDb();
+    const { courseIds, status } = await generateFreeCourseIds();
     const newUser = await User.create({
       username: name,
       email,
       password: encryptedPassword,
+      courses: status === "success" ? courseIds : [],
     });
     const imageFile = files.image;
     await newUser.save();
