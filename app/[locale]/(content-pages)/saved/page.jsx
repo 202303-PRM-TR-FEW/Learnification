@@ -11,6 +11,7 @@ import { useSession } from 'next-auth/react';
 
 function CourseViewImage({ imgUrl }) {
     const t = useTranslations("SavedCourses")
+    const session = useSession()
     return (
         <div
             className='relative w-full h-[250px] lg:min-h-[200px] basis-full rounded-2xl'
