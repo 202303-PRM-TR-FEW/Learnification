@@ -77,14 +77,28 @@ const MyLearningAndFilter = () => {
   const extraTabletCat = categories.slice(5);
 
   const handleCategoryClick = (categoryId, categoryName) => {
+    const translatedCategoryNames = {
+      Satışlar: "Sales",
+      Pazarlama: "Marketing",
+      İK: "HR",
+      Çizim: "Drawing",
+      Tasarım: "Design",
+      Astronomi: "Astronomy",
+      "Büyük Veri": "Big Data",
+    };
+
+    const translatedCategoryName = translatedCategoryNames[categoryName];
+
     if (categoryId === 7) {
       setSelectedCategoryId(categoryId);
-    } else if (selectedCategories.includes(categoryName)) {
+    } else if (selectedCategories.includes(translatedCategoryName)) {
       setSelectedCategories(
-        selectedCategories.filter((category) => category !== categoryName)
+        selectedCategories.filter(
+          (category) => category !== translatedCategoryName
+        )
       );
     } else {
-      setSelectedCategories([...selectedCategories, categoryName]);
+      setSelectedCategories([...selectedCategories, translatedCategoryName]);
     }
   };
 
