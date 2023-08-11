@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef } from "react";
 
 /**
  *
@@ -12,20 +12,41 @@ import React, { forwardRef } from 'react'
  * @param {string} type button type
  * @returns a button with the specified properties
  */
-const LearnUButton = forwardRef(({ text, paddingBlock = 10, paddingInline = 40, bgColor = "blue", borderRadius = 12, width = "", className }, ref) => {
+const LearnUButton = forwardRef(
+  (
+    {
+      text,
+      paddingBlock = 10,
+      paddingInline = 40,
+      bgColor = "blue",
+      borderRadius = 12,
+      width = "",
+      className,
+      onClick,
+    },
+    ref
+  ) => {
     return (
-        <>
-
-            <button
-                ref={ref}
-                className={`${width === "full" ? "w-full" : ""} btn ${bgColor === "blue" ? "btn-primary" : "btn-secondary"} ${className}`}
-                style={{ paddingInline: paddingInline, borderRadius: borderRadius, paddingBlock: paddingBlock }}>
-                {text}
-            </button >
-        </>
-    )
-})
+      <>
+        <button
+          onClick={onClick}
+          ref={ref}
+          className={`${width === "full" ? "w-full" : ""} btn ${
+            bgColor === "blue" ? "btn-primary" : "btn-secondary"
+          } ${className}`}
+          style={{
+            paddingInline: paddingInline,
+            borderRadius: borderRadius,
+            paddingBlock: paddingBlock,
+          }}
+        >
+          {text}
+        </button>
+      </>
+    );
+  }
+);
 
 // set display name to overcome the error of not having a display name
-LearnUButton.displayName = 'LearnUButton';
-export default LearnUButton
+LearnUButton.displayName = "LearnUButton";
+export default LearnUButton;
