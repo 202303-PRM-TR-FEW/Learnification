@@ -157,6 +157,7 @@ const MyLearningAndFilter = () => {
       {selectedCategoryId === 7 && (
         <CategoriesExpansion
           categories={isPhoneVersion ? extraPhoneCat : extraTabletCat}
+          handleCategoryClick={handleCategoryClick}
         />
       )}
       <MyLearning myLearningCourses={myLearningCourses} isLoading={isLoading} />
