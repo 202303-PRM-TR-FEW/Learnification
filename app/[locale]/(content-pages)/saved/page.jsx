@@ -15,6 +15,7 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import notify from "@/utils/notifications";
 import Loading from "@/app/Components/LoadingPage/Loading";
+import 'react-toastify/dist/ReactToastify.css';
 
 function CourseViewImage({ imgUrl }) {
   const t = useTranslations("SavedCourses");
@@ -50,6 +51,7 @@ export default function Saved() {
   const { status } = useSession();
   useEffect(() => {
     if (status === "unauthenticated") {
+      console.log("unauthenticated")
       notify("You need to sign in to view your saved courses", "error");
       redirect("/sign-in?callbackUrl=/saved");
     }
@@ -86,7 +88,7 @@ export default function Saved() {
   const [expandedCourseIndex, setExpandedCourseIndex] = useState(initialIndex);
   const selectedCourse =
     courses[
-      expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
+    expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
     ];
   const createQueryString = useCallback(
     (name, value) => {

@@ -14,11 +14,11 @@ import { useTranslations } from "use-intl";
 import { useLocale } from "next-intl";
 import Link from "next/link";
 import Icons from "@/app/Components/Icons";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSession } from "next-auth/react";
-import { CircularProgress } from "@mui/material";
 import Loading from "@/app/Components/LoadingPage/Loading";
+import 'react-toastify/dist/ReactToastify.css';
+import notify from "@/utils/notifications";
 function CourseViewImage({ imgUrl }) {
   const t = useTranslations("SavedCourses");
   return (
@@ -49,6 +49,13 @@ function CourseViewImage({ imgUrl }) {
   );
 }
 export default function MyLearning() {
+  const { status } = useSession();
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      notify("You need to sign in to view your courses", "error");
+      redirect("/sign-in?callbackUrl=/my-learning");
+    }
+  }, [status]);
   const [courses, setCourses] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -72,9 +79,6 @@ export default function MyLearning() {
 
     fetchCourses();
   }, []);
-
-  const session = useSession();
-  if (!session.data) redirect("/sign-in?callbackUrl=/my-learning");
   const t = useTranslations("MyLearning");
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -85,7 +89,7 @@ export default function MyLearning() {
   const [expandedCourseIndex, setExpandedCourseIndex] = useState(initialIndex);
   const selectedCourse =
     courses[
-      expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
+    expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
     ];
   const createQueryString = useCallback(
     (name, value) => {
