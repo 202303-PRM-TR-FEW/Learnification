@@ -88,6 +88,13 @@ const MyLearningAndFilter = () => {
       Tasarım: "Design",
       Astronomi: "Astronomy",
       "Büyük Veri": "Big Data",
+      Sales: "Sales",
+      Marketing: "Marketing",
+      HR: "HR",
+      Drawing: "Drawing",
+      Design: "Design",
+      Astronomy: "Astronomy",
+      "Big Data": "Big Data",
     };
 
     const translatedCategoryName = translatedCategoryNames[categoryName];
@@ -186,7 +193,7 @@ const MyLearningAndFilter = () => {
       {selectedCategoryId === 7 && (
         <CategoriesExpansion
           categories={isPhoneVersion ? extraPhoneCat : extraTabletCat}
-          handleCategoryClick={handleCategoryClick} 
+          handleCategoryClick={handleCategoryClick}
           handleFocus={handleFocus}
           focusedCategoryIds={focusedCategoryIds}
         />
