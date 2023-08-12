@@ -4,18 +4,12 @@ import Image from "next/image";
 import CourseOverview from "@/app/Components/CourseOverview";
 import { useEffect, useState } from "react";
 import Loading from "@/app/Components/LoadingPage/Loading";
+import ReactPlayer from "react-player";
 
-function CourseViewImage({ imgUrl }) {
+function CourseVideo({ videoUrl }) {
   return (
     <div className="relative w-full h-[250px] lg:h-[350px] xl:h-[400px] 2xl:h-[500px] rounded-2xl">
-      <Image
-        src={imgUrl}
-        width={1920}
-        height={1080}
-        alt="Course Image"
-        className="w-full h-full object-cover rounded-2xl"
-        sizes="(min-width: 1280px) 80vw, (min-width: 1024px) 50vw, (min-width: 768px) 80vw, 100vw"
-      />
+      <ReactPlayer url={videoUrl} controls={true} width="100%" height="100%" />
     </div>
   );
 }
@@ -23,6 +17,7 @@ function CourseViewImage({ imgUrl }) {
 export default function SpecificCourse({ params: { courseId } }) {
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [videoUrl, setVideoUrl] = useState(null);
   useEffect(() => {
     async function fetchCourses() {
       try {
@@ -53,12 +48,12 @@ export default function SpecificCourse({ params: { courseId } }) {
             <CourseView
               course={selectedCourse}
               backgroundImageElement={
-                <CourseViewImage imgUrl={selectedCourse?.imageUrl} />
+                <CourseVideo videoUrl={videoUrl} />
               }
             ></CourseView>
           </section>
           <section className="lg:h-screen bg-primary-white rounded-2xl lg:rounded-none mb-20 lg:mb-0 overflow-auto">
-            <CourseOverview showCheckIcon={true} course={selectedCourse} />
+            <CourseOverview setVideoUrl={setVideoUrl} showCheckIcon={true} course={selectedCourse} />
           </section>
         </main>
       )}
