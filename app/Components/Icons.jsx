@@ -245,7 +245,7 @@ const StarIcon = ({ width = 24, height = 24, empty = false, ...props }) => {
     </svg>
   );
 };
-const SaveIcon = ({ width = 14, height = 14, ...props }) => (
+const SaveIcon = ({ width = 14, height = 14, fill = "rgb(245, 245, 245)", ...props }) => (
   <svg
     style={{
       width: width,
@@ -253,7 +253,7 @@ const SaveIcon = ({ width = 14, height = 14, ...props }) => (
       overflow: "visible",
       opacity: "unset",
       zIndex: 1,
-      fill: "rgb(245, 245, 245)",
+      fill,
       cursor: "pointer",
     }}
     viewBox="0 0 384 512"
@@ -279,7 +279,7 @@ const ClockIcon = ({ width = 16, height = 16, ...props }) => (
   </svg>
 );
 
-const BrandIcon = ({ width = 28, height = 28, ...props }) => (
+const BrandIcon = ({ width = 28, height = 28, fillColor = "rgb(251, 251, 251)", ...props }) => (
   <svg
     style={{
       width: width,
@@ -287,7 +287,7 @@ const BrandIcon = ({ width = 28, height = 28, ...props }) => (
       overflow: "visible",
       opacity: "unset",
       zIndex: 1,
-      fill: "rgb(251, 251, 251)",
+      fill: fillColor,
     }}
     viewBox="0 0 576 512"
     {...props}
