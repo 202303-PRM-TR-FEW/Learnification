@@ -6,8 +6,10 @@ import MyLearningCard from "./MyLearningCard";
 import Link from "next/link";
 import { CircularProgress } from "@mui/material";
 
-const MyLearning = ({ myLearningCourses, isLoading }) => {
+const MyLearning = ({ myLearningCourses, isLoading, idCourses }) => {
   const t = useTranslations("Home");
+  const idArray = [];
+  idCourses.map((id) => idArray.push(id._id))
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-96">
@@ -15,7 +17,6 @@ const MyLearning = ({ myLearningCourses, isLoading }) => {
       </div>
     );
   }
-
   return (
     <div>
       <h1 className="mt-10 mb-5 font-bold text-2xl text-gray-950">
@@ -26,13 +27,19 @@ const MyLearning = ({ myLearningCourses, isLoading }) => {
           <p className="text-2xl text-red-500">No courses selected yet</p>
         ) : myLearningCourses && myLearningCourses.length > 2 ? (
           <>
-            <MyLearningCard course={myLearningCourses[0]} />
-            <MyLearningCard course={myLearningCourses[1]} />
+            <Link href={`my-learning?courseIndex=${0}`}>
+              <MyLearningCard course={myLearningCourses[0]} />
+            </Link>
+            <Link href={`my-learning?courseIndex=${1}`}>
+              <MyLearningCard course={myLearningCourses[1]} />
+            </Link>
           </>
         ) : (
           myLearningCourses &&
           myLearningCourses.map((course, index) => (
-            <MyLearningCard key={index} course={course} />
+            <Link href={`my-learning?courseIndex=${idArray.indexOf(course._id)}`} key={index}>
+              <MyLearningCard course={course} />
+            </Link>
           ))
         )}
       </div>

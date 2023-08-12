@@ -17,6 +17,8 @@ const MyLearningAndFilter = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const originalCourses = useRef([]);
+  const [focusedCategoryIds, setFocusedCategoryIds] = useState([]);
+  const [idCourses, setIdCourses] = useState([]);
 
   useEffect(() => {
     async function fetchMyLearningCourses() {
@@ -25,6 +27,7 @@ const MyLearningAndFilter = () => {
         if (response.ok) {
           const courses = await response.json();
           setMyLearningCourses(courses);
+          setIdCourses(courses);
           originalCourses.current = courses;
         } else {
           console.error("Failed to fetch courses");
@@ -102,6 +105,17 @@ const MyLearningAndFilter = () => {
     }
   };
 
+  const handleFocus = (categoryId) => {
+    const isAlreadyFocused = focusedCategoryIds.includes(categoryId);
+    if (isAlreadyFocused) {
+      setFocusedCategoryIds(
+        focusedCategoryIds.filter((id) => id !== categoryId)
+      );
+    } else {
+      setFocusedCategoryIds([...focusedCategoryIds, categoryId]);
+    }
+  };
+
   useEffect(() => {
     let filteredCourses = originalCourses.current;
 
@@ -125,8 +139,13 @@ const MyLearningAndFilter = () => {
           ? phoneCategories.map((category) => (
               <div
                 key={category.id}
-                className="flex flex-col items-center px-1 py-2 rounded-xl shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb]"
-                onClick={() => handleCategoryClick(category.id, category.name)}
+                className={`flex flex-col items-center px-1 py-2 rounded-xl shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb] ${
+                  focusedCategoryIds.includes(category.id) ? "focused" : ""
+                }`}
+                onClick={() => {
+                  handleCategoryClick(category.id, category.name);
+                  handleFocus(category.id, category.name);
+                }}
               >
                 <div>{category.icon}</div>
                 <p className="text-sm font-bold">{category.name}</p>
@@ -136,8 +155,13 @@ const MyLearningAndFilter = () => {
           ? tabletCategories.map((category) => (
               <div
                 key={category.id}
-                className="flex flex-col items-center px-1 py-2 rounded-xl shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb]"
-                onClick={() => handleCategoryClick(category.id, category.name)}
+                className={`flex flex-col items-center px-1 py-2 rounded-xl shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb] ${
+                  focusedCategoryIds.includes(category.id) ? "focused" : ""
+                }`}
+                onClick={() => {
+                  handleCategoryClick(category.id, category.name);
+                  handleFocus(category.id, category.name);
+                }}
               >
                 <div>{category.icon}</div>
                 <p className="text-sm font-bold">{category.name}</p>
@@ -146,8 +170,13 @@ const MyLearningAndFilter = () => {
           : categories.map((category) => (
               <div
                 key={category.id}
-                className="flex flex-col items-center px-1 py-2 rounded-xl shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb] w-full"
-                onClick={() => handleCategoryClick(category.id, category.name)}
+                className={`flex flex-col items-center px-1 py-2 rounded-xl shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb] ${
+                  focusedCategoryIds.includes(category.id) ? "focused" : ""
+                }`}
+                onClick={() => {
+                  handleCategoryClick(category.id, category.name);
+                  handleFocus(category.id, category.name);
+                }}
               >
                 <div>{category.icon}</div>
                 <p className="text-sm font-bold">{category.name}</p>
@@ -157,10 +186,16 @@ const MyLearningAndFilter = () => {
       {selectedCategoryId === 7 && (
         <CategoriesExpansion
           categories={isPhoneVersion ? extraPhoneCat : extraTabletCat}
-          handleCategoryClick={handleCategoryClick}
+          handleCategoryClick={handleCategoryClick} 
+          handleFocus={handleFocus}
+          focusedCategoryIds={focusedCategoryIds}
         />
       )}
-      <MyLearning myLearningCourses={myLearningCourses} isLoading={isLoading} />
+      <MyLearning
+        myLearningCourses={myLearningCourses}
+        isLoading={isLoading}
+        idCourses={idCourses}
+      />
     </div>
   );
 };

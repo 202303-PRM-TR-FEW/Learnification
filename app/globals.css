@@ -201,3 +201,10 @@ input[type="checkbox"]:checked::before {
   top: 18px;
   transform: rotate(-135deg);
 }
+
+.focused {
+  background-color: rgba(46, 141, 455, 0.2);
+  color: #2e8dff;
+  border-color:  #2e8dff;
+  fill: #2e8dff;
+}
