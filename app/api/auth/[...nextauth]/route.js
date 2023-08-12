@@ -35,7 +35,6 @@ const handler = NextAuth({
         // query if the user exists
         await connectToDb();
         const user = await User.findOne({ email: credentials.email }).exec();
-        console.log(user)
         if (!user || user.password === null) return null;
         const decryptedBytes = AES.decrypt(
           credentials.password,
@@ -63,7 +62,6 @@ const handler = NextAuth({
         // check if user is allowed to sign in and save their data to db
         if (existingUser) return existingUser;
         const { courseIds, status } = await generateFreeCourseIds();
-        console.log(courseIds);
         const newUser = new User({
           _id: new mongoose.Types.ObjectId(),
           username: user.name,
@@ -80,7 +78,6 @@ const handler = NextAuth({
           hoursSpent: 0,
         });
         if (status === "success") newUser.courses.push(...courseIds);
-        console.log(newUser);
         await newUser.save();
         return newUser;
       } catch (error) {
