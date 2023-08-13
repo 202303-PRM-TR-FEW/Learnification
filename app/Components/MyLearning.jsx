@@ -27,17 +27,17 @@ const MyLearning = ({ myLearningCourses, isLoading, idCourses }) => {
           <p className="text-2xl text-red-500">No courses selected yet</p>
         ) : myLearningCourses && myLearningCourses.length > 2 ? (
           <>
-            <Link href={`my-learning?courseIndex=${0}`}>
+            <Link href={`spesific-course/${myLearningCourses[0]?._id}`}>
               <MyLearningCard course={myLearningCourses[0]} />
             </Link>
-            <Link href={`my-learning?courseIndex=${1}`}>
+            <Link href={`spesific-course/${myLearningCourses[1]?._id}`}>
               <MyLearningCard course={myLearningCourses[1]} />
             </Link>
           </>
         ) : (
           myLearningCourses &&
           myLearningCourses.map((course, index) => (
-            <Link href={`my-learning?courseIndex=${idArray.indexOf(course._id)}`} key={index}>
+            <Link href={`spesific-course/${course?._id}`} key={index}>
               <MyLearningCard course={course} />
             </Link>
           ))
