@@ -24,7 +24,9 @@ const MyLearning = ({ myLearningCourses, isLoading, idCourses }) => {
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {myLearningCourses && myLearningCourses.length === 0 ? (
-          <p className="text-2xl text-red-500">No courses selected yet</p>
+          <p className="text-2xl text-red-500">
+            {t("MyLearning.NotFound")}
+          </p>
         ) : myLearningCourses && myLearningCourses.length > 2 ? (
           <>
             <Link href={`spesific-course/${myLearningCourses[0]?._id}`}>
