@@ -132,7 +132,7 @@ export default function SignInUp() {
             <input
               value={credentials.email}
               onChange={(e) =>
-                setCredentials({ ...credentials, email: e.target.value })
+                setCredentials({ ...credentials, email: e.target.value.toLowerCase() })
               }
               type="email"
               placeholder="Email"
@@ -190,7 +190,7 @@ export default function SignInUp() {
               onChange={(e) =>
                 setSignUpCredentials({
                   ...signUpCredentials,
-                  email: e.target.value,
+                  email: e.target.value.toLowerCase(),
                 })
               }
               type="email"
