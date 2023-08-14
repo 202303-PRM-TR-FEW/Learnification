@@ -4,6 +4,9 @@ import Image from "next/image";
 import CourseOverview from "@/app/Components/CourseOverview";
 import { useEffect, useState } from "react";
 import Loading from "@/app/Components/LoadingPage/Loading";
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
+import notify from "@/utils/notifications";
 
 function CourseViewImage({ imgUrl }) {
   return (
@@ -21,6 +24,7 @@ function CourseViewImage({ imgUrl }) {
 }
 
 export default function SpecificCourse({ params: { courseId } }) {
+  const { status } = useSession();
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -31,6 +35,9 @@ export default function SpecificCourse({ params: { courseId } }) {
           const data = await response.json();
           setSelectedCourse(data);
           setIsLoading(false);
+        } else if (response.status === 401) {
+          notify("You need to sign in to view your courses", "error");
+          redirect("/sign-in?callbackUrl=/saved");
         } else {
           setIsLoading(false);
           console.error("Failed to fetch course");

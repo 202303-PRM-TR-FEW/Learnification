@@ -7,6 +7,14 @@ export async function GET(request, { params }) {
   const data = await getServerSession();
   await connectToDb();
 
+  if (!data) {
+    return new Response("Unauthorized", {
+      status: 401,
+      headers: {
+        "Content-Type": "text/plain",
+      },
+    });
+  }
   try {
     const userCourses = await User.findOne({ email: data.user.email })
       .populate("courses")

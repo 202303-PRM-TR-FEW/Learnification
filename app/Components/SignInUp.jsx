@@ -81,6 +81,7 @@ export default function SignInUp() {
     } else if (res.status === 400) {
       setError("Email already exists");
     }
+    await session.update()
   }
   if (session.status === "authenticated") {
     router.push(callbackUrl);
