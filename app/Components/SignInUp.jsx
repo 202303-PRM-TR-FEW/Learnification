@@ -206,13 +206,13 @@ export default function SignInUp() {
                   ...signUpCredentials,
                   password: newPassword,
                 });
-                setPasswordStrong(isStrongPassword(newPassword)); 
+                setPasswordStrong(isStrongPassword(newPassword));
               }}
               type="password"
               placeholder="Password *"
               required
               className={`w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent ${
-                isPasswordStrong ? "" : "border-red-500" 
+                isPasswordStrong ? "" : "border-red-500"
               }`}
             />
             <select
