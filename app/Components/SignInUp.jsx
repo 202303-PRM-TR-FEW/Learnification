@@ -25,10 +25,48 @@ export default function SignInUp() {
   const [uploadedImage, setuploadedImage] = useState(null);
   const [isPasswordStrong, setPasswordStrong] = useState(true);
   const isStrongPassword = (password) => {
-    const strongRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    return strongRegex.test(password);
+    const requirements = {
+      minLength: 8,
+      requireLowercase: true,
+      requireUppercase: true,
+      requireDigit: true,
+      requireSpecialChar: true,
+    };
+
+    const validateLength = (password) => {
+      const lengthRegex = new RegExp(`^.{${requirements.minLength},}$`);
+      return lengthRegex.test(password);
+    };
+
+    const validateLowercase = (password) => {
+      const lowercaseRegex = /^(?=.*[a-z])/;
+      return lowercaseRegex.test(password);
+    };
+
+    const validateUppercase = (password) => {
+      const uppercaseRegex = /^(?=.*[A-Z])/;
+      return uppercaseRegex.test(password);
+    };
+
+    const validateDigit = (password) => {
+      const digitRegex = /^(?=.*\d)/;
+      return digitRegex.test(password);
+    };
+
+    const validateSpecialChar = (password) => {
+      const specialCharRegex = /^(?=.*[@$!%*?&])/;
+      return specialCharRegex.test(password);
+    };
+
+    return (
+      validateLength(password) &&
+      (!requirements.requireLowercase || validateLowercase(password)) &&
+      (!requirements.requireUppercase || validateUppercase(password)) &&
+      (!requirements.requireDigit || validateDigit(password)) &&
+      (!requirements.requireSpecialChar || validateSpecialChar(password))
+    );
   };
+
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
@@ -132,7 +170,10 @@ export default function SignInUp() {
             <input
               value={credentials.email}
               onChange={(e) =>
-                setCredentials({ ...credentials, email: e.target.value.toLowerCase() })
+                setCredentials({
+                  ...credentials,
+                  email: e.target.value.toLowerCase(),
+                })
               }
               type="email"
               placeholder="Email"
@@ -215,6 +256,7 @@ export default function SignInUp() {
                 isPasswordStrong ? "" : "border-red-500"
               }`}
             />
+
             <select
               className="mb-8 w-full"
               value={signUpCredentials.country}
