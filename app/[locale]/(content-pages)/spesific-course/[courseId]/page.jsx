@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Loading from "@/app/Components/LoadingPage/Loading";
 import ReactPlayer from "react-player";
 
+
 function CourseVideo({ videoUrl }) {
   return (
     <div className="relative w-full h-[250px] lg:h-[350px] xl:h-[400px] 2xl:h-[500px] rounded-2xl">
@@ -26,6 +27,7 @@ export default function SpecificCourse({ params: { courseId } }) {
           const data = await response.json();
           setSelectedCourse(data);
           setIsLoading(false);
+          setVideoUrl(data.sections[0].lessons[0].urls)
         } else {
           setIsLoading(false);
           console.error("Failed to fetch course");

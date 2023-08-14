@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 export default function CourseOverview({ course, showCheckIcon = true, setVideoUrl = null }) {
   const t = useTranslations("CourseOverview");
   const [openLessons, setOpenLessons] = useState({});
-  const handleLessonClick = (lessonId) => {
+  const handleLessonClick = (e, lessonId) => {
     setOpenLessons((prevState) => ({
       ...prevState,
       [lessonId]: !prevState[lessonId],
@@ -20,7 +20,7 @@ export default function CourseOverview({ course, showCheckIcon = true, setVideoU
         <li
           key={index}
           className="flex flex-col shadow rounded-3xl p-2 my-3 mx-6 overflow-hidden cursor-pointer"
-          onClick={() => handleLessonClick(index)}
+          onClick={(e) => handleLessonClick(e, index)}
         >
           <div className="flex justify-between py-3 px-6">
             <h3 className="text-black flex font-bold">
