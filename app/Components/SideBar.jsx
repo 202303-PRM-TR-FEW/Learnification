@@ -24,7 +24,7 @@ function SideBar() {
   const handleSwitchChange = () => {
     setActiveLang((prevLang) => (prevLang === "Türkçe" ? "English" : "Türkçe"));
   };
-  
+
   if (path.includes("tr")) path.replace("/tr", ""); // it will replace the /tr with empty string so that we can use it in the Link component
 
   return (
@@ -54,7 +54,7 @@ function SideBar() {
                   href="/search"
                   className="mainLinks no-underline text-[#b1b1b1]"
                 >
-                  <Icons.SearchIcon/>
+                  <Icons.SearchIcon />
                   <span className="hidden lg:block lg:text-center lg:text-sm">
                     {t("Search")}
                   </span>
@@ -65,8 +65,10 @@ function SideBar() {
                   href="/my-learning"
                   className="mainLinks no-underline text-[#b1b1b1]"
                 >
-                  <Icons.CoursesIcon/>
-                  <span className="hidden lg:block lg:text-sm">{t("Courses")}</span>
+                  <Icons.CoursesIcon />
+                  <span className="hidden lg:block lg:text-sm">
+                    {t("Courses")}
+                  </span>
                 </Link>
               </li>
               <li>
@@ -74,31 +76,31 @@ function SideBar() {
                   href="/saved"
                   className="mainLinks no-underline text-[#b1b1b1]"
                 >
-                  <Icons.SavedIcon/>
+                  <Icons.SavedIcon />
                   <span className="hidden lg:block lg:text-center lg:text-sm">
                     {t("Saved")}
                   </span>
                 </Link>
               </li>
-              {data && 
+              {data && (
                 <li>
                   <Link
                     href="/profile"
                     className="mainLinks no-underline text-[#b1b1b1]"
                   >
-                    <Icons.ProfileIcon/>
+                    <Icons.ProfileIcon />
                     <span className="hidden lg:block lg:text-center lg:text-sm">
                       {t("Profile")}
                     </span>
                   </Link>
                 </li>
-              }
+              )}
               <li>
                 <Link
                   href="/about"
                   className="mainLinks no-underline text-[#b1b1b1]"
                 >
-                  <Icons.AboutIcon/>
+                  <Icons.AboutIcon />
                   <span className="hidden lg:block lg:text-center lg:text-sm">
                     {t("About")}
                   </span>
@@ -108,8 +110,9 @@ function SideBar() {
                 <div>
                   <Link href={path} locale={locale === "en" ? "tr" : "en"}>
                     <button
-                      className={`rounded-2xl lang-btn text-white ${locale === "en" ? "bg-red-500" : "bg-blue-500"
-                        }`}
+                      className={`rounded-2xl lang-btn text-white ${
+                        locale === "en" ? "bg-red-500" : "bg-blue-500"
+                      }`}
                       onClick={handleSwitchChange}
                     >
                       <div className="primary text">{activeLang}</div>
@@ -130,7 +133,7 @@ function SideBar() {
                       className="rounded-2xl lang-btn text-white bg-blue-500 border border-white hover:bg-white hover:text-blue-500 hover:border-blue-500 transition-colors duration-300"
                       onClick={() => signIn()}
                     >
-                      Log In
+                      Login
                     </button>
                   )}
                 </div>

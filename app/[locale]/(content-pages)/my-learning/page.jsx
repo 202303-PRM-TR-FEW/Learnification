@@ -17,8 +17,9 @@ import Icons from "@/app/Components/Icons";
 import "react-toastify/dist/ReactToastify.css";
 import { useSession } from "next-auth/react";
 import Loading from "@/app/Components/LoadingPage/Loading";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import notify from "@/utils/notifications";
+import NoCoursesFound from "@/app/Components/NoCoursesFound";
 function CourseViewImage({ imgUrl }) {
   const t = useTranslations("SavedCourses");
   return (
@@ -89,7 +90,7 @@ export default function MyLearning() {
   const [expandedCourseIndex, setExpandedCourseIndex] = useState(initialIndex);
   const selectedCourse =
     courses[
-    expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
+      expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
     ];
   const createQueryString = useCallback(
     (name, value) => {
@@ -124,98 +125,107 @@ export default function MyLearning() {
     const route = `/spesific-course/${courseId}`;
     router.push(route);
   };
+
   return (
     <main className="w-full md:pl-12 px-[4%] md:px-[2%] lg:px-0">
       {isLoading ? (
         <Loading />
       ) : (
         <div className="flex min-w-full gap-4 max-md:pb-20">
-          <div className="basis-full lg:basis-10/12 lg:h-screen lg:overflow-y-scroll px-4">
-            <div className="w-full flex flex-col gap-4 lg:gap-0 lg:flex-row items-center mt-16 mb-4 lg:mb-8">
-              <h1 className="font-medium text-lg lg:text-xl 2xl:text-3xl">
-                {t("title")}
-              </h1>
-              <h2 className="lg:ml-auto text-lg animatedUnderline">
-                <Link href={"statistics"} lang={locale}>
-                  {<Icons.StatisticsIcon />} <span>{t("Statistics")}</span>
-                </Link>
-              </h2>
-            </div>
-            {courses?.map((course, index) => (
-              <div key={index}>
-                <CoursePreview
-                  expandedCourseIndex={expandedCourseIndex}
-                  bookmarkRef={bookmarkRef}
-                  index={index}
-                  handleClick={handleCourseClick}
-                  key={index}
-                  course={course}
-                >
-                  <div className="mt-auto">
-                    <div className="w-full h-2 rounded-lg flex bg-white-smoke">
-                      <span
-                        className={`bg-primary-blue rounded-lg`}
-                        style={{ width: `${course.finishedPercentage}%` }}
-                      ></span>
-                    </div>
-                    <p className="font-medium text-primary-gray mt-1">
-                      {locale === "en"
-                        ? `${course.finishedPercentage}% completed`
-                        : `%${course.finishedPercentage} tamamlandı`}
-                    </p>
-                  </div>
-                </CoursePreview>
-                {/* MOBILE DESIGN STARTS HERE */}
-                <div className="my-4">
-                  {expandedCourseIndex === index && (
-                    <div className="block lg:hidden bg-primary-white rounded-2xl">
-                      <CourseView
-                        backgroundImageElement={
-                          <CourseViewImage imgUrl={course.imageUrl} />
-                        }
-                        course={course}
-                      >
-                        {/* Children of the CourseView */}
-                        <div className="flex flex-col sm:flex-row gap-4 px-8 mt-auto pb-4">
-                          <LearnUButton
-                            className={"basis-full uppercase"}
-                            text={t("Continue Learning")}
-                            onClick={(e) => handlePreviewClick(e, course._id)}
-                          />
-                        </div>
-                      </CourseView>
-                    </div>
-                  )}
+          {courses.length === 0 ? (
+            <NoCoursesFound />
+          ) : (
+            <div>
+              <div className="basis-full lg:basis-10/12 lg:h-screen lg:overflow-y-scroll px-4">
+                <div className="w-full flex flex-col gap-4 lg:gap-0 lg:flex-row items-center mt-16 mb-4 lg:mb-8">
+                  <h1 className="font-medium text-lg lg:text-xl 2xl:text-3xl">
+                    {t("title")}
+                  </h1>
+                  <h2 className="lg:ml-auto text-lg animatedUnderline">
+                    <Link href={"statistics"} lang={locale}>
+                      {<Icons.StatisticsIcon />} <span>{t("Statistics")}</span>
+                    </Link>
+                  </h2>
                 </div>
-                {/* MOBILE DESIGN ENDS HERE */}
-              </div>
-            ))}
-          </div>
-          {/* LAPTOP DESIGN STARTS HERE */}
-          <div className="hidden h-screen lg:block md:basis-full bg-primary-white">
-            <div className="flex h-full flex-col p-4">
-              {
-                <CourseView
-                  course={selectedCourse}
-                  backgroundImageElement={
-                    <CourseViewImage imgUrl={selectedCourse?.imageUrl} />
-                  }
-                >
-                  {/* Children of the CourseView */}
-                  <div className="flex max-xl:flex-col gap-4 px-8 mt-auto">
-                    <LearnUButton
-                      className={"basis-full uppercase"}
-                      text={t("Continue Learning")}
-                      onClick={(e) =>
-                        handlePreviewClick(e, selectedCourse?._id)
-                      }
-                    />
+                {courses?.map((course, index) => (
+                  <div key={index}>
+                    <CoursePreview
+                      expandedCourseIndex={expandedCourseIndex}
+                      bookmarkRef={bookmarkRef}
+                      index={index}
+                      handleClick={handleCourseClick}
+                      key={index}
+                      course={course}
+                    >
+                      <div className="mt-auto">
+                        <div className="w-full h-2 rounded-lg flex bg-white-smoke">
+                          <span
+                            className={`bg-primary-blue rounded-lg`}
+                            style={{ width: `${course.finishedPercentage}%` }}
+                          ></span>
+                        </div>
+                        <p className="font-medium text-primary-gray mt-1">
+                          {locale === "en"
+                            ? `${course.finishedPercentage}% completed`
+                            : `%${course.finishedPercentage} tamamlandı`}
+                        </p>
+                      </div>
+                    </CoursePreview>
+                    {/* MOBILE DESIGN STARTS HERE */}
+                    <div className="my-4">
+                      {expandedCourseIndex === index && (
+                        <div className="block lg:hidden bg-primary-white rounded-2xl">
+                          <CourseView
+                            backgroundImageElement={
+                              <CourseViewImage imgUrl={course.imageUrl} />
+                            }
+                            course={course}
+                          >
+                            {/* Children of the CourseView */}
+                            <div className="flex flex-col sm:flex-row gap-4 px-8 mt-auto pb-4">
+                              <LearnUButton
+                                className={"basis-full uppercase"}
+                                text={t("Continue Learning")}
+                                onClick={(e) =>
+                                  handlePreviewClick(e, course._id)
+                                }
+                              />
+                            </div>
+                          </CourseView>
+                        </div>
+                      )}
+                    </div>
+                    {/* MOBILE DESIGN ENDS HERE */}
                   </div>
-                </CourseView>
-              }
+                ))}
+              </div>
+              {/* LAPTOP DESIGN STARTS HERE */}
+              <div className="hidden h-screen lg:block md:basis-full bg-primary-white">
+                <div className="flex h-full flex-col p-4">
+                  {
+                    <CourseView
+                      course={selectedCourse}
+                      backgroundImageElement={
+                        <CourseViewImage imgUrl={selectedCourse?.imageUrl} />
+                      }
+                    >
+                      {/* Children of the CourseView */}
+                      <div className="flex max-xl:flex-col gap-4 px-8 mt-auto">
+                        <LearnUButton
+                          className={"basis-full uppercase"}
+                          text={t("Continue Learning")}
+                          onClick={(e) =>
+                            handlePreviewClick(e, selectedCourse?._id)
+                          }
+                        />
+                      </div>
+                    </CourseView>
+                  }
+                </div>
+              </div>
+              {/* LAPTOP DESIGN ENDS HERE */}
             </div>
-          </div>
-          {/* LAPTOP DESIGN ENDS HERE */}
+          )}
         </div>
       )}
     </main>
