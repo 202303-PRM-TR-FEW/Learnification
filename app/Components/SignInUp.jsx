@@ -110,6 +110,10 @@ export default function SignInUp() {
       notify("Password must be at least 8 characters long, and include at least one capital letter, one number, and one special character.", "error");
       return;
     }
+    if (!signUpCredentials.image) {
+      notify("You Must Upload a Picture to Proceed", "error");
+      return;
+    }  
     const formData = new FormData();
     formData.append("name", signUpCredentials.name);
     formData.append("email", signUpCredentials.email);
