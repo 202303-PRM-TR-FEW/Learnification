@@ -113,7 +113,7 @@ export default function SignInUp() {
     if (!signUpCredentials.image) {
       notify("You Must Upload a Picture to Proceed", "error");
       return;
-    }  
+    }
     const formData = new FormData();
     formData.append("name", signUpCredentials.name);
     formData.append("email", signUpCredentials.email);
@@ -256,9 +256,8 @@ export default function SignInUp() {
               type="password"
               placeholder="Password *"
               required
-              className={`w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent ${
-                isPasswordStrong ? "" : "border-red-500"
-              }`}
+              className={`w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent ${isPasswordStrong ? "" : "border-red-500"
+                }`}
             />
 
             <select

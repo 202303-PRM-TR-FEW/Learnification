@@ -5,8 +5,10 @@ import CategoriesArray from "../CategoriesArray";
 import Icons from "../Icons";
 import { useTranslations } from "next-intl";
 import MyLearning from "../MyLearning";
+import { useSession } from "next-auth/react";
 
 const MyLearningAndFilter = () => {
+  const session = useSession()
   const t = useTranslations("Home");
   const categories = CategoriesArray();
   const [isPhoneVersion, setIsPhoneVersion] = useState(false);
@@ -37,6 +39,7 @@ const MyLearningAndFilter = () => {
       } finally {
         setIsLoading(false);
       }
+      await session.update()
     }
 
     fetchMyLearningCourses();
@@ -144,27 +147,25 @@ const MyLearningAndFilter = () => {
       >
         {isPhoneVersion
           ? phoneCategories.map((category) => (
-              <div
-                key={category.id}
-                className={`flex flex-col items-center px-1 py-2 rounded-xl shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb] ${
-                  focusedCategoryIds.includes(category.id) ? "focused" : ""
+            <div
+              key={category.id}
+              className={`flex flex-col items-center px-1 py-2 rounded-xl shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb] ${focusedCategoryIds.includes(category.id) ? "focused" : ""
                 }`}
-                onClick={() => {
-                  handleCategoryClick(category.id, category.name);
-                  handleFocus(category.id, category.name);
-                }}
-              >
-                <div>{category.icon}</div>
-                <p className="text-sm font-bold">{category.name}</p>
-              </div>
-            ))
+              onClick={() => {
+                handleCategoryClick(category.id, category.name);
+                handleFocus(category.id, category.name);
+              }}
+            >
+              <div>{category.icon}</div>
+              <p className="text-sm font-bold">{category.name}</p>
+            </div>
+          ))
           : isTabletVersion
-          ? tabletCategories.map((category) => (
+            ? tabletCategories.map((category) => (
               <div
                 key={category.id}
-                className={`flex flex-col items-center px-1 py-2 rounded-xl shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb] ${
-                  focusedCategoryIds.includes(category.id) ? "focused" : ""
-                }`}
+                className={`flex flex-col items-center px-1 py-2 rounded-xl shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb] ${focusedCategoryIds.includes(category.id) ? "focused" : ""
+                  }`}
                 onClick={() => {
                   handleCategoryClick(category.id, category.name);
                   handleFocus(category.id, category.name);
@@ -174,12 +175,11 @@ const MyLearningAndFilter = () => {
                 <p className="text-sm font-bold">{category.name}</p>
               </div>
             ))
-          : categories.map((category) => (
+            : categories.map((category) => (
               <div
                 key={category.id}
-                className={`flex flex-col items-center px-1 py-2 rounded-xl shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb] ${
-                  focusedCategoryIds.includes(category.id) ? "focused" : ""
-                }`}
+                className={`flex flex-col items-center px-1 py-2 rounded-xl shadow category-icon--container hover:bg-[#CBE1FA] hover:border-blue-500 border hover:text-[#2E8DFF] text-[#616161] bg-[#fbfbfb] ${focusedCategoryIds.includes(category.id) ? "focused" : ""
+                  }`}
                 onClick={() => {
                   handleCategoryClick(category.id, category.name);
                   handleFocus(category.id, category.name);
