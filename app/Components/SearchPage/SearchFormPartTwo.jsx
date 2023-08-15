@@ -1,4 +1,3 @@
-"use client";
 import { React, useState } from "react";
 import Icons from "../Icons";
 import CategoriesArray from "../CategoriesArray";
@@ -11,6 +10,7 @@ const SearchFormPartTwo = ({ courses }) => {
   const categories = CategoriesArray();
   const t = useTranslations("Search");
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedStars, setSelectedStars] = useState(null);
   const categoryTranslations = {
     Satışlar: "Sales",
     İK: "HR",
@@ -32,10 +32,22 @@ const SearchFormPartTwo = ({ courses }) => {
       </span>
     );
   };
-  const filteredCourses =
-    selectedCategories.length > 0
-      ? courses.filter((course) => selectedCategories.includes(course.category))
-      : courses;
+
+  const filteredCourses = courses.filter((course) => {
+    if (
+      selectedCategories.length > 0 &&
+      !selectedCategories.includes(course.category)
+    ) {
+      return false;
+    }
+
+    if (selectedStars !== null) {
+      const roundedRating = Math.round(course.rating);
+      return roundedRating === selectedStars;
+    }
+
+    return true;
+  });
 
   return (
     <div className="flex flex-col justify-between gap-8 mt-4">
@@ -80,6 +92,9 @@ const SearchFormPartTwo = ({ courses }) => {
               defaultValue={2.5}
               icon={<CustomStarIcon style={{ marginRight: "5px" }} />}
               emptyIcon={<Icons.StarIcon empty={true} />}
+              onChange={(event, newValue) => {
+                setSelectedStars(newValue);
+              }}
             />
           </Stack>
         </section>
