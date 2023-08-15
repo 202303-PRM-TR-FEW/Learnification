@@ -127,15 +127,15 @@ export default function MyLearning() {
   };
 
   return (
-    <main className="w-full md:pl-12 px-[4%] md:px-[2%] lg:px-0">
+    <>
       {isLoading ? (
         <Loading />
       ) : (
-        <div className="flex min-w-full gap-4 max-md:pb-20">
+        <main className="w-full md:pl-12 px-[4%] md:px-[2%] lg:px-0">
           {courses.length === 0 ? (
             <NoCoursesFound />
           ) : (
-            <div>
+            <div className="flex min-w-full gap-4 max-md:pb-20">
               <div className="basis-full lg:basis-10/12 lg:h-screen lg:overflow-y-scroll px-4">
                 <div className="w-full flex flex-col gap-4 lg:gap-0 lg:flex-row items-center mt-16 mb-4 lg:mb-8">
                   <h1 className="font-medium text-lg lg:text-xl 2xl:text-3xl">
@@ -226,8 +226,8 @@ export default function MyLearning() {
               {/* LAPTOP DESIGN ENDS HERE */}
             </div>
           )}
-        </div>
+        </main>
       )}
-    </main>
+    </>
   );
 }
