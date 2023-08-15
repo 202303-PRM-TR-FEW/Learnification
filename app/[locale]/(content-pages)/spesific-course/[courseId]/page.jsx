@@ -7,18 +7,13 @@ import Loading from "@/app/Components/LoadingPage/Loading";
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import notify from "@/utils/notifications";
+import ReactPlayer from "react-player";
 
-function CourseViewImage({ imgUrl }) {
+
+function CourseVideo({ videoUrl }) {
   return (
     <div className="relative w-full h-[250px] lg:h-[350px] xl:h-[400px] 2xl:h-[500px] rounded-2xl">
-      <Image
-        src={imgUrl}
-        width={1920}
-        height={1080}
-        alt="Course Image"
-        className="w-full h-full object-cover rounded-2xl"
-        sizes="(min-width: 1280px) 80vw, (min-width: 1024px) 50vw, (min-width: 768px) 80vw, 100vw"
-      />
+      <ReactPlayer url={videoUrl} controls={true} width="100%" height="100%" />
     </div>
   );
 }
@@ -27,6 +22,7 @@ export default function SpecificCourse({ params: { courseId } }) {
   const { status } = useSession();
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [videoUrl, setVideoUrl] = useState(null);
   useEffect(() => {
     async function fetchCourses() {
       try {
@@ -35,6 +31,7 @@ export default function SpecificCourse({ params: { courseId } }) {
           const data = await response.json();
           setSelectedCourse(data);
           setIsLoading(false);
+          setVideoUrl(data.sections[0].lessons[0].urls)
         } else if (response.status === 401) {
           notify("You need to sign in to view your courses", "error");
           redirect("/sign-in?callbackUrl=/saved");
@@ -60,12 +57,12 @@ export default function SpecificCourse({ params: { courseId } }) {
             <CourseView
               course={selectedCourse}
               backgroundImageElement={
-                <CourseViewImage imgUrl={selectedCourse?.imageUrl} />
+                <CourseVideo videoUrl={videoUrl} />
               }
             ></CourseView>
           </section>
           <section className="lg:h-screen bg-primary-white rounded-2xl lg:rounded-none mb-20 lg:mb-0 overflow-auto">
-            <CourseOverview showCheckIcon={true} course={selectedCourse} />
+            <CourseOverview setVideoUrl={setVideoUrl} showCheckIcon={true} course={selectedCourse} />
           </section>
         </main>
       )}

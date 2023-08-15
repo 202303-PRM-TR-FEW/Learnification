@@ -23,10 +23,58 @@ export default function SignInUp() {
   const searchParams = useSearchParams();
   const [countries, setCountries] = useState([]);
   const [uploadedImage, setuploadedImage] = useState(null);
+  const [isPasswordStrong, setPasswordStrong] = useState(true);
+  const isStrongPassword = (password) => {
+    const requirements = {
+      minLength: 8,
+      requireLowercase: true,
+      requireUppercase: true,
+      requireDigit: true,
+      requireSpecialChar: true,
+    };
+
+    const validateLength = (password) => {
+      const lengthRegex = new RegExp(`^.{${requirements.minLength},}$`);
+      return lengthRegex.test(password);
+    };
+
+    const validateLowercase = (password) => {
+      const lowercaseRegex = /^(?=.*[a-z])/;
+      return lowercaseRegex.test(password);
+    };
+
+    const validateUppercase = (password) => {
+      const uppercaseRegex = /^(?=.*[A-Z])/;
+      return uppercaseRegex.test(password);
+    };
+
+    const validateDigit = (password) => {
+      const digitRegex = /^(?=.*\d)/;
+      return digitRegex.test(password);
+    };
+
+    const validateSpecialChar = (password) => {
+      const specialCharRegex = /^(?=.*[@$!%*?&])/;
+      return specialCharRegex.test(password);
+    };
+
+    return (
+      validateLength(password) &&
+      (!requirements.requireLowercase || validateLowercase(password)) &&
+      (!requirements.requireUppercase || validateUppercase(password)) &&
+      (!requirements.requireDigit || validateDigit(password)) &&
+      (!requirements.requireSpecialChar || validateSpecialChar(password))
+    );
+  };
+
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
-      .then((data) => setCountries(data.sort((a, b) => a.name.common > b.name.common ? 1 : -1)));
+      .then((data) =>
+        setCountries(
+          data.sort((a, b) => (a.name.common > b.name.common ? 1 : -1))
+        )
+      );
   }, []);
   const callbackUrl = searchParams.get("callbackUrl") || "/home";
   const handleToggleForm = () => {
@@ -58,6 +106,14 @@ export default function SignInUp() {
   }
   async function handleSubmitSignUp(e) {
     e.preventDefault();
+    if (!isStrongPassword(signUpCredentials.password)) {
+      notify("Password must be at least 8 characters long, and include at least one capital letter, one number, and one special character.", "error");
+      return;
+    }
+    if (!signUpCredentials.image) {
+      notify("You Must Upload a Picture to Proceed", "error");
+      return;
+    }  
     const formData = new FormData();
     formData.append("name", signUpCredentials.name);
     formData.append("email", signUpCredentials.email);
@@ -97,10 +153,11 @@ export default function SignInUp() {
 
   return (
     <div
-      className={`h-screen w-full max-md:px-4 ${isLoginFormVisible
-        ? "mb-24 max-sm:mb-16 md:mb-0"
-        : "mb-32 max-sm:mb-24 md:mb-0"
-        } max-sm:pt-8 flex items-center justify-center`}
+      className={`h-screen w-full max-md:px-4 ${
+        isLoginFormVisible
+          ? "mb-24 max-sm:mb-16 md:mb-0"
+          : "mb-32 max-sm:mb-24 md:mb-0"
+      } max-sm:pt-8 flex items-center justify-center`}
     >
       <div className="bg-white bg-opacity-50 backdrop-blur-xl p-8 rounded-2xl shadow-xl">
         <div className="flex flex-col sm:flex-row justify-center md:justify-around items-center">
@@ -118,7 +175,10 @@ export default function SignInUp() {
             <input
               value={credentials.email}
               onChange={(e) =>
-                setCredentials({ ...credentials, email: e.target.value })
+                setCredentials({
+                  ...credentials,
+                  email: e.target.value.toLowerCase(),
+                })
               }
               type="email"
               placeholder="Email"
@@ -176,7 +236,7 @@ export default function SignInUp() {
               onChange={(e) =>
                 setSignUpCredentials({
                   ...signUpCredentials,
-                  email: e.target.value,
+                  email: e.target.value.toLowerCase(),
                 })
               }
               type="email"
@@ -186,17 +246,22 @@ export default function SignInUp() {
             />
             <input
               value={signUpCredentials.password}
-              onChange={(e) =>
+              onChange={(e) => {
+                const newPassword = e.target.value;
                 setSignUpCredentials({
                   ...signUpCredentials,
-                  password: e.target.value,
-                })
-              }
+                  password: newPassword,
+                });
+                setPasswordStrong(isStrongPassword(newPassword));
+              }}
               type="password"
               placeholder="Password *"
               required
-              className="w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent"
+              className={`w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent ${
+                isPasswordStrong ? "" : "border-red-500"
+              }`}
             />
+
             <select
               className="mb-8 w-full"
               value={signUpCredentials.country}
