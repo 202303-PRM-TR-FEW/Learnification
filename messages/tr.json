@@ -30,13 +30,13 @@
     },
     "Top Searches": {
       "title": "Popüler Aramalar",
-      "Marketing Strategy": "Pazarlama Stratejisi",
-      "UX Design": "UX Tasarımı",
-      "Excel": "Excel",
-      "Adobe Photoshop": "Adobe Photoshop",
-      "CRM": "Müşteri İlişkileri Yönetimi",
-      "Photography": "Fotoğrafçılık",
-      "Content Making": "İçerik Üretimi"
+      "Marketing 101": "Temel Pazarlama 101",
+      "UI/UX Design": "UI/UX Tasarımı",
+      "Big Data 101": "Büyük Veri 101",
+      "Astronomy 101": "Astronomi 101",
+      "Sales 101": "Satış 101",
+      "Drawing 101": "Çizim 101",
+      "Becoming a Photographer": "Bir Fotoğrafçı Olma"
     },
     "Categories": {
       "title": "Kategoriler"

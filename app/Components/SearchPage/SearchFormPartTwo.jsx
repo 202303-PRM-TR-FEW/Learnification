@@ -5,8 +5,9 @@ import CategoriesArray from "../CategoriesArray";
 import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
 import { useTranslations } from "next-intl";
+import RecommendedForYou from "./RecommendedForYou";
 
-const SearchFormPartTwo = () => {
+const SearchFormPartTwo = ({courses}) => {
   const categories = CategoriesArray();
   const t = useTranslations("Search")
   const CustomStarIcon = (props) => {
@@ -80,6 +81,7 @@ const SearchFormPartTwo = () => {
           </ul>
         </section>
       </div>
+      <RecommendedForYou courses={courses}/>
     </div>
   );
 };
