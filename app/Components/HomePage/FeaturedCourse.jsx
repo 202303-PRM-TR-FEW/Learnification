@@ -1,31 +1,22 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Tutor from "./Tutor";
 import LearnUButton from "../LearnUButton";
 import Icons from "../Icons";
 import Image from "next/image";
-import { useSession } from "next-auth/react";
 import notify from "@/utils/notifications";
 import 'react-toastify/dist/ReactToastify.css';
+import formatDuration from "@/utils/formatDuration";
+import { useLocale } from "next-intl";
 /**
  *
  * @param {object} course course object
  * @returns a featured course card
  */
 export default function FeaturedCourse({ course, userSavedCourseIds }) {
+  const locale = useLocale()
   const isCourseSaved = userSavedCourseIds?.includes(course?._id)
   const [isSaved, setIsSaved] = useState(isCourseSaved);
-
-  function formatDuration(durationInSeconds) {
-    const hours = Math.floor(durationInSeconds / 3600);
-    const minutes = Math.floor((durationInSeconds % 3600) / 60);
-
-if (hours < 1) {
-      return `${minutes}m`;
-    }
-
-    return `${hours}h ${minutes}m`;
-  }
   async function saveCourse() {
     const res = await fetch("/api/save-course", {
       method: "POST",
@@ -82,7 +73,7 @@ if (hours < 1) {
               <span>
                 <Icons.ClockIcon />
               </span>
-              <span>{formatDuration(course?.duration)}</span>
+              <span>{formatDuration(course?.duration, locale)}</span>
             </p>
             <p className="flex items-center gap-1 mr-auto">
               <span>
