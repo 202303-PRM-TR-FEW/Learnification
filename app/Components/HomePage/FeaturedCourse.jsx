@@ -6,58 +6,15 @@ import Icons from "../Icons";
 import Image from "next/image";
 import notify from "@/utils/notifications";
 import 'react-toastify/dist/ReactToastify.css';
-import { Box, Modal, Typography } from "@mui/material";
-import Backdrop from '@mui/material/Backdrop';
-import { useSession } from "next-auth/react";
-import { useLocale } from "next-intl";
-
-const modalStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: '#f5f5f5',
-  border: '#2e8dff',
-  boxShadow: 24,
-  p: 4,
-  borderRadius: 2
-}
-
-
+import Link from "next/link";
 /**
  *
  * @param {object} course course object
  * @returns a featured course card
  */
 export default function FeaturedCourse({ course, userSavedCourseIds }) {
-  const locale = useLocale()
-  const session = useSession()
   const isCourseSaved = userSavedCourseIds?.includes(course?._id)
   const [isSaved, setIsSaved] = useState(isCourseSaved)
-  const [openModal, setOpenModal] = useState(false)
-  const handleOpenModal = () => setOpenModal(true)
-  const handleCloseModal = () => setOpenModal(false)
-  const handleEnroll = async (courseId) => {
-    console.log("session", session)
-    const res = await fetch("/api/course-enroll", {
-      method: "POST",
-      body: JSON.stringify({
-        courseId,
-        email: session?.data?.session?.user?.email,
-        locale
-      }),
-    })
-    if (!res.ok) {
-      const { message } = await res.json()
-      notify(message, "error")
-      removePurchasedCourse(courseId)
-      return
-    }
-    const { message } = await res.json()
-    notify(message, "success")
-    handleCloseModal()
-  }
   async function saveCourse() {
     const res = await fetch("/api/save-course", {
       method: "POST",
@@ -79,49 +36,6 @@ export default function FeaturedCourse({ course, userSavedCourseIds }) {
   }
   return (
     <>
-      {/* MODAL STARTS */}
-      <Modal
-        open={openModal}
-        onClose={handleCloseModal}
-        closeAfterTransition
-        slots={{ backdrop: Backdrop }}
-        slotProps={{
-          backdrop: {
-            timeout: 500,
-          },
-        }}
-
-      >
-        <Box sx={modalStyle}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            {course?.title}
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Want to enroll in this course?
-          </Typography>
-          <div className="flex justify-end gap-2 mt-4">
-            <LearnUButton
-              text="Cancel"
-              bgColor="red"
-              borderRadius={20}
-              paddingInline={25}
-              paddingBlock={5}
-              width="full"
-              onClick={handleCloseModal}
-            />
-            <LearnUButton
-
-              text="Enroll"
-              bgColor="blue"
-              borderRadius={20}
-              paddingInline={25}
-              paddingBlock={5}
-              width="full"
-              onClick={() => handleEnroll(course?._id)}
-            />
-          </div>
-        </Box>
-      </Modal>
       <div className="bg-primary-white rounded-2xl shadow-light-gray">
         {/* CARD HEAD */}
         <div className="p-2">
@@ -165,7 +79,7 @@ export default function FeaturedCourse({ course, userSavedCourseIds }) {
               </span>
               <span>{course?.rating && `${course.rating}/5`}</span>
             </p>
-            <div onClick={handleOpenModal} className="max-2xl:w-full">
+            <Link href={`course-detail/${course._id}`} className="max-2xl:w-full">
               <LearnUButton
                 text={`$${course.price}`}
                 bgColor="blue"
@@ -174,7 +88,7 @@ export default function FeaturedCourse({ course, userSavedCourseIds }) {
                 paddingBlock={5}
                 width="full"
               />
-            </div>
+            </Link>
           </div>
         </div>
         {/* CARD BODY ENDS*/}

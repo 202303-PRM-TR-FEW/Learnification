@@ -1,18 +1,13 @@
+import { Course } from "@/models/Course";
 import { User } from "@/models/User";
 import { connectToDb } from "@/utils/database";
 import { getServerSession } from "next-auth";
 
 export async function GET(request, { params }) {
   const courseId = params.courseId;
-  const data = await getServerSession();
   await connectToDb();
-
   try {
-    const userSavedCourses = await User.findOne({email:data.user.email})
-    .populate("savedCourses").exec()
-    const courseDetail = userSavedCourses.savedCourses.find(
-      (course) => course._id.toString() === courseId
-    );
+    const courseDetail = await Course.findById(courseId).exec()
 
     if (courseDetail) {
       return new Response(JSON.stringify(courseDetail), {

@@ -2,7 +2,7 @@
 import CourseView from "@/app/Components/CourseView";
 import LearnUButton from "@/app/Components/LearnUButton";
 import CoursePreview from "@/app/Components/CoursePreview";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import {
   redirect,
   usePathname,
@@ -17,6 +17,8 @@ import notify from "@/utils/notifications";
 import Loading from "@/app/Components/LoadingPage/Loading";
 import "react-toastify/dist/ReactToastify.css";
 import NoCoursesFound from "@/app/Components/NoCoursesFound";
+import { Box, Modal, Typography } from "@mui/material";
+import Backdrop from '@mui/material/Backdrop';
 
 function CourseViewImage({ imgUrl }) {
   const t = useTranslations("SavedCourses");
@@ -47,8 +49,44 @@ function CourseViewImage({ imgUrl }) {
     </div>
   );
 }
+const modalStyle = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: '#f5f5f5',
+  border: '#2e8dff',
+  boxShadow: 24,
+  p: 4,
+  borderRadius: 2
+}
 
 export default function Saved() {
+  const session = useSession();
+  const locale = useLocale();
+  const [openModal, setOpenModal] = useState(false)
+  const handleOpenModal = () => setOpenModal(true)
+  const handleCloseModal = () => setOpenModal(false)
+  const handleEnroll = async (courseId) => {
+    const res = await fetch("/api/course-enroll", {
+      method: "POST",
+      body: JSON.stringify({
+        courseId,
+        email: session?.data?.session?.user?.email,
+        locale
+      }),
+    })
+    if (!res.ok) {
+      const { message } = await res.json()
+      notify(message, "error")
+      return
+    }
+    const { message } = await res.json()
+    notify(message, "success")
+    handleCloseModal()
+    router.push(`/spesific-course/${courseId}`)
+  }
   const { status } = useSession();
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -89,7 +127,7 @@ export default function Saved() {
   const [expandedCourseIndex, setExpandedCourseIndex] = useState(initialIndex);
   const selectedCourse =
     courses[
-      expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
+    expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
     ];
   const createQueryString = useCallback(
     (name, value) => {
@@ -128,7 +166,51 @@ export default function Saved() {
   };
 
   return (
+
     <>
+      {/* MODAL STARTS */}
+      <Modal
+        open={openModal}
+        onClose={handleCloseModal}
+        closeAfterTransition
+        slots={{ backdrop: Backdrop }}
+        slotProps={{
+          backdrop: {
+            timeout: 500,
+          },
+        }}
+
+      >
+        <Box sx={modalStyle}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            {selectedCourse?.title}
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Want to enroll in this course?
+          </Typography>
+          <div className="flex justify-end gap-2 mt-4">
+            <LearnUButton
+              text="Cancel"
+              bgColor="red"
+              borderRadius={20}
+              paddingInline={25}
+              paddingBlock={5}
+              width="full"
+              onClick={handleCloseModal}
+            />
+            <LearnUButton
+
+              text="Enroll"
+              bgColor="blue"
+              borderRadius={20}
+              paddingInline={25}
+              paddingBlock={5}
+              width="full"
+              onClick={() => handleEnroll(selectedCourse?._id)}
+            />
+          </div>
+        </Box>
+      </Modal>
       {isLoading ? (
         <Loading />
       ) : (
@@ -213,7 +295,7 @@ export default function Saved() {
                             handlePreviewClick(e, selectedCourse?._id)
                           }
                         />
-                        <LearnUButton
+                        <LearnUButton onClick={handleOpenModal}
                           className={"basis-full uppercase"}
                           text={t("Buy Now")}
                         />
