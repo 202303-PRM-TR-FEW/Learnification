@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Icons from "./Icons";
 import { useTranslations } from "next-intl";
+import formatDuration from "@/utils/formatDuration";
 
 export default function CourseOverview({ course, showCheckIcon = true, setVideoUrl = null }) {
   const t = useTranslations("CourseOverview");
@@ -60,7 +61,7 @@ export default function CourseOverview({ course, showCheckIcon = true, setVideoU
                           {lesson.title}
                         </span>
                       </h4>
-                      <p className="py-1">{lesson.duration}</p>
+                      <p className="py-1">{formatDuration(lesson.duration, locale)}</p>
                     </div>
                   </li>
                 ))}
