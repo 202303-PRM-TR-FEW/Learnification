@@ -7,7 +7,10 @@ import { AES } from "crypto-js";
 import notify from "@/utils/notifications";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+
 export default function SignInUp() {
+  const t = useTranslations("SignInUp");
   const session = useSession();
   const router = useRouter();
   const [isLoginFormVisible, setLoginFormVisible] = useState(true);
@@ -107,7 +110,10 @@ export default function SignInUp() {
   async function handleSubmitSignUp(e) {
     e.preventDefault();
     if (!isStrongPassword(signUpCredentials.password)) {
-      notify("Password must be at least 8 characters long, and include at least one capital letter, one number, and one special character.", "error");
+      notify(
+        "Password must be at least 8 characters long, and include at least one capital letter, one number, and one special character.",
+        "error"
+      );
       return;
     }
     if (!signUpCredentials.image) {
@@ -161,15 +167,17 @@ export default function SignInUp() {
       <div className="bg-white bg-opacity-50 backdrop-blur-xl p-8 rounded-2xl shadow-xl">
         <div className="flex flex-col sm:flex-row justify-center md:justify-around items-center">
           <div onClick={() => handleProviderSignIn("github")}>
-            <LearnUButton className={"my-4"} text="Sign In with GitHub" />
+            <LearnUButton className={"my-4"} text={t("Sign In with GitHub")} />
           </div>
           <div onClick={() => handleProviderSignIn("google")}>
-            <LearnUButton className={"my-4"} text="Sign In with Google" />
+            <LearnUButton className={"my-4"} text={t("Sign In with Google")} />
           </div>
         </div>
         {isLoginFormVisible ? (
           <form onSubmit={(e) => handleSubmitCredentials(e)}>
-            <h2 className="text-sky-500 font-semibold text-2xl pb-5">Login</h2>
+            <h2 className="text-sky-500 font-semibold text-2xl pb-5">
+              {t("Login")}
+            </h2>
 
             <input
               value={credentials.email}
@@ -180,7 +188,7 @@ export default function SignInUp() {
                 })
               }
               type="email"
-              placeholder="Email"
+              placeholder={t("Email")}
               required
               className="w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent"
             />
@@ -190,32 +198,32 @@ export default function SignInUp() {
                 setCredentials({ ...credentials, password: e.target.value })
               }
               type="password"
-              placeholder="Password"
+              placeholder={t("Password")}
               required
               className="w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent"
             />
             <LearnUButton
               className="max-sm:w-full"
-              text="Sign In"
+              text={t("Sign In")}
               onClick={() => signIn("credentials")}
             />
             <div>
               <p className="message text-gray-400 mt-6 inline-block mr-2">
-                Not registered?{" "}
+                {t("Sign In Description")}{" "}
               </p>
               <p
                 href="#"
                 onClick={handleToggleForm}
                 className="text-blue-500 animatedUnderline inline-block"
               >
-                Create an account
+                {t("Create account")}
               </p>
             </div>
           </form>
         ) : (
           <form onSubmit={(e) => handleSubmitSignUp(e)}>
             <h2 className="text-sky-500 font-semibold text-2xl pb-5">
-              Register
+            {t("Register")}
             </h2>
             <input
               value={signUpCredentials.name}
@@ -226,7 +234,7 @@ export default function SignInUp() {
                 })
               }
               type="text"
-              placeholder="Name *"
+              placeholder={`${t("Name")} *`}
               required
               className="w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent"
             />
@@ -239,7 +247,7 @@ export default function SignInUp() {
                 })
               }
               type="email"
-              placeholder="Email *"
+              placeholder={`${t("Email")} *`}
               required
               className="w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent"
             />
@@ -254,10 +262,11 @@ export default function SignInUp() {
                 setPasswordStrong(isStrongPassword(newPassword));
               }}
               type="password"
-              placeholder="Password *"
+              placeholder={`${t("Password")} *`}
               required
-              className={`w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent ${isPasswordStrong ? "" : "border-red-500"
-                }`}
+              className={`w-full py-2 px-1 text-gray-400 mb-8 border-b border-gray-500 outline-none bg-transparent ${
+                isPasswordStrong ? "" : "border-red-500"
+              }`}
             />
 
             <select
@@ -286,7 +295,7 @@ export default function SignInUp() {
                 transition-colors duration-300 ease-in-out
                 "
               >
-                Upload Picture
+                {t("Upload Picture")}
               </label>
               <input
                 id="fileUpload"
@@ -311,16 +320,16 @@ export default function SignInUp() {
               )}
             </div>
             {error && <p className="text-red-500 text-sm">{error}</p>}
-            <LearnUButton className="max-sm:w-full" text="Sign Up" />
+            <LearnUButton className="max-sm:w-full" text={t("Sign Up")} />
             <div className="">
               <p className="message text-gray-400 mt-6 inline-block mr-2">
-                Already registered?{" "}
+              {t("Sign Up Description")}{" "}
               </p>
               <p
                 onClick={handleToggleForm}
                 className="text-blue-500 animatedUnderline"
               >
-                Sign In
+                {t("Sign In")}
               </p>
             </div>
           </form>

@@ -14,8 +14,6 @@
     },
     "MyLearning": {
       "title": "My Learning",
-      "BecomingAPhotographer": "Becoming A Photographer",
-      "DesignThinking": "Design Thinking 2.0",
       "Complete": "Complete",
       "Save": "Save",
       "SeeAll": "See All",
@@ -29,14 +27,7 @@
       "button": "Search"
     },
     "Top Searches": {
-      "title": "Top Searches",
-      "Marketing Strategy": "Marketing Strategy",
-      "UX Design": "UX Design",
-      "Excel": "Excel",
-      "Adobe Photoshop": "Adobe Photoshop",
-      "CRM": "CRM",
-      "Photography": "Photography",
-      "Content Making": "Content Making"
+      "title": "Top Searches"
     },
     "Categories": {
       "title": "Categories"
@@ -49,6 +40,9 @@
       "Beginner": "Beginner",
       "Intermediate": "Intermediate",
       "Advanced": "Advanced"
+    },
+    "Recommended For You": {
+      "title": "Recommended For You"
     }
   },
   "MyLearning": {
@@ -97,15 +91,19 @@
     "VIEW LESS": "VIEW LESS",
     "FIND FRIENDS": "FIND FRIENDS",
     "INVITE FRIENDS": "INVITE FRIENDS",
-    "My courses": "My courses",
-    "My followers": "My followers",
-    "Following": "Following",
+    "My courses": "MY COURSES",
+    "Followers": "FOLLOWERS",
+    "Following": "FOLLOWING",
     "Achievements": "Achievements",
     "ImageSuccessMessage": "Image uploaded successfully",
     "ImageErrorMessage": "Image upload failed",
     "NoLocation": "No location",
     "NoName": "Name not found",
-    "DefaultProfilePictureAlt": "Default profile picture"
+    "DefaultProfilePictureAlt": "Default profile picture",
+    "Committed Learner":"Committed Learner",
+    "Point Collector":"Point Collector",
+    "Commited Learner Description": "Reach 3 days streak",
+    "Point Collector Description": "Earn 1800 more points"
   },
   "Statistics": {
     "Time Spent": "TIME SPENT",
@@ -115,8 +113,8 @@
     "Hours": "Hours",
     "Days": "Days",
     "Title": "My Performance",
-    "Average/Day": "Average/Day",
-    "Finished Courses": "Finished Courses",
+    "Average/Day": "AVERAGE/DAY",
+    "Finished Courses": "FINISHED COURSES",
     "My Activity": "My Activity",
     "Days Ago": "Days Ago",
     "VIEW ALL ACTIVITY": "VIEW ALL ACTIVITY",
@@ -132,6 +130,10 @@
       "Friday": "Fri",
       "Saturday": "Sat",
       "Sunday": "Sun"
+    },
+    "count": {
+     "hours":"hours",
+     "courses":"courses"
     }
   },
   "About": {
@@ -145,5 +147,21 @@
     "search description": "Head over to the Search Page to find flexible and accessible online courses that perfectly fit your needs.",
     "Home":"Home",
     "Search":"Search"
+  },
+  "SignInUp": {
+  "Login":"Login",
+  "Log out":"Log out",
+  "Sign In": "Sign In",
+  "Sign In with GitHub": "Sign In with GitHub",
+  "Sign In with Google": "Sign In with Google",
+  "Register":"Register",
+  "Sign Up": "Sign Up",
+  "Upload Picture": "Upload Picture",
+  "Name":"Name",
+  "Email":"Email",
+  "Password":"Password",
+  "Sign Up Description":"Already registered?",
+  "Sign In Description":"Not registered?",
+  "Create account": "Create an account"
   }
 }

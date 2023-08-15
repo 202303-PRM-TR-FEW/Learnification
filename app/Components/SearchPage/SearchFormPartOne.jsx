@@ -1,19 +1,19 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import LearnUButton from "../LearnUButton";
 import { useTranslations } from "next-intl";
 
 export default function SearchFormPartOne() {
-  const t = useTranslations("Search")
+  const t = useTranslations("Search");
 
   const topSearches = [
-    { id: 0, name: t("Top Searches.Marketing Strategy") },
-    { id: 1, name: t("Top Searches.UX Design") },
-    { id: 2, name: t("Top Searches.Excel") },
-    { id: 3, name: t("Top Searches.Adobe Photoshop") },
-    { id: 4, name: t("Top Searches.CRM") },
-    { id: 5, name: t("Top Searches.Photography") },
-    { id: 6, name: t("Top Searches.Content Making") },
+    { id: 0, name: "Marketing Strategy" },
+    { id: 1, name: "UX Design" },
+    { id: 2, name: "Excel" },
+    { id: 3, name: "Adobe Photoshop" },
+    { id: 4, name: "CRM" },
+    { id: 5, name: "Photography" },
+    { id: 6, name: "Content Making" },
   ];
 
   const [selectedSearch, setSelectedSearch] = useState(null);
@@ -24,7 +24,6 @@ export default function SearchFormPartOne() {
       setSelectedSearch(id);
     }
   };
-
 
   return (
     <div>
@@ -48,17 +47,18 @@ export default function SearchFormPartOne() {
         </div>
         <hr className="h-px mt-10 bg-gray-200 border-0" />
         <div className="mt-4">
-          <h2 className="mb-4 text-gray-500	font-bold text-sm">
+          <h2 className="mb-4 text-gray-500	font-bold text-sm uppercase">
             {t("Top Searches.title")}
           </h2>
           <div className="grid grid-cols-1 m-3 md:grid-cols-3 lg:grid-cols-7 gap-2">
             {topSearches.map((search) => (
               <button
                 key={search.id}
-                className={`inline-block px-4 py-2 mb-2 rounded-full ${selectedSearch === search.id
-                  ? "bg-blue-100 border border-blue-500 text-blue-500"
-                  : "border border-lightgray text-gray-800"
-                  }`}
+                className={`inline-block px-4 py-2 mb-2 rounded-full ${
+                  selectedSearch === search.id
+                    ? "bg-blue-100 border border-blue-500 text-blue-500"
+                    : "border border-lightgray text-gray-800"
+                }`}
                 onClick={() => handleSearchClick(search.id)}
               >
                 {search.name}

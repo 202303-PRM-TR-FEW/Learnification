@@ -48,7 +48,7 @@ const MyLearning = ({ myLearningCourses, isLoading, idCourses }) => {
 
       <div className="flex justify-center mt-5">
         <Link href={"/my-learning"}>
-          <LearnUButton text={t("MyLearning.SeeAll")} paddingInline={60} />
+          <LearnUButton className="uppercase" text={t("MyLearning.SeeAll")} paddingInline={60} />
         </Link>
       </div>
     </div>

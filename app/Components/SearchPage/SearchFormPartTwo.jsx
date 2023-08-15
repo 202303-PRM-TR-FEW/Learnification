@@ -22,11 +22,12 @@ const SearchFormPartTwo = () => {
   };
 
   return (
-    <div className="flex flex-col justify-between gap-8 mt-4">
+    <div className="flex flex-col justify-between gap-8 mt-4 ml-3">
+       <hr className="h-px mt-10 bg-gray-200 border-0" />
       <section>
-        <h3 className="uppercase font-bold mb-4">
+        <h2 className="uppercase mb-4 text-gray-500	font-bold text-sm">
           {t("Categories.title")}
-        </h3>
+        </h2>
         <ul className="flex flex-wrap justify-start lg:justify-between gap-4">
           {categories.map((category) => (
             <li key={category.id}>
@@ -38,12 +39,13 @@ const SearchFormPartTwo = () => {
           ))}
         </ul>
       </section>
+      <hr className="h-px mt-10 bg-gray-200 border-0" />
       <div className="grid grid-cols-1 gap-8 md:grid-flow-col md:justify-stretch lg:justify-start">
         {/* Rating Start */}
         <section>
-          <h3 className="uppercase font-bold mb-4">
+        <h2 className="mb-4 text-gray-500	font-bold text-sm uppercase">
             {t("Rating.title")}
-          </h3>
+          </h2>
           <Stack spacing={1}>
             <Rating
               name="half-rating"
@@ -55,9 +57,9 @@ const SearchFormPartTwo = () => {
         </section>
 
         <section className="">
-          <h3 className="uppercase font-bold mb-4">
+        <h2 className="mb-4 text-gray-500	font-bold text-sm uppercase">
             {t("Level.title")}
-          </h3>
+          </h2>
           <ul className="flex justify-between flex-wrap gap-4">
             <li className="mr-4">
               <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
@@ -80,6 +82,7 @@ const SearchFormPartTwo = () => {
           </ul>
         </section>
       </div>
+   
     </div>
   );
 };

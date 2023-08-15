@@ -17,7 +17,7 @@ export default function ThisWeek() {
 
   const thisWeek = [
     {
-      count: "2/3",
+      count: `2/3 ${t("Days")}`,
       label: t("Goal"),
       icon: Icons.AtIcon,
       bgColor: "bg-light-blue",

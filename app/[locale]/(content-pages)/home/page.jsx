@@ -16,7 +16,7 @@ export default async function Home() {
         {!session ? (
           <div className="flex">
             <Link className="mt-2 m-auto" href={"sign-in?callback=home"}>
-              <LearnUButton text={"Sign in to see your courses"} />
+              <LearnUButton className="uppercase" text={"Sign in to see your courses"} />
             </Link>
           </div>
         ) : <MyLearningAndFilter />

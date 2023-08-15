@@ -6,9 +6,9 @@ export default function MyPerformance() {
   const t = useTranslations("Statistics");
 
   const myPerformance = [
-    { count: 31.8, label: t("Time Spent"), icon: Icons.BookIcon, bgColor: "bg-light-blue" },
-    { count: 4.6, label: t("Average/Day"), icon: Icons.HourglassIcon, bgColor: "bg-light-orange" },
-    { count: 12, label: t("Finished Courses"), icon: Icons.DoubleTickIcon, bgColor: "bg-light-green" },
+    { count: `31.8 ${t("count.hours")}`, label: t("Time Spent"), icon: Icons.BookIcon, bgColor: "bg-light-blue" },
+    { count: `4.6 ${t("count.hours")}`, label: t("Average/Day"), icon: Icons.HourglassIcon, bgColor: "bg-light-orange" },
+    { count: `12 ${t("count.courses")}`, label: t("Finished Courses"), icon: Icons.DoubleTickIcon, bgColor: "bg-light-green" },
   ];
 
   return (

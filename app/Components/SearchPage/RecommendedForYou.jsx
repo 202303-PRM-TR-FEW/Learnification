@@ -2,8 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import howtoux from '@/public/howtoux.jpeg'
+import { useTranslations } from "next-intl";
 
 export default function RecommendedForYou() {
+  const t = useTranslations("Search")
   const recommended = [
     {
       image: howtoux,
@@ -58,7 +60,8 @@ export default function RecommendedForYou() {
 
   return (
     <div>
-      <h3 className="font-semibold md:text-start">Recommended For You</h3>
+         <hr className="h-px my-10 bg-gray-200 border-0" />
+         <h2 className="mb-4 text-gray-500	font-bold text-sm uppercase">{t("Recommended For You.title")}</h2>
       <div className="lg:w-7/12 grid md:grid-cols-4 gap-x-3">
         {phoneVersion ? (
           <div className='flex justify-center items-center md:w-4/5 gap-x-3'>
