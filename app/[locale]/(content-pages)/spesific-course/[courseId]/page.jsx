@@ -4,6 +4,9 @@ import Image from "next/image";
 import CourseOverview from "@/app/Components/CourseOverview";
 import { useEffect, useState } from "react";
 import Loading from "@/app/Components/LoadingPage/Loading";
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
+import notify from "@/utils/notifications";
 import ReactPlayer from "react-player";
 
 
@@ -16,6 +19,7 @@ function CourseVideo({ videoUrl }) {
 }
 
 export default function SpecificCourse({ params: { courseId } }) {
+  const { status } = useSession();
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [videoUrl, setVideoUrl] = useState(null);
@@ -28,6 +32,9 @@ export default function SpecificCourse({ params: { courseId } }) {
           setSelectedCourse(data);
           setIsLoading(false);
           setVideoUrl(data.sections[0].lessons[0].urls)
+        } else if (response.status === 401) {
+          notify("You need to sign in to view your courses", "error");
+          redirect("/sign-in?callbackUrl=/saved");
         } else {
           setIsLoading(false);
           console.error("Failed to fetch course");
