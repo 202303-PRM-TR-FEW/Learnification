@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import LearnUButton from "../LearnUButton";
 import { useTranslations } from "next-intl";
 import SearchFormPartTwo from "@/app/Components/SearchPage/SearchFormPartTwo";
@@ -8,27 +8,45 @@ export default function SearchFormPartOne() {
   const t = useTranslations("Search");
   const [courses, setCourses] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-  
+  const [originalCourses, setOriginalCourses] = useState([]);
+
+  const filterCourses = (courses, searchInput) => {
+    if (searchInput.trim() === "") {
+      return courses;
+    } else {
+      return courses.filter((course) =>
+        course.title.toLowerCase().includes(searchInput.toLowerCase())
+      );
+    }
+  };
+
   const fetchCourses = async () => {
     try {
-      let filteredCourses;
-      if (searchInput.trim() === "") {
-        const response = await fetch("/api/all-courses");
-        const data = await response.json();
-        filteredCourses = data.courses;
-      } else {
-        const response = await fetch("/api/all-courses");
-        const data = await response.json();
-        filteredCourses = data.courses.filter((course) =>
-          course.title.toLowerCase().includes(searchInput.toLowerCase())
-        );
-      }
-
-      setCourses(filteredCourses);
+      const response = await fetch("/api/all-courses");
+      const data = await response.json();
+      setOriginalCourses(data.courses);
+      setCourses(data.courses);      
     } catch (error) {
       console.error("Error fetching courses:", error);
     }
   };
+
+  useEffect(() => {
+    fetchCourses();
+  }, []);
+
+  useEffect(() => {
+    let filteredCourses;
+    if (searchInput.trim() === "") {
+      filteredCourses = originalCourses;
+    } else {
+      filteredCourses = originalCourses.filter((course) =>
+        course.title.toLowerCase().includes(searchInput.toLowerCase())
+      );
+    }
+
+    setCourses(filteredCourses);
+  }, [searchInput, originalCourses]);
 
   const handleInputChange = (event) => {
     setSearchInput(event.target.value);
@@ -37,9 +55,6 @@ export default function SearchFormPartOne() {
     }
   };
 
-  const handleButtonClick = () => {
-    fetchCourses();
-  };
   const topSearches = [
     { id: 0, name: t("Top Searches.Marketing 101") },
     { id: 1, name: t("Top Searches.UI/UX Design") },
@@ -72,14 +87,6 @@ export default function SearchFormPartOne() {
             className="px-4 py-2 border border-gray-300 rounded-xl focus:outline-none w-full"
             value={searchInput}
             onChange={handleInputChange}
-          />
-          <LearnUButton
-            text={t("Search Input.button")}
-            paddingInline={14}
-            bgColor="blue"
-            borderRadius={10}
-            className="ml-4"
-            onClick={handleButtonClick}
           />
         </div>
         <hr className="h-px mt-10 bg-gray-200 border-0" />

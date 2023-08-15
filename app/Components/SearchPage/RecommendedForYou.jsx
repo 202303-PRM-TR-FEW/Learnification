@@ -4,30 +4,6 @@ import Image from "next/image";
 import howtoux from "@/public/howtoux.jpeg";
 
 export default function RecommendedForYou({ courses }) {
-  console.log(courses);
-  const recommended = [
-    {
-      image: howtoux,
-      name: "UX Researcher",
-      teacher: "Chris Kinley",
-    },
-    {
-      image: howtoux,
-      name: "UX Essentials",
-      teacher: "Don Drapper",
-    },
-    {
-      image: howtoux,
-      name: "UX For Beginners",
-      teacher: "Ben Starter",
-    },
-    {
-      image: howtoux,
-      name: "How To UX",
-      teacher: "Anna May",
-    },
-  ];
-
   const [phoneVersion, setPhoneVersion] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -60,7 +36,7 @@ export default function RecommendedForYou({ courses }) {
   return (
     <div>
       <h3 className="font-semibold md:text-start">Recommended For You</h3>
-      <div className="lg:w-7/12 grid md:grid-cols-4 gap-x-3">
+      <div className="grid md:grid-cols-4 gap-x-3 w-full">
         {phoneVersion ? (
           <div className="flex justify-center items-center md:w-4/5 gap-x-3">
             <button
