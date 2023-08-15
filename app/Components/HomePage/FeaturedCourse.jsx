@@ -14,7 +14,18 @@ import 'react-toastify/dist/ReactToastify.css';
  */
 export default function FeaturedCourse({ course, userSavedCourseIds }) {
   const isCourseSaved = userSavedCourseIds?.includes(course?._id)
-  const [isSaved, setIsSaved] = useState(isCourseSaved)
+  const [isSaved, setIsSaved] = useState(isCourseSaved);
+
+  function formatDuration(durationInSeconds) {
+    const hours = Math.floor(durationInSeconds / 3600);
+    const minutes = Math.floor((durationInSeconds % 3600) / 60);
+
+if (hours < 1) {
+      return `${minutes}m`;
+    }
+
+    return `${hours}h ${minutes}m`;
+  }
   async function saveCourse() {
     const res = await fetch("/api/save-course", {
       method: "POST",
@@ -71,7 +82,7 @@ export default function FeaturedCourse({ course, userSavedCourseIds }) {
               <span>
                 <Icons.ClockIcon />
               </span>
-              <span>{course?.duration}</span>
+              <span>{formatDuration(course?.duration)}</span>
             </p>
             <p className="flex items-center gap-1 mr-auto">
               <span>
