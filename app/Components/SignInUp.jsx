@@ -152,10 +152,11 @@ export default function SignInUp() {
 
   return (
     <div
-      className={`h-screen w-full max-md:px-4 ${isLoginFormVisible
-        ? "mb-24 max-sm:mb-16 md:mb-0"
-        : "mb-32 max-sm:mb-24 md:mb-0"
-        } max-sm:pt-8 flex items-center justify-center`}
+      className={`h-screen w-full max-md:px-4 ${
+        isLoginFormVisible
+          ? "mb-24 max-sm:mb-16 md:mb-0"
+          : "mb-32 max-sm:mb-24 md:mb-0"
+      } max-sm:pt-8 flex items-center justify-center`}
     >
       <div className="bg-white bg-opacity-50 backdrop-blur-xl p-8 rounded-2xl shadow-xl">
         <div className="flex flex-col sm:flex-row justify-center md:justify-around items-center">
