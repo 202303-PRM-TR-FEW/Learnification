@@ -10,7 +10,7 @@ export default async function Statistics() {
     const data = await getServerSession()
     if (!data) redirect('/sign-in?callbackUrl=/statistics')
     return (
-        <div className='w-full flex flex-col lg:flex-row gap-y-10 pb-16'>
+        <div className='w-full flex flex-col lg:flex-row gap-y-10 pb-16 mt-8'>
             <div className='w-full lg:w-1/2'>
                 <ThisWeek />
                 <MyPerformance />
