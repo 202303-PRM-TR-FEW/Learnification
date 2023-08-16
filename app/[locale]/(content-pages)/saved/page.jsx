@@ -235,6 +235,10 @@ export default function Saved() {
                     >
                       <div className="mt-auto">
                         <LearnUButton
+                          onClick={() => {
+                            setExpandedCourseIndex(index)
+                            handleOpenModal()
+                          }}
                           ref={buttonRef}
                           className={"max-md:w-full uppercase"}
                           text={t("Buy")}
@@ -264,6 +268,7 @@ export default function Saved() {
                               />
 
                               <LearnUButton
+                                onClick={handleOpenModal}
                                 className={"basis-full uppercase"}
                                 text={t("Buy Now")}
                               />
