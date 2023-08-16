@@ -208,3 +208,7 @@ input[type="checkbox"]:checked::before {
   border-color:  #2e8dff;
   fill: #2e8dff;
 }
+
+iframe{
+  border-radius: 25px;
+}
