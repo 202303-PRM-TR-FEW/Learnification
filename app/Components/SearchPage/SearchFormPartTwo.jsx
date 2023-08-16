@@ -98,30 +98,6 @@ const SearchFormPartTwo = ({ courses }) => {
             />
           </Stack>
         </section>
-
-        <section className="">
-          <h3 className="uppercase font-bold mb-4">{t("Level.title")}</h3>
-          <ul className="flex justify-between flex-wrap gap-4">
-            <li className="mr-4">
-              <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
-                <input type="checkbox" />
-                {t("Level.Beginner")}
-              </label>
-            </li>
-            <li className="mr-4">
-              <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
-                <input type="checkbox" />
-                {t("Level.Intermediate")}
-              </label>
-            </li>
-            <li>
-              <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
-                <input type="checkbox" />
-                {t("Level.Advanced")}
-              </label>
-            </li>
-          </ul>
-        </section>
       </div>
       <RecommendedForYou courses={filteredCourses} />
     </div>

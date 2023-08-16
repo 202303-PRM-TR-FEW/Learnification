@@ -29,7 +29,7 @@ export default function CourseDetail({ params: { courseId } }) {
   useEffect(() => {
     async function fetchCourses() {
       try {
-        const response = await fetch(`/api/populate-saved-courses/${courseId}`);
+        const response = await fetch(`/api/all-courses/${courseId}`);
         if (response.ok) {
           const data = await response.json();
           setSelectedCourse(data);

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import howtoux from "@/public/howtoux.jpeg";
+import Link from "next/link";
 
 export default function RecommendedForYou({ courses }) {
   const [phoneVersion, setPhoneVersion] = useState(false);
@@ -37,39 +37,41 @@ export default function RecommendedForYou({ courses }) {
     <div>
       <h3 className="font-semibold md:text-start">Recommended For You</h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 w-full">
-        {phoneVersion ? (
-          courses.map((course, index) => (
-            <div key={index} className="lg:w-full py-3">
-              <div className="rounded-2xl overflow-hidden relative w-full h-[200px]">
-                <Image
-                  src={course.imageUrl}
-                  fill
-                  className="w-full h-full object-cover rounded-2xl aspect-square"
-                  sizes="100vw"
-                  alt="courseed courses"
-                />
-              </div>
-              <h2 className="font-semibold pt-3">{course.title}</h2>
-              <p className="text-sm">{course.tutor.name}</p>
-            </div>
-          ))
-        ) : (
-          courses.map((course, index) => (
-            <div key={index} className="lg:w-full py-3">
-              <div className="rounded-2xl overflow-hidden relative w-full h-[200px]">
-                <Image
-                  src={course.imageUrl}
-                  fill
-                  className="w-full h-full object-cover rounded-2xl aspect-square"
-                  sizes="100vw"
-                  alt="courseed courses"
-                />
-              </div>
-              <h2 className="font-semibold pt-3">{course.title}</h2>
-              <p className="text-sm">{course.tutor.name}</p>
-            </div>
-          ))
-        )}
+        {phoneVersion
+          ? courses.map((course, index) => (
+              <Link href={`course-detail/${course._id}`}>
+                <div key={index} className="lg:w-full py-3">
+                  <div className="rounded-2xl overflow-hidden relative w-full h-[200px]">
+                    <Image
+                      src={course.imageUrl}
+                      fill
+                      className="w-full h-full object-cover rounded-2xl aspect-square"
+                      sizes="100vw"
+                      alt="courseed courses"
+                    />
+                  </div>
+                  <h2 className="font-semibold pt-3">{course.title}</h2>
+                  <p className="text-sm">{course.tutor.name}</p>
+                </div>
+              </Link>
+            ))
+          : courses.map((course, index) => (
+              <Link href={`course-detail/${course._id}`}>
+                <div key={index} className="lg:w-full py-3">
+                  <div className="rounded-2xl overflow-hidden relative w-full h-[200px]">
+                    <Image
+                      src={course.imageUrl}
+                      fill
+                      className="w-full h-full object-cover rounded-2xl aspect-square"
+                      sizes="100vw"
+                      alt="courseed courses"
+                    />
+                  </div>
+                  <h2 className="font-semibold pt-3">{course.title}</h2>
+                  <p className="text-sm">{course.tutor.name}</p>
+                </div>
+              </Link>
+            ))}
       </div>
     </div>
   );
