@@ -7,14 +7,17 @@ import Image from "next/image";
 import notify from "@/utils/notifications";
 import 'react-toastify/dist/ReactToastify.css';
 import Link from "next/link";
+import formatDuration from "@/utils/formatDuration";
+import { useLocale } from "next-intl";
 /**
  *
  * @param {object} course course object
  * @returns a featured course card
  */
 export default function FeaturedCourse({ course, userSavedCourseIds }) {
+  const locale = useLocale()
   const isCourseSaved = userSavedCourseIds?.includes(course?._id)
-  const [isSaved, setIsSaved] = useState(isCourseSaved)
+  const [isSaved, setIsSaved] = useState(isCourseSaved);
   async function saveCourse() {
     const res = await fetch("/api/save-course", {
       method: "POST",
@@ -71,7 +74,7 @@ export default function FeaturedCourse({ course, userSavedCourseIds }) {
               <span>
                 <Icons.ClockIcon />
               </span>
-              <span>{course?.duration}</span>
+              <span>{formatDuration(course?.duration, locale)}</span>
             </p>
             <p className="flex items-center gap-1 mr-auto">
               <span>
