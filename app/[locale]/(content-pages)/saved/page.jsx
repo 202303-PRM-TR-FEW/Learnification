@@ -85,7 +85,7 @@ export default function Saved() {
     const { message } = await res.json()
     notify(message, "success")
     handleCloseModal()
-    router.push(`/spesific-course/${courseId}`)
+    router.push(`/specific-course/${courseId}`)
   }
   const { status } = useSession();
   useEffect(() => {

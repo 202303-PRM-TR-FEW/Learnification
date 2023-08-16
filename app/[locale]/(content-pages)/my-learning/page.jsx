@@ -90,7 +90,7 @@ export default function MyLearning() {
   const [expandedCourseIndex, setExpandedCourseIndex] = useState(initialIndex);
   const selectedCourse =
     courses[
-      expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
+    expandedCourseIndex >= courses.length ? defaultIndex : expandedCourseIndex
     ];
   const createQueryString = useCallback(
     (name, value) => {
@@ -122,7 +122,7 @@ export default function MyLearning() {
   }, [searchParams.get("courseIndex")]);
   const handlePreviewClick = (e, courseId) => {
     e.preventDefault();
-    const route = `/spesific-course/${courseId}`;
+    const route = `/specific-course/${courseId}`;
     router.push(route);
   };
 
