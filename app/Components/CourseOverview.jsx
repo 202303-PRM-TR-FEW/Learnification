@@ -1,10 +1,11 @@
 "use client";
 import { useState } from "react";
 import Icons from "./Icons";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import formatDuration from "@/utils/formatDuration";
 
 export default function CourseOverview({ course, showCheckIcon = true, setVideoUrl = null }) {
+  const locale = useLocale()
   const t = useTranslations("CourseOverview");
   const [openLessons, setOpenLessons] = useState({});
   const handleLessonClick = (e, lessonId) => {

@@ -1,13 +1,11 @@
 import { User } from "@/models/User";
 import { connectToDb } from "@/utils/database";
-import { getServerSession } from "next-auth";
 
-export async function GET(request, { params }) {
+export async function POST(request, { params }) {
   const courseId = params.courseId;
-  const data = await getServerSession();
+  const session = await request.json()
   await connectToDb();
-
-  if (!data) {
+  if (!session) {
     return new Response("Unauthorized", {
       status: 401,
       headers: {
@@ -16,13 +14,12 @@ export async function GET(request, { params }) {
     });
   }
   try {
-    const userCourses = await User.findOne({ email: data.user.email })
+    const userCourses = await User.findOne({ email: session.user.email })
       .populate("courses")
       .exec();
     const specificCourse = userCourses.courses.find(
       (course) => course._id.toString() === courseId
     );
-
     if (specificCourse) {
       return new Response(JSON.stringify(specificCourse), {
         status: 200,

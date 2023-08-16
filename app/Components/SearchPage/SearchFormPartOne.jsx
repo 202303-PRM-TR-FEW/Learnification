@@ -26,7 +26,7 @@ export default function SearchFormPartOne() {
       const response = await fetch("/api/all-courses");
       const data = await response.json();
       setOriginalCourses(data.courses);
-      setCourses(data.courses);      
+      setCourses(data.courses);
     } catch (error) {
       console.error("Error fetching courses:", error);
     }
@@ -87,22 +87,21 @@ export default function SearchFormPartOne() {
         </div>
         <hr className="h-px mt-10 bg-gray-200 border-0" />
         <div className="mt-4">
-          <h2 className="mb-4 text-gray-500	font-bold text-sm">
+          <h2 className="mb-4 text-gray-500	font-bold text-sm uppercase">
             {t("Top Searches.title")}
           </h2>
           <div className="grid grid-cols-1 m-3 md:grid-cols-3 lg:grid-cols-7 gap-2">
             {topSearches.map((search) => (
-              <Link key={search.id}  href={`course-detail/${search.id}`} className={`flex justify-center items-center text-center px-4 py-2 mb-2 rounded-full ${
-                selectedSearch === search.id
+              <Link key={search.id} href={`course-detail/${search.id}`} className={`flex justify-center items-center text-center px-4 py-2 mb-2 rounded-full ${selectedSearch === search.id
                   ? "bg-blue-100 border border-blue-500 text-blue-500"
                   : "border border-lightgray text-gray-800"
-              }`}
-              onClick={() => handleSearchClick(search.id)}> 
-              <button
-                
-              >
-                {search.name}
-              </button>
+                }`}
+                onClick={() => handleSearchClick(search.id)}>
+                <button
+
+                >
+                  {search.name}
+                </button>
               </Link>
             ))}
           </div>

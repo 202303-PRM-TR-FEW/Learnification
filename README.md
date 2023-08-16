@@ -39,4 +39,8 @@ Welcome to the Learning App project! This repository contains the source code fo
 ![seach](https://github.com/202303-PRM-TR-FEW/LearnU-Team-7/assets/45130129/32b6c237-5e74-47f8-94e0-b644549aa224)
 
 ### Courses Page
-![coursespage](https://github.com/202303-PRM-TR-FEW/LearnU-Team-7/assets/45130129/a1111e31-9b9a-4f51-95de-3dbf3899b64f)
+![coursespage](https://github.com/202303-PRM-TR-FEW/LearnU-Team-7/assets/45130129/97831378-8e9a-4ba0-afe2-6d8210064da9)
+
+### Single course Page
+![singlecoursepage](https://github.com/202303-PRM-TR-FEW/LearnU-Team-7/assets/45130129/fb69a63f-e443-45c0-ab3e-71e71cedcf9f)
+

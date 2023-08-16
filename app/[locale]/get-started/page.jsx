@@ -18,7 +18,7 @@ export default function Home() {
           <BrandIcon />
           <TitleAndParagraph />
           <Link href='/home'>
-            <LearnUButton text={t('button')} />
+            <LearnUButton className="uppercase" text={t('button')} />
           </Link>
         </div>
       </div>

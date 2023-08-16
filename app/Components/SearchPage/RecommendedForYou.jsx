@@ -39,39 +39,39 @@ export default function RecommendedForYou({ courses }) {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 w-full">
         {phoneVersion
           ? courses.map((course) => (
-              <Link href={`course-detail/${course._id}`} key={course._id}>
-                <div key={course._id} className="lg:w-full py-3">
-                  <div className="rounded-2xl overflow-hidden relative w-full h-[200px]">
-                    <Image
-                      src={course.imageUrl}
-                      fill
-                      className="w-full h-full object-cover rounded-2xl aspect-square"
-                      sizes="100vw"
-                      alt="courseed courses"
-                    />
-                  </div>
-                  <h2 className="font-semibold pt-3">{course.title}</h2>
-                  <p className="text-sm">{course.tutor.name}</p>
+            <Link href={`course-detail/${course._id}`} key={course._id}>
+              <div key={course._id} className="lg:w-full py-3">
+                <div className="rounded-2xl overflow-hidden relative w-full h-[200px]">
+                  <Image
+                    src={course.imageUrl}
+                    fill
+                    className="w-full h-full object-cover rounded-2xl aspect-square"
+                    sizes="100vw"
+                    alt="courseed courses"
+                  />
                 </div>
-              </Link>
-            ))
+                <h2 className="font-semibold pt-3">{course.title}</h2>
+                <p className="text-sm">{course.tutor.name}</p>
+              </div>
+            </Link>
+          ))
           : courses.map((course) => (
-              <Link href={`course-detail/${course._id}`} key={course._id}>
-                <div key={course._id} className="lg:w-full py-3">
-                  <div className="rounded-2xl overflow-hidden relative w-full h-[200px]">
-                    <Image
-                      src={course.imageUrl}
-                      fill
-                      className="w-full h-full object-cover rounded-2xl aspect-square"
-                      sizes="100vw"
-                      alt="courseed courses"
-                    />
-                  </div>
-                  <h2 className="font-semibold pt-3">{course.title}</h2>
-                  <p className="text-sm">{course.tutor.name}</p>
+            <Link href={`course-detail/${course._id}`} key={course._id}>
+              <div key={course._id} className="lg:w-full py-3">
+                <div className="rounded-2xl overflow-hidden relative w-full h-[200px]">
+                  <Image
+                    src={course.imageUrl}
+                    fill
+                    className="w-full h-full object-cover rounded-2xl aspect-square"
+                    sizes="100vw"
+                    alt="courseed courses"
+                  />
                 </div>
-              </Link>
-            ))}
+                <h2 className="font-semibold pt-3">{course.title}</h2>
+                <p className="text-sm">{course.tutor.name}</p>
+              </div>
+            </Link>
+          ))}
       </div>
     </div>
   );

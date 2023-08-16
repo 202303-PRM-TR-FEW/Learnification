@@ -57,7 +57,8 @@ const SearchFormPartTwo = ({ courses }) => {
   });
 
   return (
-    <div className="flex flex-col justify-between gap-8 mt-4">
+    <div className="flex flex-col justify-between gap-8 mt-4 ml-3">
+      <hr className="h-px mt-10 bg-gray-200 border-0" />
       <section>
         <h3 className="uppercase font-bold mb-4">{t("Categories.title")}</h3>
         <ul className="flex flex-wrap justify-start lg:justify-between gap-4">
@@ -89,6 +90,7 @@ const SearchFormPartTwo = ({ courses }) => {
           ))}
         </ul>
       </section>
+      <hr className="h-px mt-10 bg-gray-200 border-0" />
       <div className="grid grid-cols-1 gap-8 md:grid-flow-col md:justify-stretch lg:justify-start">
         {/* Rating Start */}
         <section>

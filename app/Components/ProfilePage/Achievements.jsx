@@ -6,8 +6,8 @@ export default function Achievements() {
   const t = useTranslations("Profile");
 
   const achievements = [
-    { achievement: 'Commited Learner', icon: Icons.HourglassIcon, bgColor: 'bg-light-orange', counter: 2, goal: 3, description: "Reach a 3 days streak" },
-    { achievement: 'Point Collector', icon: Icons.SkillsIcon, bgColor: 'bg-light-green', counter: 1200, goal: 3000, description: "Earn 1800 more points" }
+    { achievement: t("Committed Learner"), icon: Icons.HourglassIcon, bgColor: 'bg-light-orange', counter: 2, goal: 3, description: t("Commited Learner Description") },
+    { achievement:  t("Point Collector"), icon: Icons.SkillsIcon, bgColor: 'bg-light-green', counter: 1200, goal: 3000, description: t("Point Collector Description") }
   ];
   return (
     <div className="rounded-3xl">
