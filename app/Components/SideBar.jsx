@@ -150,7 +150,7 @@ function SideBar() {
                       className="rounded-2xl lang-btn text-white bg-blue-500 border border-white hover:bg-white hover:text-blue-500 hover:border-blue-500 transition-colors duration-300"
                       onClick={() => signIn()}
                     >
-                      Log In
+                      Login
                     </button>
                   )}
                 </div>

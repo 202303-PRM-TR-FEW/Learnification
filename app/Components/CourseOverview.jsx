@@ -2,11 +2,12 @@
 import { useState } from "react";
 import Icons from "./Icons";
 import { useTranslations } from "next-intl";
+import formatDuration from "@/utils/formatDuration";
 
-export default function CourseOverview({course, showCheckIcon = true}) {
+export default function CourseOverview({ course, showCheckIcon = true, setVideoUrl = null }) {
   const t = useTranslations("CourseOverview");
   const [openLessons, setOpenLessons] = useState({});
-  const handleLessonClick = (lessonId) => {
+  const handleLessonClick = (e, lessonId) => {
     setOpenLessons((prevState) => ({
       ...prevState,
       [lessonId]: !prevState[lessonId],
@@ -20,11 +21,11 @@ export default function CourseOverview({course, showCheckIcon = true}) {
         <li
           key={index}
           className="flex flex-col shadow rounded-3xl p-2 my-3 mx-6 overflow-hidden cursor-pointer"
-          onClick={() => handleLessonClick(index)}
+          onClick={(e) => handleLessonClick(e, index)}
         >
           <div className="flex justify-between py-3 px-6">
             <h3 className="text-black flex font-bold">
-            {showCheckIcon && <Icons.CheckIcon/>}
+              {showCheckIcon && <Icons.CheckIcon />}
               <span className="pl-2">
                 {`${index + 1}. `}
                 {section.title}
@@ -51,16 +52,16 @@ export default function CourseOverview({course, showCheckIcon = true}) {
             <div className="overflow-auto max-h-56">
               <ul className="">
                 {section.lessons.map((lesson, index) => (
-                  <li key={lesson._id} className="pl-6 my-4">
+                  <li key={lesson._id} className="pl-6 my-4" onClick={setVideoUrl ? () => setVideoUrl(lesson.urls) : () => { }}>
                     <div>
                       <h4 className="flex">
-                      {showCheckIcon && <Icons.CheckIcon width={14} height={14} />}
+                        {showCheckIcon && <Icons.CheckIcon width={14} height={14} />}
                         <span className="pl-2">
                           {`${index + 1}. `}
                           {lesson.title}
                         </span>
                       </h4>
-                      <p className="py-1">{lesson.duration}</p>
+                      <p className="py-1">{formatDuration(lesson.duration, locale)}</p>
                     </div>
                   </li>
                 ))}

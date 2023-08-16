@@ -14,28 +14,28 @@ const courses = [
             title: "EXPOSURE explained",
             duration: 59,
             urls:
-              "https://www.youtube.com/watch?v=3k2lFp47e6A&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=1",
+              "https://youtu.be/3k2lFp47e6A",
             completionState: false,
           },
           {
             title: "APERTURE explained",
             duration: 125,
             urls:
-              "https://www.youtube.com/watch?v=xgNAX-hKPU0&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=2",
+              "https://youtu.be/xgNAX-hKPU0",
             completionState: false,
           },
           {
             title: "ISO explained",
             duration: 145,
             urls:
-              "https://www.youtube.com/watch?v=dXFYuj6f2MM&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=3",
+              "https://youtu.be/dXFYuj6f2MM",
             completionState: false,
           },
           {
             title: "The EFFECTS of APERTURE and SHUTTER SPEED",
             duration: 53,
             urls:
-              "https://www.youtube.com/watch?v=Ns82n-RZzrU&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=4",
+              "https://youtu.be/Ns82n-RZzrU",
             completionState: false,
           },
         ],
@@ -47,21 +47,21 @@ const courses = [
             title: "APERTURE and its EFFECTS Part I",
             duration: 284,
             urls:
-              "https://www.youtube.com/watch?v=NVI-TkW5pXU&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=5",
+              "https://youtu.be/NVI-TkW5pXU",
             completionState: false,
           },
           {
             title: "APERTURE and its EFFECTS Part II",
             duration: 260,
             urls:
-              "https://www.youtube.com/watch?v=3RHOBJLbNhg&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=6",
+              "https://youtu.be/3RHOBJLbNhg",
             completionState: false,
           },
           {
             title: "APERTURE and its EFFECTS Part III",
             duration: 252,
             urls:
-              "https://www.youtube.com/watch?v=eMSVD6_v9Xo&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=7",
+              "https://youtu.be/eMSVD6_v9Xo",
             completionState: false,
           },
         ],
@@ -73,14 +73,14 @@ const courses = [
             title: "SHUTTER SPEED and its EFFECTS Part I",
             duration: 166,
             urls:
-              "https://www.youtube.com/watch?v=T9cuhx_vY3Q&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=8",
+              "https://youtu.be/T9cuhx_vY3Q",
             completionState: false,
           },
           {
             title: "SHUTTER SPEED and its EFFECTS Part II",
             duration: 183,
             urls:
-              "https://www.youtube.com/watch?v=gt5eUquQuUc&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=9",
+              "https://youtu.be/gt5eUquQuUc",
             completionState: false,
           },
         ],
@@ -92,14 +92,14 @@ const courses = [
             title: "ISO",
             duration: 425,
             urls:
-              "https://www.youtube.com/watch?v=7FPzcNEq6Xg&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=10",
+              "https://youtu.be/7FPzcNEq6Xg",
             completionState: false,
           },
           {
             title: "Focus Points and Focus Rules",
             duration: 262,
             urls:
-              "https://www.youtube.com/watch?v=IkF8DK0g0Hg&list=PL7W5udALs-AnaamfbQJGk8QX0Dz2PricA&index=11",
+              "https://youtu.be/IkF8DK0g0Hg",
             completionState: false,
           },
         ],
@@ -131,35 +131,35 @@ const courses = [
             title: "Getting Started in User Experience Design",
             duration: 577,
             urls:
-              "https://www.youtube.com/watch?v=_lyzy-vChh4&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R",
+              "https://youtu.be/_lyzy-vChh4",
             completionState: false,
           },
           {
             title: "5 UX Design Tips & Techniques",
             duration: 262,
             urls:
-              "https://www.youtube.com/watch?v=w6qyekgIo8I&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=2",
+              "https://youtu.be/w6qyekgIo8I",
             completionState: false,
           },
           {
             title: "Front-End Development and UX/UI Design",
             duration: 1675,
             urls:
-              "https://www.youtube.com/watch?v=Ku6vPZXaUwg&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=4",
+              "https://www.youtube.com/live/Ku6vPZXaUwg?feature=share",
             completionState: false,
           },
           {
             title: "The 10 Principles for Good Design",
             duration: 582,
             urls:
-              "https://www.youtube.com/watch?v=38r_3ZKZIgg&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=4",
+              "https://youtu.be/38r_3ZKZIgg",
             completionState: false,
           },
           {
             title: "UX Design vs UI Design",
             duration: 936,
             urls:
-              "https://www.youtube.com/watch?v=RtPnVtXw6HU&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=5",
+              "https://youtu.be/RtPnVtXw6HU",
             completionState: false,
           },
         ],
@@ -171,21 +171,21 @@ const courses = [
             title: "UX Design Book Review",
             duration: 382,
             urls:
-              "https://www.youtube.com/watch?v=vBzBgewl4ac&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=6",
+              "https://youtu.be/vBzBgewl4ac",
             completionState: false,
           },
           {
             title: "How to Wireframe a Website or App",
             duration: 472,
             urls:
-              "https://www.youtube.com/watch?v=e2Oynq-mOLk&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=7",
+              "https://youtu.be/e2Oynq-mOLk",
             completionState: false,
           },
           {
             title: "Design Sketching for Web Designers & Product Designers",
             duration: 291,
             urls:
-              "https://www.youtube.com/watch?v=a9h7sI7tbA0&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=8",
+              "https://youtu.be/a9h7sI7tbA0",
             completionState: false,
           },
         ],
@@ -197,21 +197,21 @@ const courses = [
             title: "3 Psychology Principles in UX Design",
             duration: 215,
             urls:
-              "https://www.youtube.com/watch?v=e_g8FxbrCWY&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=9",
+              "https://youtu.be/e_g8FxbrCWY",
             completionState: false,
           },
           {
             title: "The basics of Baseline Grids in UI & Web Design",
             duration: 573,
             urls:
-              "https://www.youtube.com/watch?v=rGq1GllRLjk&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=10",
+              "https://youtu.be/rGq1GllRLjk",
             completionState: false,
           },
           {
             title: "Prototype & Test in 10 minutes or less",
             duration: 716,
             urls:
-              "https://www.youtube.com/watch?v=pijzYKAOluw&list=PLrtjkLnNjGHvbsas7_YIpkAvGsqkRsn-R&index=11",
+              "https://youtu.be/pijzYKAOluw",
             completionState: false,
           },
         ],
@@ -242,14 +242,14 @@ const courses = [
             title: "Digital Marketing 101",
             duration: 1052,
             urls:
-              "https://www.youtube.com/watch?v=h95cQkEWBx0&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P",
+              "https://youtu.be/h95cQkEWBx0",
             completionState: false,
           },
           {
             title: "Introduction To Marketing",
             duration: 385,
             urls:
-              "https://www.youtube.com/watch?v=8Sj2tbh-ozE&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=2",
+              "https://youtu.be/8Sj2tbh-ozE",
             completionState: false,
           },
         ],
@@ -261,21 +261,21 @@ const courses = [
             title: "How To Advertise For A Small Business",
             duration: 809,
             urls:
-              "https://www.youtube.com/watch?v=2g2fSvvcN2Q&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=3",
+              "https://youtu.be/2g2fSvvcN2Q",
             completionState: false,
           },
           {
             title: "How To Create A Marketing Plan",
             duration: 884,
             urls:
-              "https://www.youtube.com/watch?v=pbNlQs2eBDY&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=4",
+              "https://youtu.be/pbNlQs2eBDY",
             completionState: false,
           },
           {
             title: "Marketing 101 Crash Course",
             duration: 878,
             urls:
-              "https://www.youtube.com/watch?v=b8oP6oeJ5WM&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=5",
+              "https://youtu.be/b8oP6oeJ5WM",
             completionState: false,
           },
         ],
@@ -287,21 +287,21 @@ const courses = [
             title: "4 Principles Of Marketing Strategy",
             duration: 1134,
             urls:
-              "https://www.youtube.com/watch?v=n8M00vmp6v0&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=6",
+              "https://youtu.be/n8M00vmp6v0",
             completionState: false,
           },
           {
             title: "5 Marketing Tips You Need To Know To GROW YOUR BUSINESS",
             duration: 750,
             urls:
-              "https://www.youtube.com/watch?v=7cCjX5MY28A&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=7",
+              "https://youtu.be/7cCjX5MY28A",
             completionState: false,
           },
           {
             title: "Understanding Marketing Fundamentals",
             duration: 794,
             urls:
-              "https://www.youtube.com/watch?v=_R-f_AlRLT8&list=PLxb4RhBMfU_FDfzNl1x0d-rrOA5cNEN2P&index=8",
+              "https://youtu.be/_R-f_AlRLT8",
             completionState: false,
           },
         ],
@@ -332,7 +332,7 @@ const courses = [
             title: "Big Data and Hadoop Introduction",
             duration: 564,
             urls:
-              "https://www.youtube.com/watch?v=F4z_ex2mjro&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7",
+              "https://youtu.be/F4z_ex2mjro",
             completionState: false,
           },
         ],
@@ -344,14 +344,14 @@ const courses = [
             title: "Hadoop Components and Architecture Part 1",
             duration: 857,
             urls:
-              "https://www.youtube.com/watch?v=aa7j7A-PPiw&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=2",
+              "https://youtu.be/aa7j7A-PPiw",
             completionState: false,
           },
           {
             title: "Hadoop Components and Architecture Part 2",
             duration: 617,
             urls:
-              "https://www.youtube.com/watch?v=fN9GA6twEQg&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=3",
+              "https://youtu.be/fN9GA6twEQg",
             completionState: false,
           },
         ],
@@ -363,21 +363,21 @@ const courses = [
             title: "Installing Ubuntu VM on windows machine",
             duration: 525,
             urls:
-              "https://www.youtube.com/watch?v=afweBBGQYZ0&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=4",
+              "https://youtu.be/afweBBGQYZ0",
             completionState: false,
           },
           {
             title: "Windows vs Linux Operating System",
             duration: 441,
             urls:
-              "https://www.youtube.com/watch?v=8fvNsNDq-sY&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=5",
+              "https://youtu.be/8fvNsNDq-sY",
             completionState: false,
           },
           {
             title: "Linux Command Tutorial For Beginners",
             duration: 680,
             urls:
-              "https://www.youtube.com/watch?v=te71qgVCDlY&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=6",
+              "https://youtu.be/te71qgVCDlY",
             completionState: false,
           },
         ],
@@ -389,14 +389,14 @@ const courses = [
             title: "Hadoop Installation Guide Step by Step",
             duration: 1469,
             urls:
-              "https://www.youtube.com/watch?v=Ih5cuJYYz6Y&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=7",
+              "https://youtu.be/Ih5cuJYYz6Y",
             completionState: false,
           },
           {
             title: "Hadoop Commands with example",
             duration: 792,
             urls:
-              "https://www.youtube.com/watch?v=Sos1QKaZySo&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=8",
+              "https://youtu.be/Sos1QKaZySo",
             completionState: false,
           },
         ],
@@ -408,21 +408,21 @@ const courses = [
             title: "Hive Tutorial For Beginners",
             duration: 521,
             urls:
-              "https://www.youtube.com/watch?v=rypH1TCXVQY&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=9",
+              "https://youtu.be/rypH1TCXVQY",
             completionState: false,
           },
           {
             title: "Hive Installation Demo On Ubuntu",
             duration: 682,
             urls:
-              "https://www.youtube.com/watch?v=wPIawRML168&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=10",
+              "https://youtu.be/wPIawRML168",
             completionState: false,
           },
           {
             title: "Hive Query Language",
             duration: 1346,
             urls:
-              "https://www.youtube.com/watch?v=zEl6zSKMhTg&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=11",
+              "https://youtu.be/zEl6zSKMhTg",
             completionState: false,
           },
         ],
@@ -434,21 +434,21 @@ const courses = [
             title: "Sqoop Architecture",
             duration: 435,
             urls:
-              "https://www.youtube.com/watch?v=kSk8ILi5yT8&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=12",
+              "https://youtu.be/kSk8ILi5yT8",
             completionState: false,
           },
           {
             title: "MySQL Installation on Ubuntu Step by Step",
             duration: 376,
             urls:
-              "https://www.youtube.com/watch?v=DO3MTLnT16M&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=13",
+              "https://youtu.be/DO3MTLnT16M",
             completionState: false,
           },
           {
             title: "Sqoop Installation Steps",
             duration: 591,
             urls:
-              "https://www.youtube.com/watch?v=6X0qJ_UV7JE&list=PLmPJQXJiMoUVb-pXjo0MyZELiiykZyAo7&index=14",
+              "https://youtu.be/6X0qJ_UV7JE",
             completionState: false,
           },
         ],
@@ -479,7 +479,7 @@ const courses = [
             title: "Learn How to Draw for Beginners",
             duration: 576,
             urls:
-              "https://www.youtube.com/watch?v=Wz6DrQeQ5rI&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51",
+              "https://youtu.be/Wz6DrQeQ5rI",
             completionState: false,
           },
         ],
@@ -491,28 +491,28 @@ const courses = [
             title: "How to draw Anything with Construction",
             duration: 519,
             urls:
-              "https://www.youtube.com/watch?v=iTey_rv-Trc&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=2",
+              "https://youtu.be/iTey_rv-Trc",
             completionState: false,
           },
           {
             title: "How to Draw Heads",
             duration: 575,
             urls:
-              "https://www.youtube.com/watch?v=pW9YCEZ5UjA&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=3",
+              "https://youtu.be/pW9YCEZ5UjA",
             completionState: false,
           },
           {
             title: "Drawing Faces",
             duration: 574,
             urls:
-              "https://www.youtube.com/watch?v=yX0S_WWiopM&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=4",
+              "https://youtu.be/yX0S_WWiopM",
             completionState: false,
           },
           {
             title: "Drawing Better Poses",
             duration: 756,
             urls:
-              "https://www.youtube.com/watch?v=6uVeYrHk8f0&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=5",
+              "https://youtu.be/6uVeYrHk8f0",
             completionState: false,
           },
         ],
@@ -524,14 +524,14 @@ const courses = [
             title: "Perspective Drawing",
             duration: 615,
             urls:
-              "https://www.youtube.com/watch?v=qq8SO9tMI8k&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=6",
+              "https://youtu.be/qq8SO9tMI8k",
             completionState: false,
           },
           {
             title: "Drawing Objects in Perspective",
             duration: 539,
             urls:
-              "https://www.youtube.com/watch?v=5cJO0UVJGP4&list=PLinIGX5eeFZLUdWmbfUu0eDdTgTzYuA51&index=7",
+              "https://youtu.be/5cJO0UVJGP4",
             completionState: false,
           },
         ],
@@ -557,76 +557,109 @@ const courses = [
         title: "Introduction To HR",
         lessons: [
           {
-            title: "Introduction to Human Resource Management",
-            duration: "332",
+            title: "Taylorism, Scientific Management & Motivation",
+            duration: "730",
             urls:
-              "https://www.youtube.com/watch?v=T7bSMzg7x-s&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy",
+              "https://youtu.be/wZ5qFnAJG9o",
             completionState: false,
           },
           {
-            title: 'The Manager"s Role in Strategic Human Resource Management',
-            duration: "442",
+            title: 'Elton Mayo & The Human Relations',
+            duration: "545",
             urls:
-              "https://www.youtube.com/watch?v=qEN4MVBacys&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=2",
-            completionState: false,
-          },
-        ],
-      },
-      {
-        title: "Analysing and Selecting Employees",
-        lessons: [
-          {
-            title: "Job Analysis and the Talent Management Process",
-            duration: "562",
-            urls:
-              "https://www.youtube.com/watch?v=y7GpP8oMkVQ&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=3",
-            completionState: false,
-          },
-          {
-            title: "Personnel Planning and Recruitment",
-            duration: "650",
-            urls:
-              "https://www.youtube.com/watch?v=kTXdTOZZ6Ek&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=4",
-            completionState: false,
-          },
-          {
-            title: "Employee testing and selection",
-            duration: "542",
-            urls:
-              "https://www.youtube.com/watch?v=LJsgAcx8v-M&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=5",
-            completionState: false,
-          },
-          {
-            title: "Interviewing Candidates",
-            duration: "261",
-            urls:
-              "https://www.youtube.com/watch?v=LARCn4yWP54&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=6",
+              "https://youtu.be/Zfq5lKBaUsQ",
             completionState: false,
           },
         ],
       },
       {
-        title: "HR Fundamentals",
+        title: "Theories and Labours",
         lessons: [
           {
-            title: "Training and Developing Employees",
-            duration: "723",
+            title: "Maslow's Hierarchy of Needs",
+            duration: "516",
             urls:
-              "https://www.youtube.com/watch?v=TJbyV5ydgMw&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=7",
+              "https://youtu.be/pYk6E0OZGdU",
             completionState: false,
           },
           {
-            title: "Performance Management and Appraisal",
-            duration: "673",
+            title: "Herzberg's Two Factor Theory",
+            duration: "444",
             urls:
-              "https://www.youtube.com/watch?v=jQNZY5e-jX8&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=8",
+              "https://youtu.be/nMfPAR_N1Do",
             completionState: false,
           },
           {
-            title: "Establishing effective pay programs",
-            duration: "673",
+            title: "Labour Productivity",
+            duration: "435",
             urls:
-              "https://www.youtube.com/watch?v=MEFju-U7wh4&list=PL3Y_p3e-Lne31qsip5QPMjsEEYd0fqpKy&index=9",
+              "https://youtu.be/610qIGxW_DM",
+            completionState: false,
+          },
+          {
+            title: "Labour Turnover",
+            duration: "563",
+            urls:
+              "https://youtu.be/-rmlnQcxwRI",
+            completionState: false,
+          },
+        ],
+      },
+      {
+        title: "Recruitment and Training",
+        lessons: [
+          {
+            title: "Recruitment & Selection",
+            duration: "514",
+            urls:
+              "https://youtu.be/fB2D09xPVKo",
+            completionState: false,
+          },
+          {
+            title: "Hard & Soft HR",
+            duration: "642",
+            urls:
+              "https://youtu.be/-SCGHnqrMDM",
+            completionState: false,
+          },
+          {
+            title: "Training",
+            duration: "544",
+            urls:
+              "https://youtu.be/50pD35uHYB8",
+            completionState: false,
+          },
+        ],
+      },
+      {
+        title: "Motivators",
+        lessons: [
+          {
+            title: " Absenteeism",
+            duration: "323",
+            urls:
+              "https://youtu.be/O2EZUP-PQK4",
+            completionState: false,
+          },
+          {
+            title: "Financial Motivators",
+            duration: "532",
+            urls:
+              "https://youtu.be/s5JXVb6evSg",
+            completionState: false,
+          },
+          {
+            title: "Non Financial Motivators",
+            duration: "572",
+            urls:
+              "https://youtu.be/-DWVl93ZNZc",
+            completionState: false,
+          },
+          {
+            title: "Hackman & Oldham's Job Characteristics Model",
+            duration: "520",
+            urls:
+              "https://youtu.be/c1QGYiLDEig",
             completionState: false,
           },
         ],
@@ -641,11 +674,11 @@ const courses = [
     },
     imageUrl:
       "https://schoolofhealthcare.net/wp-content/uploads/2022/11/HR-Management.jpg",
-    duration: 4867,
-    rating: 3.5,
+    duration: 6880,
+    rating: 4.1,
     description:
       "Welcome to a transformative online learning experience that equips you with the knowledge and skills needed to excel in the dynamic field of Human Resources. Our comprehensive course, 'Navigating Human Resources: Mastering Essential HR Practices,' is designed to empower both aspiring HR professionals and business leaders seeking to enhance their people management expertise.",
-    price: 0,
+    price: 16,
     recommendedCourses: [],
   },
   {
@@ -657,49 +690,49 @@ const courses = [
             title: "Back to Basics Part 1",
             duration: "1725",
             urls:
-              "https://www.youtube.com/watch?v=MCpi7xZz8bg&list=PLCwOIOwZBb1j_dSPpoz1e02l64TMzbp3x",
+              "https://youtu.be/MCpi7xZz8bg",
             completionState: false,
           },
           {
             title: "Back to Basics Part 2A",
             duration: "781",
             urls:
-              "https://www.youtube.com/watch?v=8GNAYwOPbP4&list=PLCwOIOwZBb1j_dSPpoz1e02l64TMzbp3x&index=2",
+              "https://youtu.be/8GNAYwOPbP4",
             completionState: false,
           },
           {
             title: "Back to Basics Part 2B",
             duration: "2098",
             urls:
-              "https://www.youtube.com/watch?v=u-qOXACgdQ0&list=PLCwOIOwZBb1j_dSPpoz1e02l64TMzbp3x&index=3",
+              "https://youtu.be/u-qOXACgdQ0",
             completionState: false,
           },
           {
             title: "Back to Basics Part 3A",
             duration: "2082",
             urls:
-              "https://www.youtube.com/watch?v=lEn1txclNTU&list=PLCwOIOwZBb1j_dSPpoz1e02l64TMzbp3x&index=4",
+              "https://youtu.be/lEn1txclNTU",
             completionState: false,
           },
           {
             title: "Back to Basics Part 3B",
             duration: "1212",
             urls:
-              "https://www.youtube.com/watch?v=QLlV2Hynf1g&list=PLCwOIOwZBb1j_dSPpoz1e02l64TMzbp3x&index=5",
+              "https://youtu.be/QLlV2Hynf1g",
             completionState: false,
           },
           {
             title: "Partner With Me As Your Sales Coach and Trainer",
             duration: "124",
             urls:
-              "https://www.youtube.com/watch?v=E8-biaMPCgw&list=PLCwOIOwZBb1j_dSPpoz1e02l64TMzbp3x&index=6",
+              "https://youtu.be/E8-biaMPCgw",
             completionState: false,
           },
           {
             title: "Back to Basics Part 4A",
             duration: "1413",
             urls:
-              "https://www.youtube.com/watch?v=ZNl2Bc8rt1o&list=PLCwOIOwZBb1j_dSPpoz1e02l64TMzbp3x&index=7",
+              "https://youtu.be/ZNl2Bc8rt1o",
             completionState: false,
           },
         ],
@@ -730,28 +763,28 @@ const courses = [
             title: "Celestial sphere: Definitions and Equatorial Coordinates",
             duration: "643",
             urls:
-              "https://www.youtube.com/watch?v=CaeOG6mTM-w&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu",
+              "https://youtu.be/CaeOG6mTM-w",
             completionState: false,
           },
           {
             title: "Celestial sphere: Horizontal Coordinates",
             duration: "471",
             urls:
-              "https://www.youtube.com/watch?v=x8cIqKmJf_s&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=2",
+              "https://youtu.be/x8cIqKmJf_s",
             completionState: false,
           },
           {
             title: "Celestial Sphere: Ecliptic Coordinates",
             duration: "358",
             urls:
-              "https://www.youtube.com/watch?v=d8HFDHq-HwQ&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=3",
+              "https://youtu.be/d8HFDHq-HwQ",
             completionState: false,
           },
           {
             title: "Celestial Sphere: Hour Coordinates and Galactic coordinates",
             duration: "353",
             urls:
-              "https://www.youtube.com/watch?v=CXiWPOOHh1U&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=4",
+              "https://youtu.be/CXiWPOOHh1U",
             completionState: false,
           },
         ],
@@ -763,28 +796,28 @@ const courses = [
             title: "The spherical triangle",
             duration: "482",
             urls:
-              "https://www.youtube.com/watch?v=2szAVccopOs&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=5",
+              "https://youtu.be/2szAVccopOs",
             completionState: false,
           },
           {
             title: "Fundamental Law of Cosines",
             duration: "576",
             urls:
-              "https://www.youtube.com/watch?v=nYW5uHKVW5Q&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=6",
+              "https://youtu.be/nYW5uHKVW5Q",
             completionState: false,
           },
           {
             title: "The dual (or polar) triangle.",
             duration: "391",
             urls:
-              "https://www.youtube.com/watch?v=uOW3yyo8-ps&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=7",
+              "https://youtu.be/uOW3yyo8-ps",
             completionState: false,
           },
           {
             title: "Law of Sines",
             duration: "243",
             urls:
-              "https://www.youtube.com/watch?v=2MhOzVOjf6o&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=8",
+              "https://youtu.be/2MhOzVOjf6o",
             completionState: false,
           },
         ],
@@ -796,42 +829,42 @@ const courses = [
             title: "Gauss Groups",
             duration: "260",
             urls:
-              "https://www.youtube.com/watch?v=tN3J5OXTojU&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=9",
+              "https://youtu.be/tN3J5OXTojU",
             completionState: false,
           },
           {
             title: "Hour to Horizontal",
             duration: "589",
             urls:
-              "https://www.youtube.com/watch?v=M4Z3kFC4E80&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=10",
+              "https://youtu.be/M4Z3kFC4E80",
             completionState: false,
           },
           {
             title: "Horizontal to Equatorial",
             duration: "182",
             urls:
-              "https://www.youtube.com/watch?v=kvlrh994k4s&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=11",
+              "https://youtu.be/kvlrh994k4s",
             completionState: false,
           },
           {
             title: "Coordinates of the Sun",
             duration: "536",
             urls:
-              "https://www.youtube.com/watch?v=cQiMhvfUspA&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=12",
+              "https://youtu.be/cQiMhvfUspA",
             completionState: false,
           },
           {
             title: "Equatorial to Galactic Coordinates",
             duration: "411",
             urls:
-              "https://www.youtube.com/watch?v=XrA27sWZsE0&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=13",
+              "https://youtu.be/XrA27sWZsE0",
             completionState: false,
           },
           {
             title: "Astronomical Time and Longitude",
             duration: "311",
             urls:
-              "https://www.youtube.com/watch?v=W43ocK1EjeY&list=PLatuGW739E0ldBl6XKiJ5vzCJVPOscPgu&index=14",
+              "https://youtu.be/W43ocK1EjeY",
             completionState: false,
           },
         ],
@@ -862,7 +895,7 @@ const courses = [
             title: "AMAZON AFFILIATE MARKETING for Beginners",
             duration: "777",
             urls:
-              "https://www.youtube.com/watch?v=ZzcgdNpw_cI&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q",
+              "https://youtu.be/ZzcgdNpw_cI",
             completionState: false,
           },
         ],
@@ -874,49 +907,49 @@ const courses = [
             title: "How to find MOST PROFITABLE Niches",
             duration: "985",
             urls:
-              "https://www.youtube.com/watch?v=b1SD4PAXBQs&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=2",
+              "https://youtu.be/b1SD4PAXBQs",
             completionState: false,
           },
           {
             title: "How To Create AMAZON AFFILIATE WEBSITE",
             duration: "1932",
             urls:
-              "https://www.youtube.com/watch?v=WfmoqKNUwBg&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=3",
+              "https://youtu.be/WfmoqKNUwBg",
             completionState: false,
           },
           {
             title: "FREE Keyword Research for SEO",
             duration: "1031",
             urls:
-              "https://www.youtube.com/watch?v=NFX5p1G1t1Q&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=4",
+              "https://youtu.be/NFX5p1G1t1Q",
             completionState: false,
           },
           {
             title: "How to Write SEO FRIENDLY ARTICLE on Wordpress",
             duration: "1486",
             urls:
-              "https://www.youtube.com/watch?v=WfAjE5-2Vcs&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=5",
+              "https://youtu.be/WfAjE5-2Vcs",
             completionState: false,
           },
           {
             title: "How To Create AMAZON AFFILIATE ACCOUNT",
             duration: "829",
             urls:
-              "https://www.youtube.com/watch?v=pRx8SZ2lC94&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=6",
+              "https://youtu.be/pRx8SZ2lC94",
             completionState: false,
           },
           {
             title: "What is SEO? Black Hat SEO? Search Engine Optimization",
             duration: "972",
             urls:
-              "https://www.youtube.com/watch?v=_Zav7CDI65I&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=7",
+              "https://youtu.be/_Zav7CDI65I",
             completionState: false,
           },
           {
             title: "How to CREATE BACKLINKS",
             duration: "1384",
             urls:
-              "https://www.youtube.com/watch?v=EHGodf4vmys&list=PLifnQOsGyOSTYxFVLLZQo0MPEP2e5dh1Q&index=8",
+              "https://youtu.be/EHGodf4vmys",
             completionState: false,
           },
         ],
@@ -946,21 +979,21 @@ const courses = [
             title: "MySQL With Python And Data Science",
             duration: "822",
             urls:
-              "https://www.youtube.com/watch?v=us1XyayQ6fU&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl",
+              "https://youtu.be/us1XyayQ6fU",
             completionState: false,
           },
           {
             title: "Create and Drop Database and Table",
             duration: "1373",
             urls:
-              "https://www.youtube.com/watch?v=9DwlJSlwvqY&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=2",
+              "https://youtu.be/9DwlJSlwvqY",
             completionState: false,
           },
           {
             title: "MYSQL NULL Values, UPDATE,DELETE,ALTER Query",
             duration: "938",
             urls:
-              "https://www.youtube.com/watch?v=7s0kdfiTLRE&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=3",
+              "https://youtu.be/7s0kdfiTLRE",
             completionState: false,
           },
         ],
@@ -972,21 +1005,21 @@ const courses = [
             title: "SQL Constraints Part1",
             duration: "1305",
             urls:
-              "https://www.youtube.com/watch?v=cKNQRAMoQHw&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=4",
+              "https://youtu.be/cKNQRAMoQHw",
             completionState: false,
           },
           {
             title: "Primary Key, Foreign Key, Check And Default Constraints",
             duration: "1424",
             urls:
-              "https://www.youtube.com/watch?v=z-Zg39LzcW8&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=5",
+              "https://youtu.be/z-Zg39LzcW8",
             completionState: false,
           },
           {
             title: "Indexing In MySQL",
             duration: "655",
             urls:
-              "https://www.youtube.com/watch?v=xDDlB51dX5E&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=6",
+              "https://youtu.be/xDDlB51dX5E",
             completionState: false,
           },
         ],
@@ -998,35 +1031,35 @@ const courses = [
             title: "Interview Preparation MySql Views",
             duration: "970",
             urls:
-              "https://www.youtube.com/watch?v=p7pYiynUNAo&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=7",
+              "https://youtu.be/p7pYiynUNAo",
             completionState: false,
           },
           {
             title: "Discussing All Types Of Joins",
             duration: "784",
             urls:
-              "https://www.youtube.com/watch?v=_OfQeKAUFtA&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=8",
+              "https://youtu.be/_OfQeKAUFtA",
             completionState: false,
           },
           {
             title: "MYSQL Stored Procedures",
             duration: "601",
             urls:
-              "https://www.youtube.com/watch?v=vFZ5rtf71WU&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=9",
+              "https://youtu.be/vFZ5rtf71WU",
             completionState: false,
           },
           {
             title: "MySQL Interview Question With Solutions",
             duration: "1409",
             urls:
-              "https://www.youtube.com/watch?v=KTdItTJVvFQ&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=10",
+              "https://youtu.be/KTdItTJVvFQ",
             completionState: false,
           },
           {
             title: "MySQL Interview Question With Solutions",
             duration: "1264",
             urls:
-              "https://www.youtube.com/watch?v=nEYdSiKygCI&list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl&index=11",
+              "https://youtu.be/nEYdSiKygCI",
             completionState: false,
           },
         ],
@@ -1055,37 +1088,37 @@ const courses = [
           {
             title: 'How to script your sales pitch process to close more sales',
             duration: '244',
-            urls: 'https://www.youtube.com/watch?v=cjmtUrPXDPI&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6',
+            urls: 'https://youtu.be/cjmtUrPXDPI',
             completionState: false,
           },
           {
             title: 'Close the Sale Faster with These 2 Powerfully Effective Closing Techniques',
             duration: '354',
-            urls: 'https://www.youtube.com/watch?v=IjZ6bEPxi5w&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=2',
+            urls: 'https://youtu.be/IjZ6bEPxi5w',
             completionState: false,
           },
           {
             title: 'How to Make Buying Easy for the Customer & Make More Sales',
             duration: '303',
-            urls: 'https://www.youtube.com/watch?v=gpfY4ZNbdSc&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=3',
+            urls: 'https://youtu.be/gpfY4ZNbdSc',
             completionState: false,
           },
           {
             title: 'Recognize Buying Signals',
             duration: '287',
-            urls: 'https://www.youtube.com/watch?v=jnKObmrwzLY&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=4',
+            urls: 'https://youtu.be/jnKObmrwzLY',
             completionState: false,
           },
           {
             title: 'How To Set More Sales Meetings',
             duration: '116',
-            urls: 'https://www.youtube.com/watch?v=HsNrWXFk5Vo&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=5',
+            urls: 'https://youtu.be/HsNrWXFk5Vo',
             completionState: false,
           },
           {
             title: 'How To Prepare For A Sales Call',
             duration: '138',
-            urls: 'https://www.youtube.com/watch?v=qSuPDf1vXQw&list=PLmicRgxv1BCWBH1cwXmOE3YJ3fpt0YMm6&index=6',
+            urls: 'https://youtu.be/qSuPDf1vXQw',
             completionState: false,
           },
         ]

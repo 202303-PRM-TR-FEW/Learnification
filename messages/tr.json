@@ -136,5 +136,13 @@
   "About": {
     "title": "Hakkımızda",
     "description": "Bu proje, her yaş ve yetenek seviyesinden kullanıcılar için kişiselleştirilmiş bir eğitim deneyimi sunan etkileşimli bir öğrenme uygulaması oluşturmayı amaçlamaktadır. Uygulama, çeşitli konuları kapsayan geniş bir ders ve kaynak yelpazesi sunacak, bireylere kendi hızlarında bilgi edinmelerine, becerilerini geliştirmelerine ve eğitim ilgi alanlarını keşfetmelerine olanak tanıyacaktır. Hedef kitlesi, bilgi ve becerilerini genişletmek için esnek ve erişilebilir bir platform arayan öğrenciler, profesyoneller ve ömür boyu öğrenmeyi amaçlayan bireylerden oluşmaktadır."
+  },
+  "NoCoursesFound": {
+    "title": "Görünüşe göre henüz herhangi bir kurs satın almadınız veya kaydetmediniz",
+    "span": "Hay aksi! ",
+    "home description": "Öğrenciler, profesyoneller ve ömür boyu öğrenenler için özel olarak tasarlanmış öne çıkan kurslarımızı keşfetmek için Ana Sayfamıza göz atın.",
+    "search description": "İhtiyaçlarınıza tam olarak uyan esnek ve erişilebilir çevrimiçi kursları bulmak için Arama Sayfasına gidin.",
+    "Home":"Ana Sayfa",
+    "Search":"Arama"
   }
 }
