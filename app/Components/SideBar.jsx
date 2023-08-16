@@ -27,12 +27,29 @@ function SideBar() {
 
   if (path.includes("tr")) path.replace("/tr", ""); // it will replace the /tr with empty string so that we can use it in the Link component
 
+  const [isLaptop, setIsLaptop] = useState(window.innerWidth >= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLaptop(window.innerWidth >= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <>
       <div>
         <div className="flex justify-center md:flex-col md:mt-[4em] md:w-20 md:mr-20">
           <nav className="fixed bottom-2 md:static z-40">
-            <ul className="flex justify-around md:justify-evenly w-[85vw] list-none md:bg-transparent bg-black/75 backdrop-blur-xl p-[1em] rounded-[40px] md:flex-col md:items-center md:h-[25em] md:w-[7em] z-40">
+            <ul
+              className={`flex justify-around md:justify-evenly w-[85vw] list-none ${
+                isLaptop ? "bg-transparent" : "gradient-bg"
+              } p-[1em] rounded-[40px] md:flex-col md:items-center md:h-[25em] md:w-[7em] z-40`}
+            >
               <li className="hidden lg:flex lg:justify-start lg:pb-8">
                 <div className="lg:flex lg:justify-center lg:items-center lg:w-12 lg:h-8 lg:bg-blue-500 lg:rounded-3xl">
                 <Link href="/">
@@ -68,7 +85,7 @@ function SideBar() {
                   className="mainLinks no-underline text-[#b1b1b1]"
                 >
                   <Icons.CoursesIcon />
-                  <span className="hidden lg:block lg:text-sm">
+                  <span className="hidden lg:block lg:text-center lg:text-sm">
                     {t("Courses")}
                   </span>
                 </Link>

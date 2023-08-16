@@ -19,8 +19,8 @@
       "SeeAll": "See All",
       "NotFound": "Course Not Found"
     },
-    "button":"Sign in to see your courses"
-  }, 
+    "button": "Sign in to see your courses"
+  },
   "Search": {
     "Search Input": {
       "title": "Find Your Favorites",
@@ -28,7 +28,14 @@
       "button": "Search"
     },
     "Top Searches": {
-      "title": "Top Searches"
+      "title": "Top Searches",
+      "Marketing 101": "Marketing 101",
+      "UI/UX Design": "UI/UX Design",
+      "Big Data 101": "Big Data 101",
+      "Astronomy 101": "Astronomy 101",
+      "Sales 101": "Sales 101",
+      "Drawing 101": "Drawing 101",
+      "Becoming a Photographer": "Becoming a Photographer"
     },
     "Categories": {
       "title": "Categories"
@@ -66,8 +73,8 @@
     "Saved": "Saved",
     "Profile": "Profile",
     "About": "About",
-    "Login":"Login",
-    "Log out":"Log out"
+    "Login": "Login",
+    "Log out": "Log out"
   },
   "CategoriesArray": {
     "title": "Categories",
@@ -103,8 +110,8 @@
     "NoLocation": "No location",
     "NoName": "Name not found",
     "DefaultProfilePictureAlt": "Default profile picture",
-    "Committed Learner":"Committed Learner",
-    "Point Collector":"Point Collector",
+    "Committed Learner": "Committed Learner",
+    "Point Collector": "Point Collector",
     "Commited Learner Description": "Reach 3 days streak",
     "Point Collector Description": "Earn 1800 more points"
   },
@@ -135,8 +142,8 @@
       "Sunday": "Sun"
     },
     "count": {
-     "hours":"hours",
-     "courses":"courses"
+      "hours": "hours",
+      "courses": "courses"
     }
   },
   "About": {
@@ -148,23 +155,23 @@
     "span": "Oops! ",
     "home description": "Explore our Home Page to discover our featured courses tailored for students, professionals, and lifelong learners.",
     "search description": "Head over to the Search Page to find flexible and accessible online courses that perfectly fit your needs.",
-    "Home":"Home",
-    "Search":"Search"
+    "Home": "Home",
+    "Search": "Search"
   },
   "SignInUp": {
-  "Login":"Login",
-  "Log out":"Log out",
-  "Sign In": "Sign In",
-  "Sign In with GitHub": "Sign In with GitHub",
-  "Sign In with Google": "Sign In with Google",
-  "Register":"Register",
-  "Sign Up": "Sign Up",
-  "Upload Picture": "Upload Picture",
-  "Name":"Name",
-  "Email":"Email",
-  "Password":"Password",
-  "Sign Up Description":"Already registered?",
-  "Sign In Description":"Not registered?",
-  "Create account": "Create an account"
+    "Login": "Login",
+    "Log out": "Log out",
+    "Sign In": "Sign In",
+    "Sign In with GitHub": "Sign In with GitHub",
+    "Sign In with Google": "Sign In with Google",
+    "Register": "Register",
+    "Sign Up": "Sign Up",
+    "Upload Picture": "Upload Picture",
+    "Name": "Name",
+    "Email": "Email",
+    "Password": "Password",
+    "Sign Up Description": "Already registered?",
+    "Sign In Description": "Not registered?",
+    "Create account": "Create an account"
   }
 }

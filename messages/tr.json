@@ -19,7 +19,7 @@
       "SeeAll": "HEPSİNİ GÖR",
       "NotFound": "Kurs Bulunamadı"
     },
-    "button":"KURSLARINIZI GÖRMEK İÇİN GİRİŞ YAPINIZ"
+    "button": "KURSLARINIZI GÖRMEK İÇİN GİRİŞ YAPINIZ"
   },
   "Search": {
     "Search Input": {
@@ -28,7 +28,14 @@
       "button": "Ara"
     },
     "Top Searches": {
-      "title": "Popüler Aramalar"
+      "title": "Popüler Aramalar",
+      "Marketing 101": "Temel Pazarlama 101",
+      "UI/UX Design": "UI/UX Tasarımı",
+      "Big Data 101": "Büyük Veri 101",
+      "Astronomy 101": "Astronomi 101",
+      "Sales 101": "Satış 101",
+      "Drawing 101": "Çizim 101",
+      "Becoming a Photographer": "Bir Fotoğrafçı Olma"
     },
     "Categories": {
       "title": "KATEGORİLER"
@@ -66,8 +73,8 @@
     "Saved": "Kaydedilenler",
     "Profile": "Profil",
     "About": "Hakkımızda",
-    "Login":"Giriş Yap",
-    "Log out":"Çıkış Yap"
+    "Login": "Giriş Yap",
+    "Log out": "Çıkış Yap"
   },
   "CategoriesArray": {
     "Sales": "Satışlar",
@@ -156,14 +163,14 @@
     "Sign In": "Giriş Yap",
     "Sign In with GitHub": "GitHub ile Giriş Yap",
     "Sign In with Google": "Google ile Giriş Yap",
-    "Register":"Kaydol",
+    "Register": "Kaydol",
     "Sign Up": "Üye ol",
     "Upload Picture": "Fotoğraf Yükle",
-    "Name":"İsim",
-    "Email":"Email",
-    "Password":"Şifre",
-    "Sign Up Description":"Zaten üye misiniz?",
-    "Sign In Description":"Üye değil misiniz?",
+    "Name": "İsim",
+    "Email": "Email",
+    "Password": "Şifre",
+    "Sign Up Description": "Zaten üye misiniz?",
+    "Sign In Description": "Üye değil misiniz?",
     "Create account": "Hesap oluştur"
   }
 }
