@@ -42,6 +42,7 @@ module.exports = {
         '^.+\\.module\\.(css|sass|scss)$',
     ],
     setupFilesAfterEnv: [
-        "@testing-library/jest-dom/extend-expect"
+        "@testing-library/jest-dom/extend-expect",
+        "<rootDir>/setupTests.js",
     ]
 }

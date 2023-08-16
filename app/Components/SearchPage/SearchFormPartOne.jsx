@@ -1,20 +1,65 @@
-'use client';
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect, useRef } from "react";
 import LearnUButton from "../LearnUButton";
 import { useTranslations } from "next-intl";
+import SearchFormPartTwo from "@/app/Components/SearchPage/SearchFormPartTwo";
+import Link from "next/link";
 
 export default function SearchFormPartOne() {
-  const t = useTranslations("Search")
+  const t = useTranslations("Search");
+  const [courses, setCourses] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+  const [originalCourses, setOriginalCourses] = useState([]);
 
-  const topSearches = [
-    { id: 0, name: t("Top Searches.Marketing Strategy") },
-    { id: 1, name: t("Top Searches.UX Design") },
-    { id: 2, name: t("Top Searches.Excel") },
-    { id: 3, name: t("Top Searches.Adobe Photoshop") },
-    { id: 4, name: t("Top Searches.CRM") },
-    { id: 5, name: t("Top Searches.Photography") },
-    { id: 6, name: t("Top Searches.Content Making") },
-  ];
+  const filterCourses = (courses, searchInput) => {
+    if (searchInput.trim() === "") {
+      return courses;
+    } else {
+      return courses.filter((course) =>
+        course.title.toLowerCase().includes(searchInput.toLowerCase())
+      );
+    }
+  };
+
+  const fetchCourses = async () => {
+    try {
+      const response = await fetch("/api/all-courses");
+      const data = await response.json();
+      setOriginalCourses(data.courses);
+      setCourses(data.courses);
+    } catch (error) {
+      console.error("Error fetching courses:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCourses();
+  }, []);
+
+  useEffect(() => {
+    let filteredCourses;
+    if (searchInput.trim() === "") {
+      filteredCourses = originalCourses;
+    } else {
+      filteredCourses = originalCourses.filter((course) =>
+        course.title.toLowerCase().includes(searchInput.toLowerCase())
+      );
+    }
+
+    setCourses(filteredCourses);
+  }, [searchInput, originalCourses]);
+
+  const handleInputChange = (event) => {
+    setSearchInput(event.target.value);
+    if (event.target.value === "") {
+      fetchCourses();
+    }
+  };
+
+  const topSearches = originalCourses.slice(0, 7).map((course) => ({
+    id: course._id,
+    name: course.title,
+  }));
 
   const [selectedSearch, setSelectedSearch] = useState(null);
   const handleSearchClick = (id) => {
@@ -24,7 +69,6 @@ export default function SearchFormPartOne() {
       setSelectedSearch(id);
     }
   };
-
 
   return (
     <div>
@@ -37,36 +81,33 @@ export default function SearchFormPartOne() {
             type="text"
             placeholder={t("Search Input.placeholder")}
             className="px-4 py-2 border border-gray-300 rounded-xl focus:outline-none w-full"
-          />
-          <LearnUButton
-            text={t("Search Input.button")}
-            paddingInline={14}
-            bgColor="blue"
-            borderRadius={10}
-            className="ml-4"
+            value={searchInput}
+            onChange={handleInputChange}
           />
         </div>
         <hr className="h-px mt-10 bg-gray-200 border-0" />
         <div className="mt-4">
-          <h2 className="mb-4 text-gray-500	font-bold text-sm">
+          <h2 className="mb-4 text-gray-500	font-bold text-sm uppercase">
             {t("Top Searches.title")}
           </h2>
           <div className="grid grid-cols-1 m-3 md:grid-cols-3 lg:grid-cols-7 gap-2">
             {topSearches.map((search) => (
-              <button
-                key={search.id}
-                className={`inline-block px-4 py-2 mb-2 rounded-full ${selectedSearch === search.id
+              <Link key={search.id} href={`course-detail/${search.id}`} className={`flex justify-center items-center text-center px-4 py-2 mb-2 rounded-full ${selectedSearch === search.id
                   ? "bg-blue-100 border border-blue-500 text-blue-500"
                   : "border border-lightgray text-gray-800"
-                  }`}
-                onClick={() => handleSearchClick(search.id)}
-              >
-                {search.name}
-              </button>
+                }`}
+                onClick={() => handleSearchClick(search.id)}>
+                <button
+
+                >
+                  {search.name}
+                </button>
+              </Link>
             ))}
           </div>
         </div>
       </div>
+      <SearchFormPartTwo courses={courses} />
     </div>
   );
 }

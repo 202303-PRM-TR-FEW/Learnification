@@ -2,7 +2,7 @@
   "GetStarted": {
     "title": "Tutkunu Keşfet",
     "description": "İlgi duyduğun konuları keşfet, yeni beceriler geliştir ve benzer tutkulara sahip olan insanlarla bağlantı kur.",
-    "button": "BAŞLA"
+    "button": "Başla"
   },
   "Home": {
     "Featured Courses": {
@@ -13,32 +13,32 @@
       "More": "Daha Fazla Göster"
     },
     "MyLearning": {
-        "title": "Benim Öğrenmem",
-        "BecomingAPhotographer": "Bir Fotoğrafçı Olmak", 
-        "DesignThinking": "Tasarım Düşüncesi 2.0", 
-        "Complete": "Tamamlandı",
-        "Save": "Kaydet",
-        "SeeAll": "Hepsini Gör"
-    }
+      "title": "Kurslarım",
+      "Complete": "Tamamlandı",
+      "Save": "Kaydet",
+      "SeeAll": "HEPSİNİ GÖR",
+      "NotFound": "Kurs Bulunamadı"
+    },
+    "button": "KURSLARINIZI GÖRMEK İÇİN GİRİŞ YAPINIZ"
   },
-  "Search":{
+  "Search": {
     "Search Input": {
-        "title": "Favorilerini Bul",
-        "placeholder": "Kurs Ara",
-        "button": "Ara"
+      "title": "Favorilerini Bul",
+      "placeholder": "Kurs Ara",
+      "button": "Ara"
     },
     "Top Searches": {
-        "title": "Popüler Aramalar",
-        "Marketing Strategy": "Pazarlama Stratejisi",
-        "UX Design": "UX Tasarımı",
-        "Excel": "Excel",
-        "Adobe Photoshop": "Adobe Photoshop",
-        "CRM": "Müşteri İlişkileri Yönetimi",
-        "Photography": "Fotoğrafçılık",
-        "Content Making": "İçerik Üretimi"
+      "title": "Popüler Aramalar",
+      "Marketing 101": "Temel Pazarlama 101",
+      "UI/UX Design": "UI/UX Tasarımı",
+      "Big Data 101": "Büyük Veri 101",
+      "Astronomy 101": "Astronomi 101",
+      "Sales 101": "Satış 101",
+      "Drawing 101": "Çizim 101",
+      "Becoming a Photographer": "Bir Fotoğrafçı Olma"
     },
     "Categories": {
-      "title": "Kategoriler"
+      "title": "KATEGORİLER"
     },
     "Rating": {
       "title": "Puan"
@@ -48,14 +48,33 @@
       "Beginner": "Başlangıç",
       "Intermediate": "Orta",
       "Advanced": "İleri"
+    },
+    "Recommended For You": {
+      "title": "SİZİN İÇİN ÖNERİLENLER"
     }
+  },
+  "MyLearning": {
+    "title": "Kurslarım",
+    "Statistics": "İstatistikler",
+    "Course Description": "Kurs Açıklaması",
+    "Continue Learning": "Öğrenmeye Devam Et"
+  },
+  "SavedCourses": {
+    "title": "Kaydedilen Kurslar",
+    "Preview": "ÖNİZLEME",
+    "Buy Now": "ŞİMDİ SATIN AL",
+    "Play Preview": "Önizlemeyi Oynat",
+    "Buy": "Satın Al"
   },
   "SideBar": {
     "Home": "Ana Sayfa",
     "Search": "Ara",
     "Courses": "Kurslar",
     "Saved": "Kaydedilenler",
-    "Profile": "Profil"
+    "Profile": "Profil",
+    "About": "Hakkımızda",
+    "Login": "Giriş Yap",
+    "Log out": "Çıkış Yap"
   },
   "CategoriesArray": {
     "Sales": "Satışlar",
@@ -65,5 +84,93 @@
     "Design": "Tasarım",
     "Astronomy": "Astronomi",
     "Big Data": "Büyük Veri"
+  },
+  "CourseOverview": {
+    "title": "Kurs İçeriği"
+  },
+  "Profile": {
+    "title": "İstatistikler",
+    "FINISHED COURSES": "TAMAMLANAN KURS SAYISI",
+    "HOURS LEARNED": "ÇALIŞILAN SÜRE",
+    "SKILLS ACHIEVED": "KAZANILAN YETENEK SAYISI",
+    "Friend Suggestions": "Arkadaş Önerileri",
+    "Friends": "Arkadaşlar",
+    "PROFILE": "PROFİL",
+    "VIEW ALL": "TÜMÜNÜ GÖRÜNTÜLE",
+    "VIEW LESS": "DAHA AZINI GÖRÜNTÜLE",
+    "FIND FRIENDS": "ARKADAŞLARINI BUL",
+    "INVITE FRIENDS": "ARKADAŞLARINI DAVET ET",
+    "My courses": "KURSLARIM",
+    "Followers": "TAKİPÇİLER",
+    "Following": "TAKİP EDİLENLER",
+    "Achievements": "Başarılar",
+    "ImageSuccessMessage": "Profil resmi başarıyla güncellendi.",
+    "ImageErrorMessage": "Profil resmi güncellenirken bir hata oluştu.",
+    "NoLocation": "Konum bilgisi bulunamadı.",
+    "NoName": "İsim bilgisi bulunamadı.",
+    "DefaultProfilePictureAlt": "Varsayılan profil resmi",
+    "Committed Learner": "Sadık Öğrenci",
+    "Point Collector": "Puan Toplayıcı",
+    "Commited Learner Description": "3 günlük seriye ulaş",
+    "Point Collector Description": "1800 puan daha kazan"
+  },
+  "Statistics": {
+    "Time Spent": "GEÇİRİLEN ZAMAN",
+    "Goal": "Hedef",
+    "Streak": "Seri",
+    "This Week": "Bu Hafta",
+    "Hours": "Saat",
+    "Days": "Gün",
+    "Title": "Performansım",
+    "Average/Day": "GÜNLÜK ORTALAMA",
+    "Finished Courses": "BİTİRİLEN KURSLAR",
+    "My Activity": "Etkinliğim",
+    "Days Ago": "gün önce",
+    "VIEW ALL ACTIVITY": "TÜM ETKİNLİKLERİ GÖRÜNTÜLE",
+    "VIEW LESS ACTIVITY": "DAHA AZ ETKİNLİK GÖRÜNTÜLE",
+    "Last Year Comparison": "Geçen Yıl İle Karşılaştırma",
+    "Study Time": "ÇALIŞMA SÜRESİ",
+    "Hours Learned": "ÇALIŞILAN SAATLER",
+    "Weekdays": {
+      "Monday": "Pzt",
+      "Tuesday": "Sal",
+      "Wednesday": "Çar",
+      "Thursday": "Per",
+      "Friday": "Cum",
+      "Saturday": "Cmt",
+      "Sunday": "Paz"
+    },
+    "count": {
+      "hours": "saat",
+      "courses": "kurs"
+    }
+  },
+  "About": {
+    "title": "Hakkımızda",
+    "description": "Bu proje, her yaş ve yetenek seviyesinden kullanıcılar için kişiselleştirilmiş bir eğitim deneyimi sunan etkileşimli bir öğrenme uygulaması oluşturmayı amaçlamaktadır. Uygulama, çeşitli konuları kapsayan geniş bir ders ve kaynak yelpazesi sunacak, bireylere kendi hızlarında bilgi edinmelerine, becerilerini geliştirmelerine ve eğitim ilgi alanlarını keşfetmelerine olanak tanıyacaktır. Hedef kitlesi, bilgi ve becerilerini genişletmek için esnek ve erişilebilir bir platform arayan öğrenciler, profesyoneller ve ömür boyu öğrenmeyi amaçlayan bireylerden oluşmaktadır."
+  },
+  "NoCoursesFound": {
+    "title": "Görünüşe göre henüz herhangi bir kurs satın almadınız veya kaydetmediniz.",
+    "span": "Hay aksi! ",
+    "home description": "Öğrenciler, profesyoneller ve ömür boyu öğrenenler için özel olarak tasarlanmış öne çıkan kurslarımızı keşfetmek için Ana Sayfamıza göz atın.",
+    "search description": "İhtiyaçlarınıza tam olarak uyan esnek ve erişilebilir çevrimiçi kursları bulmak için Arama Sayfasına gidin.",
+    "Home": "Ana Sayfa",
+    "Search": "Arama"
+  },
+  "SignInUp": {
+    "Login": "Giriş Yap",
+    "Log out": "Çıkış Yap",
+    "Sign In": "Giriş Yap",
+    "Sign In with GitHub": "GitHub ile Giriş Yap",
+    "Sign In with Google": "Google ile Giriş Yap",
+    "Register": "Kaydol",
+    "Sign Up": "Üye ol",
+    "Upload Picture": "Fotoğraf Yükle",
+    "Name": "İsim",
+    "Email": "Email",
+    "Password": "Şifre",
+    "Sign Up Description": "Zaten üye misiniz?",
+    "Sign In Description": "Üye değil misiniz?",
+    "Create account": "Hesap oluştur"
   }
 }

@@ -1,14 +1,33 @@
-"use client";
-import React from "react";
+import { React, useState } from "react";
 import Icons from "../Icons";
 import CategoriesArray from "../CategoriesArray";
 import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
 import { useTranslations } from "next-intl";
+import RecommendedForYou from "./RecommendedForYou";
 
-const SearchFormPartTwo = () => {
+const SearchFormPartTwo = ({ courses }) => {
   const categories = CategoriesArray();
-  const t = useTranslations("Search")
+  const t = useTranslations("Search");
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedStars, setSelectedStars] = useState(null);
+  const categoryTranslations = {
+    Satışlar: "Sales",
+    İK: "HR",
+    Çizim: "Drawing",
+    "Büyük Veri": "Big Data",
+    Tasarım: "Design",
+    Pazarlama: "Marketing",
+    Astronomi: "Astronomy",
+    Sales: "Sales",
+    Marketing: "Marketing",
+    HR: "HR",
+    Drawing: "Drawing",
+    Design: "Design",
+    Astronomy: "Astronomy",
+    "Big Data": "Big Data",
+  };
+
   const CustomStarIcon = (props) => {
     const { value, ...other } = props;
 
@@ -21,65 +40,75 @@ const SearchFormPartTwo = () => {
     );
   };
 
+  const filteredCourses = courses.filter((course) => {
+    if (
+      selectedCategories.length > 0 &&
+      !selectedCategories.includes(course.category)
+    ) {
+      return false;
+    }
+
+    if (selectedStars !== null) {
+      const roundedRating = Math.round(course.rating);
+      return roundedRating === selectedStars;
+    }
+
+    return true;
+  });
+
   return (
-    <div className="flex flex-col justify-between gap-8 mt-4">
+    <div className="flex flex-col justify-between gap-8 mt-4 ml-3">
+      <hr className="h-px mt-10 bg-gray-200 border-0" />
       <section>
-        <h3 className="uppercase font-bold mb-4">
-          {t("Categories.title")}
-        </h3>
+        <h3 className="uppercase font-bold mb-4">{t("Categories.title")}</h3>
         <ul className="flex flex-wrap justify-start lg:justify-between gap-4">
           {categories.map((category) => (
             <li key={category.id}>
               <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  onChange={(e) => {
+                    const turkishCategory = e.target.value;
+                    const englishCategory =
+                      categoryTranslations[turkishCategory];
+                    setSelectedCategories((prevSelectedCategories) => {
+                      if (e.target.checked) {
+                        return [...prevSelectedCategories, englishCategory];
+                      } else {
+                        return prevSelectedCategories.filter(
+                          (selectedCategory) =>
+                            selectedCategory !== englishCategory
+                        );
+                      }
+                    });
+                  }}
+                  value={category.name}
+                />
                 {category.name}
               </label>
             </li>
           ))}
         </ul>
       </section>
+      <hr className="h-px mt-10 bg-gray-200 border-0" />
       <div className="grid grid-cols-1 gap-8 md:grid-flow-col md:justify-stretch lg:justify-start">
         {/* Rating Start */}
         <section>
-          <h3 className="uppercase font-bold mb-4">
-            {t("Rating.title")}
-          </h3>
+          <h3 className="uppercase font-bold mb-4">{t("Rating.title")}</h3>
           <Stack spacing={1}>
             <Rating
               name="half-rating"
               defaultValue={2.5}
               icon={<CustomStarIcon style={{ marginRight: "5px" }} />}
               emptyIcon={<Icons.StarIcon empty={true} />}
+              onChange={(event, newValue) => {
+                setSelectedStars(newValue);
+              }}
             />
           </Stack>
         </section>
-
-        <section className="">
-          <h3 className="uppercase font-bold mb-4">
-            {t("Level.title")}
-          </h3>
-          <ul className="flex justify-between flex-wrap gap-4">
-            <li className="mr-4">
-              <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
-                <input type="checkbox" />
-                {t("Level.Beginner")}
-              </label>
-            </li>
-            <li className="mr-4">
-              <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
-                <input type="checkbox" />
-                {t("Level.Intermediate")}
-              </label>
-            </li>
-            <li>
-              <label className="text-base leading-[1.1] grid grid-cols-[1em_auto] gap-[0.5em]">
-                <input type="checkbox" />
-                {t("Level.Advanced")}
-              </label>
-            </li>
-          </ul>
-        </section>
       </div>
+      <RecommendedForYou courses={filteredCourses} />
     </div>
   );
 };

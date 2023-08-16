@@ -13,29 +13,29 @@
       "More": "More"
     },
     "MyLearning": {
-        "title": "My Learning",
-        "BecomingAPhotographer": "Becoming A Photographer", 
-        "DesignThinking": "Design Thinking 2.0", 
-        "Complete": "Complete",
-        "Save": "Save",
-        "SeeAll": "See All"
-    }
+      "title": "My Learning",
+      "Complete": "Complete",
+      "Save": "Save",
+      "SeeAll": "See All",
+      "NotFound": "Course Not Found"
+    },
+    "button": "Sign in to see your courses"
   },
-  "Search":{
+  "Search": {
     "Search Input": {
-        "title": "Find Your Favorites",
-        "placeholder": "Search Courses",
-        "button": "Search"
+      "title": "Find Your Favorites",
+      "placeholder": "Search Courses",
+      "button": "Search"
     },
     "Top Searches": {
-        "title": "Top Searches",
-        "Marketing Strategy": "Marketing Strategy",
-        "UX Design": "UX Design",
-        "Excel": "Excel",
-        "Adobe Photoshop": "Adobe Photoshop",
-        "CRM": "CRM",
-        "Photography": "Photography",
-        "Content Making": "Content Making"
+      "title": "Top Searches",
+      "Marketing 101": "Marketing 101",
+      "UI/UX Design": "UI/UX Design",
+      "Big Data 101": "Big Data 101",
+      "Astronomy 101": "Astronomy 101",
+      "Sales 101": "Sales 101",
+      "Drawing 101": "Drawing 101",
+      "Becoming a Photographer": "Becoming a Photographer"
     },
     "Categories": {
       "title": "Categories"
@@ -48,14 +48,33 @@
       "Beginner": "Beginner",
       "Intermediate": "Intermediate",
       "Advanced": "Advanced"
+    },
+    "Recommended For You": {
+      "title": "Recommended For You"
     }
+  },
+  "MyLearning": {
+    "title": "My Learning",
+    "Statistics": "Statistics",
+    "Course Description": "Course Description",
+    "Continue Learning": "Continue Learning"
+  },
+  "SavedCourses": {
+    "title": "Saved Courses",
+    "Preview": "Preview",
+    "Buy Now": "Buy Now",
+    "Play Preview": "Play Preview",
+    "Buy": "Buy"
   },
   "SideBar": {
     "Home": "Home",
     "Search": "Search",
     "Courses": "Courses",
     "Saved": "Saved",
-    "Profile": "Profile"
+    "Profile": "Profile",
+    "About": "About",
+    "Login": "Login",
+    "Log out": "Log out"
   },
   "CategoriesArray": {
     "title": "Categories",
@@ -66,6 +85,93 @@
     "Design": "Design",
     "Astronomy": "Astronomy",
     "Big Data": "Big Data"
-    
+  },
+  "CourseOverview": {
+    "title": "Course Overview"
+  },
+  "Profile": {
+    "title": "Total Statistics",
+    "FINISHED COURSES": "FINISHED COURSES",
+    "HOURS LEARNED": "HOURS LEARNED",
+    "SKILLS ACHIEVED": "SKILLS ACHIEVED",
+    "Friend Suggestions": "Friend Suggestions",
+    "Friends": "Friends",
+    "PROFILE": "PROFILE",
+    "VIEW ALL": "VIEW ALL",
+    "VIEW LESS": "VIEW LESS",
+    "FIND FRIENDS": "FIND FRIENDS",
+    "INVITE FRIENDS": "INVITE FRIENDS",
+    "My courses": "MY COURSES",
+    "Followers": "FOLLOWERS",
+    "Following": "FOLLOWING",
+    "Achievements": "Achievements",
+    "ImageSuccessMessage": "Image uploaded successfully",
+    "ImageErrorMessage": "Image upload failed",
+    "NoLocation": "No location",
+    "NoName": "Name not found",
+    "DefaultProfilePictureAlt": "Default profile picture",
+    "Committed Learner": "Committed Learner",
+    "Point Collector": "Point Collector",
+    "Commited Learner Description": "Reach 3 days streak",
+    "Point Collector Description": "Earn 1800 more points"
+  },
+  "Statistics": {
+    "Time Spent": "TIME SPENT",
+    "Goal": "Goal",
+    "Streak": "Streak",
+    "This Week": "This Week",
+    "Hours": "Hours",
+    "Days": "Days",
+    "Title": "My Performance",
+    "Average/Day": "AVERAGE/DAY",
+    "Finished Courses": "FINISHED COURSES",
+    "My Activity": "My Activity",
+    "Days Ago": "Days Ago",
+    "VIEW ALL ACTIVITY": "VIEW ALL ACTIVITY",
+    "VIEW LESS ACTIVITY": "VIEW LESS ACTIVITY",
+    "Last Year Comparison": "Last Year Comparison",
+    "Study Time": "Study Time",
+    "Hours Learned": "Hours Learned",
+    "Weekdays": {
+      "Monday": "Mon",
+      "Tuesday": "Tue",
+      "Wednesday": "Wed",
+      "Thursday": "Thu",
+      "Friday": "Fri",
+      "Saturday": "Sat",
+      "Sunday": "Sun"
+    },
+    "count": {
+      "hours": "hours",
+      "courses": "courses"
+    }
+  },
+  "About": {
+    "title": "About Us",
+    "description": "This project aims to create an interactive learning app that provides a personalized educational experience for users of all ages and skill levels. The app will offer a wide range of courses and resources spanning various subjects, empowering individuals to acquire knowledge, develop skills, and explore educational interests at their own pace. Its target audience includes students, professionals, and lifelong learners seeking a flexible and accessible platform to expand their knowledge and skills."
+  },
+  "NoCoursesFound": {
+    "title": "It seems you haven't purchased or saved any courses yet.",
+    "span": "Oops! ",
+    "home description": "Explore our Home Page to discover our featured courses tailored for students, professionals, and lifelong learners.",
+    "search description": "Head over to the Search Page to find flexible and accessible online courses that perfectly fit your needs.",
+    "Home": "Home",
+    "Search": "Search"
+  },
+  "SignInUp": {
+    "Login": "Login",
+    "Log out": "Log out",
+    "Sign In": "Sign In",
+    "Sign In with GitHub": "Sign In with GitHub",
+    "Sign In with Google": "Sign In with Google",
+    "Register": "Register",
+    "Sign Up": "Sign Up",
+    "Upload Picture": "Upload Picture",
+    "Name": "Name",
+    "Email": "Email",
+    "Password": "Password",
+    "Sign Up Description": "Already registered?",
+    "Sign In Description": "Not registered?",
+    "Create account": "Create an account"
   }
 }
