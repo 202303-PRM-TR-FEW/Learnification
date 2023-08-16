@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import LearnUButton from "../LearnUButton";
 import { useTranslations } from "next-intl";
 import SearchFormPartTwo from "@/app/Components/SearchPage/SearchFormPartTwo";
+import Link from "next/link";
 
 export default function SearchFormPartOne() {
   const t = useTranslations("Search");
@@ -55,15 +56,10 @@ export default function SearchFormPartOne() {
     }
   };
 
-  const topSearches = [
-    { id: 0, name: t("Top Searches.Marketing 101") },
-    { id: 1, name: t("Top Searches.UI/UX Design") },
-    { id: 2, name: t("Top Searches.Big Data 101") },
-    { id: 3, name: t("Top Searches.Astronomy 101") },
-    { id: 4, name: t("Top Searches.Sales 101") },
-    { id: 5, name: t("Top Searches.Drawing 101") },
-    { id: 6, name: t("Top Searches.Becoming a Photographer") },
-  ];
+  const topSearches = courses.slice(0, 7).map((course) => ({
+    id: course._id,
+    name: course.title,
+  }));
 
   const [selectedSearch, setSelectedSearch] = useState(null);
   const handleSearchClick = (id) => {
@@ -96,17 +92,18 @@ export default function SearchFormPartOne() {
           </h2>
           <div className="grid grid-cols-1 m-3 md:grid-cols-3 lg:grid-cols-7 gap-2">
             {topSearches.map((search) => (
+              <Link key={search.id}  href={`course-detail/${search.id}`} className={`flex justify-center items-center text-center px-4 py-2 mb-2 rounded-full ${
+                selectedSearch === search.id
+                  ? "bg-blue-100 border border-blue-500 text-blue-500"
+                  : "border border-lightgray text-gray-800"
+              }`}
+              onClick={() => handleSearchClick(search.id)}> 
               <button
-                key={search.id}
-                className={`inline-block px-4 py-2 mb-2 rounded-full ${
-                  selectedSearch === search.id
-                    ? "bg-blue-100 border border-blue-500 text-blue-500"
-                    : "border border-lightgray text-gray-800"
-                }`}
-                onClick={() => handleSearchClick(search.id)}
+                
               >
                 {search.name}
               </button>
+              </Link>
             ))}
           </div>
         </div>
