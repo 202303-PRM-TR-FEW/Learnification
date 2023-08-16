@@ -56,7 +56,7 @@ export default function SearchFormPartOne() {
     }
   };
 
-  const topSearches = courses.slice(0, 7).map((course) => ({
+  const topSearches = originalCourses.slice(0, 7).map((course) => ({
     id: course._id,
     name: course.title,
   }));
