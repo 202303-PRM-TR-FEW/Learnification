@@ -6,6 +6,7 @@ import Icons from "../Icons";
 import Image from "next/image";
 import notify from "@/utils/notifications";
 import 'react-toastify/dist/ReactToastify.css';
+import Link from "next/link";
 import formatDuration from "@/utils/formatDuration";
 import { useLocale } from "next-intl";
 /**
@@ -81,7 +82,7 @@ export default function FeaturedCourse({ course, userSavedCourseIds }) {
               </span>
               <span>{course?.rating && `${course.rating}/5`}</span>
             </p>
-            <div className="max-2xl:w-full">
+            <Link href={`course-detail/${course._id}`} className="max-2xl:w-full">
               <LearnUButton
                 text={`$${course.price}`}
                 bgColor="blue"
@@ -90,7 +91,7 @@ export default function FeaturedCourse({ course, userSavedCourseIds }) {
                 paddingBlock={5}
                 width="full"
               />
-            </div>
+            </Link>
           </div>
         </div>
         {/* CARD BODY ENDS*/}

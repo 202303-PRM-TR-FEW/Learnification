@@ -12,7 +12,7 @@ export default async function FeaturedCourses() {
   const protocol = host.includes('localhost') ? 'http' : 'https';
   const res = user ? await getFeaturedCourses(host, protocol, user.email) : await getFeaturedCoursesWOEmail(host, protocol);
   const savedCourseApiUrl = `${protocol}://${host}/api/saved-courses`
-  const { courses: featuredCourses } = await res.json();
+  let { courses: featuredCourses } = await res.json();
   let userSavedCourseIds = []
   if (user) {
     const savedCourseResponse = await fetch(savedCourseApiUrl, {
@@ -20,6 +20,10 @@ export default async function FeaturedCourses() {
       body: JSON.stringify({ email: user.email }),
     })
     userSavedCourseIds = await savedCourseResponse.json()
+  }
+  function removePurchasedCourse(courseId) {
+    const updatedCourses = featuredCourses.filter(course => course.id !== courseId)
+    featuredCourses = updatedCourses
   }
   return (
     <>
