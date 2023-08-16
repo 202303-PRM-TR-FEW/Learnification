@@ -19,6 +19,13 @@ const SearchFormPartTwo = ({ courses }) => {
     Tasarım: "Design",
     Pazarlama: "Marketing",
     Astronomi: "Astronomy",
+    Sales: "Sales",
+    Marketing: "Marketing",
+    HR: "HR",
+    Drawing: "Drawing",
+    Design: "Design",
+    Astronomy: "Astronomy",
+    "Big Data": "Big Data",
   };
 
   const CustomStarIcon = (props) => {
