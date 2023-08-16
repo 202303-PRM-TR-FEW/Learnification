@@ -55,7 +55,7 @@ export default function UserInfo() {
   return (
     <div className="w-full">
       <div className="flex flex-col xl:flex-row items-center justify-center w-full">
-        <div className="h-[9rem] w-[10rem] md:w-[14rem] md:h-[13rem] xl:w-[16rem] xl:h-[12rem]">
+        <div className="h-[9rem] w-[10rem] md:w-[14rem] md:h-[13rem] xl:w-[16rem] xl:h-[12rem] lg:pr-2">
           {
             user?.image ? <Image
               src={user?.image}
