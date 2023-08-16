@@ -18,8 +18,9 @@
       "Save": "Save",
       "SeeAll": "See All",
       "NotFound": "Course Not Found"
-    }
-  },
+    },
+    "button":"Sign in to see your courses"
+  }, 
   "Search": {
     "Search Input": {
       "title": "Find Your Favorites",
@@ -64,7 +65,9 @@
     "Courses": "Courses",
     "Saved": "Saved",
     "Profile": "Profile",
-    "About": "About"
+    "About": "About",
+    "Login":"Login",
+    "Log out":"Log out"
   },
   "CategoriesArray": {
     "title": "Categories",
