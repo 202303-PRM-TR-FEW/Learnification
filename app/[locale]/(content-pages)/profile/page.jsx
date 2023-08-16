@@ -9,11 +9,14 @@ import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
 function FriendsPart() {
-  const t = useTranslations("Profile")
+  const t = useTranslations("Profile");
   return (
     <div className="w-full mb-20 max-md:px-4 lg:w-2/5 max-sm:px-4 lg:max-w-md lg:ml-4">
       <div>
-        <FriendsComponent myButton="addDelete" header={t("Friend Suggestions")} />
+        <FriendsComponent
+          myButton="addDelete"
+          header={t("Friend Suggestions")}
+        />
         <FriendsComponent header={t("Friends")} />
         <div className="mt-8 flex flex-col sm:flex-row itms-center justify-center gap-4">
           <LearnUButton text={t("FIND FRIENDS")} bgColor="white" />
@@ -21,14 +24,13 @@ function FriendsPart() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-
 export default async function Profile() {
-  const data = await getServerSession()
+  const data = await getServerSession();
   if (!data) {
-    redirect('/sign-in?callbackUrl=/profile')
+    redirect("/sign-in?callbackUrl=/profile");
   }
   return (
     <div className="flex flex-col items-center lg:items-start lg:flex-row pt-16 w-full gap-4 lg:ml-10">

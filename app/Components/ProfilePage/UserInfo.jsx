@@ -16,7 +16,7 @@ export default function UserInfo() {
 
   const statsData = [
     { count: 0, label: t("My courses") },
-    { count: 2, label: t("My followers") },
+    { count: 2, label: t("Followers") },
     { count: 32, label: t("Following") },
   ];
 

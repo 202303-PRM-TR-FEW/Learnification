@@ -35,7 +35,9 @@ function SideBar() {
             <ul className="flex justify-around md:justify-evenly w-[85vw] list-none md:bg-transparent bg-black/75 backdrop-blur-xl p-[1em] rounded-[40px] md:flex-col md:items-center md:h-[25em] md:w-[7em] z-40">
               <li className="hidden lg:flex lg:justify-start lg:pb-8">
                 <div className="lg:flex lg:justify-center lg:items-center lg:w-12 lg:h-8 lg:bg-blue-500 lg:rounded-3xl">
-                  <Icons.BrandIcon />
+                <Link href="/">
+                <Icons.BrandIcon />
+              </Link>
                 </div>
               </li>
               <li>
@@ -126,14 +128,14 @@ function SideBar() {
                       className="rounded-2xl lang-btn text-white bg-blue-500 border border-white hover:bg-white hover:text-blue-500 hover:border-blue-500 transition-colors duration-300"
                       onClick={() => signOut()}
                     >
-                      Log Out
+                     { t("Log out")}
                     </button>
                   ) : (
                     <button
                       className="rounded-2xl lang-btn text-white bg-blue-500 border border-white hover:bg-white hover:text-blue-500 hover:border-blue-500 transition-colors duration-300"
                       onClick={() => signIn()}
                     >
-                      Login
+                      { t("Login")}
                     </button>
                   )}
                 </div>

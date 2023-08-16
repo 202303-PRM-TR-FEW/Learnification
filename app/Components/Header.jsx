@@ -5,10 +5,12 @@ import Link from "next-intl/link";
 import { useLocale } from "next-intl";
 import { usePathname } from "next-intl/client";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useTranslations } from "next-intl";
 
 import Icons from "./Icons";
 
 const Header = () => {
+  const t = useTranslations("SignInUp");
   const [activeLang, setActiveLang] = useState("Türkçe");
   const [activeGreeting, setActiveGreeting] = useState("Selam!");
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -50,14 +52,14 @@ const Header = () => {
                   className="rounded-2xl lang-btn text-white bg-blue-500 border border-white hover:bg-white hover:text-blue-500 hover:border-blue-500"
                   onClick={() => signOut()}
                 >
-                  Log Out
+                 {t("Log Out")}
                 </button>
               ) : (
                 <button
                   className="rounded-2xl lang-btn text-white bg-blue-500 border border-white hover:bg-white hover:text-blue-500 hover:border-blue-500"
                   onClick={() => signIn()}
                 >
-                  Login
+                   {t("Login")}
                 </button>
               )}
             </li>
