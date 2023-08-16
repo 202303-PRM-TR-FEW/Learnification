@@ -38,9 +38,9 @@ export default function RecommendedForYou({ courses }) {
       <h3 className="font-semibold md:text-start">Recommended For You</h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 w-full">
         {phoneVersion
-          ? courses.map((course, index) => (
+          ? courses.map((course) => (
               <Link href={`course-detail/${course._id}`}>
-                <div key={index} className="lg:w-full py-3">
+                <div key={course._id} className="lg:w-full py-3">
                   <div className="rounded-2xl overflow-hidden relative w-full h-[200px]">
                     <Image
                       src={course.imageUrl}
@@ -55,9 +55,9 @@ export default function RecommendedForYou({ courses }) {
                 </div>
               </Link>
             ))
-          : courses.map((course, index) => (
+          : courses.map((course) => (
               <Link href={`course-detail/${course._id}`}>
-                <div key={index} className="lg:w-full py-3">
+                <div key={course._id} className="lg:w-full py-3">
                   <div className="rounded-2xl overflow-hidden relative w-full h-[200px]">
                     <Image
                       src={course.imageUrl}
