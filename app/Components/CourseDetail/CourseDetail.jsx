@@ -64,7 +64,7 @@ export default function CourseDetail({ course }) {
         const { message } = await res.json()
         notify(message, "success")
         handleCloseModal()
-        router.push(`/spesific-course/${courseId}`)
+        router.push(`/specific-course/${courseId}`)
     }
     const t = useTranslations("SavedCourses");
     return (

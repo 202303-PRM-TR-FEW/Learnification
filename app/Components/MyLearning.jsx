@@ -29,17 +29,17 @@ const MyLearning = ({ myLearningCourses, isLoading, idCourses }) => {
           </p>
         ) : myLearningCourses && myLearningCourses.length > 2 ? (
           <>
-            <Link href={`spesific-course/${myLearningCourses[0]?._id}`}>
+            <Link href={`specific-course/${myLearningCourses[0]?._id}`}>
               <MyLearningCard course={myLearningCourses[0]} />
             </Link>
-            <Link href={`spesific-course/${myLearningCourses[1]?._id}`}>
+            <Link href={`specific-course/${myLearningCourses[1]?._id}`}>
               <MyLearningCard course={myLearningCourses[1]} />
             </Link>
           </>
         ) : (
           myLearningCourses &&
           myLearningCourses.map((course, index) => (
-            <Link href={`spesific-course/${course?._id}`} key={index}>
+            <Link href={`specific-course/${course?._id}`} key={index}>
               <MyLearningCard course={course} />
             </Link>
           ))
