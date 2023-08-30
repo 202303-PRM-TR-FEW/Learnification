@@ -1,4 +1,5 @@
 import CourseDetail from '@/app/Components/CourseDetail/CourseDetail'
+import getBaseUrl from '@/utils/getBaseUrl';
 import { headers } from 'next/dist/client/components/headers';
 import { notFound, } from 'next/navigation';
 import React from 'react'
@@ -22,9 +23,8 @@ export async function generateMetadata({ params: { courseId } }) {
 }
 
 export default async function CourseDetailPage({ params: { courseId } }) {
-  const host = headers().get('host');
-  const protocol = host.includes('localhost') ? 'http' : 'https';
-  const url = `${protocol}://${host}/api/course/${courseId}`;
+  const baseUrl = getBaseUrl()
+  const url = `${baseUrl}/api/course/${courseId}`;
   const response = await fetch(url);
   if (!response.ok) {
     notFound()
