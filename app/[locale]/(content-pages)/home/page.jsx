@@ -1,7 +1,6 @@
 import React from "react";
 import MyLearningAndFilter from "../../../Components/HomePage/MyLearningAndFilter";
 import FeaturedCourses from "../../../Components/HomePage/FeaturedCourses";
-import MyLearning from "../../../Components/MyLearning";
 import { getServerSession } from "next-auth";
 import LearnUButton from "@/app/Components/LearnUButton";
 import Link from "next/link";
